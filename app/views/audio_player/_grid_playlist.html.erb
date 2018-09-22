@@ -1,0 +1,28 @@
+<% tracks.each_with_index do |track, index| %>
+  <li class="ol-12 col-md-4 col-lg-2" id="track-<%= index %>">
+    <div class="card card-lg">
+      <div class="card-body">
+        <div class="datashift-audio-full-name">
+          <!-- TODO Hover brings up embedded player, click > to play -->
+          <% if track.cover %>
+            <%= image_tag track.cover.image.url, class: 'card-img-top' %>
+          <% elsif track.user.try(:avatar) %>
+            <!-- TODO This logic only here temp, os models in dev - track.user will be required, avatar will default to some icon until user sets it -->
+            <%= image_tag track.user.avatar.url, class: 'card-img-top' %>
+          <% end %>
+
+          <div class="media track-artist">
+            <h1 class="track-artist"><%= link_to(track.artist, user_path(track.user)) %>></h1>
+          </div>
+        </div>
+        <div class="datashift-audio-duration"><%= track.display_duration %></div>
+      </div>
+      <div class="card-footer card-footer-borderless">
+        <%= link_to track, class: 'card-img-top' do %>
+          <h1 class="track-title"><%= track.title %></h1>
+        <% end %>
+      </div>
+    </div>
+  </li>
+<% end %>
+

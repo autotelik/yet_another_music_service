@@ -1,0 +1,78 @@
+<footer class="bg-gray text-light footer-short mt-4 mb-0 pt-2 pb-2">
+
+  <div class="row">
+
+    <div class="col-1"></div>
+
+    <div class="col-10 footer">
+      <span class="h6">Yet Another Music Service  &copy; 2018 thomas statter</span>
+
+      <div class="row no-gutters  text-md-center">
+
+        <div class="col-3 align-items-center">
+          <h6>Navigate</h6>
+          <ul class="list-unstyled">
+            <li>
+              <%= link_to t(:home), root_path %>
+            </li>
+            <li>
+              <%= link_to t(:about), page_path(:about) %>
+            </li>
+            <% if user_signed_in? %>
+              <li>
+                <%= link_to t(:profile, scope: :global), user_path(current_user) %>
+              </li>
+              <li>
+                <%= link_to t(:sign_out), destroy_user_session_path, :method=>'delete' %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+
+        <div class="col-3 align-items-center">
+          <h6>Platform</h6>
+          <ul class="list-unstyled">
+            <li>
+              <%= link_to "Ruby on Rails", 'https://rubyonrails.org/', target: :_blank %>
+            </li>
+            <li>
+              <%= link_to "Bitcoin", 'https://bitcoin.org', target: :_blank %>
+            </li>
+            <li>
+              <%= link_to "Lightning Network", 'https://lightning.network', target: :_blank %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-3 align-items-center">
+          <h6>Community</h6>
+          <ul class="list-unstyled">
+            <li>
+              <%= link_to t('terms.link'), page_path(:terms) %>
+            </li>
+            <li>
+              <%= link_to t('contact.link'), page_path(:contact) %>
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-3 align-items-center">
+          <h6>Music</h6>
+          <ul class="list-unstyled">
+            <li><%= link_to t('global.radio'), radio_index_path %></li>
+
+            <% if user_signed_in? %>
+              <li class='nav-item'><%= link_to t(:upload, scope: :global), new_track_path %></li>
+              <li><%= link_to t(:tracks, scope: :global), tracks_path %></li>
+            <% end %>
+          </ul>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="col-1"></div>
+
+  </div>
+
+</footer>

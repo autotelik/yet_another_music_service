@@ -1,0 +1,22 @@
+<% content_for :head_extension do %>
+  <!-- The js for the player
+ <script src="/wimpy/wimpy.js"></script>-->
+
+  <!-- The styles for the player
+  <%#= stylesheet_link_tag  "wimpyCssPlayer" %> -->
+<% end %>
+
+<%# data_media = WimpyPlayListBuilder.call( model ) %>
+
+<div data-wimpyCssPlayer class="wimpy-player">
+
+  <div data-play class="basicButton">p</div>
+  <div data-pause class="basicButton">q</div>
+
+  <div class="time">
+    <span data-current>00:00</span>
+    / <span data-remaining>00:00</span>
+    / <span data-total>00:00</span>
+  </div>
+
+</div>

@@ -1,0 +1,78 @@
+/* OVER RIDE THE ENGINE */
+
+.datashift-audio-track-playlist i.datashift-audio-active{
+    box-shadow: 0px 0px 5px  $colour-blue-grey-2;
+    color: $colour-blue-grey-1;
+}
+
+.datashift-audio-playlist-content{
+  box-shadow: 0px 0px 5px black;
+  background: $colour-theme-background;
+  color: $colour-cool-mint;
+  display: inline-block;
+}
+
+.datashift-audio-playlist li{
+  display: block;
+  transition: 0.25s;
+  padding: 10px;
+  color: ghostwhite;
+}
+
+.datashift-audio-playlist li *{
+  display: inline-block;
+  font-size: 16px !important;
+  padding-left: 5px;
+  cursor: pointer;
+}
+
+.datashift-audio-playlist li .duration{
+  color: ghostwhite;
+  background-color: black;
+  padding: 0px 10px;
+}
+
+.datashift-audio-playlist li i{
+  color:  $colour-cool-mint;
+}
+
+.datashift-audio-playlist li:hover i{
+  color: blueviolet;
+}
+
+.datashift-audio-playlist li .full-name{
+  padding: 0px 10px;
+}
+
+.datashift-audio-playlist li:hover{
+  background-color: w;
+  color: $colour-dark-green;
+  cursor: pointer;
+}
+
+.datashift-audio-playlist li.active{
+  background-color: black;
+  color: white;
+}
+
+.datashift-audio-playlist li.datashift-audio-active:hover{
+  background-color: $colour-sea-green;
+  color: white;
+}
+
+.datashift-audio-playlist > li:nth-child(odd) {
+  background: $colour-blue-grey-1;
+}
+.datashift-audio-playlist > li:nth-child(even) {
+  background: $colour-blue-grey-2;
+}
+
+.datashift-audio-playlist .current-track{
+  background-color: black;
+  color: white;
+}
+
+.datashift-audio-player .datashift-audio-pages li:hover{
+  cursor: pointer;
+  color: $colour-off-white;
+}

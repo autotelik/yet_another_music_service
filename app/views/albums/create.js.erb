@@ -1,0 +1,5 @@
+$("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
+
+$('#target-for-album-create-insertion-point').after("<li class=\"list-group-item\"><%= j render(partial: 'albums/album_with_dropzone', locals: { album: @album } ) %></li>");
+//$('#toggle-new-album-form').toggle(); <!-- auto close the new panel -->
+

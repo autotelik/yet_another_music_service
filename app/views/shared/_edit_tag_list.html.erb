@@ -1,0 +1,13 @@
+<% form_id = "taglist-#{form.object.class.name.downcase}-#{form.object.id}" %>
+
+<div class="form-group">
+  <%= form.label(t(:tags, scope: :global)) %>
+  <%= form.select :tag_list, options_for_select(form.object.tag_list, form.object.tag_list ), {}, { multiple: true , id: form_id, class: 'col-12' }%>
+</div>
+
+<script type="text/javascript">
+    $('#<%= form_id %>').select2({
+        tags: true,
+        tokenSeparators: [',', ' ']
+    });
+</script>

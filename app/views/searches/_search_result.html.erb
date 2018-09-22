@@ -1,0 +1,70 @@
+<!-- TODO - do we really need to load the records from the DB - can we just get the cover ? -->
+
+Tracks
+
+<% presenter.search_results[:track].each do |t| %>
+
+  <% track = TrackPresenter.new(t, self) %>
+
+  <div class="col-12">
+    <div class="card card-sm">
+
+      <div class="card-body">
+        <div class="col-md-12 search_result">
+          <div class="row show_track pb-1 pt-1">
+
+            <div class="col-2 align-items-center">
+              <%= track.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %>
+            </div>
+
+            <div class="col-6">
+              <div class="row pb-1" id="track_row_<%= track.id %>">
+                <div class="col-10" data-track-id="<%= track.id %>" id="track_<%= track.id %>" >
+                  <h6 class="mb-0"><%= track.title %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= paginate presenter.search_results[:track] %>
+
+<% end %>
+
+Albums
+
+<% presenter.search_results[:album].each do |a| %>
+
+  <% album = AlbumPresenter.new(a, self) %>
+
+  <div class="col-12">
+    <div class="card card-sm">
+
+      <div class="card-body">
+        <div class="col-md-12 search_result">
+          <div class="row show_track pb-1 pt-1">
+
+            <div class="col-2 align-items-center">
+              <%= album.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %>
+            </div>
+
+            <div class="col-6">
+              <div class="row pb-1" id="track_row_<%= album.id %>">
+                <div class="col-10" data-track-id="<%= album.id %>" id="track_<%= album.id %>" >
+                  <h6 class="mb-0"><%= album.title %></h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= paginate presenter.search_results[:album] %>
+<% end %>

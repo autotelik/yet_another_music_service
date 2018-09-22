@@ -1,0 +1,32 @@
+<% visible = flash.present? ? '' : 'display: none' %>
+<section id="global_shared_messages_section" class="space-xs text-center bg-gradient text-light alert" style="padding-bottom: 0; <%= visible %>">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <% flash.each do |name, payload| %>
+          <% [*payload].each do |msg| %>
+            <div  class="col alert alert-<%= name.to_s == 'notice' ? 'success' : 'danger' %>" role="alert">
+              <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+              <%= content_tag :div, msg.to_s, :id => "flash_#{name}" %>
+            </div>
+            <% end %><% end %>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script type="text/javascript">
+    $(".close").click(function(){
+        if($('.alert:visible').length == 1) {   // not 0 - we are catching the last one clicked
+            $("#global_shared_messages_section").hide();
+        }
+    });
+
+    window.setTimeout(function() {
+        $(".alert:visible").fadeTo(500, 0).slideUp(500, function(){
+            $(this).remove();
+        });
+    }, 4000);
+
+</script>
+

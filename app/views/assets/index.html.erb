@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Assets</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Original format</th>
+      <th>Owner</th>
+      <th>Owner type</th>
+      <th>Position</th>
+      <th>User</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @assets.each do |asset| %>
+      <tr>
+        <td><%= asset.title %></td>
+        <td><%= asset.original_format %></td>
+        <td><%= asset.owner_id %></td>
+        <td><%= asset.owner_type %></td>
+        <td><%= asset.position %></td>
+        <td><%= asset.user %></td>
+        <td><%= link_to 'Show', asset %></td>
+        <td><%= link_to 'Edit', edit_asset_path(asset) %></td>
+        <td><%= link_to 'Destroy', asset, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Asset', new_asset_path %>

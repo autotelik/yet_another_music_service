@@ -1,0 +1,359 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *
+ *= require datashift_audio_engine/application
+ *= require select2
+*/
+
+@import "search";
+@import "variables";
+@import "bootstrap";
+@import "theme/scss/theme";
+@import "font-awesome";
+
+@import "datashift_audio_player/icons";
+@import "datashift_audio_player/playlist";
+@import "datashift_audio_player/player";
+@import "datashift_audio_player/cover";
+@import "datashift_audio_player/volume";
+
+body {
+  color: $colour-off-white;
+  background-color: $colour-default-body !important;
+}
+
+a {
+  color: #12e6ff !important;
+}
+
+a.icon_tag {
+  color: $colour-cool-mint !important;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a.sign-up, a.sign-in {
+  color: $colour-cool-mint;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+}
+
+a.text-black{
+
+  transition: opacity .2s ease;
+  &:hover{
+    opacity: .75;
+  }
+  color: black !important;
+}
+
+h1, h2, h3, h4, h5, h6 { color: $colour-default-h !important; }
+
+ul {
+  list-style-type: none;
+}
+
+ul.striped-list > li:nth-of-type(odd) {
+  background-color: $colour-blue-grey-1 ;
+}
+
+ul.striped-list > li:nth-of-type(even) {
+  background-color: $colour-blue-grey-2 ;
+}
+
+ul.album-drop {
+  border: solid 1px;
+  width: 200px;
+  min-height: 350px;
+  margin: 15px;
+  list-style-type: none;
+}
+
+h3.album-track, h5.album-track {
+  color: $colour-green-blue !important;
+  font-weight: bolder;
+
+}
+
+table.album-track thead tr th {
+  color: white !important;
+  font-weight: bolder;
+
+}
+
+table.album-track td a i.icon_tag
+{
+  color: black !important;
+  font-weight: bolder;
+}
+
+.audio-upload > input
+{
+  display: none;
+}
+.audio-upload > label{
+  cursor:pointer;
+  background: $colour-theme-background;
+  padding: 1rem;
+}
+
+.badge-intro {
+  @extend .badge-dark;
+  background: $colour-dark-green !important;
+  font-size: 24px;
+  font-weight: bolder;
+  padding: 8px;
+  margin: 8px;
+}
+
+.bg-black
+{
+  background: $colour-dark-green !important;
+}
+
+.bg-gradient {
+  background: radial-gradient(ellipse closest-side, $colour-theme-background 60%, $colour-blue-grey);
+}
+
+.bg-secondary {
+  background-color: $colour-secondary !important;
+}
+
+.btn {
+  @extend .btn;
+  background: $colour-secondary-btn !important;
+}
+
+.btn-danger {
+  background: $colour-danger-red !important;
+}
+
+.btn-secondary {
+  background-color: #97DFFC;
+}
+
+.btn-success {
+  color: black;
+}
+
+input[type="submit"] {
+  color: $colour-secondary-btn-text;
+}
+
+div.dropdown .btn
+{
+  color: $colour-secondary-btn-text;
+}
+
+.card {
+  @extend .card;
+  color: #f0eceb !important;
+  background: $colour-dark-green !important;
+}
+
+.card-body {
+  @extend .card-body;
+  color: $colour-off-white !important;
+  background: $colour-secondary !important;
+}
+
+div.card-body div.form-group label {
+  color: $colour-off-white !important;
+}
+
+.dropdown-menu > a:nth-child(odd) {
+  background: $colour-blue-grey-1;
+}
+.dropdown-menu > a:nth-child(even) {
+  background: $colour-blue-grey-2;
+}
+.dropdown-menu
+{
+  background: $colour-theme-background !important;
+}
+
+.fade_out
+{
+  -webkit-animation: fade 5s infinite; /* Chrome, Safari 5+ */
+  -moz-animation: fade 5s infinite; /* Firefox 5-15 */
+  -o-animation: fade 5s infinite; /* Opera 12.00 */
+  animation: fade 5s infinite; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */
+}
+
+.form-control {
+  border-radius: 4px;
+}
+
+.footer {
+  padding: $navbar-padding;
+}
+
+.footer a {
+  color: $colour-green-links !important;
+}
+.header-search {
+  padding: 9px 10px 8px;
+  position: relative;
+  appearance: none;
+  width: 100%;
+}
+
+.header-search-submit {
+  border: 0;
+  padding: 0;
+  font: 0/0 a;
+  background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiI…lwZT0iTVNTaGFwZUdyb3VwIj48L3BhdGg+CiAgICAgICAgPC9nPgogICAgPC9nPgo8L3N2Zz4=) 0 0 no-repeat;
+  color: transparent;
+  width: 15px;
+  height: 15px;
+  position: absolute;
+  right: 20px;
+  top: 15px;
+  -webkit-appearance: button;
+  cursor: pointer;
+  background: #333;
+}
+
+.icon_tag {
+  color: $colour-cool-mint !important;
+  text-decoration: none;
+  background-color: transparent;
+  -webkit-text-decoration-skip: objects;
+  font-size: 20px;
+  margin: 7px 9px 9px;
+}
+
+div.main-container
+{
+  margin-top: $navbar-total-height; // accommodate the navbar
+  background-color: $colour-default-body;
+}
+div#messages_container
+{
+  margin-bottom: $navbar-total-height; // accommodate the navbar
+}
+
+.pull-left {
+  float: left !important;
+}
+
+.pull-right {
+  float: right !important;
+}
+
+.show-track-album-dropzone > div.row:nth-child(odd) {
+  background: $colour-blue-grey-1;
+}
+.show-track-album-dropzone > div.row:nth-child(even) {
+  background: $colour-blue-grey-2;
+}
+
+.navbar-collapse{
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+// ALBUMS
+
+#new-album-card {
+  margin-bottom: 0;
+}
+
+#new-album-card-body {
+  margin-bottom: 0;
+}
+
+.sortable_tracks_row td{
+  padding: 6px 0 6px 0;
+}
+
+.select2-selection__choice
+{
+  color: $colour-rich-black;
+}
+
+ul#track-drag
+{
+  padding: 0;
+}
+
+ul#track-drag li
+{
+  padding: 0 0 0.5rem 0;
+}
+
+ul#track-drag li button
+{
+  padding: 0.2rem;
+}
+
+section#tracks_index_section .card {
+  background: $colour-off-white !important;
+  margin: 1rem;
+}
+
+section#tracks_index_section.track-listing h5
+{
+  color: $colour-dark-green !important;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 20px;
+  text-overflow: ellipsis;
+}
+
+section#tracks_index_section.track-listing li.ol-12.col-md-4.col-lg-2
+{
+  padding: 0; margin: 0;
+}
+
+section#tracks_index_section.track-listing div.card-body
+{
+  padding: 0.5rem;
+}
+
+section#tracks_index_section.track-listing li div.card-footer.card-footer-borderless
+{
+  padding: 0 0 0 12px;
+}
+
+section#tracks_index_section.track-listing .track-artist h1
+{
+  color: red !important;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 0;
+}
+
+section#tracks_index_section.track-listing h1
+{
+  color: blueviolet !important;
+  font-size: 12px;
+  font-weight: 100;
+  line-height: 20px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.text-dark{
+  color:$colour-default-body !important;
+}

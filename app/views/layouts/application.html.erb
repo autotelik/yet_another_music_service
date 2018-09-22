@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= content_for?(:title) ? yield(:title) : "Yet Another Music Service" %></title>
+  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Yet Another Music Service" %>">
+
+  <!-- theme theme -->
+  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500" rel="stylesheet">
+
+  <!-- icon stuff just thrown in public for now-->
+  <link href="/theme/assets/css/socicon.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="/theme/assets/css/entypo.css" rel="stylesheet" type="text/css" media="all" />
+
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
+
+  <%= yield(:head_extension) %>
+
+  <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
+
+  <%= csrf_meta_tags %>
+</head>
+  <body>
+    <%= render 'layouts/navigation' %>
+
+    <div class="main-container">
+
+      <div class="row">
+        <div id="messages_container" class="container-fluid">
+          <%= render 'shared/messages' %>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <%= yield %>
+      </div>
+
+    </div>
+
+    <%= render 'shared/footer' %>
+
+    <%= yield(:body_extension) %>
+
+  </body>
+</html>

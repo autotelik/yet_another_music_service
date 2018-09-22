@@ -1,0 +1,59 @@
+<div id="datashift-audio-player" class="col-12 datashift-audio-player">
+  <div class="row">
+
+    <div class="col-2 align-middle text-center">
+      <div class="datashift-audio-track-cover pt-5 m-0" aria-role="img">
+        <i class="material-icons datashift-audio-cover-play play align-middle text-center" >play_circle_outline</i>
+        <i class="material-icons datashift-audio-cover-play pause datashift-audio-hide align-middle text-center">pause_circle_outline</i>
+      </div>
+    </div>
+
+    <div class="col-10 p-0 m-0">
+
+      <div class="row">
+        <div class="col-12 mt-4">
+          <div class="row">
+            <div class="datashift-audio-current-position text-sm-left">00:00</div>
+            <div class="datashift-audio-wave-block" id="waveform"></div>
+            <div class="datashift-audio-total-duration text-sm-right pull-right">00:00</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row pt-1">
+        <div class="col-6">
+          <div class="datashift-audio-track-basic-info align-middle mt-2">
+            <span class="datashift-audio-track-name">Current Track Name</span> - <span class="datashift-audio-author-name">Author Name</span>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="datashift-audio-track-controls">
+            <i class="material-icons previous">rewind</i>
+            <i class="material-icons next">fast fwd</i>
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="datashift-audio-track-volume p-0 mt-3">
+            <input type="range" orient="horizontal" min="0" max="100" value="100" step="1" class="datashift-audio-input-range" />
+          </div>
+        </div>
+        <div class="col-2">
+          <div class="datashift-audio-track-volume p-0 mt-3">
+            <i class="material-icons volume_up">volume_up</i>
+            <i class="material-icons volume_down datashift-audio-hide">volume_down</i>
+            <i class="material-icons volume_mute datashift-audio-hide">volume_mute</i>
+            <i class="material-icons volume_off  datashift-audio-hide">volume_off</i>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        datashift_audio_engine.init();
+        datashift_audio_engine.load('<%= load_json_playlist_url %>.json');
+    });
+</script>

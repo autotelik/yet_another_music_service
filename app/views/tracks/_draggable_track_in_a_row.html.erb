@@ -1,0 +1,31 @@
+<div class="row" id="track_row_<%= track_presenter.id %>">
+  <div class="col-12" data-track-id="<%= track_presenter.id %>" draggable="true" ondragstart="drag(event)" id="track_<%= track_presenter.id %>" >
+    <div class="row show_track pb-1 pt-1">
+
+      <div class="col-1">
+        <%= track_presenter.bootstrap_actions_dropdown %>
+      </div>
+
+      <div class="col-2 align-items-center">
+        <%= track_presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %>
+      </div>
+
+      <div class="col-6">
+        <div class="row pb-1" id="track_row_<%= track_presenter.id %>">
+          <div class="col-10" data-track_presenter-id="<%= track_presenter.id %>" draggable="true" ondragstart="drag(event)" id="track_<%= track_presenter.id %>" >
+            <h6 class="mb-0"><%= track_presenter.title %></h6>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-1">
+        <%= edit_icon(track_presenter) %>
+      </div>
+
+      <div class="col-1">
+        <%= delete_icon(track_presenter) %>
+      </div>
+
+    </div>
+  </div>
+</div>

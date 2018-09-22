@@ -1,0 +1,20 @@
+<% errors = model.try(:errors) || [] %>
+
+<% if errors.any? %>
+  <div class="error-summary" role="group" aria-labelledby="groupLabel" tabindex="-1">
+
+    <span class="badge badge-pill badge-danger">
+      <h5 class="heading-medium error-summary-heading" id="error-summary-heading">
+        <%= t '.you_have' %> <%= pluralize(errors.count, "error") %>
+      </h5>
+    </span>
+
+    <ul class="error-summary-list">
+      <% errors.each do |attr, msg| %>
+        <li>
+          <%= attr %> <%= msg.html_safe %>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>

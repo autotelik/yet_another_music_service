@@ -1,0 +1,37 @@
+<%= content_for :album_form_extras do %>
+  <div class="card mt-3">
+    <div class="card-header">
+      <div class="row">
+        <div class="col-3">
+          <h5 class=".text-light"><%= t('global.tracks') %></h5>
+        </div>
+      </div>
+    </div>
+    <div class="card-body">
+      <%= render partial: 'album_tracks/sortable_tracks_table', locals: { album: @album } %>
+    </div>
+  </div>
+
+  <script type="text/javascript" charset="utf-8">
+      $(function() {
+          $('.sortable').railsSortable();
+      })
+  </script>
+
+<% end %>
+
+
+<div class="col-md-6 offset-md-3">
+
+  <div class="card card-outline-secondary">
+
+    <%= bootstrap_card_header( t('.card_header') ) %>
+
+    <div class="card-body">
+      <%= render partial: 'form', locals: { album: @album } %>
+    </div>
+
+  </div>
+</div>
+
+

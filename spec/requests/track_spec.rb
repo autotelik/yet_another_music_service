@@ -1,0 +1,56 @@
+# frozen_string_literal: true
+
+require 'rails_helper'
+
+describe 'track', type: :request do
+  context 'POST' do
+    context 'upload e' do
+      let(:test_user) { create(:user) }
+
+      before do
+        allow_any_instance_of(ApplicationController).to receive(:current_user) { test_user }
+      end
+
+      include Shoulda::Matchers::ActionController
+
+      it 'when all params valid - stores a wav file as a new track' do
+        parameters = { track: attributes_for(:track, :with_audio) }
+
+        expect { post '/tracks', params: parameters }.to change(Track, :count).by(1)
+
+        expect(response).to redirect_to(assigns(:track))
+        expect(controller).to set_flash[:notice].to(/successfully created/)
+      end
+
+      it 'stores a cover image against the new track' do
+        parameters = { track: attributes_for(:track, :with_audio).merge(cover_attributes: {
+                                                                          image: fixture_file_upload('/files/test_image.jpg', 'image/jpeg')
+                                                                        }) }
+
+        expect { post '/tracks', params: parameters }.to change(Cover, :count).by(1)
+
+        expect(response).to redirect_to(assigns(:track))
+        expect(controller).to set_flash[:notice].to(/successfully created/)
+      end
+
+      it 'sets available for fields correctly', ffs: true do
+        parameters = { track: attributes_for(:track, :with_audio), "availables": { radio: 'true' } }
+
+        expect { post '/tracks', params: parameters }.to change(Available, :count).by(1)
+
+        track = Track.last
+        expect(track.availables.count).to eq 1
+        expect(track.available_for?(:radio)).to eq true
+        expect(track.available_for?(:download)).to eq false
+      end
+
+      it 'sets suitable error notice when no title provided' do
+        parameters = { track: attributes_for(:track, :with_audio).except(:title) }
+
+        expect { post '/tracks', params: parameters }.to change(Track, :count).by(0)
+        expect(assigns(:track).errors).to have_key :title
+        expect(response).to render_template('tracks/new')
+      end
+    end
+  end
+end

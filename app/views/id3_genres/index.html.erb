@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Id3 Genres</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @id3_genres.each do |id3_genre| %>
+      <tr>
+        <td><%= id3_genre.name %></td>
+        <td><%= link_to 'Show', id3_genre %></td>
+        <td><%= link_to 'Edit', edit_id3_genre_path(id3_genre) %></td>
+        <td><%= link_to 'Destroy', id3_genre, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Id3 Genre', new_id3_genre_path %>

@@ -1,0 +1,45 @@
+default: &default
+  adapter: mysql2
+  encoding: unicode
+  host: data
+  username: root
+  password: <%= ENV['YAMS_DEV_DB_PASSWORD'] %>
+  encoding: utf8
+  reconnect: true
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: <%= ENV['YAMS_DEV_DB'] || 'Backoffice_development' %>
+
+test:
+  <<: *default
+  database: <%= ENV['YAMS_TEST_DB'] || 'Backoffice_test' %>
+  password: <%= ENV['YAMS_TEST_DB_PASSWORD'] %>
+
+# over ride normal staging with a docker specific DB
+staging:
+  <<: *default
+  host: backofficestaging.mapscape.nl
+  database: Backoffice_staging_docker
+  username: rails.mysql
+  password: rubyrules
+  socket: /var/run/mysqld/mysqld.sock
+
+# RAILS 5
+yams99:
+  <<: *default
+  host: backofficestaging.mapscape.nl
+  database: Backoffice_rails5
+  username: rails.mysql
+  password: rubyrules
+  socket: /var/run/mysqld/mysqld.sock
+
+production:
+  <<: *default
+  database: Backoffice_production
+  username: yams_prod
+  password: <%= ENV['YAMS_PASSWORD'] || 'vvGr3VPQDjP6UMpQ' %>
+  host: msmysql01
+  socket: /var/run/mysqld/mysqld.sock
+

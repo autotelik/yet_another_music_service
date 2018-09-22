@@ -1,0 +1,11 @@
+data_flow_schema:
+  Global:
+    force_inclusion_of_columns: 'audio'
+  Track:
+    nodes:
+      - audio:
+          index: 1
+          operator: attach_audio_file
+      - cover:
+          index: 2
+          operator: attach_cover

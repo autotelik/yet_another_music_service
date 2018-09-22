@@ -1,0 +1,28 @@
+<div class="row pl-5">
+  <div class="col-8" style="position: relative;">
+    <%= @track.cover_image_tag() %>
+  </div>
+
+  <div class="col-4 pl-2">
+    <h5 class="card-title mb-3"><%= @track.artist %></h5>
+    <h5 class="card-title mb-3"><%= @track.title %></h5>
+    <p>
+      <%= @track.description %>
+    </p>
+    <p>
+      <%= @track.license %>
+    </p>
+    <p>
+      <%= @track.id3_genre %>
+    </p>
+    <p>
+      TODO : Ratings, Comments, Likes etc
+    </p>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-8">
+    <%= render partial: 'shared/playlist_player', locals: { model: @track.model } %>
+  </div>
+</div>

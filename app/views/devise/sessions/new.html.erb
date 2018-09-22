@@ -1,0 +1,63 @@
+<section class="space-sm">
+
+  <div class="row">
+
+    <div class="col-3"></div> <!-- TODO how to just centre the next column with width 6 without needign this spacer ?? -->
+
+    <div class="col-6 card p-0">
+      <div class="card-body">
+
+        <%= render partial: 'shared/card_body_header', locals: { panel_title: t('.panel_title') } %>
+
+        <div class="row">
+          <div class="col text-center" style="padding: 0 64px 0 64px;">
+            <%= devise_error_messages! %>
+
+            <%= form_for(resource, as: resource_name, url: session_path(resource_name), class: "form") do |f| %>
+
+              <div class="form-row form-group">
+                <div class="col">
+                  <div class="invalid-feedback">Please enter your username or email</div>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control form-control-lg', placeholder: "Email" %>
+                </div>
+              </div>
+
+              <div class="form-row form-group">
+                <div class="col">
+                  <div class="invalid-feedback">Please enter a password</div>
+                  <%= f.password_field :password, autocomplete: "off", class: 'form-control form-control-lg', placeholder: "Password" %>
+                </div>
+              </div>
+
+              <% if devise_mapping.rememberable? -%>
+                <div class="float-left form-group">
+                  <div class="col pl-0">
+                    <%= f.check_box :remember_me %>
+                    <label>Remember me on this computer</label>
+                  </div>
+                </div>
+              <% end -%>
+
+              <%= bootstrap_submit(form: f, text: t('.submit')) %>
+
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-9" style="padding: 0 64px 0 64px;">
+            <%= render "devise/shared/links" %>
+          </div>
+
+          <div class="col-3 float-left p-0">
+            </br>
+            <span>Need an account? <%= link_to t(:sign_up), new_user_registration_path, class: 'sign-up' %></span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <div class="col-3"></div> <!-- TODO how to just centre the prev column with width 6 without needign this spacer ?? -->
+  </div>
+
+</section>

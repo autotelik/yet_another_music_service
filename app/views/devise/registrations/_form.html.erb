@@ -1,0 +1,88 @@
+<section class="space-sm">
+
+  <div class="row">
+
+    <div class="col-2"></div> <!-- TODO how to just centre the next column with width 6 without needign this spacer ?? -->
+
+    <div class="col-8 card p-0">
+      <div class="card-body">
+
+        <%= render partial: 'shared/card_body_header', locals: { panel_title: t('.panel_title') } %>
+
+        <div class="row">
+          <div class="col float-right text-center">
+            <%= render 'shared/errors', model: resource %>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="col text-center" style="padding: 0 64px 0 64px;">
+            <% resource.password = nil %>
+            <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put, autocomplete: "off" }) do |f| %>
+
+              <!-- allowing users to change primary email ?? maybe spam implications ?? -->
+              <div class="row">
+                <div class="col-6 form-group">
+                  <%= f.label t(:email), class: 'float-left' %><br />
+                  <%#= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control' %>
+                  <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control', style: 'background-color: #9d9d9d', disabled: true %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-6 form-group">
+                  <%= f.label t(:display_name), class: 'float-left' %><br />
+                  <%= f.text_field :name, autofocus: true, autocomplete: "user", class: 'form-control' %>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col form-group">
+                  <%= f.label t('.bio'), class: 'float-left' %><br />
+                  <%= f.text_area(:bio, cols: 20, rows: 4, class: 'form-control') %>
+                </div>
+              </div>
+
+              <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
+                <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
+              <% end %>
+
+              <div class="card">
+                <div class="card-header">
+                  <h5 class=".text-light"><%= t('.avatar_heading') %></h5>
+                </div>
+
+                <div class="card-body">
+                  <div class="form-group">
+                    <% if current_user.avatar.try(:attached?) %>
+                      <%= image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-lg') %>
+                    <% else %>
+                      <% default = DefaultCover.for_user %>
+                      <%= image_tag(polymorphic_url(default.image), class: 'avatar avatar-lg') if default.try(:image) %>
+                    <% end %>
+                  </div>
+
+                  <div class="form-group">
+                    <%= custom_file_field(f, :avatar, t('.choose_avatar'), options: { accept: 'image/png,image/gif,image/jpeg', class: "filestyle" }) %>
+                  </div>
+                </div>
+
+              </div>
+
+              <%= bootstrap_submit(form: f, text: t('.submit')) %>
+
+            <% end %>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col">
+            <%= button_to t('.cancel_button'), registration_path(resource_name), data: { confirm: t('.cancel_confirm') }, method: :delete, class: 'btn btn-danger float-left' %>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>

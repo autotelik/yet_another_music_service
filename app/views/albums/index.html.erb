@@ -1,0 +1,69 @@
+<% content_for :banner do %>
+  <h5>Albums</h5>
+<% end %>
+
+<div class="col-12" style="border: 1px solid">
+  Very thin Audio player - fixed position (no scroll), navigation only ......
+</div>
+
+<% li_class = 'ol-12 col-md-4 col-lg-2' %>
+
+<div class=" row">
+  <div class="col-2" style="border: 1px solid">
+    On hover, play/pause button appears within album cover. On play, loads album into thin player
+  </div>
+
+  <div class="col-10">
+    <section class="album-listing" id="albums_index_section">
+
+      <ul class="row mb-6 feature-list feature-list-sm">
+        <% @albums.each do |a| %>
+          <% album = AlbumPresenter.new(a, self) %>
+
+          <li class="<%= li_class %>">
+            <div class="card card-lg">
+              <div class="card-body">
+                <%= album.cover_image_tag() %>
+
+                <%= render partial: 'shared/playlist_player', locals: { model: a } %>
+              </div>
+              <div class="card-footer card-footer-borderless">
+                <%= link_to album, class: 'card-img-top' do %>
+                  <h1 class="album-title"><%= album.title %></h1>
+                <% end %>
+              </div>
+            </div>
+          </li>
+        <% end %>
+      </ul>
+
+      <!--end of albums -->
+      <div class="row justify-content-center">
+        <div class="col-auto">
+          <nav aria-label="Page navigation example">
+            <ul class="pagination">
+              <li class="page-item disabled">
+                <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true"><i class="icon-chevron-left"></i>
+                                            </span>
+                  <span class="sr-only">Previous</span>
+                </a>
+              </li>
+              <li class="page-item">
+                <%= paginate @albums, window: 2 %>
+              </li>
+              <li class="page-item">
+                <a class="page-link" href="#" aria-label="Next">
+                  <span aria-hidden="true"><i class="icon-chevron-right"></i></span>
+                  <span class="sr-only">Next</span>
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+      </div>
+    </section> <!--end list/pagination section-->
+  </div>
+</div>
+
