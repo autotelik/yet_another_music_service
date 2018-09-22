@@ -8,25 +8,26 @@ end
 
 ruby '>= 2.5.0'
 
+# RAILS
 gem 'rails', '~> 5.2.1'
-
-gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
-
-gem 'puma', '~> 3.7'
 
 gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
+
+# YAMS
 gem 'acts-as-taggable-on'
 gem 'administrate'
 gem 'autoprefixer-rails', '8.6.5'
 
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.1.2'
 gem 'bourbon'
+
+gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'          # Tokens
 gem 'devise_invitable'                # An invitation strategy for devise
@@ -49,6 +50,7 @@ gem 'pundit'
 
 gem 'rails_sortable', '~> 1.2.1'
 gem 'rubocop', '~> 0.57.2'
+gem 'rubyzip', '~> 1.2.2'
 
 gem 'select2-rails'
 gem 'searchkick'
