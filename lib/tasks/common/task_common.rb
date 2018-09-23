@@ -8,6 +8,12 @@ module TaskCommon
     system cli
   end
 
+  def docker_exec(cmd:, env: 'development')
+    cli = "docker exec -ti #{env} #{cmd}"
+    puts "Running": cli
+    system cli
+  end
+
   # Helper to request a user enter a Rails env on cmd line.
   # Checks if valid env entered (based on config/database.yaml) and if acceptable to client script.
   #

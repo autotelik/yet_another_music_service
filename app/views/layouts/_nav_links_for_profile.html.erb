@@ -4,19 +4,18 @@
   </ul>
 <% end %>
 
-<ul class="navbar-nav col-2">
+<ul class="navbar-nav mr-auto col-2">
   <% if user_signed_in? %>
 
     <li class="nav-item dropdown">
-      <% css = { class: "nav-link dropdown-toggle", id: "navbarDropdown", role: "button", 'data-toggle': "dropdown", 'aria-haspopup': "true", 'aria-expanded': "false" } %>
-
-      <% if current_user.avatar.attached? %>
-        <%= link_to image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-xs'), edit_user_registration_path, css %>
-      <%else %>
-        <%= link_to t(:profile, scope: :global), edit_user_registration_path,  class: 'nav-link icon-user' %>
-      <% end %>
-
-      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
+        <%else %>
+          <%= t(:profile, scope: :global) %>
+        <% end %>
+      </a>
+      <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
         <%= link_to t(:profile, scope: :global), user_path(current_user), class: 'dropdown-item' %>
         <%= link_to t(:music), album_tracks_path, class: 'dropdown-item' %>
         <%= link_to t(:sign_out), destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>

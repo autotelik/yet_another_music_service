@@ -4,15 +4,13 @@ FROM phusion/passenger-ruby25:0.9.35
 # Check the Ubuntu version passenger image based on.
 # RUN cat /etc/lsb-release
 # Check the Ruby version passenger image based on.
-RUN ruby --version  && export
+#RUN ruby --version  && export
 
 # Set correct environment variables.
 ENV HOME /root
 
 # Install everything requied to build native gems and run services - mlibsasl2-dev
-RUN apt-get update -qq
-# && apt-get install -y build-essential make wget gcc g++ qt5-default libqt5webkit5-dev gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x
-RUN apt-get install -y --no-install-recommends \
+RUN apt-get update -qq && apt-get install -y --no-install-recommends \
   build-essential \
   curl libssl-dev \
   ffmpeg \
@@ -37,14 +35,15 @@ RUN mkdir $APP_HOME
 WORKDIR $APP_HOME
 
 # Configure Nginx
-# N.B - site specific config for /etc/nginx/sites-enabled/ should be added via volume
+# N.B - site specific config for /etc/nginx/sites-enabled/ is added via volume
 RUN rm /etc/nginx/sites-enabled/default
-
-# Copy the main application.
-COPY --chown=app:app . ${APP_HOME}
-
-RUN bundle install --binstubs ${BUNDLE_INSTALL_ARGS}
 
 # Start Nginx and Passenger
 EXPOSE 80
 RUN rm -f /etc/service/nginx/down
+
+# Copy the main application.
+COPY --chown=app:app . ${APP_HOME}
+
+RUN bundle install${BUNDLE_INSTALL_ARGS}
+

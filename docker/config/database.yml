@@ -1,45 +1,32 @@
-default: &default
-  adapter: mysql2
-  encoding: unicode
-  host: data
-  username: root
-  password: <%= ENV['YAMS_DEV_DB_PASSWORD'] %>
-  encoding: utf8
-  reconnect: true
-  socket: /tmp/mysql.sock
+# Host should match postgres docker service name
 
 development:
-  <<: *default
-  database: <%= ENV['YAMS_DEV_DB'] || 'Backoffice_development' %>
+  adapter:  postgresql
+  host:     db
+  encoding: unicode
+  database: yams_development
+  pool:     5
+  username: <%= ENV['YAMS_DEV_DB_USERNAME'] %>
+  password: <%= ENV['YAMS_DEV_DB_PASSWORD'] %>
 
+# Warning: The database defined as "test" will be erased and
+# re-generated from your development database when you run "rake".
+# Do not set this db to the same as development or production.
 test:
-  <<: *default
-  database: <%= ENV['YAMS_TEST_DB'] || 'Backoffice_test' %>
+  adapter:  postgresql
+  host:     db
+  encoding: unicode
+  database: yams_test
+  pool:     5
+  username: <%= ENV['YAMS_TEST_DB_USERNAME'] %>
   password: <%= ENV['YAMS_TEST_DB_PASSWORD'] %>
 
-# over ride normal staging with a docker specific DB
-staging:
-  <<: *default
-  host: backofficestaging.mapscape.nl
-  database: Backoffice_staging_docker
-  username: rails.mysql
-  password: rubyrules
-  socket: /var/run/mysqld/mysqld.sock
-
-# RAILS 5
-yams99:
-  <<: *default
-  host: backofficestaging.mapscape.nl
-  database: Backoffice_rails5
-  username: rails.mysql
-  password: rubyrules
-  socket: /var/run/mysqld/mysqld.sock
 
 production:
-  <<: *default
-  database: Backoffice_production
-  username: yams_prod
-  password: <%= ENV['YAMS_PASSWORD'] || 'vvGr3VPQDjP6UMpQ' %>
-  host: msmysql01
-  socket: /var/run/mysqld/mysqld.sock
-
+  adapter:  postgresql
+  host:     db
+  encoding: unicode
+  database: yams_production
+  pool:     5
+  username: <%= ENV['YAMS_PRODUCTION_DB_USERNAME'] %>
+  password: <%= ENV['YAMS_PRODUCTION_DB_PASSWORD'] %>

@@ -32,7 +32,7 @@ services:
    # or at least not worth the complication at this stage. Turn it off via  - xpack.security.enabled=false
 
   elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:5.6.8
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     container_name: elasticsearch
     environment:
       - xpack.security.enabled=false
@@ -49,7 +49,7 @@ services:
     depends_on: [sidekiq]
 
   kibana:
-    image: docker.elastic.co/kibana/kibana:5.6.8
+    image: docker.elastic.co/kibana/kibana:6.4.1
     container_name: kibana
     environment:
       - xpack.security.enabled=false
@@ -58,8 +58,6 @@ services:
       - xpack.graph.enabled=false
       - xpack.watcher.enabled=false
       - ELASTICSEARCH_URL=http://elasticsearch:9200
-      # - ELASTICSEARCH_USERNAME=
-      # - ELASTICSEARCH_PASSWORD=
     ports:
       - '5601:5601'
     depends_on: [elasticsearch]
@@ -72,7 +70,7 @@ services:
     depends_on:
       - 'redis'
     build: .
-    command: cd /home/app && bundle exec sidekiq
+    command: bundle exec sidekiq
     volumes:
       - '.:/app'
     env_file:
@@ -80,6 +78,7 @@ services:
     environment:
       - JOB_WORKER_URL=redis://redis:6379/0
       - REDIS_URL=redis://redis:6379/0
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
     links:
       - redis
 

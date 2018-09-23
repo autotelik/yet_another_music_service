@@ -12,9 +12,16 @@ module Yams
 
       desc :up, 'Build development cluster : App, ELK container'
 
+      method_option :init, type: :boolean, default: false
+
       def up
-        # Now we can bring up the rest
         docker_up('development')
+
+        if(options[:init])
+          docker_exec(cmd: 'bundle exec rake db:create')
+          docker_exec(cmd: 'bundle exec rake db:migrate')
+          docker_exec(cmd: 'bundle exec rake db:seed')
+        end
       end
       #       desc :up_with_data, 'Build a new development cluster and POPULATE DB container'
       #

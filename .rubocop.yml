@@ -51,9 +51,6 @@ Metrics/CyclomaticComplexity:
 Style/BlockDelimiters:
   Exclude:
     - spec/**/*_spec.rb
-Style/ClassVars:
-  Exclude:
-    - lib/waste_exemptions/permitted_attributes.rb
 MethodCalledOnDoEndBlock:
   Exclude:
     - spec/**/*_spec.rb
@@ -82,7 +79,6 @@ Documentation:
   Enabled: false
 
 # We shouldn't be committing code with debug statements left in (e.g. byebug or save_and_open_page),
-# we don't understand the GDS rationale for disabling this check
 Debugger:
   Enabled: true
 
