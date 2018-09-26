@@ -1,9 +1,7 @@
 <div class="row">
 
-  <div class="col-8">
-    <div class="form-group">
-      <%= select(:track, :track_id, options_for_select(Track.without_album(@album, current_user).pluck(:title, :id)), {}, class: 'form-control') %>
-    </div>
+  <div id="track_selection_options_form_group" class="col-8">
+      <%= render partial: 'shared/track_selection_options' %>
   </div>
 
   <div class="col-4">

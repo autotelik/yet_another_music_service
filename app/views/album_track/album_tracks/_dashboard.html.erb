@@ -41,7 +41,6 @@
               dataType: "script",
               data: { album_track: { id: rails_album, track_id: rails_track } }
           })
-
       }
   </script>
 
@@ -61,16 +60,11 @@
         </div>
 
         <div class="card card-sm p-0 col">
-
           <div class="card-body drag show-track-album-dropzone">
-
-
             <div id="target-for-album-track_removal-reinsertion"></div>
-
             <% @tracks.each do |t| %>
               <%= render partial: 'tracks/draggable_track_in_a_row', locals: { track_presenter: TrackPresenter.new(t, self) } %>
             <% end %>
-
           </div>
         </div>
       </div>

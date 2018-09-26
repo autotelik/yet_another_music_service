@@ -17,16 +17,15 @@
         </div>
       </div>
 
+      <div class="card-header" ondrop="return false;">
+        <ul id="album-track-drop-zone-<%= album.id %>" data-album-id="<%= album.id %>" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+          <h6 class="text-white"><%= t('global.drop_tracks') %></h6>
+        </ul>
+      </div>
+
       <!-- ALBUM TRACKS -->
-      <div id="<%= accordion %>" class="collapse show col-12 album-track" role="tabpanel">
-
-        <div class="card-header" ondrop="return false;">
-          <ul id="album-track-drop-zone-<%= album.id %>" data-album-id="<%= album.id %>" ondrop="drop(event, this)" ondragover="allowDrop(event)">
-            <h6 class="text-white"><%= t('global.drop_tracks') %></h6>
-          </ul>
-        </div>
-
-        <div class="card-body">
+      <div class="card-body">
+        <div id="<%= accordion %>" class="collapse show col-12 album-track" role="tabpanel">
           <div class="show-track-album-dropzone">
             <%= render partial: 'shared/sortable_tracks_table', locals: { album: album } %>
           </div>

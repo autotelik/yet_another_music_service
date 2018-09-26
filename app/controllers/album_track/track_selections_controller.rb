@@ -5,11 +5,7 @@ class AlbumTrack::TrackSelectionsController < ApplicationController
   before_action :set_album, only: %i[create]
 
   def create
-    track = Track.find(album_track_params[:track_id])
-
     @album_track = AlbumTrack.new(album: @album, track: Track.find(album_track_params[:track_id]))
-
-    @track = TrackPresenter.new(track, view_context)
 
     respond_to do |format|
       if @album_track.save
