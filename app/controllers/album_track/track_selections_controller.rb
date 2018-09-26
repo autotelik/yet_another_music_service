@@ -13,7 +13,7 @@ class AlbumTrack::TrackSelectionsController < ApplicationController
 
     respond_to do |format|
       if @album_track.save
-        format.js   {}
+        format.js   { }
       else
         format.json { render json: @album_track.errors, status: :unprocessable_entity }
         format.js   { flash.now[:error] = @album_track.errors.full_messages }
