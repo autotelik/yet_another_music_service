@@ -16,7 +16,9 @@ Rails.application.routes.draw do
     delete :tracks, as: :clear_tracks
   end
 
-  resources :album_tracks, only: [:create, :destroy, :edit, :index]
+  resources :album_tracks, only: [:create, :destroy, :edit, :index], module: 'album_track' do
+    resources :track_selections, only: [:create]
+  end
 
   resources :radio, only: [:index]
 

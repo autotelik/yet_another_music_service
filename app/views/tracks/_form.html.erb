@@ -1,7 +1,7 @@
 <%= form_with model: @track, local: true do |f| %>
 
   <div class="row">
-    <div class="col-7 offset-1">
+    <div class="col-6 offset-1">
       <span class="anchor" id="formLogin"></span>
 
       <div class="card card-outline-secondary">
@@ -40,7 +40,7 @@
     </div>
 
     <!-- Side bar -->
-    <div class="col-3">
+    <div class="col-4">
 
       <div class="row">
         <div class="col-12">
@@ -55,6 +55,14 @@
             <%= bootstrap_card_header( t(:albums, scope: :global)) %>
 
             <div class="card-body">
+
+              <div class="row">
+                <div class="col-12">
+                  <%= render partial: 'shared/album_selection' %>
+                </div>
+              </div>
+
+              <hr>
 
               <% track.albums.each do |a|  %>
                 <div class="form-group">

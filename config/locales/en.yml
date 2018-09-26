@@ -73,8 +73,12 @@ en:
   privacy_policy: Privacy Policy
   security_policy: Security Policy
   shared:
+    album_selection:
+        add: Add Track to Album
     choose_cover:
       choose_cover: Choose Image
+    track_selection:
+      add: Add to Album
   sign_in: Login
   sign_out: Sign out
   sign_up: Register
