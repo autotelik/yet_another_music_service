@@ -37,9 +37,6 @@ db/*.sqlite3
 /capybara-*.html
 /docker/.env
 /dump.rdb
-/config/config.yml
-/config/database.yml
-/config/secrets.yml
 /coverage.data
 /coverage/
 /db/*.javadb/

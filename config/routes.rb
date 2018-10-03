@@ -32,4 +32,7 @@ Rails.application.routes.draw do
 
   post '/player_save_callback', to: 'player_save_callback#create'
 
+  require 'sidekiq/web'
+  mount Sidekiq::Web => '/sidekiq'
+
 end

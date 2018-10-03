@@ -20,6 +20,7 @@ volumes:
 services:
 
   db:
+    container_name: yams_database
     image: postgres:9.6.10
     ports:
       - "5432:5432"
@@ -50,7 +51,7 @@ services:
 
   kibana:
     image: docker.elastic.co/kibana/kibana:6.4.1
-    container_name: kibana
+    container_name: yams_kibana
     environment:
       - xpack.security.enabled=false
       - xpack.monitoring.enabled=false
@@ -67,10 +68,10 @@ services:
       #elastic_search_volume:/????
 
   sidekiq:
-    depends_on:
-      - 'redis'
     build: .
     command: bundle exec sidekiq
+    container_name: yams_sidekiq
+    depends_on: [redis]
     volumes:
       - '.:/app'
     env_file:
