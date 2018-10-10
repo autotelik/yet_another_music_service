@@ -64,12 +64,16 @@ en:
     edit: Edit
     home: YAMS
     permissions: Permissions
+    playlists: Playlists
     profile: Profile
     radio: Radio
     tags: Tags
     tracks: Tracks
     upload: Upload
   music: Music
+  playlists:
+    index:
+      submit: Create
   privacy_policy: Privacy Policy
   security_policy: Security Policy
   shared:

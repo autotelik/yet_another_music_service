@@ -31,11 +31,13 @@ class AlbumsController < ApplicationController
   # POST /albums
   # POST /albums.json
   def create
+
     album = Album.new(album_params)
 
-    album.user = current_user if album.user.blank?
+    album.user ||= current_user
 
-    @album = AlbumPresenter.new(album, view_context)
+    @album_presenter = AlbumPresenter.new(album, view_context)
+
     respond_to do |format|
       if album.save
         format.html { redirect_to album, notice: 'Album was successfully created.' }

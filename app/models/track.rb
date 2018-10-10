@@ -45,9 +45,9 @@ class Track < ApplicationRecord
   scope :no_album, -> { includes(:albums).where(albums: { id: nil }) }
   # scope :with_album, includes(:album_tracks).where.not(photos: { id: nil })
 
-  scope :current, -> (user) { Track.where('user_id = ?', user.id) }
+  scope :for_user, -> (user) { Track.where('user_id = ?', user.id) }
 
-  scope :without_album, -> (album, user) { Track.current(user).where.not(id: AlbumTrack.where('album_id = ?', album.id).select(:track_id)) }
+  scope :without_album, -> (album, user) { Track.for_user(user).where.not(id: AlbumTrack.where('album_id = ?', album.id).select(:track_id)) }
 
   def attach_audio_file(path)
     audio.attach(io: File.open(path), filename:  File.split(path).last, content_type: Track.valid_types)

@@ -69,7 +69,7 @@ services:
 
   sidekiq:
     build: .
-    command: bundle exec sidekiq
+    command: bundle exec sidekiq -q searchkick
     container_name: yams_sidekiq
     depends_on: [redis]
     volumes:

@@ -7,7 +7,7 @@ class AlbumPresenter < Yams::Presenter
   def initialize(album, view)
     super(album, view)
 
-    album.build_cover unless album.nil? || album.cover.present?
+    album.build_cover if album && album.cover.blank?
   end
 
   def bootstrap_actions_dropdown(except: [])
@@ -23,9 +23,9 @@ class AlbumPresenter < Yams::Presenter
         <i class="icon-dots-three-horizontal"></i>
       </button>
       <div class="dropdown-menu dropdown-menu-sm" aria-labelledby="dropdownMenuButton">
-        #{edit_icon(album, text: I18n.t(:edit, scope: :global), html_options: { class: 'dropdown-item' }) unless except_list.include? :edit}
+        #{link_to back_icon_tag('icon-pencil', text: I18n.t(:edit, scope: :global)), edit_album_path(album), { id: "edit-icon-#{model.class}-#{model.id}", class: 'dropdown-item' }  unless except_list.include? :edit}
         <div class="dropdown-divider"></div>
-        #{view.delete_icon(album, text: 'Delete', html_options: { class: 'dropdown-item' }) unless except_list.include? :delete}
+        #{view.delete_icon(model, text: 'Delete', html_options: { class: 'dropdown-item' }) unless except_list.include? :delete}
       </div>
     </div>
     EOS

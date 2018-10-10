@@ -16,8 +16,7 @@
       </div>
 
       <hr>
-
-      <%= render partial: 'shared/sortable_tracks_table', locals: { album: @album } %>
+      <%= render partial: 'tracks/shared/sortable_tracks_table', locals: { owner: @album,  sortable: @album.album_tracks } %>
     </div>
   </div>
 

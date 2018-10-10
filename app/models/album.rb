@@ -20,7 +20,7 @@ class Album < ApplicationRecord
 
   validates :title, uniqueness: { scope: :user }
 
-  scope :current, -> (user) { Album.where('user_id = ?', user.id) }
+  scope :for_user, -> (user) { Album.where('user_id = ?', user.id) }
 
   scope :without_track, -> (track, user) { Album.current(user).where.not(id: AlbumTrack.where('track_id = ?', track.id).select(:album_id)) }
 

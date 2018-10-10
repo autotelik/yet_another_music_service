@@ -20,6 +20,14 @@ Rails.application.routes.draw do
     resources :track_selections, only: [:create]
   end
 
+  resources :playlists, module: 'playlist'
+
+  namespace :playlist do
+    resources :management, only: [:index]
+
+    resources :tracks, only: [:create]
+  end
+
   resources :radio, only: [:index]
 
   resources :id3_genres

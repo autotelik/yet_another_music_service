@@ -1,0 +1,5 @@
+$("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
+
+<% if(@playlist.errors.blank?) %>
+  $('#target-for-playlist-create-insertion-point').after("<li class=\"list-group-item\"><%= j render(partial: 'playlist/playlist_with_dropzone', locals: { playlist: @playlist } ) %></li>");
+<% end %>

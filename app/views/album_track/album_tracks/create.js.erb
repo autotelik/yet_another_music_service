@@ -2,5 +2,5 @@ $("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
 
 <% if(@album_track.errors.blank?) %>
   // place track on the album
-  $('#target-for-track-drop-insertion-point-<%= @album_track.album.id %>').append("<%= j render(partial: 'tracks/sortable_tracks_row', locals: { album_track: @album_track } ) %>");
+  $('#target-for-track-drop-insertion-point-<%= @album_track.album.id %>').append("<%= j render(partial: 'tracks/shared/sortable_tracks_row', locals: { sortable: @album_track } ) %>");
 <% end %>

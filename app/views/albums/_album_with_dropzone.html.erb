@@ -1,4 +1,4 @@
-<% accordion = "album-track-manager-#{album.id}" %>
+<% accordion = "album-track-manager-#{album_presenter.id}" %>
 
 <div class="media align-items-center">
   <div class="accordion-item album-track col-12">
@@ -7,10 +7,10 @@
       <div class="card-header col-12">
         <div class="row">
           <div class="col-1">
-            <%= album.bootstrap_actions_dropdown %>
+            <%= album_presenter.bootstrap_actions_dropdown %>
           </div>
-          <div class="col-2"><%= album.cover_image_tag %></div>
-          <div class="col"><h5 class="album-track"><%= album.title %></h5></div>
+          <div class="col-2"><%= album_presenter.cover_image_tag %></div>
+          <div class="col"><h5 class="album-track"><%= album_presenter.title %></h5></div>
           <a data-toggle="collapse" href="#<%= accordion %>" aria-expanded="true">
             <div class="col"><i class="icon-chevron-small-right" style="border: 2px solid;"></i></div>
           </a>
@@ -18,7 +18,7 @@
       </div>
 
       <div class="card-header" ondrop="return false;">
-        <ul id="album-track-drop-zone-<%= album.id %>" data-album-id="<%= album.id %>" ondrop="drop(event, this)" ondragover="allowDrop(event)">
+        <ul id="album-track-drop-zone-<%= album_presenter.id %>" data-album-id="<%= album_presenter.id %>" ondrop="drop(event, this)" ondragover="allowDrop(event)">
           <h6 class="text-white"><%= t('global.drop_tracks') %></h6>
         </ul>
       </div>
@@ -27,7 +27,7 @@
       <div class="card-body">
         <div id="<%= accordion %>" class="collapse show col-12 album-track" role="tabpanel">
           <div class="show-track-album-dropzone">
-            <%= render partial: 'shared/sortable_tracks_table', locals: { album: album } %>
+            <%= render partial: 'tracks/shared/sortable_tracks_table', locals: { owner: album_presenter,  sortable: album_presenter.album_tracks } %>
           </div>
         </div>
       </div>

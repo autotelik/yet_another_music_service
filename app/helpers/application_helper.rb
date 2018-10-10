@@ -37,6 +37,7 @@ module ApplicationHelper
 
   def edit_icon(model, text: nil, html_options: {})
     options = { id: "edit-icon-#{model.class}-#{model.id}" }
+
     if text
       link_to back_icon_tag('icon-pencil', text: text), edit_polymorphic_path(model), options.merge(html_options)
     else

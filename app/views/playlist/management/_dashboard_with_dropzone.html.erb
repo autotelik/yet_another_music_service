@@ -1,0 +1,44 @@
+<div class="media align-items-center">
+
+  <div class="accordion-item playlist-track col-12">
+    <div class="card card-sm col p-0">
+      <%= bootstrap_card_header( t(:playlists, scope: :global)) %>
+    </div>
+
+    <div class="card-body">
+      <div class="row">
+
+        <div class="col"><h5 class="playlist-track">Create Playlist</h5></div>
+        <a data-toggle="collapse" href="#toggle-new-playlist-form" aria-expanded="true">
+          <div class="col"><i class="icon-chevron-small-right" style="border: 2px solid;"></i></div>
+        </a>
+      </div>
+
+      <div id="toggle-new-playlist-form" class="collapse show col-12 playlist-track" role="tabpanel">
+        <div class="media-body">
+          <div class="d-flex justify-content-between">
+            <div class="col-12">
+              <%= render(partial: 'playlist/form', locals: {playlist: Playlist.new }) %>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <ul class="striped-list list-group list-group-flush">
+
+      <!-- Target for dynamic CREATE - new playlist from remote controller-->
+      <div id="target-for-playlist-create-insertion-point">
+      </div>
+
+      <!-- Playlist Management - with drag and drop track section-->
+      <% playlists.each do |playlist| %>
+        <li id="playlist_row_<%= playlist.id %>">
+          <%= render(partial: 'playlist/playlist_with_dropzone', locals: {playlist: PlaylistPresenter.new(playlist, self) }) %>
+        </li>
+      <% end %>
+
+    </ul>
+
+  </div>
+</div>

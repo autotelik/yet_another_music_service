@@ -34,7 +34,7 @@
       <!-- Album Management - with drag and drop track section-->
       <% current_user.albums.each do |album| %>
         <li id="album_row_<%= album.id %>">
-          <%= render(partial: 'albums/album_with_dropzone', locals: {album: AlbumPresenter.new(album, self) }) %>
+          <%= render(partial: 'albums/album_with_dropzone', locals: { album_presenter: AlbumPresenter.new(album, self) }) %>
         </li>
       <% end %>
 

@@ -16,9 +16,15 @@
         <% end %>
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
         <%= link_to t(:profile, scope: :global), user_path(current_user), class: 'dropdown-item' %>
+
         <%= link_to t(:music), album_tracks_path, class: 'dropdown-item' %>
+
+        <%= link_to t(:manage_playlists, scope: :global), playlist_management_index_path, class: 'dropdown-item' %>
+
         <%= link_to t(:sign_out), destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
+
         <% if current_user.try(:admin?) %>
           <div class="dropdown-divider"></div>
           <%= link_to t(:admin), '/admin', class: 'dropdown-item' %>
