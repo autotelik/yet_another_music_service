@@ -11,43 +11,30 @@ class Track < ApplicationRecord
   has_many :album_tracks, class_name: 'AlbumTrack', dependent: :destroy
   has_many :albums, through: :album_tracks, class_name: 'Album'
 
+  has_one_attached :audio
+
   include Yams::AvailableFor
 
   acts_as_taggable
-
-  searchkick callbacks: :queue
-
-=begin
-  include Elasticsearch::Model
-  include Elasticsearch::Model::Callbacks
-  settings do
-    mappings dynamic: false do
-      indexes :title, type: :text, analyzer: :english # cases like singular/plural version of terms are treated the same way (and much more).
-      indexes :tag_list, type: :text, analyzer: :english
-    end
-  end
-=end
 
   after_create :after_create_hook
 
   after_save :after_save_hook
 
-  def self.valid_types
-    %w[audio/mpeg audio/x-wav audio/x-mpeg audio/mp3 audio/x-mp3 audio/mpeg3 audio/x-mpeg3 audio/mpg audio/x-mpg audio/x-mpegaudio application/octet-stream]
-  end
 
-  has_one_attached :audio
-  # TODO  validates_attachment_content_type :audio, content_type: valid_types
+  validates_presence_of :title, :audio, :user
 
-  # TODO: - User
-  validates_presence_of :title, :audio
+  validates :audio, attached: true, content_type: Yams::AudioService.valid_types
 
+  searchkick callbacks: :queue
+
+  # Tracks not in any Album
   scope :no_album, -> { includes(:albums).where(albums: { id: nil }) }
-  # scope :with_album, includes(:album_tracks).where.not(photos: { id: nil })
+
+  # Tracks not in the supplied album belonging to user
+  scope :without_album, -> (album, user) { Track.for_user(user).where.not(id: AlbumTrack.where('album_id = ?', album.id).select(:track_id)) }
 
   scope :for_user, -> (user) { Track.where('user_id = ?', user.id) }
-
-  scope :without_album, -> (album, user) { Track.for_user(user).where.not(id: AlbumTrack.where('album_id = ?', album.id).select(:track_id)) }
 
   def attach_audio_file(path)
     audio.attach(io: File.open(path), filename:  File.split(path).last, content_type: Track.valid_types)
@@ -72,6 +59,7 @@ class Track < ApplicationRecord
   end
 
   def display_duration
+    return 0 unless length?
     Time.at(duration).utc.strftime('%H:%M:%S')
   end
 
@@ -98,11 +86,9 @@ class Track < ApplicationRecord
   def after_save_hook
 
     begin
+
       Rails.logger.debug("Calling Searchkick to update ES Track Index")
       Searchkick::ProcessQueueJob.perform_later(class_name: "Track")
-
-      # Not sure queue works yet - TODO delete this once jobs performant
-      Track.reindex
 
     rescue Redis::CannotConnectError => x
       Rails.logger.error("Redis DOWN - Elastic search update failed #{x.message}")

@@ -20,6 +20,8 @@ gem 'uglifier', '>= 1.3.0'
 
 
 # YAMS
+#
+gem 'active_storage_validations'
 gem 'acts-as-taggable-on'
 gem 'administrate'
 gem 'autoprefixer-rails', '8.6.5'
@@ -27,7 +29,9 @@ gem 'autoprefixer-rails', '8.6.5'
 gem 'bootstrap', '~> 4.1.2'
 gem 'bourbon'
 
-gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
+#gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'          # Tokens
 gem 'devise_invitable'                # An invitation strategy for devise

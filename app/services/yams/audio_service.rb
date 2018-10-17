@@ -6,6 +6,10 @@ module Yams
 
     include Yams::Services
 
+    def self.valid_types
+      %w[audio/mpeg audio/x-wav audio/x-mpeg audio/mp3 audio/x-mp3 audio/mpeg3 audio/x-mpeg3 audio/mpg audio/x-mpg audio/x-mpegaudio application/octet-stream]
+    end
+
     # Uses ffmpeg to calculate the duration in seconds of an mp3 on the filesystem
     #
     def self.get_duration_secs(filepath)

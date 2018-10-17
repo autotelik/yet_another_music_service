@@ -1,11 +1,11 @@
-<% presenter = TrackPresenter.new(sortable.track, self) %>
+<% presenter = TrackPresenter.new(sortable_with_track.track, self) %>
 
-<tr id="<%= sortable.sortable_id %>" class="sortable_tracks_row p-0">
+<tr id="<%= sortable_with_track.sortable_id %>" class="sortable_tracks_row p-0">
   <td> <%= icon_tag('icon-list') %></td>
   <td><%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %></td>
   <td>
-    <h6 class="mb-0"><%= link_to presenter.title, edit_polymorphic_path(track) %></h6>
+    <h6 class="mb-0"><%= link_to presenter.title, edit_polymorphic_path(sortable_with_track.track) %></h6>
   </td>
-  <td><%= remove_icon(sortable, confirm: I18n.t('.remove') ) %></td>
+  <td><%= remove_icon(sortable_with_track, confirm: I18n.t(:remove, scope: sortable_with_track.class.name.underscore.pluralize.downcase) ) %></td>
 </tr>
 

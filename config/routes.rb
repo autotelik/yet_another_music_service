@@ -25,7 +25,7 @@ Rails.application.routes.draw do
   namespace :playlist do
     resources :management, only: [:index]
 
-    resources :tracks, only: [:create]
+    resources :tracks, only: [:create, :destroy]
   end
 
   resources :radio, only: [:index]

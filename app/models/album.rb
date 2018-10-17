@@ -2,9 +2,6 @@
 
 class Album < ApplicationRecord
 
-  acts_as_taggable
-
-  searchkick callbacks: :queue
 
   belongs_to :user
 
@@ -16,15 +13,20 @@ class Album < ApplicationRecord
 
   enum published_state: %i[draft published]
 
+  acts_as_taggable
+
+
   validates_presence_of :title
 
   validates :title, uniqueness: { scope: :user }
 
   scope :for_user, -> (user) { Album.where('user_id = ?', user.id) }
 
-  scope :without_track, -> (track, user) { Album.current(user).where.not(id: AlbumTrack.where('track_id = ?', track.id).select(:album_id)) }
+  scope :without_track, -> (track, user) { Album.for_user(user).where.not(id: AlbumTrack.where('track_id = ?', track.id).select(:album_id)) }
 
   after_save :after_save_hook
+
+  searchkick callbacks: :queue
 
   def attach_cover(file_name)
     update(cover: Cover.create!(owner: self, image: File.open(file_name)))

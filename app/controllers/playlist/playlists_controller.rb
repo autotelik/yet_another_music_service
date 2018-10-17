@@ -30,8 +30,6 @@ class Playlist::PlaylistsController < ApplicationController
     respond_to do |format|
 
       if @playlist.save
-
-
         format.html { redirect_to @playlist, notice: 'Playlist was successfully created.' }
         format.json { render :show, status: :created, location: @playlist }
         format.js   { flash.now[:notice] = 'Playlist was successfully created.' }
@@ -74,8 +72,6 @@ class Playlist::PlaylistsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_playlist
     @playlist = Playlist.find(params[:id])
-
-    @playlist.build_cover unless @playlist.nil? || @playlist.cover.present?
   end
 
   # Never trust parameters from the scary internet, only allow the white list through.

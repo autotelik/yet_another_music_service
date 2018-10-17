@@ -14,6 +14,11 @@
   box-shadow: 5px 0px 10px black;
 }
 
+.datashift-audio-player.datashift-audio-bar.datashift-audio-top {
+  top: $navbar-total-height;
+  box-shadow: 5px 0px 10px black;
+}
+
 .datashift-audio-player.bar.bottom {
   bottom: 0px;
   box-shadow: -5px 0px 10px black;

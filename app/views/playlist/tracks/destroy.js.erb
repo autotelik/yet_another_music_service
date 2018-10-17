@@ -1,0 +1,5 @@
+$("#<%= @playlist_track_row_id %>").remove();
+$('#target-for-playlist-track_removal-reinsertion').append("<%= j render partial: 'tracks/draggable_track_in_a_row', locals: { track_presenter: @track_presenter } %>");
+$("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
+
+

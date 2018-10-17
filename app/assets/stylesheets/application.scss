@@ -21,12 +21,13 @@
 @import "theme/scss/theme";
 @import "font-awesome";
 
-@import "datashift_audio_player/icons";
-@import "datashift_audio_player/playlist";
-@import "datashift_audio_player/player";
-@import "datashift_audio_player/cover";
-@import "datashift_audio_player/volume";
-
+/*
+@import "datashift_audio_player.bak/icons";
+@import "datashift_audio_player.bak/playlist";
+@import "datashift_audio_player.bak/player";
+@import "datashift_audio_player.bak/cover";
+@import "datashift_audio_player.bak/volume";
+*/
 body {
   color: $colour-off-white;
   background-color: $colour-default-body !important;
@@ -253,10 +254,18 @@ div#messages_container
   float: right !important;
 }
 
+/* Drag and Drop list for selection */
 .show-track-album-dropzone > div.row:nth-child(odd) {
   background: $colour-blue-grey-1;
 }
 .show-track-album-dropzone > div.row:nth-child(even) {
+  background: $colour-blue-grey-2;
+}
+
+.show-track-playlist-dropzone > div.row:nth-child(odd) {
+  background: $colour-blue-grey-1;
+}
+.show-track-playlist-dropzone > div.row:nth-child(even) {
   background: $colour-blue-grey-2;
 }
 
@@ -353,6 +362,11 @@ section#tracks_index_section.track-listing h1
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
+.select2-container {
+  color: $colour-rich-black !important;
+}
+
 
 .text-dark{
   color:$colour-default-body !important;

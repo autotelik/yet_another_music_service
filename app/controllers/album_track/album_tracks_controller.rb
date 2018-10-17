@@ -11,7 +11,7 @@ class AlbumTrack::AlbumTracksController < ApplicationController
   def create
     track = Track.find(album_track_params[:track_id])
 
-    @album_track = AlbumTrack.new(album: @album, track: Track.find(album_track_params[:track_id]))
+    @album_track = AlbumTrack.new(album: @album, track: track)
 
     @track = TrackPresenter.new(track, view_context)
 
@@ -30,8 +30,10 @@ class AlbumTrack::AlbumTracksController < ApplicationController
   def destroy
     album_track = AlbumTrack.find(params[:id])
 
+    # Re-enable Track for selection
     @track_presenter =  TrackPresenter.new(album_track.track, view_context)
 
+    # TODO - view should probably send complete ccs ID for us to remove row
     @album_track_row_id = album_track.sortable_id
 
     unless album_track.destroy

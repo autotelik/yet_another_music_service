@@ -1,0 +1,40 @@
+<div class="row">
+
+  <div id="track_selection_options_form_group" class="col-8">
+    <div class="form-group">
+      <%= select(:track, :track_id, options_for_select(Track.all.pluck(:title, :id)), {}, class: 'form-control') %>
+    </div>
+  </div>
+
+  <div class="col-4">
+    <div class="form-group">
+      <input type='button' id="submitTrackPlaylist" value="<%= t('.add') %>">
+    </div>
+  </div>
+
+</div>
+
+<script type="text/javascript" charset="utf-8">
+
+    $('#track_track_id').select2({
+        placeholder: 'Select Track'
+    });
+
+    $('#submitTrackPlaylist').click(function() {
+
+        let rails_track = $("#track_track_id").val();
+        let rails_playlist = '<%= @playlist.id %>';
+        $.ajax({
+            type: 'POST',
+            url: '<%= url_for(playlist_tracks_path) %>',
+            dataType: "script",
+            data: { playlist_track: { id: rails_playlist, track_id: rails_track } },
+            success:function(data){
+            },
+            error:function(){
+                $('#ajax_response').html('<p class="error"><strong>Oops!</strong> Try that again in a few moments.</p>');
+            }
+        });
+    });
+
+</script>

@@ -63,17 +63,19 @@ services:
       - '5601:5601'
     depends_on: [elasticsearch]
     volumes:
-      - ./docker/docker-kibana.yml:/usr/share/kibana/kibana.yml
+      - ./docker/kibana.yml:/usr/share/kibana/kibana.yml
       # TODO -  we need to create an 'index' that  persists across rebuilds
       #elastic_search_volume:/????
 
   sidekiq:
     build: .
-    command: bundle exec sidekiq -q searchkick
+    command: bundle exec sidekiq
     container_name: yams_sidekiq
     depends_on: [redis]
     volumes:
       - '.:/app'
+      - ./docker/.env:/home/app/yams/.env
+      - ./docker/config/database.yml:/home/app/yams/config/database.yml
     env_file:
       - '.env'
     environment:
@@ -85,6 +87,7 @@ services:
 
   redis:
     image: redis:latest
+    container_name: yams_redis
     ports:
       - 6379:6379
 

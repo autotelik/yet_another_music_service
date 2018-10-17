@@ -82,6 +82,8 @@ Elastic search will be available at : `http://localhost:9200`
 
 Kibana will be available at : `http://localhost:5601` 
 
+Sidekick configuration, including list of queues to start can found here : `docker/config/sidekiq.yml`
+
 ### DB Setup
 
 We use .env to manage configuration, including DB access.
@@ -112,16 +114,27 @@ rake db:seed
 
 ##### Loading Sample Audio Data
 
-Example data can be bulked uploaded from Excel spreadsheet containing details of tracks and covers
+Example data can be bulked uploaded from Excel spreadsheet containing details of tracks and covers.
+
+There is a starter pack of my music and images available Free, from this link : 
+
+- https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=0
+
+Save the contents to `/tmp` - path expected by loading spreadsheet : `db/seed/aqwan_tracks.xls`
+ 
+The development artist user is assigned by default in the spreadsheet, so edit this to assign tracks to a different user.
+
+Run
 
 ```ruby
 thor yams:db:seed_music
-
-wrapper around - TODO create dropbox link in excel so anyone can dopwnload the actual mp3s
-
-thor datashift:import:excel -i  db/seed/aqwan_tracks.xls -m Track -c lib/tasks/config/track_import.yaml 
 ```
 
+This is essentially a wrapper around an Excel import tool for Rails. If you want to load your own, the raw command would be :
+
+```
+thor datashift:import:excel -i  db/seed/aqwan_tracks.xls -m Track -c lib/tasks/config/track_import.yaml 
+```
 
 
 ### Development

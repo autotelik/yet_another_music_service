@@ -71,9 +71,19 @@ en:
     tracks: Tracks
     upload: Upload
   music: Music
-  playlists:
+  playlist:
+    playlists:
+      edit:
+        card_header: Manage Playlist
+      form:
+        edit:
+          submit: Update Playlist
+      track_selection:
+        add: Add Track
     index:
       submit: Create
+  playlist_tracks:
+    remove: Remove Track from Playlist ?
   privacy_policy: Privacy Policy
   security_policy: Security Policy
   shared:

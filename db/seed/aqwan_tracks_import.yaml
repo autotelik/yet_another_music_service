@@ -9,3 +9,6 @@ data_flow_schema:
       - cover:
           index: 2
           operator: attach_cover
+      - availables:
+          index: 4    # TODO why is this necessary, can't datashift work it our from heading name
+          operator: make_available_for

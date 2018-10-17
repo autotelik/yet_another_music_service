@@ -19,6 +19,7 @@ module Yams
     end
 
     def make_available_for(mode)
+      save! if new_record?
       availables.create!(mode: Available.concepts[mode])
     end
 

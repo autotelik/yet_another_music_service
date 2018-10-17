@@ -1,4 +1,1 @@
-<%= render partial: 'audio_player/full_width_wave', locals: { load_json_playlist_url: radio_index_url } %>
-<hr>
-<%= render partial: 'audio_player/playlist_wrapper' %>
-
+<%= datashift_audio_player_tag( load_url: "#{radio_index_url}.json" )  %>

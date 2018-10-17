@@ -18,7 +18,7 @@
         <div class="media-body">
           <div class="d-flex justify-content-between">
             <div class="col-12">
-              <%= render(partial: 'playlist/form', locals: {playlist: Playlist.new }) %>
+              <%= render(partial: 'playlist/playlists/form', locals: {playlist: Playlist.new }) %>
             </div>
           </div>
         </div>
@@ -34,7 +34,7 @@
       <!-- Playlist Management - with drag and drop track section-->
       <% playlists.each do |playlist| %>
         <li id="playlist_row_<%= playlist.id %>">
-          <%= render(partial: 'playlist/playlist_with_dropzone', locals: {playlist: PlaylistPresenter.new(playlist, self) }) %>
+          <%= render(partial: 'playlist/playlist_with_dropzone', locals: { playlist: PlaylistPresenter.new(playlist, self) }) %>
         </li>
       <% end %>
 

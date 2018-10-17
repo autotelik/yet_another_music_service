@@ -1,0 +1,5 @@
+$("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
+
+<% if(@playlist_track.errors.blank?) %>
+  $('#target-for-track-drop-insertion-point-<%= @playlist_track.playlist.id %>').append("<%= j render(partial: 'tracks/shared/sortable_tracks_row', locals: { sortable_with_track: @playlist_track } ) %>");
+<% end %>
