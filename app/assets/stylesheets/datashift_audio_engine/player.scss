@@ -1,0 +1,25 @@
+@import "variables";
+
+.datashift-audio-player {
+  top: $navbar-total-height;
+  box-shadow: 5px 0px 10px black;
+}
+
+.datashift-audio-hide{
+  display: none !important;
+}
+
+.datashift-audio-track-basic-info
+{
+  padding: 24px;
+}
+
+#datashift-audio-track-playlist-wrapper-row {
+  margin-top: $navbar-total-height;
+}
+
+#datashift-audio-player-spacer
+{
+  width: 100%;
+  height: $navbar-total-height;
+}

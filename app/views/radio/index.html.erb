@@ -1,1 +1,16 @@
-<%= datashift_audio_player_tag( load_url: "#{radio_index_url}.json" )  %>
+<%= content_for 'audio_player_in_navbar' do %>
+  <ul class="navbar-nav nav-fill bt-2 w-100">
+    <li class="nav-item">
+      <%= datashift_audio_player_tag %>
+
+      <%= datashift_audio_player_script(init_url: "#{init_player_url}.json", load_url: "#{radio_index_url}.json")  %>
+    </li>
+  </ul>
+<% end %>
+
+<div id="datashift-audio-player-spacer">
+  &nbsp
+</div>
+
+<%= render partial: 'datashift_audio_engine/shared/track_playlist' %>
+

@@ -26,7 +26,7 @@ gem 'acts-as-taggable-on'
 gem 'administrate'
 gem 'autoprefixer-rails', '8.6.5'
 
-gem 'bootstrap', '~> 4.1.2'
+gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
 
 gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
@@ -44,6 +44,8 @@ gem 'elasticsearch-rails', '~> 5.1.0'
 gem 'font-awesome-rails'
 
 gem 'high_voltage', '~> 3.1.0'
+
+gem 'image_processing', '~> 1.7'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'

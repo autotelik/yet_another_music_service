@@ -20,6 +20,8 @@ Rails.application.routes.draw do
     resources :track_selections, only: [:create]
   end
 
+  post 'init_player', to: 'init_player#create'
+
   resources :playlists, module: 'playlist'
 
   namespace :playlist do

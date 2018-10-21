@@ -24,7 +24,7 @@ module Yams
         author: track.artist,
         name: track.title,
         audio_url: rails_blob_path(track.audio, only_path: true),
-        cover_image: rails_blob_path(track.cover_image, only_path: true),
+        cover_image: url_for(track.cover_image.variant(resize: '120x120')),
         duration: track.duration
       }
     end
