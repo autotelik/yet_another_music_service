@@ -37,7 +37,7 @@ class Track < ApplicationRecord
   scope :for_user, -> (user) { Track.where('user_id = ?', user.id) }
 
   def attach_audio_file(path)
-    audio.attach(io: File.open(path), filename:  File.split(path).last, content_type: Track.valid_types)
+    audio.attach(io: File.open(path), filename:  File.split(path).last, content_type: Yams::AudioService.valid_types)
   end
 
   def attach_cover(path)

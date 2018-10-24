@@ -1,16 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= content_for?(:title) ? yield(:title) : "Yet Another Music Service" %></title>
-  <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Yet Another Music Service" %>">
-
-  <!-- theme theme -->
-  <link href="https://fonts.googleapis.com/css?family=Rubik:300,400,400i,500" rel="stylesheet">
-
-  <!-- icon stuff just thrown in public for now-->
-  <link href="/theme/assets/css/socicon.css" rel="stylesheet" type="text/css" media="all" />
-  <link href="/theme/assets/css/entypo.css" rel="stylesheet" type="text/css" media="all" />
+  <%= render 'shared/head' %>
 
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
 
@@ -20,26 +11,26 @@
 
   <%= csrf_meta_tags %>
 </head>
-  <body>
-    <%= render 'layouts/navigation' %>
+<body>
+  <%= render 'layouts/navigation' %>
 
-    <div class="main-container">
+  <div class="main-container">
 
-      <div class="row">
-        <div id="messages_container" class="container-fluid">
-          <%= render 'shared/messages' %>
-        </div>
+    <div class="row">
+      <div id="messages_container" class="container-fluid">
+        <%= render 'shared/messages' %>
       </div>
-
-      <div class="container-fluid pl-5 pr-5">
-        <%= yield %>
-      </div>
-
     </div>
 
-    <%= render 'shared/footer' %>
+    <div class="container-fluid pl-5 pr-5">
+      <%= yield %>
+    </div>
 
-    <%= yield(:body_extension) %>
+  </div>
 
-  </body>
+  <%= render 'shared/footer' %>
+
+  <%= yield(:body_extension) %>
+
+</body>
 </html>

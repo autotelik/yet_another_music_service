@@ -56,4 +56,14 @@ module ApplicationHelper
     content_tag(:div, content, class: 'audio-upload')
   end
 
+
+  def avatar_image_tag(user)
+    if user.avatar.try(:attached?)
+      image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-lg')
+    else
+      default = DefaultCover.for_user
+      image_tag(polymorphic_url(default.image), class: 'avatar avatar-lg') if default.try(:image)
+    end
+  end
+
 end

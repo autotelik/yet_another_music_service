@@ -4,14 +4,19 @@
 
   <li id="track-<%= index %>">
       <div class="col-2">
-        <%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %>
+        <%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-lg" ) %>
       </div>
-      <div class="col-7">
+      <div class="col-2">
         <div class="datashift-audio-track-details">
-          <%= link_to(track.artist, user_path(track.user), class: "datashift-audio-full-name") %> - <%= link_to(track.title, track_path(track), class: "datashift-audio-track-title") %>
+          <%= link_to(track.artist, user_path(track.user), class: "datashift-audio-full-name") %>
         </div>
       </div>
-      <div class="col-2 p-0 m-0 pull-right">
+    <div class="col-4">
+      <div class="datashift-audio-track-details">
+        <%= link_to(track.title, track_path(track), class: "datashift-audio-track-title") %>
+      </div>
+    </div>
+      <div class="col-2 p-0 m-0">
         <div class="datashift-audio-duration pull-right"><%= track.display_duration %></div>
       </div>
   </li>

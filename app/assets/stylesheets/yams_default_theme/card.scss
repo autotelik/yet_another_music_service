@@ -1,14 +1,5 @@
-// 
-// 
-// card.scss
-//
-//
-
-
 // Bootstrap overrides
 //
-// General overrides for default card styles
-
 .card{
   margin-bottom: $spacer;
 }
@@ -29,17 +20,6 @@
         &:last-child{
           border-left: 1px solid $border-color;
         }
-      }
-    }
-  }
-}
-
-.bg-dark{
-  .card{
-    &:not(.bg-dark){
-      color: $body-color;
-      h1,h2,h3,h4,h5,h6,.h1,.h2,.h3,.h4,.h5,.h6,.display-1,.display-2,.display-3,.display-4,{
-        color: $headings-color;
       }
     }
   }

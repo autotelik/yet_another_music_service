@@ -20,7 +20,7 @@ Rails.application.routes.draw do
     resources :track_selections, only: [:create]
   end
 
-  post 'init_player', to: 'init_player#create'
+  post 'player_init', to: 'player_init#create'
 
   resources :playlists, module: 'playlist'
 
@@ -40,7 +40,7 @@ Rails.application.routes.draw do
 
   mount DatashiftAudioEngine::Engine, at: "/audio"
 
-  post '/player_save_callback', to: 'player_save_callback#create'
+  post 'player_status_callback', to: 'player_status_callback#create'
 
   require 'sidekiq/web'
   mount Sidekiq::Web => '/sidekiq'

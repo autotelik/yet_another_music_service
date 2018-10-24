@@ -45,5 +45,5 @@ RUN rm -f /etc/service/nginx/down
 # Copy the main application.
 COPY --chown=app:app . ${APP_HOME}
 
-RUN bundle install${BUNDLE_INSTALL_ARGS}
+RUN bundle install ${BUNDLE_INSTALL_ARGS}
 

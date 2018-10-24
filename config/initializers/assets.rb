@@ -9,9 +9,7 @@ Rails.application.config.assets.version = '1.0'
 
 #Rails.application.config.assets.paths << Rails.root.join("app", "assets", "fonts")
 
-Rails.application.config.assets.precompile += %w(
-  theme/scss/theme.css
-)
+Rails.application.config.assets.precompile += %w( application_with_player.css )
 
 # Precompile additional assets.
 # application.js, application.css, and all non-JS/CSS in the app/assets

@@ -116,13 +116,13 @@ rake db:seed
 
 Example data can be bulked uploaded from Excel spreadsheet containing details of tracks and covers.
 
-There is a starter pack of my music and images available Free, from this link : 
+There is a starter pack of my music and images available Free, click the Download button, from this link : 
 
 - https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=0
 
-Save the contents to `/tmp` - path expected by loading spreadsheet : `db/seed/aqwan_tracks.xls`
+Save the contents to `/tmp` - which is the path hardcoded in the loading spreadsheet : `db/seed/aqwan_tracks.xls`
  
-The development artist user is assigned by default in the spreadsheet, so edit this to assign tracks to a different user.
+>The development artist user is assigned by default in the spreadsheet, so edit this to assign tracks to a different user.
 
 Run
 

@@ -5,6 +5,10 @@ class TracksController < ApplicationController
   before_action :set_track,     only: %i[destroy]
   before_action :set_presenter, only: %i[edit update show]
 
+  helper DatashiftAudioEngine::ApplicationHelper
+
+  layout 'application_with_player', only: [:show]
+
   # GET /tracks
   # GET /tracks.json
   def index
@@ -24,7 +28,12 @@ class TracksController < ApplicationController
 
   # GET /tracks/1
   # GET /tracks/1.json
-  def show; end
+  def show;
+    respond_to do |format|
+      format.html {}
+      format.json { @track_json = Yams::AudioEnginePlayListBuilder.call(@track, current_user) }
+    end
+  end
 
   # GET /tracks/new
   def new

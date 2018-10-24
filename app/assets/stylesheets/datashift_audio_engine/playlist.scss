@@ -1,6 +1,4 @@
-@import "variables";
-
-/* OVER RIDE THE ENGINE */
+/* YAMS - OVER RIDE THE ENGINE */
 
 .datashift-audio-track-playlist i.datashift-audio-active{
     box-shadow: 0px 0px 5px  $colour-blue-grey-2;
@@ -16,7 +14,6 @@
 
 .datashift-audio-playlist li *{
   display: inline-block;
-  font-size: 16px !important;
   padding-left: 5px;
   cursor: pointer;
 }
@@ -40,7 +37,6 @@
 }
 
 .datashift-audio-playlist li:hover{
-  background-color: w;
   color: $colour-dark-green;
   cursor: pointer;
 }

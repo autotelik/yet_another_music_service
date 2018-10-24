@@ -78,6 +78,8 @@ en:
       form:
         edit:
           submit: Update Playlist
+        index:
+          submit: Create
       track_selection:
         add: Add Track
     index:

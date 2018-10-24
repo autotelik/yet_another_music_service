@@ -1,13 +1,5 @@
-// 
-// 
-// navbar.scss
-//
-//
-
-
 // Bootstrap overrides
 //
-// General overrides for default styles
 
 .nav-link{
   transition: color .35s ease;
@@ -49,6 +41,10 @@
 
 .navbar-nav.nav-fill{
   flex-grow: 1;
+}
+
+.navbar {
+  padding-bottom: 0;
 }
 
 // Navbar additions

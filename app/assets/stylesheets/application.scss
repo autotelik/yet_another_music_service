@@ -13,41 +13,28 @@
  *
  *= require select2
 */
-@import "variables";
+@import "yams_default_theme/variables";
 
 @import "bootstrap";
-
-@import "breakpoints";
-@import "avatar";
-@import "colour";
-@import "search";
-@import "feature-list";
 @import "font-awesome";
-@import "reboot";
-@import "spacing";
 
-@import "datashift_audio_engine/datashift_audio_engine";
-
-@import "background-images";
-@import "utilities";
-
-@import "buttons";
-@import "card";
-@import "footer";
-@import "lists";
-@import "media";
-@import "navbar";
-@import "type";
-
-/*
-@import "datashift_audio_engine/player";
-@import "datashift_audio_engine/playlist";
-@import "datashift_audio_player.bak/icons";
-@import "datashift_audio_player.bak/playlist";
-
-@import "datashift_audio_player.bak/cover";
-@import "datashift_audio_player.bak/volume";
-*/
+@import "yams_default_theme/breakpoints";
+@import "yams_default_theme/avatar";
+@import "yams_default_theme/borders";
+@import "yams_default_theme/card";
+@import "yams_default_theme/colour";
+@import "yams_default_theme/search";
+@import "yams_default_theme/feature-list";
+@import "yams_default_theme/reboot";
+@import "yams_default_theme/spacing";
+@import "yams_default_theme/background-images";
+@import "yams_default_theme/utilities";
+@import "yams_default_theme/buttons";
+@import "yams_default_theme/footer";
+@import "yams_default_theme/lists";
+@import "yams_default_theme/media";
+@import "yams_default_theme/navbar";
+@import "yams_default_theme/type";
 
 
 // stylelint-disable selector-list-comma-newline-after
@@ -133,6 +120,10 @@ h3.album-track, h5.album-track {
 img {
   vertical-align: middle;
   border-style: none;
+}
+
+.img-fluid {
+  @include img-fluid;
 }
 
 table.album-track thead tr th {

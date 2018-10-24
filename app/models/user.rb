@@ -23,5 +23,4 @@ class User < ApplicationRecord
 
   # TODO: tokens - https://github.com/waiting-for-dev/devise-jwt
   # :jwt_authenticatable, jwt_revocation_strategy: Blacklist
-
 end

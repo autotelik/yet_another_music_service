@@ -9,7 +9,7 @@ module Yams
     include Yams::Services
 
     def initialize(tracks, current_user)
-      @tracks = tracks
+      @tracks = *tracks
       @current_user = current_user
       @per_page = 30
     end

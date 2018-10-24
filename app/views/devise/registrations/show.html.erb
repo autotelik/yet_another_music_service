@@ -4,7 +4,7 @@
     <div class="row">
       <div class="col-2 text-center">
         <div>
-          <%=image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-m') %>
+          <%= avatar_image_tag(current_user) %>
         </div>
       </div>
       <div class="col-2 text-center">

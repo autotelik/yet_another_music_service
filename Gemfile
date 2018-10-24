@@ -29,8 +29,11 @@ gem 'autoprefixer-rails', '8.6.5'
 gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
 
-gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
-#gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
+  gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
+else
+  gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+end
 
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'          # Tokens

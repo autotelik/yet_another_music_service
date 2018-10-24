@@ -3,7 +3,7 @@
 module Yams
   module CoverPresenter
 
-    def cover_image_tag(size: :thumb, css: 'img-fluid rounded ')
+    def cover_image_tag(size: :thumb, css: 'img-fluid rounded')
       if cover.attached?
         view.image_tag(polymorphic_url(cover.image), class: css)
       else
