@@ -21,7 +21,6 @@ class Track < ApplicationRecord
 
   after_save :after_save_hook
 
-
   validates_presence_of :title, :audio, :user
 
   validates :audio, attached: true, content_type: Yams::AudioService.valid_types

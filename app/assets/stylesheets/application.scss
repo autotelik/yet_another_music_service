@@ -158,6 +158,20 @@ ul.album-drop {
   list-style-type: none;
 }
 
+/* YAMS */
+
+ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzone
+{
+  margin-top: 1rem;
+}
+
+#albums-dashboard-with-dropzone, div.card {
+  margin-top: 1rem;
+}
+
+#playlist-management-dashboard-with-dropzone, div.card {
+  margin-top: 1rem;
+}
 
 .audio-upload > input
 {
@@ -212,13 +226,13 @@ ul.album-drop {
   color: black;
 }
 
-input[type="submit"] {
-  color: $colour-secondary-btn-text;
-}
-
 div.dropdown .btn
 {
   color: $colour-secondary-btn-text;
+}
+
+.dropdown-toggle-no-arrow:after {
+  display: none !important; /* just [...] no arrow */
 }
 
 .card {
@@ -267,6 +281,21 @@ div.card-body div.form-group label {
 .footer a {
   color: $colour-green-links !important;
 }
+
+.grabbable {
+  cursor: grab; /* fallback if move cursor is unsupported */
+  cursor: move;
+  cursor: -moz-grab;
+  cursor: -webkit-grab;
+}
+
+/* (Optional) Apply a "closed-hand" cursor during drag operation. */
+.grabbable:active {
+  cursor: grabbing;
+  cursor: -moz-grabbing;
+  cursor: -webkit-grabbing;
+}
+
 .header-search {
   padding: 9px 10px 8px;
   position: relative;
@@ -297,6 +326,10 @@ div.card-body div.form-group label {
   -webkit-text-decoration-skip: objects;
   font-size: 20px;
   margin: 7px 9px 9px;
+}
+
+input[type="submit"] {
+  color: $colour-secondary-btn-text;
 }
 
 div.main-container

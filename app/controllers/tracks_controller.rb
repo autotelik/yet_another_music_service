@@ -18,7 +18,7 @@ class TracksController < ApplicationController
     Track.connection.execute("select setseed(#{seed_val})")
     @tracks = Track.eager_load(:cover, :user).for_commercial.order('random()').page(params[:page]).per(30)
 
-    @radio_tracks_json = Yams::AudioEnginePlayListBuilder.call(@tracks, current_user)
+    @tracks_json = Yams::AudioEnginePlayListBuilder.call(@tracks, current_user)
 
     respond_to do |format|
       format.html {}

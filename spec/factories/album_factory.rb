@@ -2,7 +2,7 @@
 
 FactoryBot.define do
   factory :album do
-    title       { Faker::Name.title }
+    title       { Faker::Artist.name }
     description { Faker::Music.instrument }
     association :user
   end

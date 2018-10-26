@@ -36,7 +36,7 @@ class AlbumsController < ApplicationController
 
     album.user ||= current_user
 
-    @album_presenter = AlbumPresenter.new(album, view_context)
+    @album = AlbumPresenter.new(album, view_context)
 
     respond_to do |format|
       if album.save

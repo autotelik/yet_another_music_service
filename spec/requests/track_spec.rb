@@ -14,7 +14,7 @@ describe 'track', type: :request do
       include Shoulda::Matchers::ActionController
 
       it 'when all params valid - stores a wav file as a new track' do
-        parameters = { track: attributes_for(:track, :with_audio) }
+        parameters = { track: attributes_for(:track, :with_audio_fixture) }
 
         expect { post '/tracks', params: parameters }.to change(Track, :count).by(1)
 
@@ -23,7 +23,7 @@ describe 'track', type: :request do
       end
 
       it 'stores a cover image against the new track' do
-        parameters = { track: attributes_for(:track, :with_audio).merge(cover_attributes: {
+        parameters = { track: attributes_for(:track, :with_audio_fixture).merge(cover_attributes: {
                                                                           image: fixture_file_upload('/files/test_image.jpg', 'image/jpeg')
                                                                         }) }
 
@@ -34,7 +34,7 @@ describe 'track', type: :request do
       end
 
       it 'sets available for fields correctly', ffs: true do
-        parameters = { track: attributes_for(:track, :with_audio), "availables": { radio: 'true' } }
+        parameters = { track: attributes_for(:track, :with_audio_fixture), "availables": { radio: 'true' } }
 
         expect { post '/tracks', params: parameters }.to change(Available, :count).by(1)
 
@@ -45,7 +45,7 @@ describe 'track', type: :request do
       end
 
       it 'sets suitable error notice when no title provided' do
-        parameters = { track: attributes_for(:track, :with_audio).except(:title) }
+        parameters = { track: attributes_for(:track, :with_audio_fixture).except(:title) }
 
         expect { post '/tracks', params: parameters }.to change(Track, :count).by(0)
         expect(assigns(:track).errors).to have_key :title

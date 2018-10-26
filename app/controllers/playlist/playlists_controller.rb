@@ -2,17 +2,30 @@
 
 class Playlist::PlaylistsController < ApplicationController
 
+  before_action :authenticate_user!
+
   before_action :set_playlist, only: %i[show edit destroy]
 
   before_action :set_presenter, only: %i[edit update]
 
+  helper DatashiftAudioEngine::ApplicationHelper
+
+  layout 'application_with_player', only: %i[index]
 
   def index
-    @playlists = Playlist.eager_load(:cover, :user).page(params[:page]).per(30)
+    @playlists = Playlist.for_user(current_user).page(params[:page]).per(30)
   end
 
-
-  def show; end
+  def show;
+    # Render the Audio Player via HTML first
+    # Player partial will then make a callback to get the JSON Playlist
+    respond_to do |format|
+      format.html {}
+      format.json do
+        @tracks_json = Yams::AudioEnginePlayListBuilder.call(@playlist.tracks, current_user)
+      end
+    end
+  end
 
   def new
     @playlist = Playlist.new(user: current_user)

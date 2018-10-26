@@ -22,7 +22,7 @@ class RadioController < ApplicationController
 
         @tracks = Track.eager_load(:cover, :user).for_radio.order('random()').page(params[:page]).per(per_page)
 
-        @radio_tracks_json = Yams::AudioEnginePlayListBuilder.call(@tracks, current_user)
+        @tracks_json = Yams::AudioEnginePlayListBuilder.call(@tracks, current_user)
       end
     end
   end

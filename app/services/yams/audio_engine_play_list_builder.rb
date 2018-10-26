@@ -19,6 +19,8 @@ module Yams
     end
 
     def package(track)
+      return {} unless track.present?
+
       {
         id: track.id,
         author: track.artist,
@@ -27,6 +29,7 @@ module Yams
         cover_image: url_for(track.cover_image.variant(resize: '120x120')),
         duration: track.duration
       }
+
     end
 
     private

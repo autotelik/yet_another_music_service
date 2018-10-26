@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-json.tracks @radio_tracks_json
+json.tracks @tracks_json
 
 json.user_token current_user.id
 json.client_token '0987654321' # TODO: - add tokens to devise

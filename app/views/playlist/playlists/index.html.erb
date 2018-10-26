@@ -1,27 +1,80 @@
-<% content_for :banner do %>
-  <h5>Playlists</h5>
-<% end %>
+<div class="media align-items-center">
 
+  <div class="accordion-item playlist-track col-4">
+    <div class="card card-sm col p-0">
+      <%= bootstrap_card_header( t(:playlists, scope: :global)) %>
+    </div>
 
-<% li_class = 'ol-12 col-md-4 col-lg-2' %>
+    <% if @playlists.present? %>
+      <%= content_for 'audio_player_in_navbar' do %>
+        <ul id="navbar-audio-player" class="navbar-nav nav-fill w-100">
+          <li class="nav-item">
+            <%= datashift_audio_player_tag %>
 
-<div class=" row">
-  <div class="col-2" style="border: 1px solid">
-    On hover, play/pause button appears within playlist cover. On play, loads playlist into thin player
-  </div>
+            <%= datashift_audio_player_script(init_url: "#{player_init_url}.json", load_url: "#{playlist_url(@playlists.first)}.json")  %>
+          </li>
+        </ul>
+      <% end %>
+    <% end %>
 
-  <div class="col-10">
-    <section class="playlist-listing" id="playlists_index_section">
+    <ul id="playlist-index" class="striped-list list-group list-group-flush">
 
-      <ul class="row mb-6 feature-list feature-list-sm">
-        <% @playlists.each do |a| %>
-          <%= link_to playlist, class: 'card-img-top' do %>
-            <h1 class="playlist-title"><%= playlist.name %></h1>
-          <% end %>
-        <% end %>
-      </ul>
+      <% @playlists.each do |playlist| %>
 
-    </section> <!--end list/pagination section-->
+        <li id="playlist_row_<%= playlist.id %>">
+
+          <% playlist = PlaylistPresenter.new(playlist, self) %>
+
+          <% accordion = "playlist-track-manager-#{playlist.id}" %>
+
+          <div class="media align-items-center">
+            <div class="accordion-item playlist-track col-12">
+              <div class="card card-sm ml-2 mr-2">
+
+                <div class="card-header col-12">
+                  <div class="row">
+                    <div class="col-2"><%= playlist.cover_image_tag %></div>
+                    <div class="col"><h5 class="playlist-track"><%= playlist.name %></h5></div>
+                  </div>
+                </div>
+
+                <div class="card-body">
+                  <div id="<%= accordion %>" class="collapse show col-12 playlist-track" role="tabpanel">
+                    <div class="show-track-playlist-dropzone">
+
+                      <table class="table table-striped table-dark">
+
+                        <tbody id="playlist-tracks-table-<%= playlist.id %>">
+
+                        <% playlist.playlist_tracks.order([:sort]).each do |at| %>
+
+                          <% presenter = TrackPresenter.new(at.track, self) %>
+
+                          <tr id="<%= at.sortable_id %>" class="p-0">
+                            <td>Play Button</td>
+                            <td><%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %></td>
+                            <td>
+                              <h6 class="mb-0"><%= link_to presenter.title, edit_polymorphic_path(at.track) %></h6>
+                            </td>
+                            <td><%= remove_icon(at, confirm: I18n.t(:remove, scope: at.class.name.underscore.pluralize.downcase) ) %></td>
+                          </tr>
+                        <% end %>
+
+                        </tbody>
+                      </table>
+
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </li>
+      <% end %>
+    </ul>
+
   </div>
 </div>
 

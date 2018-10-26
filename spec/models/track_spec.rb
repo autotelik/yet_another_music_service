@@ -5,8 +5,8 @@ require 'rails_helper'
 RSpec.describe Track, type: :model do
   let(:album) { create(:album) }
 
-  it 'is valid when all params present' do
-    expect(Track.new(build(:track, :with_audio).attributes)).to be_valid
+  it 'saves the audio when all params present' do
+    expect(create(:track, :with_audio)).to be_valid
   end
 
   it 'returns tracks not assigned to an Album' do
@@ -16,14 +16,11 @@ RSpec.describe Track, type: :model do
     expect(Track.no_album.collect(&:id)).to_not include tracks.first.id
   end
 
-  it 'has an optional cover' do
-    attributes = build(:track, :with_audio).attributes.merge(
-      cover_attributes: {
-        image: fixture_file_upload('/files/test_image.jpg', 'image/jpeg')
-      }
-    )
+  it 'can attach an optional cover' do
+    track = build(:track, :with_audio)
 
-    expect { Track.create(attributes) }.to change(Cover, :count).by(1)
+    track.attach_cover(fixture_file('test_image.jpg'))
+    expect(track.cover.image).to be_attached
   end
 
   it 'is not radio friendly by default' do

@@ -143,15 +143,7 @@ ActiveRecord::Schema.define(version: 2018_10_03_203725) do
   create_table "tracks", force: :cascade do |t|
     t.string "title"
     t.text "description"
-    t.boolean "streamable"
-    t.boolean "downloadable"
-    t.integer "played"
-    t.integer "downloaded"
-    t.integer "favourited"
-    t.integer "commented"
     t.string "permalink"
-    t.string "stream_url"
-    t.string "download_url"
     t.integer "length"
     t.integer "bitrate"
     t.integer "release_year", limit: 2
@@ -161,10 +153,8 @@ ActiveRecord::Schema.define(version: 2018_10_03_203725) do
     t.integer "original_content_size"
     t.bigint "user_id"
     t.bigint "license_id"
-    t.bigint "id3_genre_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["id3_genre_id"], name: "index_tracks_on_id3_genre_id"
     t.index ["license_id"], name: "index_tracks_on_license_id"
     t.index ["title"], name: "index_tracks_on_title"
     t.index ["user_id"], name: "index_tracks_on_user_id"
@@ -212,7 +202,6 @@ ActiveRecord::Schema.define(version: 2018_10_03_203725) do
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlist_tracks", "tracks"
   add_foreign_key "playlists", "users"
-  add_foreign_key "tracks", "id3_genres"
   add_foreign_key "tracks", "licenses"
   add_foreign_key "tracks", "users"
 end

@@ -18,8 +18,9 @@ describe 'album', type: :request do
 
         expect { post '/albums', params: parameters }.to change(Album, :count).by(1)
 
-        expect(response).to redirect_to(assigns(:album))
         expect(controller).to set_flash[:notice].to(/successfully created/)
+        expect(response).to redirect_to(album_url(assigns(:album)))
+
       end
     end
   end

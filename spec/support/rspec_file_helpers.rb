@@ -3,7 +3,10 @@
 module RspecFileHelpers
 
   def fixture_file(name)
-    return File.join(self.class.fixture_path, name) if self.class.respond_to?(:fixture_path) && self.class.fixture_path
+    if self.class.respond_to?(:fixture_path)
+      default = File.join(self.class.fixture_path, name)
+      return default if File.exists?(default)
+    end
 
     File.join(Rails.root, 'spec', 'fixtures', 'files', name)
   end

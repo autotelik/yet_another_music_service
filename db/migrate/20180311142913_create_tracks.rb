@@ -1,20 +1,11 @@
 class CreateTracks < ActiveRecord::Migration[5.1]
   def change
     create_table :tracks do |t|
+
       t.string :title, index: true
       t.text :description
 
-      t.boolean :streamable
-      t.boolean :downloadable
-
-      t.integer :played
-      t.integer :downloaded
-      t.integer :favourited
-      t.integer :commented
-
       t.string :permalink
-      t.string :stream_url
-      t.string :download_url
 
       t.integer :length
       t.integer :bitrate
@@ -26,7 +17,6 @@ class CreateTracks < ActiveRecord::Migration[5.1]
 
       t.belongs_to :user, foreign_key: true
       t.belongs_to :license, foreign_key: true
-      t.belongs_to :id3_genre, foreign_key: true
 
       t.timestamps
     end
