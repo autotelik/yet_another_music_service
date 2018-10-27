@@ -18,4 +18,3 @@ DefaultCover.create!(kind: :track).tap{ |c| c.image.attach(io: File.open("#{Rail
 DefaultCover.create!(kind: :album).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
 DefaultCover.create!(kind: :playlist).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
 
-Album.create(title: 'Photon Histories', description: 'Demo album loaded via db:seed', published_state: "published")

@@ -1,4 +1,4 @@
-<div class="media align-items-center">
+<div class="media row">
 
   <div class="accordion-item playlist-track col-4">
     <div class="card card-sm col p-0">
@@ -6,75 +6,52 @@
     </div>
 
     <% if @playlists.present? %>
-      <%= content_for 'audio_player_in_navbar' do %>
-        <ul id="navbar-audio-player" class="navbar-nav nav-fill w-100">
-          <li class="nav-item">
-            <%= datashift_audio_player_tag %>
-
-            <%= datashift_audio_player_script(init_url: "#{player_init_url}.json", load_url: "#{playlist_url(@playlists.first)}.json")  %>
-          </li>
-        </ul>
-      <% end %>
+      <%= datashift_audio_player_in_navbar(init_url: "#{player_init_url}.json", load_url: "#{playlist_url(@playlists.first)}.json") %>
     <% end %>
 
     <ul id="playlist-index" class="striped-list list-group list-group-flush">
-
       <% @playlists.each do |playlist| %>
 
         <li id="playlist_row_<%= playlist.id %>">
-
           <% playlist = PlaylistPresenter.new(playlist, self) %>
-
-          <% accordion = "playlist-track-manager-#{playlist.id}" %>
-
           <div class="media align-items-center">
             <div class="accordion-item playlist-track col-12">
               <div class="card card-sm ml-2 mr-2">
-
                 <div class="card-header col-12">
                   <div class="row">
-                    <div class="col-2"><%= playlist.cover_image_tag %></div>
-                    <div class="col"><h5 class="playlist-track"><%= playlist.name %></h5></div>
-                  </div>
-                </div>
+                    <div class="col-2">
+                      <!-- format: json does not work ?? -->
+                      <%= playlist.cover_image_tag %>
+                    </div>
+                    <div class="col">
+                      <%= link_to(playlist.name, "#{playlist_url(playlist)}.json", id: "select_playlist_row_#{playlist.id}") %>
 
-                <div class="card-body">
-                  <div id="<%= accordion %>" class="collapse show col-12 playlist-track" role="tabpanel">
-                    <div class="show-track-playlist-dropzone">
-
-                      <table class="table table-striped table-dark">
-
-                        <tbody id="playlist-tracks-table-<%= playlist.id %>">
-
-                        <% playlist.playlist_tracks.order([:sort]).each do |at| %>
-
-                          <% presenter = TrackPresenter.new(at.track, self) %>
-
-                          <tr id="<%= at.sortable_id %>" class="p-0">
-                            <td>Play Button</td>
-                            <td><%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %></td>
-                            <td>
-                              <h6 class="mb-0"><%= link_to presenter.title, edit_polymorphic_path(at.track) %></h6>
-                            </td>
-                            <td><%= remove_icon(at, confirm: I18n.t(:remove, scope: at.class.name.underscore.pluralize.downcase) ) %></td>
-                          </tr>
-                        <% end %>
-
-                        </tbody>
-                      </table>
+                      <script type="text/javascript" charset="utf-8">
+                          $('#<%= "select_playlist_row_#{playlist.id}" %>').click(function (event) {
+                              event.preventDefault(); // Prevent link from following its href
+                              datashift_audio_engine.load('<%= "#{playlist_url(playlist)}.json" %>');
+                          });
+                      </script>
 
                     </div>
                   </div>
                 </div>
-
               </div>
             </div>
           </div>
-
         </li>
       <% end %>
     </ul>
-
   </div>
+
+  <!-- datashift audio JS insertion point, for rendering playlist of currently selected list -->
+  <div id="datashift-audio-playlist" class="col-8"></div>
+
 </div>
 
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        datashift_audio_engine.settings.autoplay = true;
+        datashift_audio_engine.save_interval = 30000;
+    });
+</script>

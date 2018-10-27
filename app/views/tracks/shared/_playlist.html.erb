@@ -2,6 +2,7 @@
 
   <% presenter = TrackPresenter.new(track, self) %>
 
+  <!-- ID format important xxxxxx-index - cos JS needs to be able to grab index -->
   <li id="track-<%= index %>">
       <div class="col-2">
         <%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-lg" ) %>

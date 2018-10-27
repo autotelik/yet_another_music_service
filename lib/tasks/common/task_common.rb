@@ -48,11 +48,6 @@ module TaskCommon
 
     begin
       require File.expand_path('config/environment.rb')
-
-      # Odd rails 4 does not autoload these - hopefully can be removed in Rails 5
-      ['app/services'].each do |dir|
-        Dir.glob(File.join(Rails.root, dir, '**/*.rb')).each { |c| require_dependency(c) }
-      end
     rescue StandardError => e
       puts("Failed to initialise ActiveRecord : #{e.message}\n#{e.backtrace}")
       raise "Failed to initialise ActiveRecord : #{e.message}"

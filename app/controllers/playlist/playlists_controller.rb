@@ -10,7 +10,7 @@ class Playlist::PlaylistsController < ApplicationController
 
   helper DatashiftAudioEngine::ApplicationHelper
 
-  layout 'application_with_player', only: %i[index]
+  layout 'application_with_player', only: %i[index show]
 
   def index
     @playlists = Playlist.for_user(current_user).page(params[:page]).per(30)

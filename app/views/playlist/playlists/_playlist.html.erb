@@ -1,0 +1,53 @@
+<% playlist = PlaylistPresenter.new(playlist, self) %>
+
+<div id="show_playlist_row_<%= playlist.id %>" class="show_playlist_row card card-sm ml-2 mr-2">
+
+  <div class="card-header col-12">
+    <div class="row">
+      <div class="col-2"><%= playlist.cover_image_tag %></div>
+      <div class="col"><h5 class="playlist-track"><%= playlist.name %></h5></div>
+    </div>
+  </div>
+
+  <div class="card-body">
+    <div class="collapse show col-12 playlist-track" role="tabpanel">
+      <div class="datashift-audio-playlist-content p-1 col-12 w-100">
+
+        <ol id="datashift-audio-playlist" class="datashift-audio-playlist p-1">
+
+          <% playlist.playlist_tracks.order([:sort]).each_with_index do |play_track, index| %>
+
+            <% presenter = TrackPresenter.new(play_track.track, self) %>
+
+            <li id="track-<%= index %>">
+              <div class="col-1"><%= presenter.cover_image_tag(size: :thumb, css: "avatar rounded avatar-sm" ) %></div>
+              <div class="col-3">
+                <div class="datashift-audio-track-details">
+                  <%= link_to(play_track.track.artist, user_path(play_track.track.user), class: "datashift-audio-full-name") %>
+                </div>
+              </div>
+              <div class="col-5">
+                <div class="datashift-audio-track-details">
+                  <%= link_to(play_track.track.title, track_path(play_track.track), class: "datashift-audio-track-title") %>
+                </div>
+              </div>
+              <div><%= remove_icon(play_track, confirm: I18n.t(:remove, scope: :playlist_track) ) %></div>
+            </li>
+
+          <% end %>
+        </ol>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript" charset="utf-8">
+    $(document).ready(function(){
+        $("li[id^='track-']").click(function() {
+            datashift_audio_engine.audio_data.track = parseInt(this.id.split('-')[1]);
+            datashift_audio_engine.settings.autoplay = true;
+            datashift_audio_engine.render_wave_from_audio_file()
+        });
+    });
+</script>

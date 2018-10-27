@@ -10,3 +10,6 @@ json.page '1'
 json.total_pages  '1'
 json.track '0'
 json.position '0'
+
+# Render the Track Playlist - auto inserts into #datashift-audio-playlist
+json.playlist_partial json.partial! 'playlist.html.erb', locals: { playlist: @playlist, tracks: @tracks }
