@@ -21,6 +21,8 @@ services:
 
   db:
     container_name: yams_database
+    env_file:
+        - .env
     image: postgres:9.6.10
     ports:
       - "5432:5432"
