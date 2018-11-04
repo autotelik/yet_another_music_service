@@ -54,6 +54,8 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 
+gem 'loofah', ">= 2.2.3"
+
 gem 'pg', '~> 0.18'
 gem 'pundit'
 
@@ -73,6 +75,12 @@ gem 'nokogiri', '1.8.2'
 group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13'
+
+  # On Centos - QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
+  #
+  # TODO How to set in bundle - this dont seem to work :
+  #   bundle config build.capybara-webkit  --with-opt-include=/usr/lib64/qt5/bin/qmake
+  #
   gem 'capybara-webkit'
 
   # TODO: remove once dev complete
@@ -84,17 +92,18 @@ group :development, :test do
 end
 
 group :development do
+
+  gem 'better_errors'
   gem 'binding_of_caller'
+
+  gem "capistrano", "~> 3.11", require: false
+
+  gem 'i18n-tasks', '~> 0.9.24'
   gem 'listen', '>= 3.0.5', '< 3.2'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
   gem 'web-console', '>= 3.3.0'
 
-  gem 'i18n-tasks', '~> 0.9.24'
-end
-
-group :development do
-  gem 'better_errors'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
 end

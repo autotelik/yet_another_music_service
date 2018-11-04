@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_10_03_203725) do
+ActiveRecord::Schema.define(version: 2018_11_02_155021) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,18 @@ ActiveRecord::Schema.define(version: 2018_10_03_203725) do
     t.integer "published_state", default: 0
     t.index ["title"], name: "index_albums_on_title"
     t.index ["user_id"], name: "index_albums_on_user_id"
+  end
+
+  create_table "announcements", force: :cascade do |t|
+    t.integer "category"
+    t.integer "status"
+    t.string "related_type"
+    t.bigint "related_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["category"], name: "index_announcements_on_category"
+    t.index ["related_type", "related_id"], name: "index_announcements_on_related_type_and_related_id"
+    t.index ["status"], name: "index_announcements_on_status"
   end
 
   create_table "availables", force: :cascade do |t|
