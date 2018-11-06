@@ -15,6 +15,8 @@ role :db,  %w{46.32.230.11}
 
 server "46.32.230.11", user: "yams"
 
+append :linked_files, ".env"
+
 # role-based syntax
 # ==================
 
