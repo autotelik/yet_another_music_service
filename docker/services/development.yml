@@ -33,7 +33,7 @@ services:
       - "80:80"       # Nginx
     volumes:
       - rails_logs_volume:/home/app/yams/log/
-      - ./docker/.env:/home/app/yams/.env
+      - .env:/home/app/yams/.env
       - ./docker/config/database.yml:/home/app/yams/config/database.yml
       - ./docker/nginx/development.conf:/etc/nginx/sites-enabled/development.conf
     depends_on:

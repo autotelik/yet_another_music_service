@@ -25,6 +25,21 @@ module Yams
       end
 
     end
+
+    class Prod < Thor
+
+      include TaskCommon
+
+      desc :up, 'Build cluster : Db, SideKiq, Redis, ELK containers'
+
+      def up
+        cli = "docker-compose -f docker-compose.yml up --no-recreate -d sidekiq"
+        puts "Running": cli
+        system cli
+      end
+
+    end
+
   end
 
 end

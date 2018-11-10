@@ -18,7 +18,6 @@ gem 'sass-rails', '~> 5.0'
 gem 'turbolinks', '~> 5'
 gem 'uglifier', '>= 1.3.0'
 
-
 # YAMS
 #
 gem 'active_storage_validations'
@@ -29,6 +28,13 @@ gem "aws-sdk-s3", require: false
 
 gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
+
+# TODO: remove once dev complete
+if File.exist?('../datashift')
+  gem 'datashift', path: '../datashift'
+else
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
+end
 
 if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
   gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
@@ -83,17 +89,9 @@ group :development, :test do
   #   bundle config build.capybara-webkit  --with-opt-include=/usr/lib64/qt5/bin/qmake
   #
   gem 'capybara-webkit'
-
-  # TODO: remove once dev complete
-  if File.exist?('../datashift')
-    gem 'datashift', path: '../datashift'
-  else
-    gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
-  end
 end
 
 group :development do
-
   gem 'better_errors'
   gem 'binding_of_caller'
 
