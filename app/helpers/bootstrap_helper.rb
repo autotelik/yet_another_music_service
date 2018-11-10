@@ -2,6 +2,16 @@
 
 module BootstrapHelper
 
+  def map_flash_bootstrap( name )
+    if name.to_s == 'notice'
+      'success'
+    elsif name == 'response'
+      'info'
+    else
+      'danger'
+    end
+  end
+  
   def bootstrap_actions_dropdown(model, except: [])
     html = <<-EOS
     <div class="dropdown">
