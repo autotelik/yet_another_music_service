@@ -1,17 +1,6 @@
-PATH
-  remote: ../datashift
-  specs:
-    datashift (0.40.4)
-      erubis (~> 2.7, >= 2.7.0)
-      paperclip (>= 4.3, <= 6.0.0)
-      rails (~> 5.2, >= 4.2)
-      rubyzip (>= 0.9.9, < 1.3)
-      spreadsheet (~> 1.1)
-      thor (>= 0.18, <= 0.20)
-      thread_safe (~> 0.3, >= 0.3)
-
-PATH
-  remote: /home/rubyuser/SoftwareDev/git/datashift_audio_engine
+GIT
+  remote: https://github.com/autotelik/datashift_audio_engine.git
+  revision: 59b9cfe9ee287136dddc8c5e2725ca669cfe5548
   specs:
     datashift_audio_engine (0.1.0)
       rails (~> 5.2)
@@ -53,6 +42,8 @@ GEM
       activemodel (= 5.2.1)
       activesupport (= 5.2.1)
       arel (>= 9.0)
+    activerecord-import (0.27.0)
+      activerecord (>= 3.2)
     activestorage (5.2.1)
       actionpack (= 5.2.1)
       activerecord (= 5.2.1)
@@ -77,9 +68,12 @@ GEM
       momentjs-rails (~> 2.8)
       sass-rails (~> 5.0)
       selectize-rails (~> 0.6)
+    aggregate_root (0.33.0)
     airbrussh (1.3.1)
       sshkit (>= 1.6.1, != 1.7.0)
     arel (9.0.0)
+    arkency-command_bus (0.4.0)
+      thread_safe
     ast (2.4.0)
     autoprefixer-rails (8.6.5)
       execjs
@@ -111,6 +105,7 @@ GEM
       autoprefixer-rails (>= 6.0.3)
       popper_js (>= 1.12.9, < 2)
       sass (>= 3.5.2)
+    bounded_context (0.33.0)
     bourbon (5.1.0)
       sass (~> 3.4)
       thor (~> 0.19)
@@ -131,7 +126,6 @@ GEM
     capybara-webkit (1.15.1)
       capybara (>= 2.3, < 4.0)
       json
-    climate_control (0.2.0)
     coderay (1.1.2)
     coffee-rails (4.2.2)
       coffee-script (>= 2.2.0)
@@ -185,7 +179,6 @@ GEM
       faraday
       multi_json
     erubi (1.7.1)
-    erubis (2.7.0)
     execjs (2.7.0)
     factory_bot (4.11.1)
       activesupport (>= 3.0.0)
@@ -260,9 +253,6 @@ GEM
     marcel (0.3.3)
       mimemagic (~> 0.3.2)
     method_source (0.9.1)
-    mime-types (3.2.2)
-      mime-types-data (~> 3.2015)
-    mime-types-data (3.2018.0812)
     mimemagic (0.3.2)
     mini_magick (4.9.2)
     mini_mime (1.0.1)
@@ -281,12 +271,6 @@ GEM
     nokogiri (1.8.2-x86-mingw32)
       mini_portile2 (~> 2.3.0)
     orm_adapter (0.5.0)
-    paperclip (6.0.0)
-      activemodel (>= 4.2.0)
-      activesupport (>= 4.2.0)
-      mime-types
-      mimemagic (~> 0.3.0)
-      terrapin (~> 0.6.0)
     parallel (1.12.1)
     parser (2.5.3.0)
       ast (~> 2.4.0)
@@ -327,6 +311,20 @@ GEM
     rails-i18n (5.1.2)
       i18n (>= 0.7, < 2)
       railties (>= 5.0, < 6)
+    rails_event_store (0.33.0)
+      activejob (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      aggregate_root (= 0.33.0)
+      arkency-command_bus (>= 0.4)
+      bounded_context (= 0.33.0)
+      rails_event_store_active_record (= 0.33.0)
+      ruby_event_store (= 0.33.0)
+    rails_event_store_active_record (0.33.0)
+      activemodel (>= 3.0)
+      activerecord-import (~> 0.21)
+      activesupport (>= 3.0)
+      ruby_event_store (= 0.33.0)
     rails_layout (1.0.42)
     rails_sortable (1.2.1)
     railties (5.2.1)
@@ -370,11 +368,12 @@ GEM
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
       unicode-display_width (~> 1.0, >= 1.0.1)
-    ruby-ole (1.2.12.1)
     ruby-progressbar (1.10.0)
     ruby-vips (2.0.13)
       ffi (~> 1.9)
     ruby_dep (1.5.0)
+    ruby_event_store (0.33.0)
+      concurrent-ruby (~> 1.0)
     rubyzip (1.2.2)
     sass (3.6.0)
       sass-listen (~> 4.0.0)
@@ -400,8 +399,6 @@ GEM
       connection_pool (~> 2.2, >= 2.2.2)
       rack-protection (>= 1.5.0)
       redis (>= 3.3.5, < 5)
-    spreadsheet (1.1.8)
-      ruby-ole (>= 1.0)
     spring (2.0.2)
       activesupport (>= 4.2)
     spring-commands-rspec (1.0.4)
@@ -421,8 +418,6 @@ GEM
       net-ssh (>= 2.8.0)
     terminal-table (1.8.0)
       unicode-display_width (~> 1.1, >= 1.1.1)
-    terrapin (0.6.0)
-      climate_control (>= 0.0.3, < 1.0)
     therubyracer (0.12.3)
       libv8 (~> 3.16.14.15)
       ref
@@ -477,7 +472,6 @@ DEPENDENCIES
   capybara-webkit
   coffee-rails (~> 4.2)
   database_cleaner
-  datashift!
   datashift_audio_engine!
   devise
   devise-jwt (~> 0.5.7)
@@ -504,6 +498,7 @@ DEPENDENCIES
   pundit
   rails (~> 5.2.1)
   rails-controller-testing
+  rails_event_store
   rails_layout
   rails_sortable (~> 1.2.1)
   rspec-rails

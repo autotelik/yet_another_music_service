@@ -23,7 +23,7 @@ FactoryBot.define do
 
     trait :availble_for_radio do
       after(:create) do |t, _evaluator|
-        t.availables << Available.build(mode: Available.concepts[:radio], on: DateTime.now)
+        t.availables << Available.build(mode: Available.concepts[:free], on: DateTime.now)
       end
     end
   end

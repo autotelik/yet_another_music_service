@@ -8,7 +8,7 @@ feature 'Navigation links', :devise do
   scenario 'view navigation links' do
     visit root_path
 
-    expect(page).to have_link(I18n.t(:radio, scope: :global))
+    expect(page).to have_link(I18n.t(:free, scope: :global))
 
     expect(page).to have_link(I18n.t('sign_in'))
     expect(page).to have_link(I18n.t('sign_up'))
@@ -31,7 +31,7 @@ feature 'Navigation links', :devise do
     scenario 'view navigation links' do
       visit root_path
 
-      expect(page).to have_link(I18n.t(:radio, scope: :global))
+      expect(page).to have_link(I18n.t(:free, scope: :global))
       #expect(page).to have_link(I18n.t(:albums, scope: :global))
      # expect(page).to have_link(I18n.t(:artists, scope: :global))
       expect(page).to have_link(I18n.t(:tracks, scope: :global))

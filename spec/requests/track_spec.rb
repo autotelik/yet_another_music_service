@@ -34,13 +34,13 @@ describe 'track', type: :request do
       end
 
       it 'sets available for fields correctly', ffs: true do
-        parameters = { track: attributes_for(:track, :with_audio_fixture), "availables": { radio: 'true' } }
+        parameters = { track: attributes_for(:track, :with_audio_fixture), "availables": { free: 'true' } }
 
         expect { post '/tracks', params: parameters }.to change(Available, :count).by(1)
 
         track = Track.last
         expect(track.availables.count).to eq 1
-        expect(track.available_for?(:radio)).to eq true
+        expect(track.available_for?(:free)).to eq true
         expect(track.available_for?(:download)).to eq false
       end
 

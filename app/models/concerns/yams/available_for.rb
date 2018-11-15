@@ -9,13 +9,13 @@ module Yams
 
       accepts_nested_attributes_for :availables, allow_destroy: true
 
-      scope :for_radio, -> { joins(:availables).where('availables.mode': Available.concepts[:radio]) }
+      scope :for_free, -> { joins(:availables).where('availables.mode': Available.concepts[:free]) }
       scope :for_commercial, -> { joins(:availables).where('availables.mode': Available.concepts[:commercial]) }
     end
 
     def available_for?(mode)
-      # TODO: should we check if mode is already an integer ?
-      availables.where(type: self, mode: Available.concepts[mode]).count > 0 # TODO: most efficient way ?
+      # https://semaphoreci.com/blog/2017/03/14/faster-rails-how-to-check-if-a-record-exists.html
+      availables.where(type: self, mode: Available.concepts[mode]).exists?
     end
 
     def make_available_for(mode)

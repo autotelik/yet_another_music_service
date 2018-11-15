@@ -25,15 +25,15 @@ RSpec.describe Track, type: :model do
 
   it 'is not radio friendly by default' do
     track = build(:track)
-    expect(track.available_for?(:radio)).to eq false
+    expect(track.available_for?(:free)).to eq false
   end
 
   it 'can be made available_for radio' do
     track = create(:track, :with_audio)
 
-    expect(track.make_available_for(:radio)).to be_a Available
+    expect(track.make_available_for(:free)).to be_a Available
 
-    expect(track.reload.available_for?(:radio)).to eq true
+    expect(track.reload.available_for?(:free)).to eq true
 
     expect(Track.for_radio.first).to eq track
   end

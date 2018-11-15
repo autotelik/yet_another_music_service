@@ -1,0 +1,27 @@
+# https://docs.docker.com/compose/compose-file/
+#
+# Nice management UI for Docker : https://github.com/portainer/portainer
+# This creates a local (development) style installation, availble at http://http://docker.dsc/dsc
+# Note:  Requires following entry in your local /etc/hosts
+#   127.0.0.1 dsc.docker
+#
+version: '3'
+
+volumes:
+  rabbit_mq_volume:
+    driver: local
+
+services:
+
+  mq:
+    image: rabbitmq:3-management            # This image includes the Admin management UI, available @ http://localhost:15672
+    container_name: dsc-rabbit-mq-server
+    hostname: "dsc-rabbit-mq-server"
+    ports:
+    - 4369:4369
+    - 5671:5671
+    - 5672:5672
+    - 15672:15672
+    restart: "always"
+    volumes:
+    - rabbit_mq_volume:/var/lib/rabbitmq

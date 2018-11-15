@@ -31,9 +31,9 @@ gem 'bourbon'
 
 # TODO: remove once dev complete
 if File.exist?('../datashift')
-  gem 'datashift', path: '../datashift'
+  #gem 'datashift', path: '../datashift'
 else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
+  #gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
 end
 
 if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
@@ -66,6 +66,7 @@ gem 'loofah', ">= 2.2.3"
 gem 'pg', '~> 0.18'
 gem 'pundit'
 
+gem "rails_event_store"
 gem 'rails_sortable', '~> 1.2.1'
 gem 'rubocop', '~> 0.57.2'
 gem 'rubyzip', '~> 1.2.2'
