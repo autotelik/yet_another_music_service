@@ -17,7 +17,7 @@ services:
 
   development:
     build:
-      context: .
+      context: ""
       args:                           # Build Arguments
        RAILS_ENV: development
        RUBY_VERSION: 2.5.1

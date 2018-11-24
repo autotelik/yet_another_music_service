@@ -1,6 +1,6 @@
 <% if user_signed_in? %>
   <ul class="nav navbar-nav col-1">
-    <li class='nav-item'><%= link_to t(:upload, scope: :global), new_track_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: 'nav-link' %></li>
   </ul>
 <% end %>
 
@@ -17,13 +17,13 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-        <%= link_to t(:profile, scope: :global), user_path(current_user), class: 'dropdown-item' %>
+        <%= link_to t(:profile, scope: :global), yams_core.user_path(current_user), class: 'dropdown-item' %>
 
-        <%= link_to t(:music), album_tracks_path, class: 'dropdown-item' %>
+        <%= link_to t(:music), yams_core.album_tracks_path, class: 'dropdown-item' %>
 
-        <%= link_to t(:manage_playlists, scope: :global), playlist_management_index_path, class: 'dropdown-item' %>
+        <%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'dropdown-item' %>
 
-        <%= link_to t(:sign_out), destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
+        <%= link_to t(:sign_out), yams_core.destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
 
         <% if current_user.try(:admin?) %>
           <div class="dropdown-divider"></div>
@@ -33,8 +33,8 @@
     </li>
 
   <% else %>
-    <li class='nav-item'><%= link_to t(:sign_in), new_user_session_path, class: 'nav-link border-right' %></li>
-    <li class='nav-item'><%= link_to t(:sign_up), new_user_registration_path, class: 'nav-link' %></li>
+    <li class='nav-item'><%= link_to t(:sign_in), yams_core.new_user_session_path, class: 'nav-link border-right' %></li>
+    <li class='nav-item'><%= link_to t(:sign_up), yams_core.new_user_registration_path, class: 'nav-link' %></li>
   <% end %>
 
 </ul>

@@ -31,9 +31,9 @@ gem 'bourbon'
 
 # TODO: remove once dev complete
 if File.exist?('../datashift')
-  #gem 'datashift', path: '../datashift'
+  gem 'datashift', path: '../datashift'
 else
-  #gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
 end
 
 if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
@@ -63,10 +63,12 @@ gem 'kaminari'
 
 gem 'loofah', ">= 2.2.3"
 
+gem 'nokogiri', '1.8.2'
+
 gem 'pg', '~> 0.18'
 gem 'pundit'
 
-gem "rails_event_store"
+gem 'rails_event_store', '~> 0.33'
 gem 'rails_sortable', '~> 1.2.1'
 gem 'rubocop', '~> 0.57.2'
 gem 'rubyzip', '~> 1.2.2'
@@ -78,10 +80,24 @@ gem 'sidekiq'
 gem 'therubyracer', platform: :ruby
 gem 'tzinfo-data'
 
-gem 'nokogiri', '1.8.2'
+if File.exists?('/home/rubyuser/SoftwareDev/git/yams_core')
+  gem 'yams_core', path: '/home/rubyuser/SoftwareDev/git/yams_core'
+else
+  gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
+end
+
+if File.exists?('/home/rubyuser/SoftwareDev/git/yams_private_events/')
+  gem 'yams_private_events', path: '/home/rubyuser/SoftwareDev/git/yams_private_events'
+else
+  gem 'yams_private_events', git: 'https://github.com/autotelik/yams_private_events.git'
+end
 
 group :development, :test do
-  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+
+  gem 'byebug'
+
+  gem 'capistrano'
+
   gem 'capybara', '~> 2.13'
 
   # On Centos - QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
@@ -90,33 +106,10 @@ group :development, :test do
   #   bundle config build.capybara-webkit  --with-opt-include=/usr/lib64/qt5/bin/qmake
   #
   gem 'capybara-webkit'
-end
 
-group :development do
-  gem 'better_errors'
-  gem 'binding_of_caller'
-
-  gem "capistrano", "~> 3.11", require: false
-
-  gem 'i18n-tasks', '~> 0.9.24'
-  gem 'listen', '>= 3.0.5', '< 3.2'
-  gem 'spring'
-  gem 'spring-watcher-listen', '~> 2.0.0'
-  gem 'web-console', '>= 3.3.0'
-
-  gem 'rails_layout'
-  gem 'spring-commands-rspec'
-end
-
-group :development, :test do
-  gem 'factory_bot_rails'
-  gem 'faker'
-  gem 'rspec-rails'
-end
-
-group :test do
   gem 'database_cleaner', platforms: [:mri]
   gem 'launchy'
+  gem 'listen'
   gem 'rails-controller-testing'
   gem 'shoulda-matchers', '~> 3.1'
 end

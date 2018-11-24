@@ -1,3 +1,0 @@
-<div class="form-group">
-  <%= select(:track, :track_id, options_for_select(Track.without_album(@album, current_user).pluck(:title, :id)), {}, class: 'form-control') %>
-</div>

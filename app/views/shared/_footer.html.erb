@@ -13,17 +13,17 @@
           <h6>Navigate</h6>
           <ul class="list-unstyled">
             <li>
-              <%= link_to t(:home), root_path %>
+              <%= link_to t(:home), main_app.root_path %>
             </li>
             <li>
-              <%= link_to t(:about), page_path(:about) %>
+              <%= link_to t(:about), main_app.page_path(:about) %>
             </li>
             <% if user_signed_in? %>
               <li>
-                <%= link_to t(:profile, scope: :global), user_path(current_user) %>
+                <%= link_to t(:profile, scope: :global),  yams_core.user_path(current_user) %>
               </li>
               <li>
-                <%= link_to t(:sign_out), destroy_user_session_path, :method=>'delete' %>
+                <%= link_to t(:sign_out),  yams_core.destroy_user_session_path, :method=>'delete' %>
               </li>
             <% end %>
           </ul>
@@ -48,10 +48,10 @@
           <h6>Community</h6>
           <ul class="list-unstyled">
             <li>
-              <%= link_to t('terms.link'), page_path(:terms) %>
+              <%= link_to t('terms.link'), main_app.page_path(:terms) %>
             </li>
             <li>
-              <%= link_to t('contact.link'), page_path(:contact) %>
+              <%= link_to t('contact.link'), main_app.page_path(:contact) %>
             </li>
           </ul>
         </div>
@@ -59,11 +59,11 @@
         <div class="col-3 align-items-center">
           <h6>Music</h6>
           <ul class="list-unstyled">
-            <li><%= link_to t('global.radio'), radio_index_path %></li>
+            <li><%= link_to t('global.radio'), yams_core.radio_index_path %></li>
 
             <% if user_signed_in? %>
-              <li class='nav-item'><%= link_to t(:upload, scope: :global), new_track_path %></li>
-              <li><%= link_to t(:tracks, scope: :global), tracks_path %></li>
+              <li class='nav-item'><%= link_to t(:upload, scope: :global), yams_core.new_track_path %></li>
+              <li><%= link_to t(:tracks, scope: :global), yams_core.tracks_path %></li>
             <% end %>
           </ul>
         </div>

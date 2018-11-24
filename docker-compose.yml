@@ -21,8 +21,8 @@ services:
 
   db:
     container_name: yams_database
-    env_file:
-        - .env
+    environment:
+      POSTGRES_PASSWORD: bitnami
     image: postgres:9.6.10
     ports:
       - "5432:5432"
@@ -85,7 +85,6 @@ services:
     restart: always
     volumes:
       - '.:/app'
-      - ./docker/config/database.yml:/home/app/yams/config/database.yml
 
   redis:
     image: redis:latest

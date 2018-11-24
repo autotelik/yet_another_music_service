@@ -1,5 +1,0 @@
-$("#messages_container").html("<%= j render(partial: 'shared/messages') %>");
-
-<% if(@album.errors.blank?) %>
-  $('#target-for-album-create-insertion-point').after("<li class=\"list-group-item\"><%= j render(partial: 'albums/album_with_dropzone', locals: { album_presenter: @album } ) %></li>");
-<% end %>

@@ -1,10 +1,10 @@
 <% if user_signed_in? %>
-  <li class='nav-item'><%= link_to t('global.radio'), radio_index_path, class: 'nav-link border-right' %></li>
-  <li class='nav-item'><%= link_to t(:playlists, scope: :global), playlists_path, class: 'nav-link' %></li>
+  <li class='nav-item'><%= link_to t('global.radio'), yams_core.radio_index_path, class: 'nav-link border-right' %></li>
+  <li class='nav-item'><%= link_to t(:playlists, scope: :global), yams_core.playlists_path, class: 'nav-link' %></li>
   <!-- <li class='nav-item'><%#= link_to t('global.tracks'), tracks_path, class: 'nav-link border-right' %></li>
   <li class='nav-item'><%#= link_to t('global.albums'), '/albums', class: 'nav-link border-right' %></li>
   <li class='nav-item'><%#= link_to t('global.artists'), '/artists', class: 'nav-link border-right' %></li>-->
 <% else %>
-  <li class="nav-item"><%= link_to t('global.about'), page_path('about'), class: 'nav-link border-right' %></li>
-  <li class='nav-item'><%= link_to t('global.radio'), radio_index_path, class: 'nav-link' %></li>
+  <li class="nav-item"><%= link_to t('global.about'), main_app.page_path('about'), class: 'nav-link border-right' %></li>
+  <li class='nav-item'><%= link_to t('global.radio'), yams_core.radio_index_path, class: 'nav-link' %></li>
 <% end %>
