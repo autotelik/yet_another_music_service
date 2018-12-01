@@ -5,7 +5,7 @@
 #
 development:
   adapter:  postgresql
-  host:     localhost
+  host:     <%= ENV['YAMS_DB_HOST'] || Rails.application.credentials.dig(:postgresql, :host) || 'localhost' %>
   encoding: unicode
   database: yams_development
   pool:     5
@@ -30,7 +30,7 @@ test:
 
 production:
   adapter:  postgresql
-  host:     localhost
+  host:     <%= ENV['YAMS_DB_HOST'] %>
   encoding: unicode
   database: yams_production
   pool:     5

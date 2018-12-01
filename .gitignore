@@ -88,3 +88,6 @@ pickle-email-*.html
 
 # tilde files are usually backup files from a text editor
 *~
+
+# Ignore master key for decrypting credentials and more.
+/config/master.key

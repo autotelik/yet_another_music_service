@@ -116,7 +116,8 @@ rake db:seed
 
 Example data can be bulked uploaded from Excel spreadsheet containing details of tracks and covers.
 
-There is a starter pack of my music and images available Free, click the Download button, from this link : 
+There is a starter pack of my music and images available Free, click the Download button (top right), 
+and save o local hard drive, via this link : 
 
 - https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=0
 

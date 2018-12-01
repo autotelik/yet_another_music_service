@@ -1,12 +1,17 @@
+.byebug_history
 .dockerignore
-.env
+.env.example
 */.git
 .git
 .gitignore
+.idea
+.rubocop.yml
 */.vs
 .vs
 */.vscode
 .vscode
+/config/master.key
+Dockerfile
 docker-compose.yml
 docker-compose.*.yml
 */bin
@@ -19,3 +24,6 @@ storage
 spec
 docker
 db
+/log/*
+/tmp/*
+/public/system/*

@@ -1,7 +1,7 @@
 <%= form_for :searches, url: yams_core.searches_path, method: :get, html: { class: 'form-inline my-2 my-lg-0 col-12' } do |form| %>
   <div class="search">
-    <button class="fa fa-search"></button>
     <%= form.text_field :q, { value: params[:q], class: "form-control mr-sm-2", placeholder: "Search", 'aria-label': "Search" } %>
+    <!-- TODO fix the position correctly inside thw search box <button class="fa fa-search"></button> -->
   </div>
 <% end %>
 

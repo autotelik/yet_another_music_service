@@ -4,7 +4,7 @@ FROM phusion/passenger-ruby25:0.9.35
 # Check the Ubuntu version passenger image based on.
 # RUN cat /etc/lsb-release
 # Check the Ruby version passenger image based on.
-#RUN ruby --version  && export
+# RUN ruby --version  && export
 
 # Set correct environment variables.
 ENV HOME /root
@@ -45,5 +45,7 @@ RUN rm -f /etc/service/nginx/down
 # Copy the main application.
 COPY --chown=app:app . ${APP_HOME}
 
-RUN bundle install ${BUNDLE_INSTALL_ARGS}
-
+# We have private repos - need a Token
+ARG GITHUB_TOKEN
+RUN bundle config github.com x-access-token:${GITHUB_TOKEN}
+RUN GITHUB_TOKEN=${GITHUB_TOKEN} bundle install ${BUNDLE_INSTALL_ARGS}

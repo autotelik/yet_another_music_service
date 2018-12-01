@@ -3,7 +3,7 @@
 # Nice management UI for Docker : https://github.com/portainer/portainer
 # This creates a local (development) style installation, availble at http://http://docker.yams/yams
 # Note:  Requires following entry in your local /etc/hosts
-#   127.0.0.1 yams.docker
+#   127.0.0.1 yams_core.docker
 #
 version: '3'
 
@@ -38,7 +38,6 @@ services:
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
     container_name: yams_elasticsearch
-    depends_on: [kibana]
     environment:
       - xpack.security.enabled=false
       - xpack.monitoring.enabled=false
@@ -66,29 +65,35 @@ services:
     ports:
       - '5601:5601'
     restart: always
+    depends_on: [elasticsearch]
     volumes:
       - ./docker/kibana.yml:/usr/share/kibana/kibana.yml
       # TODO -  we need to create an 'index' that  persists across rebuilds
       #elastic_search_volume:/????
 
+  redis:
+    container_name: yams_redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: always
+
   sidekiq:
-    build: .
-    command: bundle exec sidekiq
+    build:
+     context: .
+     args:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    command: bundle exec sidekiq -C config/sidekiq.yml
     container_name: yams_sidekiq
     depends_on: [db, elasticsearch, redis]
     environment:
+      - YAMS_DB_HOST=db
       - JOB_WORKER_URL=redis://redis:6379/0
       - REDIS_URL=redis://redis:6379/0
       - ELASTICSEARCH_URL=http://elasticsearch:9200
-    links:
-      - redis
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    links:      [db, elasticsearch, redis]
     restart: always
     volumes:
       - '.:/app'
 
-  redis:
-    image: redis:latest
-    container_name: yams_redis
-    ports:
-      - 6379:6379
-    restart: always

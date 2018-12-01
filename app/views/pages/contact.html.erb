@@ -1,3 +1,3 @@
-<% content_for :title do t('contact.title', instance: site_hostname)  end %>
+<% content_for :title do t('contact.title', instance: Rails.application.secrets.domain_name)  end %>
 
 <%= t('contact.body_html') %>
