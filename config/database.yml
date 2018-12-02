@@ -9,10 +9,8 @@ development:
   encoding: unicode
   database: yams_development
   pool:     5
-  username: <%= ENV['YAMS_DEV_DB_USERNAME'] %>
-  password: <%= ENV['YAMS_DEV_DB_PASSWORD'] %>
-
-
+  username: <%= ENV['YAMS_DEV_DB_USERNAME'] || Rails.application.credentials.dig(:postgresql, :username) %>
+  password: <%= ENV['YAMS_DEV_DB_PASSWORD'] || Rails.application.credentials.dig(:postgresql, :password) %>
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

@@ -48,4 +48,4 @@ COPY --chown=app:app . ${APP_HOME}
 # We have private repos - need a Token
 ARG GITHUB_TOKEN
 RUN bundle config github.com x-access-token:${GITHUB_TOKEN}
-RUN GITHUB_TOKEN=${GITHUB_TOKEN} bundle install ${BUNDLE_INSTALL_ARGS}
+RUN bundle install ${BUNDLE_INSTALL_ARGS}

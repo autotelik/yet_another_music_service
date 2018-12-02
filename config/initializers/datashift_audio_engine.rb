@@ -1,10 +1,10 @@
 # Use this hook to configure datashift_audio_engine audio engine processing
 
-DatashiftAudioEngine::Configuration.call do |config|
+DatashiftAudioEngine::Configuration.configure do |config|
 
   # routes
   #
-  # Url of action wich will authorize user and will load personalized information about player right for current user
+  # Url of action to authorize user and will load personalized information about player right for current user
   #
   # config.init_url = "";
 
@@ -28,7 +28,9 @@ DatashiftAudioEngine::Configuration.call do |config|
 
   # Player will report back current status to a save callback.
   # This parameter can be used to set the interval between reports in milliseconds.
-  config.save_interval = 1000; #  - in milliseconds
+  #
+  # We want a report at start, 30 seconds and 60 seconds and end
+  config.save_interval = 30000; #  - in milliseconds
 
   # Waveform colors.
   #
@@ -42,3 +44,4 @@ DatashiftAudioEngine::Configuration.call do |config|
   # config.bar_width;
 
 end
+

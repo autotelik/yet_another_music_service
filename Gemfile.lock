@@ -1,5 +1,5 @@
 GIT
-  remote: https://x-access-token:1c71dcf7bc43926bd937adab49a25d35e461505f@github.com/autotelik/yams_private_events.git
+  remote: https://github.com/autotelik/yams_private_events.git
   revision: 3ddf88cb760fad6a6bd4d0f1cef47ba6fb247bf1
   specs:
     yams_private_events (0.1.0)

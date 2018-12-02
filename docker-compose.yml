@@ -85,14 +85,13 @@ services:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
     command: bundle exec sidekiq -C config/sidekiq.yml
     container_name: yams_sidekiq
-    depends_on: [db, elasticsearch, redis]
+    depends_on: [db, elasticsearch, kibana, redis]
     environment:
       - YAMS_DB_HOST=db
       - JOB_WORKER_URL=redis://redis:6379/0
       - REDIS_URL=redis://redis:6379/0
       - ELASTICSEARCH_URL=http://elasticsearch:9200
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
-    links:      [db, elasticsearch, redis]
+    links:   [db, elasticsearch, redis]
     restart: always
     volumes:
       - '.:/app'

@@ -1,5 +1,6 @@
 .byebug_history
 .dockerignore
+.env
 .env.example
 */.git
 .git
@@ -10,7 +11,10 @@
 .vs
 */.vscode
 .vscode
-/config/master.key
+
+# TODO - UNCOMMENT - this should be part of Capistrano deploy - shared area on server- and not copied here
+# /config/master.key
+
 Dockerfile
 docker-compose.yml
 docker-compose.*.yml

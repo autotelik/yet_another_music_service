@@ -89,7 +89,7 @@ end
 if false && File.exists?('/home/rubyuser/SoftwareDev/git/yams_private_events/')
   gem 'yams_private_events', path: '/home/rubyuser/SoftwareDev/git/yams_private_events'
 else
-  gem 'yams_private_events', git: "https://x-access-token:#{ENV['GITHUB_TOKEN']}@github.com/autotelik/yams_private_events.git"
+  gem 'yams_private_events', git: "https://github.com/autotelik/yams_private_events.git"
 end
 
 group :development, :test do
