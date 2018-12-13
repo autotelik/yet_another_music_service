@@ -11,10 +11,10 @@ DatashiftAudioEngine::Configuration.configure do |config|
   # Url of action which will form playlist load action with params
   # config.load_url = "";
 
-  # Url of action wich will controll save action
+  # Url of action which will control save action
   # config.save_url = "";
 
-  # Url of action wich will controll save action
+  # Url of action which will control radio streaming action - Not USED Yet
   # config.radio_url = "";
 
   # Player can start playing audio on page load, rather than waiting for visitor to click play.
@@ -29,6 +29,7 @@ DatashiftAudioEngine::Configuration.configure do |config|
   # Player will report back current status to a save callback.
   # This parameter can be used to set the interval between reports in milliseconds.
   #
+  # TODO - Support a list of intervals
   # We want a report at start, 30 seconds and 60 seconds and end
   config.save_interval = 30000; #  - in milliseconds
 
@@ -44,4 +45,3 @@ DatashiftAudioEngine::Configuration.configure do |config|
   # config.bar_width;
 
 end
-

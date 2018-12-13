@@ -13,17 +13,17 @@
           <h6>Navigate</h6>
           <ul class="list-unstyled">
             <li>
-              <%= link_to t(:home), main_app.root_path %>
+              <%= link_to t(:home, scope: :global), main_app.root_path %>
             </li>
             <li>
-              <%= link_to t(:about), main_app.page_path(:about) %>
+              <%= link_to t(:about, scope: :global), main_app.page_path(:about) %>
             </li>
             <% if user_signed_in? %>
               <li>
                 <%= link_to t(:profile, scope: :global),  yams_core.user_path(current_user) %>
               </li>
               <li>
-                <%= link_to t(:sign_out),  yams_core.destroy_user_session_path, :method=>'delete' %>
+                <%= link_to t(:sign_out, scope: :global),  yams_core.destroy_user_session_path, :method=>'delete' %>
               </li>
             <% end %>
           </ul>

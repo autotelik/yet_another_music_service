@@ -247,6 +247,12 @@ div.dropdown .btn
   background: $colour-secondary !important;
 }
 
+.card-body-plain {
+  @extend .card-body;
+  color: $colour-off-white !important;
+  background: transparent !important;
+}
+
 div.card-body div.form-group label {
   color: $colour-off-white !important;
 }

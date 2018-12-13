@@ -8,7 +8,7 @@ class CreateTracks < ActiveRecord::Migration[5.1]
 
       t.string :permalink
 
-      t.integer :length
+      t.integer :length, default: 0
       t.integer :bitrate
       t.integer :release_year, limit: 2
       t.integer :release_month, limit: 2

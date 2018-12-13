@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_22_195881) do
+ActiveRecord::Schema.define(version: 2018_12_07_071276) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -175,7 +175,7 @@ ActiveRecord::Schema.define(version: 2018_11_22_195881) do
     t.string "title"
     t.text "description"
     t.string "permalink"
-    t.integer "length"
+    t.integer "length", default: 0
     t.integer "bitrate"
     t.integer "release_year", limit: 2
     t.integer "release_month", limit: 2
@@ -219,6 +219,12 @@ ActiveRecord::Schema.define(version: 2018_11_22_195881) do
     t.string "invited_by_type"
     t.bigint "invited_by_id"
     t.integer "invitations_count", default: 0
+    t.string "permalink"
+    t.string "permalink_url"
+    t.string "firstname"
+    t.string "lastname"
+    t.string "city"
+    t.string "country"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["invitation_token"], name: "index_users_on_invitation_token", unique: true
     t.index ["invitations_count"], name: "index_users_on_invitations_count"

@@ -10,7 +10,7 @@
     <li class="nav-item dropdown">
       <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.avatar.attached? %>
-          <%= image_tag(polymorphic_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
+          <%= image_tag(main_app.rails_blob_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
         <%else %>
           <%= t(:profile, scope: :global) %>
         <% end %>
@@ -19,9 +19,14 @@
 
         <%= link_to t(:profile, scope: :global), yams_core.user_path(current_user), class: 'dropdown-item' %>
 
-        <%= link_to t(:music), yams_core.album_tracks_path, class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
+        <%= link_to t(:add_album, scope: :global), yams_core.new_album_path, class: 'dropdown-item' %>
+        <%= link_to t(:manage_albums, scope: :global), yams_core.album_management_index_path, class: 'dropdown-item' %>
 
+        <div class="dropdown-divider"></div>
+        <%= link_to t(:add_playlist, scope: :global), yams_core.new_playlist_path, class: 'dropdown-item' %>
         <%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'dropdown-item' %>
+        <div class="dropdown-divider"></div>
 
         <%= link_to t(:sign_out), yams_core.destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
 
