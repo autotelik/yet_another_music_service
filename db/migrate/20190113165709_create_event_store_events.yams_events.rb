@@ -1,4 +1,4 @@
-# This migration comes from yams_core (originally 20181115151716)
+# This migration comes from yams_events (originally 20181115151716)
 class CreateEventStoreEvents < ActiveRecord::Migration[4.2]
   def change
     postgres = ActiveRecord::Base.connection.adapter_name == "PostgreSQL"

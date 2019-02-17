@@ -25,4 +25,5 @@ end
 DefaultCover.create!(kind: :track).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
 DefaultCover.create!(kind: :album).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
 DefaultCover.create!(kind: :playlist).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
+DefaultCover.create!(kind: :user).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/default_avatar.png"), filename: 'default_avatar.png') }
 

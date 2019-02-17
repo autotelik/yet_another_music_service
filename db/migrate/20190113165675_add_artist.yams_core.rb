@@ -1,4 +1,5 @@
 # This migration comes from yams_core (originally 20181206090304)
+# This migration comes from yams_core (originally 20181206090304)
 class AddArtist < ActiveRecord::Migration[5.1]
   def change
     #rename_column :users, :name, :username  # name to display - aqwan

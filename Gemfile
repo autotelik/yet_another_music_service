@@ -86,18 +86,24 @@ else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 end
 
-if false && File.exists?('/home/rubyuser/SoftwareDev/git/yams_private_events/')
-  gem 'yams_private_events', path: '/home/rubyuser/SoftwareDev/git/yams_private_events'
+if File.exists?('/home/rubyuser/SoftwareDev/git/yams_events/')
+  gem 'yams_events', path: '/home/rubyuser/SoftwareDev/git/yams_events'
 else
-  gem 'yams_private_events', git: "https://github.com/autotelik/yams_private_events.git"
+  gem 'yams_events', git: "https://github.com/autotelik/yams_events.git"
 end
 
 group :development, :test do
-
   gem 'byebug'
 
   gem 'capistrano'
 
+  gem 'listen'
+
+  gem "spring"
+  gem 'spring-commands-rspec'
+end
+
+group :test do
   gem 'capybara', '~> 2.13'
 
   # On Centos - QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
@@ -108,8 +114,16 @@ group :development, :test do
   gem 'capybara-webkit'
 
   gem 'database_cleaner', platforms: [:mri]
+
+  gem 'factory_bot_rails'
+  gem 'faker'
+
+  gem 'i18n-tasks', '~> 0.9.28'
+
   gem 'launchy'
-  gem 'listen'
   gem 'rails-controller-testing'
+  gem 'rspec'
+  gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end
+

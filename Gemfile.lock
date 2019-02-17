@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/autotelik/yams_private_events.git
-  revision: 3ddf88cb760fad6a6bd4d0f1cef47ba6fb247bf1
-  specs:
-    yams_private_events (0.1.0)
-      rails (~> 5.2.1)
-
 PATH
   remote: ../datashift_audio_engine
   specs:
@@ -56,6 +49,13 @@ PATH
       turbolinks (~> 5)
       tzinfo-data
       uglifier (>= 1.3.0)
+
+PATH
+  remote: /home/rubyuser/SoftwareDev/git/yams_events
+  specs:
+    yams_events (0.1.0)
+      rails (~> 5.2.1)
+      rails-observers (~> 0.1.5)
 
 GEM
   remote: https://rubygems.org/
@@ -197,6 +197,7 @@ GEM
     devise_invitable (1.7.5)
       actionmailer (>= 4.1.0)
       devise (>= 4.0.0)
+    diff-lcs (1.3)
     dotenv (2.5.0)
     dotenv-rails (2.5.0)
       dotenv (= 2.5.0)
@@ -224,6 +225,13 @@ GEM
     erubi (1.7.1)
     erubis (2.7.0)
     execjs (2.7.0)
+    factory_bot (4.11.1)
+      activesupport (>= 3.0.0)
+    factory_bot_rails (4.11.1)
+      factory_bot (~> 4.11.1)
+      railties (>= 3.0.0)
+    faker (1.9.1)
+      i18n (>= 0.7)
     faraday (0.15.3)
       multipart-post (>= 1.2, < 3)
     ffi (1.9.25)
@@ -234,8 +242,19 @@ GEM
       activesupport (>= 4.2.0)
     hashie (3.6.0)
     high_voltage (3.1.0)
+    highline (2.0.0)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    i18n-tasks (0.9.28)
+      activesupport (>= 4.0.2)
+      ast (>= 2.1.0)
+      erubi
+      highline (>= 2.0.0)
+      i18n
+      parser (>= 2.2.3.0)
+      rails-i18n
+      rainbow (>= 2.2.2, < 4.0)
+      terminal-table (>= 1.5.1)
     image_processing (1.7.1)
       mini_magick (~> 4.0)
       ruby-vips (>= 2.0.13, < 3)
@@ -343,6 +362,11 @@ GEM
       nokogiri (>= 1.6)
     rails-html-sanitizer (1.0.4)
       loofah (~> 2.2, >= 2.2.2)
+    rails-i18n (5.1.2)
+      i18n (>= 0.7, < 2)
+      railties (>= 5.0, < 6)
+    rails-observers (0.1.5)
+      activemodel (>= 4.0)
     rails_event_store (0.33.0)
       activejob (>= 3.0)
       activemodel (>= 3.0)
@@ -374,6 +398,27 @@ GEM
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+    rspec-core (3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-expectations (3.8.2)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-mocks (3.8.0)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.8.0)
+    rspec-rails (3.8.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
+      rspec-support (~> 3.8.0)
+    rspec-support (3.8.0)
     rubocop (0.57.2)
       jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
@@ -416,6 +461,10 @@ GEM
       redis (>= 3.3.5, < 5)
     spreadsheet (1.1.8)
       ruby-ole (>= 1.0)
+    spring (2.0.2)
+      activesupport (>= 4.2)
+    spring-commands-rspec (1.0.4)
+      spring (>= 0.9.1)
     sprockets (3.7.2)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -426,6 +475,8 @@ GEM
     sshkit (1.18.0)
       net-scp (>= 1.1.2)
       net-ssh (>= 2.8.0)
+    terminal-table (1.8.0)
+      unicode-display_width (~> 1.1, >= 1.1.1)
     terrapin (0.6.0)
       climate_control (>= 0.0.3, < 1.0)
     therubyracer (0.12.3)
@@ -484,8 +535,11 @@ DEPENDENCIES
   dotenv-rails (~> 2.5.0)
   elasticsearch-model (~> 5.1.0)
   elasticsearch-rails (~> 5.1.0)
+  factory_bot_rails
+  faker
   font-awesome-rails
   high_voltage (~> 3.1.0)
+  i18n-tasks (~> 0.9.28)
   image_processing (~> 1.7)
   jbuilder (~> 2.5)
   jquery-rails
@@ -501,6 +555,8 @@ DEPENDENCIES
   rails-controller-testing
   rails_event_store (~> 0.33)
   rails_sortable (~> 1.2.1)
+  rspec
+  rspec-rails
   rubocop (~> 0.57.2)
   rubyzip (~> 1.2.2)
   sass-rails (~> 5.0)
@@ -508,12 +564,14 @@ DEPENDENCIES
   select2-rails
   shoulda-matchers (~> 3.1)
   sidekiq
+  spring
+  spring-commands-rspec
   therubyracer
   turbolinks (~> 5)
   tzinfo-data
   uglifier (>= 1.3.0)
   yams_core!
-  yams_private_events!
+  yams_events!
 
 RUBY VERSION
    ruby 2.5.0p0

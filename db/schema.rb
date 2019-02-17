@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_07_071276) do
+ActiveRecord::Schema.define(version: 2019_01_13_165709) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -58,18 +58,6 @@ ActiveRecord::Schema.define(version: 2018_12_07_071276) do
     t.index ["user_id"], name: "index_albums_on_user_id"
   end
 
-  create_table "announcements", force: :cascade do |t|
-    t.integer "category"
-    t.integer "status"
-    t.string "related_type"
-    t.bigint "related_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["category"], name: "index_announcements_on_category"
-    t.index ["related_type", "related_id"], name: "index_announcements_on_related_type_and_related_id"
-    t.index ["status"], name: "index_announcements_on_status"
-  end
-
   create_table "availables", force: :cascade do |t|
     t.string "type_type"
     t.bigint "type_id"
@@ -78,6 +66,16 @@ ActiveRecord::Schema.define(version: 2018_12_07_071276) do
     t.datetime "expires"
     t.index ["mode"], name: "index_availables_on_mode"
     t.index ["type_type", "type_id"], name: "index_availables_on_type_type_and_type_id"
+  end
+
+  create_table "contractable_resources", force: :cascade do |t|
+    t.string "resource_type"
+    t.bigint "resource_id"
+    t.bigint "spree_product_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["resource_type", "resource_id"], name: "index_contractable_resources_on_resource_type_and_resource_id"
+    t.index ["spree_product_id"], name: "index_contractable_resources_on_spree_product_id"
   end
 
   create_table "covers", force: :cascade do |t|
