@@ -9,11 +9,11 @@
 
 set :rails_env, "production"
 
-role :app, %w{46.32.230.11}
-role :web, %w{46.32.230.11}
-role :db,  %w{46.32.230.11}
+role :app, ENV['YAMS_CAP_DEPLOY_SERVER_STAGING']
+role :web, ENV['YAMS_CAP_DEPLOY_SERVER_STAGING']
+role :db, ENV['YAMS_CAP_DEPLOY_SERVER_STAGING']
 
-server "46.32.230.11", user: "yams"
+server ENV['YAMS_CAP_DEPLOY_SERVER_STAGING'], user: "yams"
 
 append :linked_files, ".env"
 

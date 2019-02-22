@@ -5,32 +5,25 @@ An open source  music streaming service, band page or record store.
 
 #### Installation
 
-### Manual
-
-Clone from github
 
 This application requires:
 
 - Ruby 2.5
 - Rails 5
-- Elastic search with Kibana - [Installation instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) - or see docker section below.
+- ElasticSearch, Kibana - [Installation instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) - or see docker section below.
 - Sidekiq and Redis
 
-These are already bundled as services, configured to inter operate, in our docker compose setup. 
+These are already bundled as services, configured to inter operate, in provided Docker compose setup. 
 
-Elastic search will be available at : `http://localhost:9200`
+Clone the Project from github
 
-Kibana will be available at : `http://localhost:5601` 
-
-To manually install Redis locally see  : `https://redis.io/topics/quickstart`
-
-To start them locally, run from the root of the application:
+In your cloned project, install the gems
 
 ```sh
-redis-server
-
-bundle exec sidekiq
+bundle install
 ```
+
+### Prerequisites
 
 Some mp3 processing currently requires ffmpeg
 
@@ -47,11 +40,10 @@ For Ubuntu
 sudo apt-get install imagemagick
 ```
 
-In your cloned project, install the gems
+We use mailcatcher but is not present in Gemfile since it will conflict with your applications gems at some point.
 
-```sh
-bundle install
-```
+Simply run `gem install mailcatcher` then `mailcatcher` to get started.
+
 
 ### Docker
 
@@ -74,21 +66,41 @@ ERROR: [1] bootstrap checks failed
 
 >RESOLUTION : Run : `sudo sysctl -w vm.max_map_count=262144`
 
-You can open a bash sh in the container and jump to seed the DB section.
-```sh
- docker exec -ti development bash
-```
+
 Elastic search will be available at : `http://localhost:9200`
 
 Kibana will be available at : `http://localhost:5601` 
 
 Sidekick configuration, including list of queues to start can found here : `docker/config/sidekiq.yml`
 
+
+### Manual
+
+To manually install Redis locally see  : `https://redis.io/topics/quickstart`
+
+To start them locally, run from the root of the application:
+
+```sh
+redis-server
+
+bundle exec sidekiq
+```
+
+
 ### DB Setup
 
-We use .env to manage configuration, including DB access.
+If using the docker install, DB container should be ready to use,if you wish to use the seed data,
+open a bash sh in the container and jump to seed the DB section.
+
+```sh
+ docker exec -ti development bash
+```
+
+For manual installs, we use .env to manage configuration, including DB access.
 
 Copy .env.example to .env and edit, supplying your DB credentials. Current config is setup to use postgres.
+
+Standard Rails DB stuff applies to create, migrate and seed the DB.
 
 ```ruby
 rake db:create
@@ -138,25 +150,19 @@ thor datashift:import:excel -i  db/seed/aqwan_tracks.xls -m Track -c lib/tasks/c
 ```
 
 
-### Development
+### Run your own
 
-If hosting your own YAMS, you probably first want to change the `front_page` and `about` pages. 
+The core functionality of YAMS is provided in the engine. This is only the front end for the Yet Another Music Serive site.
+
+You are welcome to use this as a basis or template for your own music service.
+ 
+After forking this repository, you probably need to :
+
+- First want to change the `front_page` and `about` pages. 
 
 These can be found under : `app/views/pages`
 
-We use mailcatcher but is not present inr Gemfile since it will conflict with your applications gems at some point.
-
-Simply run `gem install mailcatcher` then `mailcatcher` to get started.
-
-
-Documentation and Support
--------------------------
-
-The app and associated applications can be spun up via Docker
-
-
-Similar Projects
-----------------
+- In Gemfile, remove references to our private  gem 'yams_events'
 
 Contributing
 ------------

@@ -24,8 +24,8 @@ describe 'track', type: :request do
 
       it 'stores a cover image against the new track' do
         parameters = { track: attributes_for(:track, :with_audio_fixture).merge(cover_attributes: {
-                                                                          image: fixture_file_upload('/files/test_image.jpg', 'image/jpeg')
-                                                                        }) }
+                                                                                  image: fixture_file_upload('/files/test_image.jpg', 'image/jpeg')
+                                                                                }) }
 
         expect { post '/tracks', params: parameters }.to change(YamsCore::Cover, :count).by(1)
 

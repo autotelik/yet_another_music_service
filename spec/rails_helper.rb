@@ -76,7 +76,7 @@ RSpec.configure do |config|
   config.include Warden::Test::Helpers
 
   config.include FactoryBot::Syntax::Methods
-  
+
   include RspecFileHelpers
 end
 

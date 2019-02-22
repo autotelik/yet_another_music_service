@@ -5,7 +5,6 @@ require 'rails_helper'
 feature 'Add Album' do
   context 'From User Menu' do
     context 'When I choose Create Album' do
-
       let(:album) { build(:album) }
       let(:user) { create(:user) }
 
@@ -21,5 +20,4 @@ feature 'Add Album' do
       end
     end
   end
-
 end

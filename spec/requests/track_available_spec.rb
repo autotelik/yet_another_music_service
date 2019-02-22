@@ -23,7 +23,6 @@ describe 'track made available', type: :request do
         expect(track.available_for?(:free)).to eq false
         expect(track.available_for?(:download)).to eq true
       end
-
     end
   end
 end

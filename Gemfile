@@ -24,7 +24,7 @@ gem 'active_storage_validations'
 gem 'acts-as-taggable-on'
 gem 'administrate'
 gem 'autoprefixer-rails', '8.6.5'
-gem "aws-sdk-s3", require: false
+gem 'aws-sdk-s3', require: false
 
 gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
@@ -36,7 +36,7 @@ else
   gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
 end
 
-if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
+if File.exist?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
   gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
 else
   gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
@@ -61,9 +61,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 
-gem 'loofah', ">= 2.2.3"
-
-gem 'nokogiri', '1.8.2'
+gem 'loofah', '>= 2.2.3'
 
 gem 'pg', '~> 0.18'
 gem 'pundit'
@@ -73,23 +71,23 @@ gem 'rails_sortable', '~> 1.2.1'
 gem 'rubocop', '~> 0.57.2'
 gem 'rubyzip', '~> 1.2.2'
 
-gem 'select2-rails'
 gem 'searchkick'
+gem 'select2-rails'
 gem 'sidekiq'
 
 gem 'therubyracer', platform: :ruby
 gem 'tzinfo-data'
 
-if File.exists?('/home/rubyuser/SoftwareDev/git/yams_core')
+if File.exist?('/home/rubyuser/SoftwareDev/git/yams_core')
   gem 'yams_core', path: '/home/rubyuser/SoftwareDev/git/yams_core'
 else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 end
 
-if File.exists?('/home/rubyuser/SoftwareDev/git/yams_events/')
+if File.exist?('/home/rubyuser/SoftwareDev/git/yams_events/')
   gem 'yams_events', path: '/home/rubyuser/SoftwareDev/git/yams_events'
 else
-  gem 'yams_events', git: "https://github.com/autotelik/yams_events.git"
+  gem 'yams_events', git: 'https://github.com/autotelik/yams_events.git'
 end
 
 group :development, :test do
@@ -99,7 +97,7 @@ group :development, :test do
 
   gem 'listen'
 
-  gem "spring"
+  gem 'spring'
   gem 'spring-commands-rspec'
 end
 
@@ -126,4 +124,3 @@ group :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end
-

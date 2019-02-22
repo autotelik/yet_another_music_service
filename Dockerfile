@@ -20,8 +20,7 @@ RUN apt-get update -qq && apt-get install -y --no-install-recommends \
   zlib1g-dev \
   libxslt-dev \
   libqt5webkit5-dev \
-  qt5-default \
-  sqlite3
+  qt5-default
 
 # Clean up APT when done.
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*

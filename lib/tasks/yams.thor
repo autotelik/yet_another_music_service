@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 begin
   require File.expand_path('config/environment.rb')
 rescue StandardError => e

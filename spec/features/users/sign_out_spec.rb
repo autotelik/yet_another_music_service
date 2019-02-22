@@ -15,7 +15,7 @@ feature 'Sign out', :devise do
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
 
     within('.navbar') do
-       click_link 'Sign out'
+      click_link 'Sign out'
     end
 
     expect(page).to have_content I18n.t 'devise.sessions.signed_out'
