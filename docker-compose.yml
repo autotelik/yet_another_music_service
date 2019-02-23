@@ -1,0 +1,98 @@
+# https://docs.docker.com/compose/compose-file/
+#
+# Nice management UI for Docker : https://github.com/portainer/portainer
+# This creates a local (development) style installation, availble at http://http://docker.yams/yams
+# Note:  Requires following entry in your local /etc/hosts
+#   127.0.0.1 yams_core.docker
+#
+version: '3'
+
+volumes:
+  elastic_search_volume:
+    driver: local
+  postgres:
+    driver: local
+  rails_logs_volume:
+    driver: local
+  redis:
+    driver: local
+
+services:
+
+  db:
+    container_name: yams_database
+    environment:
+      POSTGRES_PASSWORD: bitnami
+    image: postgres:9.6.10
+    ports:
+      - "5432:5432"
+    restart: always
+    volumes:
+      - postgres:/var/lib/postgresql/data
+
+  # NOTES
+
+   # The ELK images come with XPack already installed - this adds an authorisation layer we do not need,
+   # or at least not worth the complication at this stage. Turn it off via  - xpack.security.enabled=false
+
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
+    container_name: yams_elasticsearch
+    environment:
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.ml.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+    ports:
+      - 9200:9200
+      - 9300:9300
+    restart: always
+    volumes:
+      # N.B if switched for a mounted volume,then that volumes permissions must make it accessible by user/group elasticsearch.
+      - elastic_search_volume:/usr/share/elasticsearch/data
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.1
+    container_name: yams_kibana
+    environment:
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.ml.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    ports:
+      - '5601:5601'
+    restart: always
+    depends_on: [elasticsearch]
+    volumes:
+      - ./docker/kibana.yml:/usr/share/kibana/kibana.yml
+      # TODO -  we need to create an 'index' that  persists across rebuilds
+      #elastic_search_volume:/????
+
+  redis:
+    container_name: yams_redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    restart: always
+
+  sidekiq:
+    build:
+     context: .
+     args:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    command: bundle exec sidekiq -C config/sidekiq.yml
+    container_name: yams_sidekiq
+    depends_on: [db, elasticsearch, kibana, redis]
+    environment:
+      - YAMS_DB_HOST=db
+      - JOB_WORKER_URL=redis://redis:6379/0
+      - REDIS_URL=redis://redis:6379/0
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
+    links:   [db, elasticsearch, redis]
+    restart: always
+    volumes:
+      - '.:/app'
+
