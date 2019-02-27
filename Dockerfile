@@ -1,6 +1,8 @@
 # Rails 5 - https://github.com/phusion/passenger-docker/blob/master/Changelog.md
 FROM phusion/passenger-ruby25:0.9.35
 
+RUN gem install --no-ri --no-rdoc bundler
+
 # Check the Ubuntu version passenger image based on.
 # RUN cat /etc/lsb-release
 # Check the Ruby version passenger image based on.

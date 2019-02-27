@@ -84,6 +84,12 @@ else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 end
 
+if File.exist?('/home/rubyuser/SoftwareDev/git/yams_messaging/')
+  gem 'yams_messaging', path: '/home/rubyuser/SoftwareDev/git/yams_messaging'
+else
+  gem 'yams_messaging', git: 'https://github.com/autotelik/yams_messaging.git'
+end
+
 if File.exist?('/home/rubyuser/SoftwareDev/git/yams_events/')
   gem 'yams_events', path: '/home/rubyuser/SoftwareDev/git/yams_events'
 else
