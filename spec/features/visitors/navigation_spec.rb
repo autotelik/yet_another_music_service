@@ -39,7 +39,7 @@ feature 'Navigation links', :devise do
       expect(page).to have_link(I18n.t(:profile, scope: :global))
       expect(page).to have_link(I18n.t(:upload, scope: :global))
 
-      expect(page).to have_link(I18n.t(:sign_out))
+      expect(page).to have_link(I18n.t(:sign_out, scope: :global))
     end
   end
 end

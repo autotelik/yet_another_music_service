@@ -8,6 +8,21 @@ end
 
 ruby '>= 2.5.0'
 
+# TODO: remove once dev complete move to core gemspec
+if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
+  gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
+else
+  gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+end
+
+# TODO: remove once dev complete
+if File.exist?('../datashift')
+  gem 'datashift', path: '../datashift'
+else
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
+end
+
+
 # RAILS
 gem 'rails', '~> 5.2.1'
 
@@ -28,13 +43,6 @@ gem 'aws-sdk-s3', require: false
 
 gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
-
-# TODO: remove once dev complete
-if File.exist?('../datashift')
-  gem 'datashift', path: '../datashift'
-else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
-end
 
 if File.exist?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
   gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'

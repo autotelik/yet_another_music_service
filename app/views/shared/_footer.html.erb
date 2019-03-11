@@ -2,10 +2,13 @@
 
   <div class="row">
 
-    <div class="col-1"></div>
+    <div class="col-2 text-center">
+      <%= image_tag 'logos/kyoto_drummers_logo_200x200.png', class: "avatar avatar-lg" %>
+      <span class="text-small">Yet Another Music Service</span>
+      <div class="text-small">&copy; 2019 aqwan</div>
+    </div>
 
     <div class="col-10 footer">
-      <span class="h6">Yet Another Music Service  &copy; 2018 thomas statter</span>
 
       <div class="row no-gutters  text-md-center">
 
@@ -48,10 +51,10 @@
           <h6>Community</h6>
           <ul class="list-unstyled">
             <li>
-              <%= link_to t('terms.link'), main_app.page_path(:terms) %>
+              <%= link_to t('.terms.link'), main_app.page_path(:terms) %>
             </li>
             <li>
-              <%= link_to t('contact.link'), main_app.page_path(:contact) %>
+              <%= link_to t('.contact.link'), main_app.page_path(:contact) %>
             </li>
           </ul>
         </div>

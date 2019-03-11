@@ -10,7 +10,7 @@ class SetupDev < Thor
     system('bundle exec rake db:drop')
 
     puts 'Create the DB'
-    system('bundle exec rails yams_core:install:migrations')
+    #system('bundle exec rails yams_core:install:migrations')
     system('bundle exec rails yams_events:install:migrations')
 
     system('bundle exec rake db:create')
@@ -18,9 +18,11 @@ class SetupDev < Thor
     puts 'Migrating the DB'
     system('bundle exec rake db:migrate')
 
-    puts 'Seed the DB'
+    puts 'Seed the DB - bundle exec rake db:seed'
     system('bundle exec rake db:seed')
-    system('bundle exec thor yams_core:db:seed_music')
+
+    puts 'Seed the example Music - bundle exec thor yams:db:seed_music'
+    system('bundle exec thor yams:db:seed_music')
   end
 
 end

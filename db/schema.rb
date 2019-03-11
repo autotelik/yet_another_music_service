@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_01_13_165709) do
+ActiveRecord::Schema.define(version: 2019_03_02_103434) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -65,7 +65,15 @@ ActiveRecord::Schema.define(version: 2019_01_13_165709) do
     t.datetime "on"
     t.datetime "expires"
     t.index ["mode"], name: "index_availables_on_mode"
+    t.index ["type_id", "type_type", "mode"], name: "index_availables_on_type_id_and_type_type_and_mode", unique: true
     t.index ["type_type", "type_id"], name: "index_availables_on_type_type_and_type_id"
+  end
+
+  create_table "bulk_uploads", force: :cascade do |t|
+    t.bigint "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_bulk_uploads_on_user_id"
   end
 
   create_table "contractable_resources", force: :cascade do |t|

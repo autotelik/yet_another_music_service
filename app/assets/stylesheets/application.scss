@@ -169,6 +169,17 @@ ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzon
   margin-top: 1rem;
 }
 
+.album-selection-add
+{
+  color: $colour-green-links !important;
+  border: 4px; padding: 0;
+  background: transparent;
+  transition: opacity .2s ease;
+  &:hover{
+    opacity: .75;
+  }
+}
+
 #playlist-management-dashboard-with-dropzone, div.card {
   margin-top: 1rem;
 }
@@ -282,10 +293,12 @@ div.card-body div.form-group label {
 
 .footer {
   padding: $navbar-padding;
+  font-size: 12px;
 }
 
 .footer a {
   color: $colour-green-links !important;
+  font-size: 12px;
 }
 
 .grabbable {
