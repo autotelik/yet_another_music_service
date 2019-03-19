@@ -17,7 +17,10 @@ desc 'Run a searchkick:reindex task on all models'
 task :searchkick_reindex do
   on roles(:app) do
     within current_path do
-      execute :bundle, 'exec thor yams:search_index:build'
+      begin
+        execute :bundle, 'exec thor yams:search_index:build'
+      rescue
+      end
     end
   end
 end
