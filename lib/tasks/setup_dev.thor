@@ -1,5 +1,10 @@
 # frozen_string_literal: true
+#
+require_relative 'common/task_common'
+
 class SetupDev < Thor
+
+  include TaskCommon
 
   desc :clean, 'Drop Db, remove containers and reinstall everything from scratch'
 
@@ -23,6 +28,9 @@ class SetupDev < Thor
 
     puts 'Seed the example Music - bundle exec thor yams:db:seed_music'
     system('bundle exec thor yams:db:seed_music')
+
+    YamsCore::Track.reindex
+    YamsCore::Album.reindex
   end
 
 end

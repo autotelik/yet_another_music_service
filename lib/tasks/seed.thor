@@ -43,10 +43,8 @@ module Yams
     desc :build, 'Build full Index for Elastic Search'
 
     def build
-
       load_rails_environment
 
-      # TODO: make part of deployment ?
       ::YamsCore::Track.reindex
       ::YamsCore::Album.reindex
     end

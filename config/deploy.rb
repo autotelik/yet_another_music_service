@@ -11,6 +11,17 @@ set :repo_url, "git@github.com:autotelik/yet_another_music_service.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, '/var/www/vhosts/yams.fm/apps'
 
+after :deploy, :searchkick_reindex
+
+desc 'Run a searchkick:reindex task on all models'
+task :searchkick_reindex do
+  on roles(:app) do
+    within current_path do
+      execute :bundle, 'exec thor yams:search_index:build'
+    end
+  end
+end
+
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
