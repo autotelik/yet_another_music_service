@@ -1,10 +1,21 @@
-Yet Another Music Service
+Yet Another Music Service - Front End
 ================
 
-An open source  music streaming service, band page or record store.
+Demonstration of an open source music streaming service, band page or record store.
+
+### Run your own
+
+This is a front end example APP, that utilises the core functionality of YAMS, which is provided in the engine -
+ 
+You are welcome to use this as a basis or template for your own music service.
+ 
+After forking this repository, you probably want to :
+
+- Create your own `front_page` and `about` pages. 
+
+These can be found under : `app/views/pages`
 
 #### Installation
-
 
 This application requires:
 
@@ -66,13 +77,11 @@ ERROR: [1] bootstrap checks failed
 
 >RESOLUTION : Run : `sudo sysctl -w vm.max_map_count=262144`
 
-
 Elastic search will be available at : `http://localhost:9200`
 
 Kibana will be available at : `http://localhost:5601` 
 
 Sidekick configuration, including list of queues to start can found here : `docker/config/sidekiq.yml`
-
 
 ### Manual
 
@@ -148,21 +157,6 @@ This is essentially a wrapper around an Excel import tool for Rails. If you want
 ```
 thor datashift:import:excel -i  db/seed/aqwan_tracks.xls -m Track -c lib/tasks/config/track_import.yaml 
 ```
-
-
-### Run your own
-
-The core functionality of YAMS is provided in the engine. This is only the front end for the Yet Another Music Serive site.
-
-You are welcome to use this as a basis or template for your own music service.
- 
-After forking this repository, you probably need to :
-
-- First want to change the `front_page` and `about` pages. 
-
-These can be found under : `app/views/pages`
-
-- In Gemfile, remove references to our private  gem 'yams_events'
 
 Contributing
 ------------

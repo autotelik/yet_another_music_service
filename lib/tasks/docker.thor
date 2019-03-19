@@ -15,6 +15,9 @@ module Yams
       method_option :sidekiq, type: :boolean, default: false, desc: 'Also spin up Sidekiq container'
 
       def up
+
+        load_rails_environment
+
         %w{db elasticsearch kibana redis}.each {|c| docker_up(c) }
 
         docker_up('sidekiq') if(options[:sidekiq])
@@ -34,6 +37,8 @@ module Yams
       desc :up, 'Build cluster : Db, SideKiq, Redis, ELK containers'
 
       def up
+        load_rails_environment
+
         cli = "docker-compose -f docker-compose.yml up --no-recreate -d sidekiq"
         puts "Running": cli
         system cli
@@ -47,11 +52,13 @@ module Yams
 
         desc :up, "Start #{name} docker container"
         define_method(:up) {
+          load_rails_environment
+
           docker_up("#{name.downcase}")
         }
       end
 
-      YamsCore.const_set name, klass
+      Yams.const_set name, klass
     end
 
   end

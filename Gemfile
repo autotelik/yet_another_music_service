@@ -19,7 +19,7 @@ end
 if File.exist?('../datashift')
   gem 'datashift', path: '../datashift'
 else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'master'
 end
 
 
@@ -43,12 +43,6 @@ gem 'aws-sdk-s3', require: false
 
 gem 'bootstrap', '~> 4.1.3'
 gem 'bourbon'
-
-if File.exist?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
-  gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
-else
-  gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
-end
 
 gem 'devise'
 gem 'devise-jwt', '~> 0.5.7'          # Tokens
@@ -86,22 +80,10 @@ gem 'sidekiq'
 gem 'therubyracer', platform: :ruby
 gem 'tzinfo-data'
 
-if File.exist?('/home/rubyuser/SoftwareDev/git/yams_core')
-  gem 'yams_core', path: '/home/rubyuser/SoftwareDev/git/yams_core'
+if File.exist?('../yams_core')
+  gem 'yams_core', path: '../yams_core'
 else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
-end
-
-if File.exist?('/home/rubyuser/SoftwareDev/git/yams_messaging/')
-  gem 'yams_messaging', path: '/home/rubyuser/SoftwareDev/git/yams_messaging'
-else
-  gem 'yams_messaging', git: 'https://github.com/autotelik/yams_messaging.git'
-end
-
-if File.exist?('/home/rubyuser/SoftwareDev/git/yams_events/')
-  gem 'yams_events', path: '/home/rubyuser/SoftwareDev/git/yams_events'
-else
-  gem 'yams_events', git: 'https://github.com/autotelik/yams_events.git'
 end
 
 group :development, :test do
