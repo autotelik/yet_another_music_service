@@ -1,8 +1,8 @@
 /* YAMS - OVER RIDE THE ENGINE */
 
 .datashift-audio-track-playlist i.datashift-audio-active{
-    box-shadow: 0px 0px 5px  $colour-blue-grey-2;
-    color: $colour-blue-grey-1;
+  box-shadow: 0px 0px 5px  $colour-blue-grey-2;
+  color: $colour-blue-grey-1;
 }
 
 .datashift-audio-playlist li{
@@ -52,10 +52,10 @@
 }
 
 .datashift-audio-playlist > li:nth-child(odd) {
-  background: $colour-blue-grey-1;
+  background: $colour-theme-background-1;
 }
 .datashift-audio-playlist > li:nth-child(even) {
-  background: $colour-blue-grey-2;
+  background: $colour-theme-background-2;
 }
 
 .datashift-audio-playlist .current-track{
