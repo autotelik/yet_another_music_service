@@ -90,6 +90,8 @@ group :development, :test do
   gem 'byebug'
 
   gem 'capistrano'
+  gem 'capistrano-rails'
+  gem 'capistrano-rvm'
 
   gem 'listen'
 
