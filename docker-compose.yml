@@ -87,10 +87,11 @@ services:
     container_name: yams_sidekiq
     depends_on: [db, elasticsearch, kibana, redis]
     environment:
-      - YAMS_DB_HOST=db
+      - ELASTICSEARCH_URL=http://elasticsearch:9200
       - JOB_WORKER_URL=redis://redis:6379/0
       - REDIS_URL=redis://redis:6379/0
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
+      - RAILS_ENV=production
+      - YAMS_DB_HOST=db
     links:   [db, elasticsearch, redis]
     restart: always
     volumes:

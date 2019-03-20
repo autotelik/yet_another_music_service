@@ -55,7 +55,7 @@ end
 
 # Service containers that can be stopped and restarted
 def container_names
-  %w[yams_database yams_redis yams_rabbit-mq-server yams_elasticsearch yams_kibana ]
+  %w[yams_database yams_redis yams_elasticsearch yams_kibana]
 end
 
 task :stop_other_containers do
@@ -73,8 +73,8 @@ end
 task :up_app_container do
   on roles(:app) do
     # -p project means containers can be reused if unchanged
-    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml -f docker/services/staging.yml up -d kibana"
-    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml -f docker/services/staging.yml up -d kibana"
+    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d kibana"
+    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d db"
   end
 end
 

@@ -54,7 +54,7 @@ module Yams
         define_method(:up) {
           load_rails_environment
 
-          docker_up("#{name.downcase}")
+          docker_up("--no-deps #{name.downcase}")
         }
       end
 

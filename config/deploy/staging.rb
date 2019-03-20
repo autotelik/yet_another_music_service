@@ -16,6 +16,7 @@ role :db, ENV['YAMS_CAP_DEPLOY_SERVER_STAGING']
 server ENV['YAMS_CAP_DEPLOY_SERVER_STAGING'], user: "yams"
 
 append :linked_files, ".env"
+append :linked_dirs, "storage"
 
 # role-based syntax
 # ==================
