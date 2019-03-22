@@ -73,8 +73,8 @@ end
 task :up_app_container do
   on roles(:app) do
     # -p project means containers can be reused if unchanged
-    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d kibana"
     execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d db"
+    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d sidekiq"
   end
 end
 

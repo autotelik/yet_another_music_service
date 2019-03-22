@@ -21,7 +21,7 @@ module Yams
         %w{db elasticsearch kibana redis}.each {|c| docker_up(c) }
 
         docker_up('sidekiq') if(options[:sidekiq])
-
+        <%= image_tag(Rails.application.routes.url_helpers.rails_blob_path(track_presenter.cover_image, only_path: true), class: "avatar rounded avatar-sm") %>
         if(options[:init])
           docker_exec(cmd: 'bundle exec rake db:create')
           docker_exec(cmd: 'bundle exec rake db:migrate')
