@@ -85,7 +85,7 @@ services:
      context: .
      args:
       - GITHUB_TOKEN=${GITHUB_TOKEN}
-    command: bundle exec sidekiq -C config/sidekiq.yml
+    command: bundle exec sidekiq -C config/sidekiq.yml -e production
     container_name: yams_sidekiq
     depends_on: [db, elasticsearch, kibana, redis]
     environment:
