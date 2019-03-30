@@ -46,9 +46,7 @@ set :container_name, "yams_#{fetch(:stage)}"
 
 before :deploy, :stop_docker_containers
 after :deploy, :up_app_container
-after :up_app_container, :container_admin
 
-container_admin
 task :stop_docker_containers do
   on roles(:app) do
     invoke 'stop_other_containers'
@@ -79,6 +77,7 @@ task :up_app_container do
     execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d sidekiq"
   end
 
+  invoke :container_admin
 end
 
 task :container_admin do
