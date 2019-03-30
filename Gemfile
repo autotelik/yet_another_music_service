@@ -63,6 +63,7 @@ gem 'jquery-rails'
 gem 'jquery-ui-rails'
 gem 'kaminari'
 
+gem 'listen'
 gem 'loofah', '>= 2.2.3'
 
 gem 'pg', '~> 0.18'
@@ -92,8 +93,6 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
-
-  gem 'listen'
 
   gem 'spring'
   gem 'spring-commands-rspec'

@@ -16,6 +16,8 @@ volumes:
     driver: local
   redis:
     driver: local
+  local_cloud_storage_volume:
+    driver: local
 
 services:
 
@@ -92,8 +94,10 @@ services:
       - REDIS_URL=redis://redis:6379/0
       - RAILS_ENV=production
       - YAMS_DB_HOST=db
+    depends_on:   [db, elasticsearch, redis]
     links:   [db, elasticsearch, redis]
     restart: always
     volumes:
-      - '.:/app'
+      - /var/www/vhosts/yams.fm/apps/shared/storage:/home/app/dsc/storage
+      - /var/www/vhosts/yams.fm/apps/shared/.env:/home/app/yams/.env
 
