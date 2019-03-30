@@ -98,6 +98,6 @@ services:
     links:   [db, elasticsearch, redis]
     restart: always
     volumes:
-      - /var/www/vhosts/yams.fm/apps/shared/storage:/home/app/dsc/storage
+      - /var/www/vhosts/yams.fm/apps/shared/storage:/home/app/yams/storage
       - /var/www/vhosts/yams.fm/apps/shared/.env:/home/app/yams/.env
 

@@ -17,7 +17,7 @@ server ENV['YAMS_CAP_DEPLOY_SERVER_STAGING'], user: "yams"
 
 append :linked_files, ".env"
 append :linked_dirs, "storage"
-append :linked_dirs, "logs"
+append :linked_dirs, "log"
 
 # role-based syntax
 # ==================
