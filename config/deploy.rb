@@ -55,7 +55,7 @@ end
 
 # Service containers that can be stopped and restarted
 def container_names
-  %w[yams_database yams_redis yams_elasticsearch yams_kibana]
+  %w[yams_database yams_redis yams_elasticsearch yams_kibana yams_sidekiq]
 end
 
 task :stop_other_containers do
@@ -82,26 +82,26 @@ end
 
 task :container_admin do
   on roles(:app) do
-    begin
-      #cd /var/www/vhosts/yams.fm/apps/current
-      execute "/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
-    rescue => e
-    end
+    within current_path do
+      begin
+        #cd /var/www/vhosts/yams.fm/apps/current
+        execute "cd #{deploy_to}/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
+      rescue => e
+      end
 
-    begin
-      execute " /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
-    rescue => e
-      puts "Assets precompile failed : #{e.inspect}"
-    end
+      begin
+        execute "cd #{deploy_to}/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
+      rescue => e
+        puts "Assets precompile failed : #{e.inspect}"
+      end
 
-    begin
-      # Sort out any issues with permissions etc
-      execute "chmod -R #{fetch(:deploy_to)}/current/log/*.log"
-    rescue => e
-      puts "Container admin failed : #{e.inspect}"
+      begin
+        # Sort out any issues with permissions etc
+        execute "cd #{deploy_to}/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
+      rescue => e
+        puts "Container admin failed : #{e.inspect}"
+      end
     end
-
-    chmod 0664 /var/www/vhosts/yams.fm/apps/releases/20190330174628/log/production.lo
   end
 end
 
@@ -111,7 +111,7 @@ task :searchkick_reindex do
   on roles(:app) do
     within current_path do
       begin
-        execute :bundle, 'exec thor yams:search_index:build'
+        execute '/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec thor yams:search_index:build'
       rescue
       end
     end
