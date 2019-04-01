@@ -87,6 +87,10 @@ else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 end
 
+group :development do
+  gem 'bullet'
+end
+
 group :development, :test do
   gem 'byebug'
 

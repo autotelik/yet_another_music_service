@@ -85,19 +85,19 @@ task :container_admin do
     within current_path do
       begin
         #cd /var/www/vhosts/yams.fm/apps/current
-        execute "cd #{deploy_to}/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
+        execute "/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
       rescue => e
       end
 
       begin
-        execute "cd #{deploy_to}/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
+        execute "/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
       rescue => e
         puts "Assets precompile failed : #{e.inspect}"
       end
 
       begin
         # Sort out any issues with permissions etc
-        execute "cd #{deploy_to}/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
+        execute "chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
       rescue => e
         puts "Container admin failed : #{e.inspect}"
       end
