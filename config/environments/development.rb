@@ -74,15 +74,12 @@ Rails.application.configure do
 
   config.after_initialize do
     Bullet.enable = true
-    Bullet.sentry = true
-    Bullet.alert = true
+    Bullet.alert = true   # JS popup
     Bullet.bullet_logger = true
     Bullet.console = true
     Bullet.rails_logger = true
-    Bullet.honeybadger = true
-    Bullet.bugsnag = true
-    Bullet.airbrake = true
-    Bullet.rollbar = true
+    Bullet.stacktrace_includes = ['yams_core', 'datashift_audio_engine']
+    #Bullet.bugsnag = true
     Bullet.add_footer = true
   end
 

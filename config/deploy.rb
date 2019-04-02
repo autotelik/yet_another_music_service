@@ -82,22 +82,22 @@ end
 
 task :container_admin do
   on roles(:app) do
-    within current_path do
+    within current_path do  # TOFIX: does not seem to work - still need to cd to /var/www/vhosts/yams.fm/apps/current
       begin
         #cd /var/www/vhosts/yams.fm/apps/current
-        execute "/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
+        execute "cd /var/www/vhosts/yams.fm/apps/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
       rescue => e
       end
 
       begin
-        execute "/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
+        execute "cd /var/www/vhosts/yams.fm/apps/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
       rescue => e
         puts "Assets precompile failed : #{e.inspect}"
       end
 
       begin
         # Sort out any issues with permissions etc
-        execute "chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
+        execute "cd /var/www/vhosts/yams.fm/apps/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
       rescue => e
         puts "Container admin failed : #{e.inspect}"
       end
