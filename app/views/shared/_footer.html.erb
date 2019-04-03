@@ -62,7 +62,7 @@
         <div class="col-3 align-items-center">
           <h6>Music</h6>
           <ul class="list-unstyled">
-            <li><%= link_to t('global.radio'), yams_core.radio_index_path %></li>
+            <li><%= link_to t('global.radio'), yams_core.radio_path(method: :post, remote: true) %></li>
 
             <% if user_signed_in? %>
               <li class='nav-item'><%= link_to t(:upload, scope: :global), yams_core.new_track_path %></li>

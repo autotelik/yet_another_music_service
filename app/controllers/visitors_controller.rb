@@ -2,8 +2,6 @@
 
 class VisitorsController < ApplicationController
 
-  layout 'welcome'
-
   def index; end
 
 end

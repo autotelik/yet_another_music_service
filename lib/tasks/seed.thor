@@ -7,6 +7,22 @@ module Yams
 
     include TaskCommon
 
+    desc :up, "Start #{name} docker container"
+
+    method_option :init, type: :boolean, default: false, desc: 'Initialise the DB'
+
+    def up
+      load_rails_environment
+
+      docker_up("--no-deps db")
+
+      if(options[:init])
+        docker_exec(cmd: 'bundle exec rake db:create')
+        docker_exec(cmd: 'bundle exec rake db:migrate')
+        docker_exec(cmd: 'bundle exec rake db:seed')
+      end
+    end
+
     desc :seed_music, 'seed database with some music, albums and playlists - useful in dev'
 
     method_option :user, default: 'aqwan'

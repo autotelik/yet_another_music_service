@@ -1,4 +1,32 @@
-/* YAMS - OVER RIDE THE ENGINE */
+/* YAMS - OVER RIDES OF THE ENGINE AND PLAYER SPECIFIC STYLES*/
+
+#navbar-container
+{
+  border-bottom: 1px solid whitesmoke;
+}
+
+#navbar-audio-player
+{
+  border-top: 1px solid whitesmoke;
+}
+
+.datashift-audio-track-title, .datashift-audio-duration, .datashift-audio-full-name
+{
+  font-family: 'Concert One', cursive;
+  font-size: 20px;
+}
+
+// Need to shift this down to accommodate our navbar and player at top
+#datashift-audio-track-playlist-wrapper-row
+{
+  margin-top: $navbar-player-spacer;
+  background-color: $colour-default-body;
+}
+
+.datashift-audio-duration
+{
+  font-size: 16px;
+}
 
 .datashift-audio-track-playlist i.datashift-audio-active{
   box-shadow: 0px 0px 5px  $colour-blue-grey-2;

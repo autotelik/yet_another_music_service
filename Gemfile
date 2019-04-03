@@ -9,8 +9,8 @@ end
 ruby '>= 2.5.0'
 
 # TODO: remove once dev complete move to core gemspec
-if File.exists?('/home/rubyuser/SoftwareDev/git/datashift_audio_engine')
-  gem 'datashift_audio_engine', path: '/home/rubyuser/SoftwareDev/git/datashift_audio_engine'
+if File.exists?('../datashift_audio_engine')
+  gem 'datashift_audio_engine', path: '../datashift_audio_engine'
 else
   gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
 end

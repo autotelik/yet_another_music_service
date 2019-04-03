@@ -17,8 +17,6 @@
 //= require turbolinks
 //= require jquery-ui/widgets/sortable
 //= require rails_sortable
-//= require datashift_audio_engine/audio_engine
-//= require datashift_audio_engine/audio_engine_utils
-//= require datashift_audio_engine/audio_engine_controls
+//= require datashift_audio_engine
 //= require select2-full
 //= require_tree .

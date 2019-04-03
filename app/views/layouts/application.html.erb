@@ -3,10 +3,9 @@
 <head>
   <%= render 'shared/head' %>
 
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
-
   <%= yield(:head_extension) %>
 
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
 
   <%= csrf_meta_tags %>

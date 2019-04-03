@@ -36,6 +36,10 @@
 @import "yams_default_theme/navbar";
 @import "yams_default_theme/type";
 
+@import "datashift_audio_engine/datashift_audio_engine";
+
+// YAMS over rides
+@import "datashift_audio_engine/playlist";
 
 // stylelint-disable selector-list-comma-newline-after
 // Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
@@ -354,12 +358,6 @@ input[type="submit"] {
 div.main-container
 {
   margin-top: $navbar-total-height; // accommodate the navbar
-  background-color: $colour-default-body;
-}
-
-div.main-container-player
-{
-  margin-top: $navbar-player-total-height; // accommodate the navbar
   background-color: $colour-default-body;
 }
 

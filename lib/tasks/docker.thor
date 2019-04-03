@@ -21,7 +21,7 @@ module Yams
         %w{db elasticsearch kibana redis}.each {|c| docker_up(c) }
 
         docker_up('sidekiq') if(options[:sidekiq])
-        <%= image_tag(Rails.application.routes.url_helpers.rails_blob_path(track_presenter.cover_image, only_path: true), class: "avatar rounded avatar-sm") %>
+
         if(options[:init])
           docker_exec(cmd: 'bundle exec rake db:create')
           docker_exec(cmd: 'bundle exec rake db:migrate')
@@ -51,10 +51,20 @@ module Yams
         include TaskCommon
 
         desc :up, "Start #{name} docker container"
+
+        method_option :init, type: :boolean, default: false, desc: 'Initialise the DB'
+
         define_method(:up) {
           load_rails_environment
 
           docker_up("--no-deps #{name.downcase}")
+
+          if(options[:init])
+            docker_exec(cmd: 'bundle exec rake db:create')
+            docker_exec(cmd: 'bundle exec rake db:migrate')
+            docker_exec(cmd: 'bundle exec rake db:seed')
+          end
+
         }
       end
 
