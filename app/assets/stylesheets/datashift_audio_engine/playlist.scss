@@ -20,7 +20,6 @@
 #datashift-audio-track-playlist-wrapper-row
 {
   margin-top: $navbar-player-spacer;
-  background-color: $colour-default-body;
 }
 
 .datashift-audio-duration
@@ -80,10 +79,8 @@
 }
 
 .datashift-audio-playlist > li:nth-child(odd) {
-  background: $colour-theme-background-1;
 }
 .datashift-audio-playlist > li:nth-child(even) {
-  background: $colour-theme-background-2;
 }
 
 .datashift-audio-playlist .current-track{
