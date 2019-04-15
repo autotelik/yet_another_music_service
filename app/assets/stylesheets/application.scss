@@ -241,6 +241,12 @@ ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzon
   color: black;
 }
 
+.btn-yams
+{
+  color: $colour-iceberg-blue !important;;
+  background-color: $colour-eerie-black !important;;
+}
+
 div.dropdown .btn
 {
   color: $colour-secondary-btn-text;
@@ -366,12 +372,61 @@ div#messages_container
   margin-bottom: $navbar-total-height; // accommodate the navbar
 }
 
+#opensource_gradient {
+  border: 1px $colour-dark-green solid;
+  border-radius: 50%;
+}
+
 .pull-left {
   float: left !important;
 }
 
 .pull-right {
   float: right !important;
+}
+
+.navbar-collapse{
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+// NEW ALBUMS
+
+#new-album-card {
+  margin-bottom: 0;
+}
+
+#new-album-card-body {
+  margin-bottom: 0;
+}
+
+div#radio-create-playlist-wrapper {
+  padding-top: $navbar-player-height;
+}
+
+
+// Need to shift these down to accommodate our navbar and player at top
+#show-artists
+{
+  padding-top: $navbar-player-height;
+}
+
+#show-tracks
+{
+  padding-top: $navbar-player-height;
+}
+
+#index-playlist-playlists
+{
+  padding-top: $navbar-player-height;
+}
+
+#index-album-albums
+{
+  padding-top: $navbar-player-height;
 }
 
 /* Drag and Drop list for selection */
@@ -387,24 +442,6 @@ div#messages_container
 }
 .show-track-playlist-dropzone > div.row:nth-child(even) {
   background: $colour-blue-grey-2;
-}
-
-.navbar-collapse{
-  justify-content: flex-end;
-}
-
-.nav-link {
-  color: white !important;
-}
-
-// ALBUMS
-
-#new-album-card {
-  margin-bottom: 0;
-}
-
-#new-album-card-body {
-  margin-bottom: 0;
 }
 
 .sortable_tracks_row td{
@@ -486,7 +523,6 @@ section#tracks_index_section.track-listing h1
 .select2-container {
   color: $colour-rich-black !important;
 }
-
 
 .text-dark{
   color:$colour-default-body !important;
