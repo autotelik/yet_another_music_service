@@ -87,18 +87,18 @@ body {
 }
 
 a {
-  color: #12e6ff !important;
+  color: $colour-bright-blue !important;
 }
 
 a.icon_tag {
-  color: $colour-cool-mint !important;
+  color: $colour-bright-blue !important;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
 }
 
 a.sign-up, a.sign-in {
-  color: $colour-cool-mint;
+  color: $colour-bright-blue;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -111,6 +111,11 @@ a.text-black{
     opacity: .75;
   }
   color: black !important;
+}
+
+b, strong {
+  font-weight: bolder;
+  color: $colour-cool-mint !important;
 }
 
 h1, h2, h3, h4, h5, h6 { color: $colour-default-h !important; }
@@ -217,7 +222,7 @@ ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzon
 }
 
 .bg-gradient {
-  background: radial-gradient(ellipse closest-side, $colour-theme-background 60%, $colour-blue-grey);
+  background: radial-gradient(ellipse closest-side, $colour-eerie-black 60%, $colour-eerie-black);
 }
 
 .bg-secondary {
@@ -390,7 +395,7 @@ div#messages_container
 }
 
 .nav-link {
-  color: white !important;
+  color: $colour-bright-blue !important;
 }
 
 // NEW ALBUMS
