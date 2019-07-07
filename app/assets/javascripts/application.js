@@ -11,12 +11,13 @@
 // about supported directives.
 //
 //= require jquery3
-//= require popper
 //= require activestorage
-//= require bootstrap-sprockets
+//= require bootstrap
 //= require turbolinks
 //= require jquery-ui/widgets/sortable
+//= require popper
 //= require rails_sortable
-//= require datashift_audio_engine
 //= require select2-full
+//= require webflow.js
+//= require datashift_audio_engine
 //= require_tree .

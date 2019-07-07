@@ -38,10 +38,9 @@ gem 'uglifier', '>= 1.3.0'
 gem 'active_storage_validations'
 gem 'acts-as-taggable-on'
 gem 'administrate'
-gem 'autoprefixer-rails', '8.6.5'
 gem 'aws-sdk-s3', require: false
 
-gem 'bootstrap', '~> 4.1.3'
+gem 'bootstrap', '~> 4.3.1'
 gem 'bourbon'
 
 gem 'devise'
@@ -78,7 +77,7 @@ gem 'searchkick'
 gem 'select2-rails'
 gem 'sidekiq'
 
-gem 'therubyracer', platform: :ruby
+gem 'mini_racer'#, platform: :ruby
 gem 'tzinfo-data'
 
 if File.exist?('../yams_core')
