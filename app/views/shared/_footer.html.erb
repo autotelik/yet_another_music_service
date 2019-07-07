@@ -1,81 +1,59 @@
-<footer class="bg-gray text-light footer-short mt-4 mb-0 pt-2 pb-2">
+<div class="footer">
+  <div class="w-container">
+    <div class="columns w-row">
 
-  <div class="row">
-
-    <div class="col-2 text-center">
-      <%= image_tag 'logos/kyoto_drummers_logo_200x200.png', class: "avatar avatar-lg" %>
-      <span class="text-small">Yet Another Music Service</span>
-      <div class="text-small">&copy; 2019 aqwan</div>
-    </div>
-
-    <div class="col-10 footer">
-
-      <div class="row no-gutters  text-md-center">
-
-        <div class="col-3 align-items-center">
-          <h6>Navigate</h6>
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to t(:home, scope: :global), main_app.root_path %>
-            </li>
-            <li>
-              <%= link_to t(:about, scope: :global), main_app.page_path(:about) %>
-            </li>
-            <% if user_signed_in? %>
-              <li>
-                <%= link_to t(:profile, scope: :global),  yams_core.user_path(current_user) %>
-              </li>
-              <li>
-                <%= link_to t(:sign_out, scope: :global),  yams_core.destroy_user_session_path, :method=>'delete' %>
-              </li>
-            <% end %>
-          </ul>
+      <div class="spc w-col w-col-3">
+        <%= image_tag 'logos/kyoto_drummers_logo_200x200.png', height: '150px', width: '150px', class: "avatar avatar-lg" %>
+        <div class="center">
+          <span class="text-small">Yet Another Music Service</span>
         </div>
+      </div>
 
-        <div class="col-3 align-items-center">
-          <h6>Platform</h6>
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to "Ruby on Rails", 'https://rubyonrails.org/', target: :_blank %>
-            </li>
-            <li>
-              <%= link_to "Bitcoin", 'https://bitcoin.org', target: :_blank %>
-            </li>
-            <li>
-              <%= link_to "Lightning Network", 'https://lightning.network', target: :_blank %>
-            </li>
-          </ul>
-        </div>
+      <div class="spc w-col w-col-3">
+        <h5>useful links</h5>
+        <%= link_to t(:home, scope: :global), main_app.root_path, class: "footer-link" %>
+        <%= link_to t(:about, scope: :global), main_app.page_path(:about), class: "footer-link" %>
+        <% if user_signed_in? %>
+          <%= link_to t(:profile, scope: :global),  yams_core.user_path(current_user), class: "footer-link" %>
+          <%= link_to t(:sign_out, scope: :global),  yams_core.destroy_user_session_path, :method=>'delete', class: "footer-link" %>
+        <% end %>
+        <h6 class="pt-2">Platform</h6>
 
-        <div class="col-3 align-items-center">
-          <h6>Community</h6>
-          <ul class="list-unstyled">
-            <li>
-              <%= link_to t('terms.link'), main_app.page_path(:terms) %>
-            </li>
-            <li>
-              <%= link_to t('.contact.link'), main_app.page_path(:contact) %>
-            </li>
-          </ul>
-        </div>
+        <%= link_to "Ruby on Rails", 'https://rubyonrails.org/', target: :_blank, class: "footer-link" %>
 
-        <div class="col-3 align-items-center">
-          <h6>Music</h6>
-          <ul class="list-unstyled">
-            <li><%= link_to t('global.radio'), yams_core.radio_path(method: :post, remote: true) %></li>
+        <%= link_to "Bitcoin", 'https://bitcoin.org', target: :_blank, class: "footer-link" %>
 
-            <% if user_signed_in? %>
-              <li class='nav-item'><%= link_to t(:upload, scope: :global), yams_core.new_track_path %></li>
-              <li><%= link_to t(:tracks, scope: :global), yams_core.tracks_path %></li>
-            <% end %>
-          </ul>
-        </div>
+        <%= link_to "Lightning Network", 'https://lightning.network', target: :_blank, class: "footer-link" %>
 
       </div>
+
+      <div class="spc w-col w-col-3">
+        <h5>Community</h5>
+
+        <%= link_to t('terms.link'), main_app.page_path(:terms), class: "footer-link" %>
+
+        <%= link_to t('.contact.link'), main_app.page_path(:contact), class: "footer-link" %>
+
+        <h6 class="pt-2">Music</h6>
+
+        <%= link_to t('global.radio'), yams_core.radio_path(method: :post, remote: true), class: "footer-link" %>
+
+        <% if user_signed_in? %>
+          <%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: "footer-link" %>
+          <%= link_to t(:tracks, scope: :global), yams_core.tracks_path, class: "footer-link" %>
+        <% end %>
+      </div>
+
+      <div class="spc w-col w-col-3">
+        <h5>social</h5>
+        <div class="footer-link-wrapper w-clearfix"><img src="<%=asset_path('webflow/social-18.svg') %>" width="20" alt="" class="info-icon"><a href="#" class="footer-link with-icon">Twitter</a></div>
+        <div class="footer-link-wrapper w-clearfix"><img src="<%=asset_path('webflow/social-33.svg') %>" width="20" alt="" class="info-icon"><a href="#" class="footer-link with-icon">github</a></div>
+      </div>
     </div>
-
-    <div class="col-1"></div>
-
   </div>
-
-</footer>
+</div>
+<div class="footer center">
+  <div class="w-container">
+    <div class="footer-text">&copy; 2019 aqwan. Designed in Webflow. Built with Rails.</div>
+  </div>
+</div>

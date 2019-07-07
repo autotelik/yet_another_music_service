@@ -12,40 +12,22 @@
  *
  *
  *= require select2
+ *= require webflow/normalize
+ *= require webflow/webflow
+ *= require webflow/yams-webflow
 */
+@import "yams_default_theme/bootstrap-custom";
+@import "yams_default_theme/direct_uploads";
 @import "yams_default_theme/variables";
 
-@import "bootstrap";
 @import "font-awesome";
 
-@import "yams_default_theme/breakpoints";
-@import "yams_default_theme/avatar";
-@import "yams_default_theme/borders";
-@import "yams_default_theme/card";
-@import "yams_default_theme/colour";
-@import "yams_default_theme/search";
-@import "yams_default_theme/feature-list";
-@import "yams_default_theme/reboot";
-@import "yams_default_theme/spacing";
-@import "yams_default_theme/background-images";
-@import "yams_default_theme/utilities";
-@import "yams_default_theme/buttons";
-@import "yams_default_theme/footer";
-@import "yams_default_theme/lists";
-@import "yams_default_theme/media";
-@import "yams_default_theme/navbar";
-@import "yams_default_theme/type";
-
+// YAMS Engines
 @import "datashift_audio_engine/datashift_audio_engine";
 
-// YAMS over rides
+// YAMS engine over rides
 @import "datashift_audio_engine/playlist";
 
-// stylelint-disable selector-list-comma-newline-after
-// Shim for "new" HTML5 structural elements to display correctly (IE10, older browsers)
-article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, section {
-  display: block;
-}
 
 .section-intro{
   margin-bottom: $spacer;
@@ -82,27 +64,9 @@ article, aside, dialog, figcaption, figure, footer, header, hgroup, main, nav, s
 
 /* END CLONE THEME */
 body {
-  color: $colour-off-white;
-  background-color: $colour-default-body !important;
+  font-family: Inconsolata, monospace;
 }
 
-a {
-  color: $colour-bright-blue !important;
-}
-
-a.icon_tag {
-  color: $colour-bright-blue !important;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
-
-a.sign-up, a.sign-in {
-  color: $colour-bright-blue;
-  text-decoration: none;
-  background-color: transparent;
-  -webkit-text-decoration-skip: objects;
-}
 
 a.text-black{
 
@@ -118,7 +82,7 @@ b, strong {
   color: $colour-cool-mint !important;
 }
 
-h1, h2, h3, h4, h5, h6 { color: $colour-default-h !important; }
+/*h1, h2, h3, h4, h5, h6 { color: $colour-default-h !important; }*/
 
 h3.album-track, h5.album-track {
   color: $colour-green-blue !important;
@@ -307,13 +271,13 @@ div.card-body div.form-group label {
 }
 
 .footer {
-  padding: $navbar-padding;
-  font-size: 12px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  font-family: Inconsolata, monospace;
 }
 
-.footer a {
-  color: $colour-green-links !important;
-  font-size: 12px;
+.footer.center {
+  padding-top: 16px;
 }
 
 .grabbable {
@@ -366,15 +330,38 @@ input[type="submit"] {
   color: $colour-secondary-btn-text;
 }
 
-div.main-container
+div#main-body-container
 {
-  margin-top: $navbar-total-height; // accommodate the navbar
+  margin-top: 0;
   background-color: $colour-default-body;
 }
 
 div#messages_container
 {
   margin-bottom: $navbar-total-height; // accommodate the navbar
+}
+
+.navbar-collapse{
+  justify-content: flex-end;
+}
+
+.nav-link {
+  color: $colour-bright-blue !important;
+}
+
+.navbar-toggler{
+  i{
+    color: #fff;
+  }
+}
+
+
+#new-album-card {
+  margin-bottom: 0;
+}
+
+#new-album-card-body {
+  margin-bottom: 0;
 }
 
 #opensource_gradient {
@@ -390,28 +377,16 @@ div#messages_container
   float: right !important;
 }
 
-.navbar-collapse{
-  justify-content: flex-end;
-}
-
-.nav-link {
-  color: $colour-bright-blue !important;
-}
-
-// NEW ALBUMS
-
-#new-album-card {
-  margin-bottom: 0;
-}
-
-#new-album-card-body {
-  margin-bottom: 0;
-}
-
 div#radio-create-playlist-wrapper {
-  padding-top: $navbar-player-height;
+  padding: 16px;
 }
 
+.search-input {
+  overflow: visible;
+  max-width: 400px;
+  padding-left: 27px;
+  text-align: center;
+}
 
 // Need to shift these down to accommodate our navbar and player at top
 #show-artists
@@ -473,6 +448,10 @@ ul#track-drag li button
   padding: 0.2rem;
 }
 
+.section {
+  padding: 40px 10px;
+}
+
 section#tracks_index_section .card {
   background: $colour-off-white !important;
   margin: 1rem;
@@ -531,4 +510,9 @@ section#tracks_index_section.track-listing h1
 
 .text-dark{
   color:$colour-default-body !important;
+}
+
+ul,
+ol {
+  padding-left: 0px;
 }

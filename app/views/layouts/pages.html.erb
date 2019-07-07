@@ -23,12 +23,6 @@
 <body>
   <%= render 'layouts/navigation' %>
 
-  <%= yield :audio_player_in_navbar %>
-
-  <!-- player insertion point via UJS -->
-  <span id="navbar-audio-player-insertion-point" class="col-12 w-hidden"></span>
-
-
   <div id="messages_container" class="container-fluid p-0 m-0">
     <%= render 'shared/messages' %>
   </div>
@@ -40,6 +34,5 @@
   <%= render 'shared/footer' %>
 
   <%= yield(:body_extension) %>
-
 </body>
 </html>
