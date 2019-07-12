@@ -1,10 +1,9 @@
 <% if user_signed_in? %>
 
-  <%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: 'navigation-link w-nav-link nav-link' %>
+  <%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: 'navigation-link w-nav-link' %>
 
-  <ul class="navbar-nav mr-auto col-2">
-    <li class="nav-item dropdown">
-      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    <li class="w-nav-link dropdown pt-0 ">
+      <a class="dropdown-toggle navigation-link w-nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
         <% if current_user.avatar.attached? %>
           <%= image_tag(main_app.rails_blob_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
         <%else %>
@@ -13,29 +12,29 @@
       </a>
       <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
 
-        <%= link_to t(:profile, scope: :global), yams_core.edit_user_registration_path(current_user), class: 'dropdown-item navigation-link w-nav-link ' %>
+        <%= link_to t(:profile, scope: :global), yams_core.edit_user_registration_path(current_user), class: 'w-dropdown-link w-nav-link ' %>
 
         <div class="dropdown-divider"></div>
-        <%= link_to t(:bulk_upload, scope: :global), yams_core.new_track_bulk_uploads_path, class: 'dropdown-item navigation-link w-nav-link ' %>
+        <%= link_to t(:bulk_upload, scope: :global), yams_core.new_track_bulk_uploads_path, class: 'w-dropdown-link' %>
 
         <div class="dropdown-divider"></div>
-        <%= link_to t(:add_album, scope: :global), yams_core.new_album_path, class: 'dropdown-item' %>
-        <%= link_to t(:manage_albums, scope: :global), yams_core.album_management_index_path, class: 'dropdown-item navigation-link w-nav-link ' %>
+        <%= link_to t(:add_album, scope: :global), yams_core.new_album_path, class: 'w-dropdown-link' %>
+        <%= link_to t(:manage_albums, scope: :global), yams_core.album_management_index_path, class: 'w-dropdown-link' %>
 
         <div class="dropdown-divider"></div>
-        <%= link_to t(:add_playlist, scope: :global), yams_core.new_playlist_path, class: 'dropdown-item' %>
-        <%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'dropdown-item navigation-link w-nav-link ' %>
+        <%= link_to t(:add_playlist, scope: :global), yams_core.new_playlist_path, class: 'w-dropdown-link' %>
+        <%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'w-dropdown-link ' %>
         <div class="dropdown-divider"></div>
 
-        <%= link_to t(:sign_out, scope: :global), yams_core.destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
+        <%= link_to t(:sign_out, scope: :global), yams_core.destroy_user_session_path, :method=>'delete', class: 'w-dropdown-link' %>
 
         <% if current_user.try(:admin?) %>
           <div class="dropdown-divider"></div>
-          <%= link_to t(:admin, scope: :global), yams_core.admin_root_path, class: 'dropdown-item' %>
+          <%= link_to t(:admin, scope: :global), yams_core.admin_root_path, class: 'w-dropdown-link' %>
         <% end %>
       </div>
     </li>
-  </ul>
+
 <% else %>
   <%= link_to t(:sign_in, scope: :global), yams_core.new_user_session_path, class: 'navigation-link w-nav-link' %>
   <%= link_to t(:sign_up, scope: :global), yams_core.new_user_registration_path, class: 'navigation-link w-nav-link' %>

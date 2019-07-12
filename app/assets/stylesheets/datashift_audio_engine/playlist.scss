@@ -52,8 +52,19 @@
 }
 
 .datashift-audio-playlist li:hover i{
-  color: blueviolet;
+  color:  $colour-cool-mint;
 }
+
+.datashift-audio-playlist a {
+  color:  $colour-cool-mint;
+  text-decoration: none;
+}
+
+.datashift-audio-playlist a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
 
 .datashift-audio-playlist li .full-name{
   padding: 0px 10px;

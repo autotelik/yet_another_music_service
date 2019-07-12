@@ -10,14 +10,16 @@
 // Read Sprockets README (https://github.com/rails/sprockets#sprockets-directives) for details
 // about supported directives.
 //
+// N.B popper must come before bootstrap and turbolinks
+//
 //= require jquery3
 //= require activestorage
+//= require popper
 //= require bootstrap
 //= require turbolinks
 //= require jquery-ui/widgets/sortable
-//= require popper
 //= require rails_sortable
 //= require select2-full
-//= require webflow.js
+//= require webflow
 //= require datashift_audio_engine
 //= require_tree .

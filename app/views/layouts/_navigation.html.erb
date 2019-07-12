@@ -1,24 +1,22 @@
-<div data-collapse="medium" data-animation="default" data-duration="400" data-doc-height="1" class="navigation-bar w-nav">
-  <div class="w-container">
+<div data-collapse="medium" data-animation="default" data-duration="400" data-doc-height="1" class="navigation-bar w-nav centered pl-4">
+  <nav role="navigation" class="navigation-menu">
 
     <%= link_to t('global.home'), main_app.root_path, class: 'navigation-link w-nav-link' %>
 
     <%= link_to t('global.about'), main_app.page_path('about'), class: 'navigation-link w-nav-link' %>
 
-    <nav role="navigation" class="navigation-menu w-nav-menu">
 
-      <%= render partial: 'layouts/navigation_search' %>
+    <%= render partial: 'layouts/navigation_search' %>
 
-      <%= render partial: 'layouts/navigation_links' %>
+    <%= render partial: 'layouts/navigation_links' %>
 
-      <%= render partial: 'layouts/nav_links_for_profile' %>
+    <%= render partial: 'layouts/nav_links_for_profile' %>
+  </nav>
 
-    </nav>
-
-    <div class="hamburger-button w-nav-button">
-      <div class="w-icon-nav-menu"></div>
-    </div>
-
+  <div class="hamburger-button w-nav-button">
+    <div class="w-icon-nav-menu"></div>
   </div>
+
 </div>
+
 

@@ -69,7 +69,6 @@ services:
     restart: always
     depends_on: [elasticsearch]
     volumes:
-      - ./docker/kibana.yml:/usr/share/kibana/kibana.yml
       # TODO -  we need to create an 'index' that  persists across rebuilds
       #elastic_search_volume:/????
 

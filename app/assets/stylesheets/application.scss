@@ -12,6 +12,7 @@
  *
  *
  *= require select2
+ *= require webflow/radio
  *= require webflow/normalize
  *= require webflow/webflow
  *= require webflow/yams-webflow
@@ -67,6 +68,14 @@ body {
   font-family: Inconsolata, monospace;
 }
 
+a {
+  color: ghostwhite !important;
+  text-decoration: none;
+  transition: opacity .2s ease;
+  &:hover{
+    opacity: .5;
+  }
+}
 
 a.text-black{
 
@@ -247,6 +256,14 @@ div.card-body div.form-group label {
   color: $colour-off-white !important;
 }
 
+.card-header {
+  padding: 0.25rem 0.5rem;
+}
+
+.custom-file-field-additional {
+  font-size: 11px;
+}
+/*
 .dropdown-menu > a:nth-child(odd) {
   background: $colour-blue-grey-1;
 }
@@ -257,7 +274,7 @@ div.card-body div.form-group label {
 {
   background: $colour-theme-background !important;
 }
-
+*/
 .fade_out
 {
   -webkit-animation: fade 5s infinite; /* Chrome, Safari 5+ */
@@ -266,9 +283,19 @@ div.card-body div.form-group label {
   animation: fade 5s infinite; /* Chrome, Firefox 16+, IE 10+, Opera 12.10+ */
 }
 
-.form-control {
+.form-control-yams {
+  color: #495057;
+  display: block;
+  width: 75%;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 7px;
   border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color .1s;
 }
+
 
 .footer {
   padding-top: 20px;
@@ -332,7 +359,6 @@ input[type="submit"] {
 
 div#main-body-container
 {
-  margin-top: 0;
   background-color: $colour-default-body;
 }
 
@@ -347,6 +373,13 @@ div#messages_container
 
 .nav-link {
   color: $colour-bright-blue !important;
+}
+.navigation-link:hover {
+  text-decoration: none;
+}
+
+.w-dropdown-link:hover {
+  text-decoration: none;
 }
 
 .navbar-toggler{
@@ -433,20 +466,6 @@ div#radio-create-playlist-wrapper {
   color: $colour-rich-black;
 }
 
-ul#track-drag
-{
-  padding: 0;
-}
-
-ul#track-drag li
-{
-  padding: 0 0 0.5rem 0;
-}
-
-ul#track-drag li button
-{
-  padding: 0.2rem;
-}
 
 .section {
   padding: 40px 10px;
@@ -483,7 +502,7 @@ section#tracks_index_section.track-listing li div.card-footer.card-footer-border
 
 section#tracks_index_section.track-listing .track-artist h1
 {
-  color: red !important;
+  color: $colour-off-white !important;
   font-size: 12px;
   font-weight: 100;
   line-height: 20px;
@@ -495,7 +514,7 @@ section#tracks_index_section.track-listing .track-artist h1
 
 section#tracks_index_section.track-listing h1
 {
-  color: blueviolet !important;
+  color: $colour-off-white !important;
   font-size: 12px;
   font-weight: 100;
   line-height: 20px;
@@ -512,7 +531,39 @@ section#tracks_index_section.track-listing h1
   color:$colour-default-body !important;
 }
 
+.text-light
+{
+  color: #c7c7b0 !important;
+}
+
+.text-question {
+  color: $colour-cool-mint !important;
+}
+
+.text-small {
+  font-size: 12px;
+}
+.text-tiny {
+  font-size: 11px;
+}
+
 ul,
 ol {
   padding-left: 0px;
+}
+
+
+ul#track-drag
+{
+  padding: 0;
+}
+
+ul#track-drag li
+{
+  padding: 0 0 0.5rem 0;
+}
+
+ul#track-drag li button
+{
+  padding: 0.2rem;
 }

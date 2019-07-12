@@ -8,6 +8,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => 'reload' %>
   <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track' => 'reload' %>
 
+  <%= yield(:head_stylesheet_extension) %>
+
   <%= csrf_meta_tags %>
 
   <!-- webflow -->
@@ -33,7 +35,7 @@
     <%= render 'shared/messages' %>
   </div>
 
-  <div id="main-body-container" class="container-fluid p-0">
+  <div id="main-body-container" class="container-fluid mb-4 pb-4">
     <%= yield %>
   </div>
 
