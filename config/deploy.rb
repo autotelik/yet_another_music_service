@@ -1,4 +1,10 @@
 # config valid for current version and patch releases of Capistrano
+#
+#This links the folder specified in config.assets.prefix to shared/assets. If you already use this shared folder you'll need to write your own deployment task.
+
+# It is important that this folder is shared between deployments so that remotely cached pages referencing the old compiled assets still work for the life of the cached page.
+#load 'deploy/assets'
+
 lock "~> 3.11.0"
 
 set :application, "yams"
