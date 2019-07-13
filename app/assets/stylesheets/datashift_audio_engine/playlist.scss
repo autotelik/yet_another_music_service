@@ -81,7 +81,6 @@
 }
 
 .datashift-audio-playlist li.datashift-audio-active:hover{
-  background-color: $colour-sea-green;
   color: white;
 }
 
@@ -97,5 +96,5 @@
 
 .datashift-audio-player .datashift-audio-pages li:hover{
   cursor: pointer;
-  color: $colour-off-white;
+  opacity: 50%;
 }
