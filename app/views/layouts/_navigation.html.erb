@@ -1,9 +1,9 @@
-<div data-collapse="medium" data-animation="default" data-duration="400" data-doc-height="1" class="navigation-bar w-nav centered pl-4">
-  <nav role="navigation" class="navigation-menu">
+<div data-collapse="medium" data-animation="default" data-duration="400" data-doc-height="1" class="navigation-bar w-nav centered pl-4 w-100">
+  <nav role="navigation" class="navigation-menu centered">
 
-    <%= link_to t('global.home'), main_app.root_path, class: 'navigation-link w-nav-link' %>
+    <%= link_to image_tag('logos/kyoto_drummers_logo_200x200.png', class: "avatar avatar-sm"), main_app.root_path, class: 'navigation-link w-nav-link pt-3 pb-1' %>
 
-    <%= link_to t('global.about'), main_app.page_path('about'), class: 'navigation-link w-nav-link' %>
+    <%#= link_to t('global.about'), main_app.page_path('about'), class: 'navigation-link w-nav-link' %>
 
 
     <%= render partial: 'layouts/navigation_search' %>

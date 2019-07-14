@@ -1,3 +1,9 @@
-<% content_for :title do t('terms.title', instance: Rails.application.secrets.domain_name)  end %>
+<div class="section accent">
+  <div class="w-container">
 
-<%= t('terms.body_html') %>
+    <% content_for :title do t('terms.title', instance: Rails.application.secrets.domain_name)  end %>
+
+    <%= t('terms.body_html') %>
+
+  </div>
+</div>

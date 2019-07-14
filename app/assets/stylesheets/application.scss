@@ -85,6 +85,7 @@ a.text-black{
   }
 }
 
+
 b, strong {
   font-weight: bolder;
   color: $colour-cool-mint !important;
@@ -141,6 +142,62 @@ ul.album-drop {
 
 /* YAMS */
 
+.avatar{
+  border-radius: 50%;
+  width: $spacer*3;
+  height: $spacer*3;
+  &.avatar-xs{
+    width: $spacer*2;
+    height: $spacer*2;
+  }
+  &.avatar-sm{
+    width: $spacer*3;
+    height: $spacer*3;
+  }
+  &.avatar-lg{
+    width: $spacer*5;
+    height: $spacer*5;
+  }
+  &.avatar-xlg{
+    width: $spacer*8;
+    height: $spacer*8;
+  }
+  &.avatar-square{
+    border-radius: $border-radius/2;
+  }
+}
+
+.media{
+  > .avatar:first-child{
+    margin-right: $spacer;
+    &.avatar-xs, &.avatar-sm{
+      margin-right: $spacer/2;
+    }
+  }
+}
+
+.avatar + .avatar{
+  margin-left: $spacer/2;
+}
+
+.avatar + .badge{
+  position: relative;
+  margin-left: -.75rem;
+}
+
+.avatar-lg+.avatar-lg{
+  margin-left: $spacer*2;
+}
+
+@include media-breakpoint-down(sm) {
+  .avatar{
+    &.avatar-xlg{
+      width: $spacer*5;
+      height: $spacer*5;
+    }
+  }
+}
+
 ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzone
 {
   margin-top: 1rem;
@@ -160,9 +217,8 @@ ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzon
     opacity: .75;
   }
 }
-
-#playlist-management-dashboard-with-dropzone, div.card {
-  margin-top: 1rem;
+.article {
+  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.12);
 }
 
 .audio-upload > input
@@ -294,7 +350,9 @@ div.card-body div.form-group label {
   border: 1px solid #ccc;
   transition: border-color .1s;
 }
-
+.form-group {
+  padding-bottom: ($spacer * 1) !important;
+}
 
 .footer {
   padding-top: 20px;
@@ -344,12 +402,16 @@ div.card-body div.form-group label {
 }
 
 .icon_tag {
-  color: $colour-cool-mint !important;
+  color: $colour-eerie-black !important;
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
   font-size: 20px;
   margin: 7px 9px 9px;
+}
+
+.icon_tag-light {
+  color: $colour-cool-mint !important;
 }
 
 input[type="submit"] {
@@ -387,7 +449,6 @@ div#messages_container
   }
 }
 
-
 #new-album-card {
   margin-bottom: 0;
 }
@@ -399,6 +460,10 @@ div#messages_container
 #opensource_gradient {
   border: 1px $colour-dark-green solid;
   border-radius: 50%;
+}
+
+#playlist-management-dashboard-with-dropzone, div.card {
+  margin-top: 1rem;
 }
 
 .pull-left {
@@ -427,16 +492,6 @@ div#radio-create-playlist-wrapper {
 }
 
 #show-tracks
-{
-  padding-top: $navbar-player-height;
-}
-
-#index-playlist-playlists
-{
-  padding-top: $navbar-player-height;
-}
-
-#index-album-albums
 {
   padding-top: $navbar-player-height;
 }
