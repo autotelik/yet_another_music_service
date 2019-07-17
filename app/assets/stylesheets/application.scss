@@ -218,7 +218,7 @@ ul#albums-dashboard-with-dropzone, ul#playlist-management-dashboard-with-dropzon
   }
 }
 .article {
-  box-shadow: 0 10px 0 0 rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 0 0 rgba(0, 0, 0, 0.12);
 }
 
 .audio-upload > input
@@ -299,6 +299,7 @@ div.dropdown .btn
   @extend .card-body;
   color: $colour-off-white !important;
   background: $colour-secondary !important;
+  padding: 0 0.5rem;
 }
 
 .card-body-plain {
@@ -496,7 +497,7 @@ div#radio-create-playlist-wrapper {
   padding-top: $navbar-player-height;
 }
 
-/* Drag and Drop list for selection */
+/* Drag and Drop list for selection
 .show-track-album-dropzone > div.row:nth-child(odd) {
   background: $colour-blue-grey-1;
 }
@@ -510,7 +511,7 @@ div#radio-create-playlist-wrapper {
 .show-track-playlist-dropzone > div.row:nth-child(even) {
   background: $colour-blue-grey-2;
 }
-
+*/
 .sortable_tracks_row td{
   padding: 6px 0 6px 0;
 }
