@@ -67,10 +67,6 @@ Rails.application.configure do
   # config.active_job.queue_name_prefix = "yet_another_music_site_#{Rails.env}"
   config.action_mailer.perform_caching = false
 
-  # Ignore bad email addresses and do not raise email delivery errors.
-  # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
-
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
   config.i18n.fallbacks = true
@@ -79,11 +75,14 @@ Rails.application.configure do
   config.active_support.deprecation = :notify
 
   config.action_mailer.smtp_settings = {
-    address: "mail.yams.fm",
-    port: 587,
+    address: "yams.fm",
+    # TODO OpenSSL::SSL::SSLError (hostname "yams.fm" does not match the server certificate)
+    # port: 587,
+    #enable_starttls_auto: true,
     domain: Rails.application.secrets.domain_name,
     authentication: "plain",
-    enable_starttls_auto: true,
+    port: 25,
+    enable_starttls_auto: false,
     user_name: Rails.application.secrets.email_provider_username,
     password: Rails.application.secrets.email_provider_password
   }
@@ -91,7 +90,7 @@ Rails.application.configure do
   config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
-  config.action_mailer.raise_delivery_errors = false
+  config.action_mailer.raise_delivery_errors = true
 
 
   # Use default logging formatter so that PID and timestamp are not suppressed.
