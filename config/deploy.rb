@@ -13,6 +13,11 @@ set :repo_url, "git@github.com:autotelik/yet_another_music_service.git"
 
 set :deploy_to, '/var/www/vhosts/yams.fm/apps'
 
+append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/storage'
+
+# Only keep the last 5 releases to save disk space
+set :keep_releases, 5
+
 # Defaults to :db role
 set :migration_role, :app
 
