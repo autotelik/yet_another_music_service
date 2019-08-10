@@ -76,18 +76,15 @@ Rails.application.configure do
 
   config.action_mailer.smtp_settings = {
     address: "yams.fm",
-    # TODO OpenSSL::SSL::SSLError (hostname "yams.fm" does not match the server certificate)
-    # port: 587,
-    #enable_starttls_auto: true,
     domain: Rails.application.secrets.domain_name,
     authentication: "plain",
-    port: 25,
-    enable_starttls_auto: false,
+    port: Rails.application.secrets.email_port,
+    enable_starttls_auto: Rails.application.secrets.enable_starttls_auto,
     user_name: Rails.application.secrets.email_provider_username,
     password: Rails.application.secrets.email_provider_password
   }
   # ActionMailer Config
-  config.action_mailer.default_url_options = { :host => Rails.application.secrets.domain_name }
+  config.action_mailer.default_url_options = { host: Rails.application.secrets.domain_name, protocol: 'https' }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.perform_deliveries = true
   config.action_mailer.raise_delivery_errors = true
