@@ -7,6 +7,8 @@ feature 'User profile page', :devise do
 
   before do
     login_as(me, scope: :user)
+
+    allow_any_instance_of(ApplicationController).to receive(:current_user) { me }
   end
 
   after(:each) do
@@ -20,12 +22,17 @@ feature 'User profile page', :devise do
     visit yams_core.user_path(me)
     expect(page).to have_content me.name
     expect(page).to have_content me.email
-    expect(find(:xpath, "//img[@class='avatar avatar-lg']")['src']).to match /test_image\.jpg/
+
+    within('div#registrations_show_avatar_image_tag') do
+      expect(find(:xpath, "img[@class='avatar avatar-lg']")['src']).to match /test_image\.jpg/
+    end
   end
 
-  scenario 'users has ability to edit own profile' do
+  scenario 'users has link to edit when viewing own profile' do
     visit yams_core.user_path(me)
-    expect(page).to have_css 'a.icon_tag'
+    expect(page).to have_link I18n.t(:edit, scope: :global)
+
+    expect(find(:xpath, "//a/i")['class']).to match /.*icon-pencil/
   end
 
   # Scenario: User can see another users's profile but cannot edit
@@ -36,6 +43,9 @@ feature 'User profile page', :devise do
     other = FactoryBot.create(:user, email: 'other@example.com')
     Capybara.current_session.driver.header 'Referer', root_path
     visit yams_core.user_path(other)
-    expect(page).to_not have_css 'a.icon_tag'
+
+    expect(page).to have_content other.name
+    expect(page).to have_content other.email
+    expect(page).to_not  have_link I18n.t(:edit, scope: :global)
   end
 end

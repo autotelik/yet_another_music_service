@@ -10,8 +10,8 @@ feature 'Navigation links', :devise do
 
     expect(page).to have_link(I18n.t('global.radio'))
 
-    expect(page).to have_link(I18n.t('sign_in'))
-    expect(page).to have_link(I18n.t('sign_up'))
+    expect(page).to have_link(I18n.t(:sign_in, scope: :global))
+    expect(page).to have_link(I18n.t(:sign_up, scope: :global))
 
     expect(page).to_not have_link(I18n.t(:profile, scope: :global))
     expect(page).to_not have_link(I18n.t(:tracks, scope: :global))

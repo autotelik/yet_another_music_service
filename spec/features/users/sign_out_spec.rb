@@ -14,8 +14,8 @@ feature 'Sign out', :devise do
     signin(user.email, user.password)
     expect(page).to have_content I18n.t 'devise.sessions.signed_in'
 
-    within('.navbar') do
-      click_link 'Sign out'
+    within('.navigation-menu') do
+      click_link I18n.t(:sign_out, scope: :global)
     end
 
     expect(page).to have_content I18n.t 'devise.sessions.signed_out'

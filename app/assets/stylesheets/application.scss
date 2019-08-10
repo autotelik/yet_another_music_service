@@ -411,7 +411,7 @@ div.card-body div.form-group label {
   margin: 7px 9px 9px;
 }
 
-.icon_tag-light {
+.icon-tag-light {
   color: $colour-cool-mint !important;
 }
 
@@ -486,15 +486,12 @@ div#radio-create-playlist-wrapper {
   text-align: center;
 }
 
-// Need to shift these down to accommodate our navbar and player at top
 #show-artists
 {
-  padding-top: $navbar-player-height;
 }
 
 #show-tracks
 {
-  padding-top: $navbar-player-height;
 }
 
 /* Drag and Drop list for selection
@@ -595,6 +592,9 @@ section#tracks_index_section.track-listing h1
   color: $colour-cool-mint !important;
 }
 
+.text-large {
+  font-size: 1.75rem;
+}
 .text-small {
   font-size: 12px;
 }

@@ -103,6 +103,7 @@ end
 
 group :test do
   gem 'capybara', '~> 2.13'
+  gem 'capybara-email'
 
   # On Centos - QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
   #

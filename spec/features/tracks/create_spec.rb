@@ -12,18 +12,17 @@ feature 'Create Tracks', tracks: true do
   scenario 'visit new brings up upload form' do
     visit yams_core.new_track_path
 
-    expect(page).to have_xpath('//*[@id="taglist-track-"]')
+    expect(page).to have_xpath('//select[@name="track[tag_list][]"]')
     expect(page).to have_xpath('//input[@type="file"]')
     expect(page).to have_xpath('//*[@id="yamscore::cover--file-input"]')
   end
 
   context 'No cover supplied' do
     before do
-      DefaultCover.create!(kind: :track, image: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"))
-      # DefaultCover.create!(kind: :album, image: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"))
+      DefaultCover.create!(kind: :track).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
     end
 
-    scenario 'creates a new track with a default cover' do
+    scenario 'creates a new track with a default cover', ffs: true do
       visit yams_core.new_track_path
 
       page.attach_file('track[audio]', fixture_file('/files/test.wav'))
