@@ -118,38 +118,27 @@ p {
   background-color: #2e80b6;
 }
 
-.navigation-link {
-  left: 0px;
-  -webkit-transition: all 300ms ease-in-out;
-  transition: all 300ms ease-in-out;
-  color: #edeff2;
-}
-
-.navigation-link:hover {
-  color: #2e9dff;
-}
-
-.navigation-link.w--current {
-  font-family: Inconsolata, monospace;
-}
 
 .navigation-bar {
-    right: 0px;
-    display: block;
-    margin-left: 0px;
-    padding-left: 0px;
-    float: none;
-    clear: both;
-    grid-auto-columns: 1fr;
-    grid-column-gap: 16px;
-    grid-row-gap: 16px;
-    -ms-grid-columns: 1fr 1fr;
-    grid-template-columns: 1fr 1fr;
-    -ms-grid-rows: auto auto;
-    grid-template-rows: auto auto;
-    background-color: #2d3e4f;
-    font-family: Inconsolata, monospace;
-    color: #edeff2;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+  right: 0px;
+  display: block;
+  margin-left: 0px;
+  padding-left: 0px;
+  float: none;
+  clear: both;
+  grid-auto-columns: 1fr;
+  grid-column-gap: 16px;
+  grid-row-gap: 16px;
+  -ms-grid-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr;
+  -ms-grid-rows: auto auto;
+  grid-template-rows: auto auto;
+  background-color: #2d3e4f;
+  font-family: Inconsolata, monospace;
+  color: #edeff2;
 }
 
 .brand-text {
@@ -390,11 +379,6 @@ p {
 
 .form {
   margin-top: 40px;
-}
-
-.nav-link {
-  right: 0px;
-  float: right;
 }
 
 .paragraph {

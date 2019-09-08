@@ -1,0 +1,9 @@
+
+<%= link_to t('global.radio'), yams_core.radio_path, method: :post, class: 'navigation-link w-nav-link' %>
+
+<% if user_signed_in? %>
+  <%= link_to t(:playlists, scope: :global), yams_core.playlists_path, class: 'navigation-link w-nav-link' %>
+  <!--<li class='nav-item'><%#= link_to t('global.tracks'), tracks_path, class: 'nav-link border-right' %></li>-->
+  <%= link_to t('global.albums'), yams_core.albums_path, class: 'navigation-link w-nav-link' %>
+  <!--<li class='nav-item'><%#= link_to t('global.artists'), '/artists', class: 'nav-link border-right' %></li>-->
+<% end %>

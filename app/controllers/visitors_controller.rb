@@ -2,8 +2,6 @@
 
 class VisitorsController < ApplicationController
 
-  layout 'pages'
-
   def index; end
 
 end

@@ -3,10 +3,10 @@
   <div data-ix="new-interaction" class="w-container">
     <h1 class="hero-heading">Yet Another music service</h1>
     <div >
-      <div class="hero-subheading">A new take on music sharing<br><br>built by musIcians<br>‍<br> for musIcians<br>‍</div>
+      <div class="hero-subheading">A new take on music sharing<br><br>built by musicians<br>‍<br> for musicians<br>‍</div>
         <div>
-          <a href="#" class="button">sign up</a>
-          <a href="#" class="hollow-button all-caps">Learn more</a>
+          <%= link_to t(:sign_up, scope: :global), yams_core.new_user_registration_path, class: 'button' %>
+          <%= link_to t(:learn_more, scope: :global), main_app.page_path(:about), class: 'hollow-button all-caps' %>
         </div>
     </div>
   </div>

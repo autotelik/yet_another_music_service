@@ -7,18 +7,20 @@ describe 'User', type: :feature do
   def fill_in_email(email = "tester@example.tld")
     fill_in "user_email", with: email
   end
-  
+
   def submit
     click_button "Create account"
   end
-  
+
   context 'User register' do
 
     scenario "with valid details" do
 
       visit root_path
 
-      click_link I18n.t(:sign_up, scope: :global)
+      within('.navbar') do
+        click_link I18n.t(:sign_up, scope: :global)
+      end
 
       expect(current_path).to eq(yams_core.new_user_registration_path)
 
