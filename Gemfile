@@ -43,9 +43,6 @@ gem 'aws-sdk-s3', require: false
 gem 'bootstrap', '~> 4.3.1'
 gem 'bourbon'
 
-gem 'devise'
-gem 'devise-jwt', '~> 0.5.7'          # Tokens
-gem 'devise_invitable'                # An invitation strategy for devise
 gem 'dotenv', '~> 2.5.0'
 gem 'dotenv-rails', '~> 2.5.0', require: 'dotenv/rails-now'
 

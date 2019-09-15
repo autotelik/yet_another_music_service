@@ -26,7 +26,7 @@ PATH
       bourbon
       coffee-rails (~> 4.2)
       devise
-      devise-jwt (~> 0.5.7)
+      devise-jwt
       devise_invitable
       elasticsearch-model (~> 5.1.0)
       elasticsearch-rails (~> 5.1.0)
@@ -197,9 +197,9 @@ GEM
       railties (>= 4.1.0)
       responders
       warden (~> 1.2.3)
-    devise-jwt (0.5.9)
+    devise-jwt (0.6.0)
       devise (~> 4.0)
-      warden-jwt_auth (~> 0.3.6)
+      warden-jwt_auth (~> 0.4)
     devise_invitable (2.0.1)
       actionmailer (>= 5.0)
       devise (>= 4.6)
@@ -522,7 +522,7 @@ GEM
     uniform_notifier (1.12.1)
     warden (1.2.8)
       rack (>= 2.0.6)
-    warden-jwt_auth (0.3.6)
+    warden-jwt_auth (0.4.0)
       dry-auto_inject (~> 0.6)
       dry-configurable (~> 0.8)
       jwt (~> 2.1)
@@ -556,9 +556,6 @@ DEPENDENCIES
   database_cleaner
   datashift!
   datashift_audio_engine!
-  devise
-  devise-jwt (~> 0.5.7)
-  devise_invitable
   dotenv (~> 2.5.0)
   dotenv-rails (~> 2.5.0)
   elasticsearch-model (~> 5.1.0)
