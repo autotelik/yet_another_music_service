@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '>= 2.5.0'
+ruby '>= 2.6.0'
 
 # TODO: remove once dev complete move to core gemspec
 if File.exists?('../datashift_audio_engine')

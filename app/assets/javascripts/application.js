@@ -13,7 +13,6 @@
 // N.B popper must come before bootstrap and turbolinks
 //
 //= require jquery3
-//= require activestorage
 //= require popper
 //= require bootstrap
 //= require turbolinks
@@ -22,4 +21,6 @@
 //= require select2-full
 //= require webflow
 //= require datashift_audio_engine
+//= require yams_core
 //= require_tree .
+
