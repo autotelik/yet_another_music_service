@@ -17,6 +17,8 @@
  *= require webflow/webflow
  *= require webflow/yams-webflow
 */
+@import "yams_core/file_upload";
+
 @import "yams_default_theme/bootstrap-custom";
 @import "yams_default_theme/direct_uploads";
 @import "yams_default_theme/variables";

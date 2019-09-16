@@ -95,7 +95,6 @@ task :container_admin do
   on roles(:app) do
     within current_path do  # TOFIX: does not seem to work - still need to cd to /var/www/vhosts/yams.fm/apps/current
       begin
-        #cd /var/www/vhosts/yams.fm/apps/current
         execute "cd /var/www/vhosts/yams.fm/apps/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
       rescue => e
       end
@@ -112,6 +111,13 @@ task :container_admin do
       rescue => e
         puts "Container admin failed : #{e.inspect}"
       end
+
+      begin
+        execute "cd /var/www/vhosts/yams.fm/apps/current && touch tmp/restart.txt"
+      rescue => e
+        puts "Elastic Search Container admin failed : #{e.inspect}"
+      end
+
     end
   end
 end

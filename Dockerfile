@@ -1,5 +1,5 @@
-# Rails 5 - https://github.com/phusion/passenger-docker/blob/master/Changelog.md
-FROM phusion/passenger-ruby25:0.9.35
+# Rails 5/Ruby 2.6 - https://hub.docker.com/r/phusion/passenger-ruby26
+FROM phusion/passenger-ruby26:latest
 
 RUN gem install --no-ri --no-rdoc bundler
 
