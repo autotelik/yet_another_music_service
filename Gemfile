@@ -28,6 +28,7 @@ end
 
 # RAILS
 gem 'rails', '~> 5.2.1'
+gem 'rack', '2.0.8'
 
 gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'

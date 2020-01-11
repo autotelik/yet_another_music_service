@@ -43,7 +43,7 @@ PATH
       nokogiri (>= 1.8.5)
       pg (~> 0.18)
       pundit
-      rails (~> 5.2.1)
+      rails (= 5.2.4.1)
       rails-settings-cached
       rails_event_store
       rails_sortable (~> 1.2.1)
@@ -364,7 +364,7 @@ GEM
     public_suffix (4.0.3)
     pundit (2.1.0)
       activesupport (>= 3.0.0)
-    rack (2.1.0)
+    rack (2.0.8)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
@@ -603,6 +603,7 @@ DEPENDENCIES
   mini_racer
   pg (~> 0.18)
   pundit
+  rack (= 2.0.8)
   rails (~> 5.2.1)
   rails-controller-testing
   rails_event_store-rspec

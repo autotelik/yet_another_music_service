@@ -135,16 +135,20 @@ rake db:seed
 
 ##### Loading Sample Audio Data
 
-Example data can be bulked uploaded from Excel spreadsheet containing details of tracks and covers.
+Example data can be **bulk uploaded** from Excel spreadsheet containing details of tracks and covers.
 
-There is a starter pack of my music and images available Free, click the Download button (top right), 
-and save o local hard drive, via this link : 
+There is a starter pack of my music and images available Free, by visiting this link
 
-- 
+https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=1
 
-Save the contents to `/tmp` - which is the path hardcoded in the loading spreadsheet : `db/seed/aqwan_tracks.xls`
+If download does not start automatically, there should be a a Download button top right.
+
+Save to /tmp on your local hard drive: 
+
+
+> If you save elsewhere, open up the loading spreadsheet, `db/seed/aqwan_tracks.xls`, and change the `/tmp` path hardcoded in there.
  
->The development artist user is assigned by default in the spreadsheet, so edit this to assign tracks to a different user.
+> The development artist user is assigned by default in the spreadsheet, again edit in th4 spreadsheet to change.
 
 Run
 
@@ -168,6 +172,6 @@ Credits
 
 License
 -------
-@copyright thomas statter @ autotelik
+@copyright aqwan @ autotelik
 
 open source
