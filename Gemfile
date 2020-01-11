@@ -93,11 +93,11 @@ gem 'sidekiq'
 gem 'mini_racer'#, platform: :ruby
 gem 'tzinfo-data'
 
-#if File.exist?('../yams_core')
+if File.exist?('../yams_core')
   gem 'yams_core', path: '../yams_core'
-#else
-#  gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
-#end
+else
+  gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
+end
 
 group :development do
   gem 'bullet'
