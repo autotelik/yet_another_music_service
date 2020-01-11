@@ -1,4 +1,8 @@
 $colour-blue-grey:      #637079;
+$colour-border-break:   #d5d5e0;
+
+$colour-btc-orange:     #f7931a;
+
 $colour-cool-mint:      #dafcff;
 
 $colour-dark-green:     #090c03;
@@ -14,11 +18,9 @@ $colour-off-white:      #f0eceb;
 $colour-sea-green:      #2d7174;
 
 $colour-gun-metal-blue: #273043;
-$colour-iceberg-blue:   #74B3CE;
 $colour-steel-teal:     #508991;
-$colour-bright-blue:    #12e6ff;
 
-$colour-navbar-blue:    #2d3e4f;
+
 
 $colour-eerie-black:    #0D0118;
 $colour-rich-black:     #020202;
@@ -26,11 +28,9 @@ $colour-rich-black:     #020202;
 $colour-danger-red:     #D1495B;
 
 // Backgrounds
-$colour-default-body: #192024;
+$colour-default-body:     #192024;
 $colour-theme-background: #192024;
-
-$colour-theme-background-1:    #343a40;
-$colour-theme-background-2:    #343a42;
+$colour-audio-player:     #2d3e4f;
 
 $colour-secondary: $colour-gun-metal-blue;
 
@@ -47,3 +47,5 @@ $navbar-player-height: 155px;
 $navbar-player-spacer: 79px;
 
 $navbar-padding: 0.75rem 1.5rem;
+
+$footer-height: 320px;

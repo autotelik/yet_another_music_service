@@ -140,7 +140,7 @@ Example data can be bulked uploaded from Excel spreadsheet containing details of
 There is a starter pack of my music and images available Free, click the Download button (top right), 
 and save o local hard drive, via this link : 
 
-- https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=0
+- 
 
 Save the contents to `/tmp` - which is the path hardcoded in the loading spreadsheet : `db/seed/aqwan_tracks.xls`
  

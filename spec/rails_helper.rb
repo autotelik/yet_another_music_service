@@ -81,6 +81,9 @@ RSpec.configure do |config|
   include RspecFileHelpers
 end
 
+require 'sidekiq/testing'
+Sidekiq::Testing.fake!
+
 FactoryBot::SyntaxRunner.send(:include, RspecFileHelpers)
 
 Shoulda::Matchers.configure do |config|

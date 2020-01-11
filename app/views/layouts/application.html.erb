@@ -23,25 +23,34 @@
 </head>
 
 <body>
-  <%= render 'layouts/navigation' %>
 
-  <%= yield :audio_player_in_navbar %>
+  <div id="app-container">
 
-  <!-- player insertion point via UJS -->
-  <span id="navbar-audio-player-insertion-point" class="col-12 w-hidden"></span>
+    <div id="app-header">
+      <%= render 'layouts/navigation' %>
 
+      <%= yield :audio_player_in_navbar %>
 
-  <div id="messages_container" class="container-fluid p-0 m-0">
-    <%= render 'shared/messages' %>
+      <!-- player insertion point via UJS -->
+      <span id="navbar-audio-player-insertion-point" class="col-12 w-hidden"></span>
+    </div>
+
+    <div id="app-body">
+
+      <div id="messages_container" class="container-fluid p-0 m-0">
+        <%= render 'shared/messages' %>
+      </div>
+
+      <%= yield %>
+
+      <%= yield(:body_extension) %>
+    </div>
+
+    <div id="app-footer">
+      <%= render 'shared/footer' %>
+    </div>
+
   </div>
-
-  <div id="main-body-container" class="container-fluid mb-4 pb-4">
-    <%= yield %>
-  </div>
-
-  <%= render 'shared/footer' %>
-
-  <%= yield(:body_extension) %>
 
 </body>
 </html>

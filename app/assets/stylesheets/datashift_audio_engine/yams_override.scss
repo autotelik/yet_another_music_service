@@ -1,5 +1,20 @@
 /* YAMS - OVER RIDES OF THE ENGINE AND PLAYER SPECIFIC STYLES*/
 
+.datashift-audio-author-name {
+  font-size: 18px;
+  color: $colour-cool-mint !important;
+}
+
+#datashift-audio-player {
+  background-color: $colour-audio-player;
+  border-top: 1px solid $colour-blue-grey;
+  border-bottom: 1px solid $colour-blue-grey;
+}
+
+#datashift-audio-player-track_cover
+{
+  padding-left: 32px;
+}
 #navbar-container
 {
   border-bottom: 1px solid whitesmoke;
@@ -31,13 +46,14 @@
 .datashift-audio-playlist li{
   display: block;
   transition: 0.25s;
-  padding: 10px;
   color: ghostwhite;
+  padding: 8px 0 8px 0;
+  border-top: 1px solid $colour-gun-metal-blue;
 }
 
 .datashift-audio-playlist li *{
   display: inline-block;
-  padding-left: 5px;
+  padding: 0;
   cursor: pointer;
 }
 
@@ -64,7 +80,6 @@
   color: ghostwhite;
   text-decoration: none;
 }
-
 
 .datashift-audio-playlist li .full-name{
   padding: 0px 10px;
@@ -99,7 +114,42 @@
   opacity: 50%;
 }
 
+.datashift-audio-playlist-content{
+  display: inline-block;
+  width: 100%;
+  margin-top: 16px;
+}
+
+.datashift-audio-track-basic-info {
+  padding-left: 32px;
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 100;
+}
+
+#datashift-audio-track-playlist-wrapper-row
+{
+  padding: 0;
+
+}
+#datashift-audio-track-volume {
+  float: right;
+  margin-right: 32px;
+}
+
 .datashift-user-track-playlist h6
 {
   color:  $colour-cool-mint !important;
 }
+
+#datashift-audio-wave-controls {
+  text-align: center;
+  padding-bottom: 8px;
+  padding-top: 4px;
+}
+
+#radio-create-playlist-wrapper {
+  margin-left: 48px;
+  margin-top: 16px;
+}
+

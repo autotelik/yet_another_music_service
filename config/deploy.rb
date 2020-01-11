@@ -13,6 +13,8 @@ set :repo_url, "git@github.com:autotelik/yet_another_music_service.git"
 
 set :deploy_to, '/var/www/vhosts/yams.fm/apps'
 
+set :server_ruby, '/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.6.4/wrappers/ruby'
+
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'storage'
 
 # Only keep the last 5 releases to save disk space
@@ -95,25 +97,25 @@ task :container_admin do
   on roles(:app) do
     within current_path do  # TOFIX: does not seem to work - still need to cd to /var/www/vhosts/yams.fm/apps/current
       begin
-        execute "cd /var/www/vhosts/yams.fm/apps/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle install --no-deployment --without development test"
+        execute "cd #{deploy_to}/current && #{fetch(:server_ruby)} -S bundle install --no-deployment --without development test"
       rescue => e
       end
 
       begin
-        execute "cd /var/www/vhosts/yams.fm/apps/current && /var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec rake assets:precompile RAILS_ENV=production"
+        execute "cd #{deploy_to}/current && #{fetch(:server_ruby)} -S bundle exec rake assets:precompile RAILS_ENV=production"
       rescue => e
         puts "Assets precompile failed : #{e.inspect}"
       end
 
       begin
         # Sort out any issues with permissions etc
-        execute "cd /var/www/vhosts/yams.fm/apps/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
+        execute "cd #{deploy_to}/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
       rescue => e
         puts "Container admin failed : #{e.inspect}"
       end
 
       begin
-        execute "cd /var/www/vhosts/yams.fm/apps/current && touch tmp/restart.txt"
+        execute "cd #{deploy_to}/current && touch tmp/restart.txt"
       rescue => e
         puts "Elastic Search Container admin failed : #{e.inspect}"
       end
@@ -128,7 +130,7 @@ task :searchkick_reindex do
   on roles(:app) do
     within current_path do
       begin
-        execute '/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.5.1/wrappers/ruby -S bundle exec thor yams:search_index:build'
+        execute "#{fetch(:server_ruby)} -S bundle exec thor yams:search_index:build"
       rescue
       end
     end

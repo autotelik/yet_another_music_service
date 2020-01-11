@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
 
   mount YamsCore::Engine, at: "/"
+  mount YamsEvents::Engine, at: "/ecommerce"
 
   root to: 'visitors#index'
 

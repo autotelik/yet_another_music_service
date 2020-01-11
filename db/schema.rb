@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_02_103434) do
+ActiveRecord::Schema.define(version: 2020_03_01_144652) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pgcrypto"
@@ -64,6 +64,8 @@ ActiveRecord::Schema.define(version: 2019_03_02_103434) do
     t.integer "mode"
     t.datetime "on"
     t.datetime "expires"
+    t.jsonb "meta_data", default: {}
+    t.index ["meta_data"], name: "index_availables_on_meta_data", using: :gin
     t.index ["mode"], name: "index_availables_on_mode"
     t.index ["type_id", "type_type", "mode"], name: "index_availables_on_type_id_and_type_type_and_mode", unique: true
     t.index ["type_type", "type_id"], name: "index_availables_on_type_type_and_type_id"
@@ -133,6 +135,26 @@ ActiveRecord::Schema.define(version: 2019_03_02_103434) do
     t.datetime "updated_at", null: false
   end
 
+  create_table "line_items", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "order_id"
+    t.bigint "amount"
+    t.integer "currency"
+    t.index ["order_id"], name: "index_line_items_on_order_id"
+    t.index ["product_id"], name: "index_line_items_on_product_id"
+  end
+
+  create_table "orders", force: :cascade do |t|
+    t.string "number", limit: 32
+    t.string "aasm_state"
+    t.integer "user_id"
+    t.datetime "completed_at"
+    t.integer "currency"
+    t.string "last_ip_address"
+    t.integer "store_id"
+    t.index ["store_id"], name: "index_orders_on_store_id"
+  end
+
   create_table "playlist_tracks", force: :cascade do |t|
     t.bigint "playlist_id"
     t.bigint "track_id"
@@ -150,6 +172,36 @@ ActiveRecord::Schema.define(version: 2019_03_02_103434) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_playlists_on_name"
     t.index ["user_id"], name: "index_playlists_on_user_id"
+  end
+
+  create_table "prices", force: :cascade do |t|
+    t.bigint "product_id"
+    t.bigint "amount"
+    t.integer "currency"
+    t.index ["product_id"], name: "index_prices_on_product_id"
+  end
+
+  create_table "products", force: :cascade do |t|
+    t.string "sellable_type"
+    t.bigint "sellable_id"
+    t.integer "available_for"
+    t.string "slug"
+    t.text "meta_description"
+    t.string "meta_keywords"
+    t.string "meta_title"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["available_for"], name: "index_products_on_available_for"
+    t.index ["sellable_type", "sellable_id"], name: "index_products_on_sellable_type_and_sellable_id"
+    t.index ["slug"], name: "index_products_on_slug"
+  end
+
+  create_table "settings", force: :cascade do |t|
+    t.string "var", null: false
+    t.text "value"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["var"], name: "index_settings_on_var", unique: true
   end
 
   create_table "taggings", id: :serial, force: :cascade do |t|
@@ -242,9 +294,12 @@ ActiveRecord::Schema.define(version: 2019_03_02_103434) do
   add_foreign_key "album_tracks", "albums"
   add_foreign_key "album_tracks", "tracks"
   add_foreign_key "albums", "users"
+  add_foreign_key "line_items", "orders"
+  add_foreign_key "line_items", "products"
   add_foreign_key "playlist_tracks", "playlists"
   add_foreign_key "playlist_tracks", "tracks"
   add_foreign_key "playlists", "users"
+  add_foreign_key "prices", "products"
   add_foreign_key "tracks", "licenses"
   add_foreign_key "tracks", "users"
 end
