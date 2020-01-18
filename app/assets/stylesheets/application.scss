@@ -10,6 +10,7 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require select2
 */
 @import "font-awesome";
 @import "normalize";
@@ -18,9 +19,12 @@
 @import "bootstrap";
 
 // YAMS Engines
-@import "yams_core/file_upload";
 @import "yams_theme/variables";
+
+@import "yams_theme/cover_file_upload";
+@import "yams_theme/file_upload";
 @import "yams_theme/pages";
+
 @import "datashift_audio_engine/datashift_audio_engine";
 @import "datashift_audio_engine/yams_override";
 
@@ -52,6 +56,7 @@ body {
 }
 
 #app-body {
+  margin-top: 32px;
   padding-bottom: $footer-height;
 }
 
@@ -67,6 +72,9 @@ body {
 a {
   text-decoration: none !important;
   transition: opacity .2s ease;
+  background-color: transparent;
+  font-size: 18px;
+  color: $colour-links;
 }
 
 .avatar{
@@ -98,21 +106,55 @@ a {
   border-top: 1px solid $colour-border-break;
 }
 
+button,
+input,
+optgroup,
+select,
+textarea {
+  color: $colour-rich-black;
+}
+
+input[type="submit"] {
+  color:      $colour-submit-btn-text;
+  background: $colour-submit-btn;
+  font-weight: bolder;
+}
+
+.btn {
+  //background: #508991 !important;
+}
 
 .btn-download-track {
   padding: 4px !important;
   color: $colour-btc-orange !important;
   background: $colour-rich-black !important;
+  border: 1px solid $colour-borders;
 }
+
+.btn-dropdown {
+  background-color: $colour-cool-mint !important;
+}
+
+.btn-dropdown-toggle-no-arrow:after {
+  display: none !important; /* just [...] no arrow */
+}
+
 
 .card {
   color: $colour-off-white !important;
   background: #090c03 !important;
   word-wrap: break-word;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background-clip: border-box;
+  border: 1px solid rgba(0,0,0,0.125);
+  border-radius: 0.25rem;
 }
 
 .card-body {
-  background: #273043 !important;
+  background: $colour-theme-background !important;
   padding: 0 0.5rem;
 }
 
@@ -147,6 +189,11 @@ form {
   bottom: 0px;
 }
 
+div.footer h5
+{
+  padding-bottom: 8px;
+}
+
 .footer-link {
   margin-right: 6px;
   margin-left: 6px;
@@ -171,10 +218,24 @@ form {
   font-size: 16px;
 }
 
+.form-control-yams {
+  color: #495057;
+  display: block;
+  width: 75%;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color .1s;
+}
+
 .fullwidth-image {
   width: 100%;
   margin-bottom: 20px;
 }
+
 h1, h2, h3, h4, h5, h6 {
   margin-bottom: 0.5rem;
   font-weight: 500;
@@ -191,17 +252,24 @@ h3 {
 h5 {
   font-size: 1.25rem;
   line-height: 20px;
-  margin-top: 0px;
+  margin: 0px;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: white;
 }
 
+h5.text-light {
+  color: #c7c7b0 !important;
+}
 
 h3.album-track, h5.album-track {
   color: $colour-green-blue !important;
   font-weight: bolder;
 
+}
+
+h6 {
+  margin: 0px;
 }
 
 img {
@@ -216,6 +284,10 @@ img {
 .image-wrapper {
   width: 20%;
   text-align: center;
+}
+
+.material-icons-small {
+  font-size: 16px;
 }
 
 nav {
@@ -302,9 +374,7 @@ nav {
   }
 }
 
-ol,
-ul
-{
+ol{
   margin: 0; padding: 0;
 }
 
@@ -315,6 +385,10 @@ p {
   font-size: 14px;
   line-height: 25px;
   font-weight: 300;
+}
+
+p.light {
+  color: $colour-off-white;
 }
 
 .row {
@@ -329,8 +403,30 @@ p {
   text-align: center;
 }
 
+.single_list_item_headers
+{
+  vertical-align: middle;
+  padding-bottom: 8px;
+  border-bottom: 1px solid $colour-borders;
+}
+
+.single_list_item_headers i.material-icons
+{
+  vertical-align: middle;
+}
+
+strong {
+  font-weight: bolder;
+}
+
 .text-light {
   color: $colour-off-white !important;
+}
+
+ul
+{
+  margin: 0; padding: 0;
+  list-style-type: none;
 }
 
 .white-text {

@@ -1,0 +1,149 @@
+#album-albums-index ul li
+{
+  display: block;
+  vertical-align: middle;
+  color: ghostwhite;
+  padding: 8px 0 8px 0;
+  border-bottom: 1px solid $colour-gun-metal-blue;
+}
+
+
+#datashift-audio-album-wrapper ul li.row.single_list_item_headers {
+}
+
+
+.draggable-track-row {
+  border-bottom: 1px solid $colour-borders;
+  padding-bottom: 8px;
+  padding-top: 8px;
+}
+
+.front-page-section {
+  padding-top: 242px;
+  padding-bottom: 242px;
+}
+
+.front-page-section.centered {
+  padding-top: 89px;
+  padding-bottom: 195px;
+  border-bottom: 4px solid #69b9ff;
+  background-image: linear-gradient(180deg, #101010, rgba(46, 157, 255, 0.32)), image-url('webflow/kyoto_drummers_comic.jpg');
+  background-position: 0px 0px, 50% 50%;
+  background-size: auto, cover;
+  font-family: Inconsolata, monospace;
+  text-align: center;
+}
+
+.front-page-heading {
+  margin-bottom: 40px;
+  color: #fff;
+  font-size: 60px;
+  line-height: 60px;
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+}
+
+.front-page-subheading {
+  margin-bottom: 40px;
+  color: #ffc62a;
+  font-size: 25px;
+  line-height: 25px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+}
+
+.grid-image {
+  display: block;
+  width: 60%;
+  margin: 20px auto;
+  padding: 4px;
+  border: 2px solid #fff;
+  border-radius: 18%;
+  background-color: #1f517e;
+  box-shadow: 0 0 0 1px #2e9dff;
+  opacity: 1;
+}
+
+#playlist-playlists-index {
+  margin-left: 48px;
+  margin-top: 16px;
+  padding-left: 0;
+}
+
+#playlist-playlists-index ul{
+  margin-top: 16px;
+}
+
+#playlist-playlists-index ul li
+{
+  display: block;
+  vertical-align: middle;
+  color: ghostwhite;
+  padding: 8px 0 8px 0;
+  border-bottom: 1px solid $colour-gun-metal-blue;
+}
+
+.section {
+  position: relative;
+  padding: 40px 10px;
+  background-color: #fff;
+  font-family: Inconsolata, monospace;
+  text-align: center;
+}
+
+.section.accent {
+  background-color: #192024;
+}
+
+.section-title-group {
+  margin-bottom: 60px;
+}
+
+.section-heading {
+  margin-top: 0px;
+  margin-bottom: 0px;
+}
+
+.section-heading.centered {
+  font-family: Inconsolata, monospace;
+  color: #676770;
+  font-size: 30px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+}
+
+.section-heading.centered.white {
+  color: #fff;
+}
+
+.section-subheading.center {
+  color: #8e8e9c;
+  font-size: 18px;
+  font-weight: 300;
+  text-align: center;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  margin-top: 10px;
+}
+
+.show-track.card-body div.row
+{
+  padding-bottom: 16px;
+}
+
+.white-box {
+  padding: 15px;
+  border: 1px solid #dcebf7;
+  border-radius: 5px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.white-box.transparent {
+  border-style: none;
+  background-color: transparent;
+}
