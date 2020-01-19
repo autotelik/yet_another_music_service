@@ -1,8 +1,7 @@
 // Vars and Reset
 //
-$theme:       #454cad;
-$dark-text:   #5f6982;
 
+$dark-text:   #5f6982;
 
 // Cover Images
 
@@ -25,10 +24,10 @@ $dark-text:   #5f6982;
     background-size: contain;
 
     &:hover {
-      border-color: $theme;
+      border-color: $colour-purple;
     }
     &.hover {
-      border: 3px solid $theme;
+      border: 3px solid $colour-purple;
       box-shadow: inset 0 0 0 6px #eee;
 
       #start {
@@ -135,11 +134,11 @@ $dark-text:   #5f6982;
   }
 
   .progress[value]::-webkit-progress-value {
-    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    background: linear-gradient(to right, darken($colour-purple,8%) 0%, $colour-dark-purple 50%);
     border-radius: 4px;
   }
   .progress[value]::-moz-progress-bar {
-    background: linear-gradient(to right, darken($theme,8%) 0%, $theme 50%);
+    background: linear-gradient(to right, darken($colour-purple,8%) 0%, $colour-dark-purple 50%);
     border-radius: 4px;
   }
 
@@ -169,8 +168,8 @@ $dark-text:   #5f6982;
     color: #fff;
     transition: all 0.2s ease-in-out;
     box-sizing: border-box;
-    background: $theme;
-    border-color: $theme;
+    background: $colour-dark-purple;
+    border-color: $colour-purple;
     cursor: pointer;
   }
 }

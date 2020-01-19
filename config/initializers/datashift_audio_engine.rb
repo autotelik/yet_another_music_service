@@ -35,13 +35,8 @@ DatashiftAudioEngine::Config.configure do |config|
 
   # Waveform colors.
   #
-  #config.wave_color = '#729f98'
-  #config.progress_color = '#729f98'
-  #config.cursor_color = '#729f98'
-  #
-  # width in pixels
-  # config.bar_width;
-  #
-
+  config.wave_color     = '#f7931a'
+  config.progress_color = '#c7630a'
+  config.cursor_color   = '#010101'
 
 end

@@ -121,7 +121,11 @@ input[type="submit"] {
 }
 
 .btn {
-  //background: #508991 !important;
+
+}
+
+.btn-danger {
+  background: #dc3545 !important;
 }
 
 .btn-download-track {
@@ -158,11 +162,19 @@ input[type="submit"] {
   padding: 0 0.5rem;
 }
 
-.card-header {
+.card-header, .card-header-light {
   margin-bottom: 0;
-  background-color: rgba(0, 0, 0, 0.03);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-color: $colour-card-header;
+  border-bottom: 1px solid #090c03;
   padding: 0.25rem 0.5rem;
+}
+
+.card-header-light {
+  background-color: $colour-card-header-light;
+}
+
+.card-header-drag-drop {
+  background-color: $colour-card-header-drag-drop;
 }
 
 .content-wrapper {
@@ -260,12 +272,6 @@ h5 {
 
 h5.text-light {
   color: #c7c7b0 !important;
-}
-
-h3.album-track, h5.album-track {
-  color: $colour-green-blue !important;
-  font-weight: bolder;
-
 }
 
 h6 {
@@ -403,6 +409,11 @@ p.light {
   text-align: center;
 }
 
+.select2-container--default .select2-selection--multiple .select2-selection__choice {
+  background-color: $colour-purple;
+  color: $colour-rich-black;;
+}
+
 .single_list_item_headers
 {
   vertical-align: middle;
@@ -417,6 +428,17 @@ p.light {
 
 strong {
   font-weight: bolder;
+}
+
+.table th,
+.table td {
+  padding-bottom: 8px;
+  padding-top: 8px;
+  border-top: 1px solid $colour-borders;
+}
+
+.tag-list {
+  font-size: 10px;
 }
 
 .text-light {

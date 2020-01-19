@@ -6,15 +6,17 @@
 }
 
 #datashift-audio-player {
-  background-color: $colour-audio-player;
-  border-top: 1px solid $colour-blue-grey;
+  background-color:        $colour-audio-player;
+  border-top: 1px solid    $colour-blue-grey;
   border-bottom: 1px solid $colour-blue-grey;
 }
 
 #datashift-audio-player-track_cover
 {
   padding-left: 32px;
+  padding-top: 8px;
 }
+
 #navbar-container
 {
   border-bottom: 1px solid whitesmoke;
@@ -121,9 +123,9 @@
 
 .datashift-audio-track-basic-info {
   padding-left: 32px;
-  font-size: 24px;
-  line-height: 1.2;
-  font-weight: 100;
+  font-size:    18px;
+  line-height:  1.2;
+  font-weight:  100;
 }
 
 #datashift-audio-track-playlist-wrapper-row
@@ -138,7 +140,7 @@
 
 .datashift-user-track-playlist h6
 {
-  color:  $colour-cool-mint !important;
+  color: $colour-cool-mint !important;
 }
 
 #datashift-audio-wave-controls {

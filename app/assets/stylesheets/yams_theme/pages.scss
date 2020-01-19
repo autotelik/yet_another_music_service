@@ -66,6 +66,11 @@
   opacity: 1;
 }
 
+h3.album-track, h5.album-track {
+  color: $colour-grey-white !important;
+  font-weight: bolder;
+}
+
 #playlist-playlists-index {
   margin-left: 48px;
   margin-top: 16px;
@@ -108,9 +113,6 @@
 
 .section-heading.centered {
   font-family: Inconsolata, monospace;
-  color: #676770;
-  font-size: 30px;
-  font-weight: 300;
   text-align: center;
   letter-spacing: 5px;
   text-transform: uppercase;
