@@ -6,17 +6,17 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '>= 2.6.0'
+ruby '>= 2.7.0'
 
-gem 'dotenv', '~> 2.5.0'
-gem 'dotenv-rails', '~> 2.5.0', require: 'dotenv/rails-now'
+gem 'dotenv', '~> 2.7.5'
+gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
 require 'dotenv/load'
 
 # TODO: remove once dev complete move to core gemspec
-if File.exists?('../datashift_audio_engine')
-  gem 'datashift_audio_engine', path: '../datashift_audio_engine'
+if File.exists?('../yams_audio_engine')
+  gem 'yams_audio_engine', path: '../yams_audio_engine'
 else
-  gem 'datashift_audio_engine', git: 'https://github.com/autotelik/datashift_audio_engine.git'
+  gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git'
 end
 
 # TODO: remove once dev complete
@@ -27,10 +27,9 @@ else
 end
 
 # RAILS
-gem 'rails', '~> 5.2.1'
+gem 'rails', '~> 6.0.3.1', '>= 6.0.2.2'
 gem 'rack', '2.0.8'
 
-gem 'coffee-rails', '~> 4.2'
 gem 'jbuilder', '~> 2.5'
 
 gem 'sass-rails', '~> 5.0'
@@ -68,8 +67,6 @@ end
 gem 'elasticsearch-model', '~> 5.1.0' # major release should match the ES major release in docker compose
 gem 'elasticsearch-rails', '~> 5.1.0'
 
-gem 'font-awesome-rails'
-
 gem 'high_voltage', '~> 3.1.0'
 
 gem 'image_processing', '~> 1.7'
@@ -81,10 +78,12 @@ gem 'kaminari'
 gem 'listen'
 
 gem 'pg', '~> 0.18'
+
+# Use Puma as the app server
+gem 'puma', '~> 4.1'
 gem 'pundit'
 
-gem 'rails_sortable', '~> 1.2.1'
-gem 'rubocop', '~> 0.57.2'
+gem 'rubocop', '~> 0.79.0'
 
 gem 'searchkick'
 gem 'select2-rails'
@@ -92,6 +91,8 @@ gem 'sidekiq'
 
 gem 'mini_racer'#, platform: :ruby
 gem 'tzinfo-data'
+
+gem 'webpacker'
 
 if File.exist?('../yams_core')
   gem 'yams_core', path: '../yams_core'
@@ -110,6 +111,8 @@ group :development, :test do
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
 
+  gem 'database_cleaner'
+
   gem 'spring'
   gem 'spring-commands-rspec'
 end
@@ -124,8 +127,6 @@ group :test do
   #   bundle config build.capybara-webkit  --with-opt-include=/usr/lib64/qt5/bin/qmake
   #
   gem 'capybara-webkit'
-
-  gem 'database_cleaner'
 
   gem 'factory_bot_rails'
   gem 'faker'

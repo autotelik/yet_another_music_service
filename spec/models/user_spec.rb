@@ -21,7 +21,7 @@ describe YamsCore::User do
 
     it 'publishes an event when a user created' do
       create(:user)
-      expect(event_store).to have_published(an_event(YamsEvents::NewUserCreated))
+      expect(event_store).to have_published(an_event(YamsEvents::NewUserCreatedEvent))
     end
 
     it 'is handled by event store and subscriber NewUserCreatedHandler is started' do

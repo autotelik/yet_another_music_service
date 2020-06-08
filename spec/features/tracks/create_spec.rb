@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+require 'rails_helper'
+
 feature 'Create Tracks', tracks: true do
   let(:user) { FactoryBot.create(:user) }
 
@@ -14,12 +16,13 @@ feature 'Create Tracks', tracks: true do
 
     expect(page).to have_xpath('//select[@name="track[tag_list][]"]')
     expect(page).to have_xpath('//input[@type="file"]')
-    expect(page).to have_xpath('//*[@id="yamscore::cover--file-input"]')
+    expect(page).to have_xpath('//*[@id="new-cover-file-upload"]')
   end
 
   context 'No cover supplied' do
+
     before do
-      DefaultCover.create!(kind: :track).tap{ |c| c.image.attach(io: File.open("#{Rails.root}/app/assets/images/covers/white_label.jpg"), filename: 'white_label.jpg') }
+      FactoryBot.create(:default_track_cover)
     end
 
     scenario 'creates a new track with a default cover', ffs: true do
@@ -32,7 +35,7 @@ feature 'Create Tracks', tracks: true do
       expect { click_button('Upload') }.to change(YamsCore::Track, :count).by(1)
 
       expect(page).to have_text 'Track was successfully created.'
-      expect(page).to have_xpath('//*[@id="datashift-audio-track-cover-img"]')
+      expect(page).to have_xpath('//*[@id="yams-audio-track-cover-img"]')
     end
   end
 
@@ -44,7 +47,12 @@ feature 'Create Tracks', tracks: true do
     fill_in 'track[title]', with: 'Photon Histories'
     fill_in 'track[description]', with: 'new banging album'
 
-    expect { click_button('Upload') }.to change(YamsCore::Track, :count).by(1).and change(YamsCore::Cover, :count).by(1)
+    #t('.' + controller.action_name + '.submit'
+    #click_button I18n.t(:submit)
+    expect {
+      click_button(I18n.t('yams_core.track.tracks.form.new.submit'))
+    }.to change(YamsCore::Track, :count).by(1)
+             .and change(YamsCore::Cover, :count).by(1)
 
     expect(page).to have_text 'Track was successfully created.'
     expect(page).to have_text 'new banging album'

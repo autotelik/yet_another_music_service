@@ -173,38 +173,6 @@ p {
   font-size: 15px;
 }
 
-.tour-title {
-  margin-bottom: 100px;
-  text-align: center;
-}
-
-.rsvp-button {
-  padding: 5px 15px;
-  border: 1px solid #f7e769;
-  background-color: transparent;
-  -webkit-transition: color 200ms ease, border-color 200ms ease;
-  transition: color 200ms ease, border-color 200ms ease;
-  color: #f7e769;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 1px;
-}
-
-.rsvp-button:hover {
-  border-color: #fff;
-  color: #fff;
-}
-
-.tour-date-row {
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.photo-block {
-  height: 250px;
-  margin: 20px 10px;
-}
-
 .contact-h3 {
   margin-top: 0px;
   margin-bottom: 20px;
@@ -229,32 +197,6 @@ p {
 
 .contact-link:hover {
   color: #fff;
-}
-
-.form {
-  display: block;
-  max-width: 550px;
-  margin-top: 54px;
-  margin-right: auto;
-  margin-left: auto;
-  text-align: left;
-}
-
-.submit-button {
-  display: block;
-  margin-top: 20px;
-  margin-right: auto;
-  margin-left: auto;
-  padding-right: 30px;
-  padding-left: 30px;
-  border: 2px solid #fff;
-  background-color: transparent;
-  -webkit-transition: background-color 200ms ease, color 200ms ease;
-  transition: background-color 200ms ease, color 200ms ease;
-  font-size: 12px;
-  line-height: 18px;
-  letter-spacing: 1px;
-  text-transform: uppercase;
 }
 
 .submit-button:hover {

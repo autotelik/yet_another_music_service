@@ -24,11 +24,11 @@ services:
   db:
     container_name: yams_database
     environment:
-      POSTGRES_PASSWORD: bitnami
+      POSTGRES_PASSWORD: bitnami  # TODO ${YAMS_PRODUCTION_DB_PASSWORD}
     image: postgres:9.6.10
     ports:
       - "5432:5432"
-    restart: always
+    restart: unless-stopped
     volumes:
       - postgres:/var/lib/postgresql/data
 
@@ -53,35 +53,17 @@ services:
     ports:
       - 9200:9200
       - 9300:9300
-    restart: always
+    restart: unless-stopped
     volumes:
       # N.B if switched for a mounted volume,then that volumes permissions must make it accessible by user/group elasticsearch.
       - elastic_search_volume:/usr/share/elasticsearch/data
-
-  kibana:
-    image: docker.elastic.co/kibana/kibana:6.4.1
-    container_name: yams_kibana
-    environment:
-      - xpack.security.enabled=false
-      - xpack.monitoring.enabled=false
-      - xpack.ml.enabled=false
-      - xpack.graph.enabled=false
-      - xpack.watcher.enabled=false
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
-    ports:
-      - '5601:5601'
-    restart: always
-    depends_on: [elasticsearch]
-    #volumes:
-      # TODO -  we need to create an 'index' that  persists across rebuilds
-      #elastic_search_volume:/????
 
   redis:
     container_name: yams_redis
     image: redis:latest
     ports:
       - 6379:6379
-    restart: always
+    restart: unless-stopped
 
   sidekiq:
     build:

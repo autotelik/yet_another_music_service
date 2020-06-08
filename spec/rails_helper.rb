@@ -79,6 +79,7 @@ RSpec.configure do |config|
   config.include FactoryBot::Syntax::Methods
 
   include RspecFileHelpers
+
 end
 
 require 'sidekiq/testing'

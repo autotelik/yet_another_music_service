@@ -52,7 +52,8 @@ set :normalize_asset_timestamps, %w{public/images public/javascripts public/styl
 # set this to the number of versions to keep
 set :keep_assets, 2
 
-#after :deploy, :searchkick_reindex
+after :deploy, :searchkick_reindex
+
 #after 'deploy:updated', 'assets:precompile'
 
 set :container_name, "yams_#{fetch(:stage)}"

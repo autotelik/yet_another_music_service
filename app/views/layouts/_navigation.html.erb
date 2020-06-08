@@ -39,11 +39,8 @@
       <% end %>
 
 
-
       <%= form_for :searches, url: yams_core.searches_path, method: :get, html: { class: 'pull-left p-1 mb-0 mt-2' } do |form| %>
-        <%= form.text_field :q, { value: params[:q], class: "search-input w-input p-0", placeholder: "Search...", maxlength: "256", name: "query", 'aria-label': "Search" } %>
-        <!-- TODO fix the position correctly inside thw search box <button class="fa fa-search"></button> -->
-        <!--<input type="submit" value="Search" class="search-button w-button">-->
+        <%= form.text_field :q, { value: params[:q], class: "search-input w-input p-0", placeholder: "Search...", maxlength: "256", 'aria-label' => "Search" } %>
       <% end %>
     </ul>
       <% if user_signed_in? %>

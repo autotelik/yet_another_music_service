@@ -9,30 +9,6 @@ en:
       </ul>
       <hr class="spacer" />
     title: Contact %{instance}
-  global:
-    about: About
-    add_album: Add album
-    add_playlist: Add playlist
-    admin: Admin
-    albums: Albums
-    artist: Artist
-    artists: Artists
-    bulk_upload: Bulk upload
-    discography: Discography
-    home: Home
-    learn_more: Learn More
-    manage: Manage
-    manage_albums: Manage albums
-    manage_playlists: Manage playlists
-    playlists: Playlists
-    profile: Profile
-    radio: Radio
-    sign_in: Sign in
-    sign_out: Sign out
-    sign_up: Sign up
-    title: Title
-    tracks: Tracks
-    upload: Upload
   pages:
     about:
       site_name: Yet Another Music Service

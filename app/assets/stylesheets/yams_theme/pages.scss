@@ -8,9 +8,8 @@
 }
 
 
-#datashift-audio-album-wrapper ul li.row.single_list_item_headers {
+#yams-audio-album-wrapper ul li.row.single_list_item_headers {
 }
-
 
 .draggable-track-row {
   border-bottom: 1px solid $colour-borders;
@@ -23,11 +22,11 @@
   padding-bottom: 242px;
 }
 
-.front-page-section.centered {
+.front-page-section {
   padding-top: 89px;
   padding-bottom: 195px;
   border-bottom: 4px solid #69b9ff;
-  background-image: linear-gradient(180deg, #101010, rgba(46, 157, 255, 0.32)), image-url('webflow/kyoto_drummers_comic.jpg');
+  background-image: linear-gradient(180deg, #101010, rgba(25, 32, 36, 0.9)), image-url('webflow/kyoto_drummers_comic.jpg');
   background-position: 0px 0px, 50% 50%;
   background-size: auto, cover;
   font-family: Inconsolata, monospace;
@@ -116,6 +115,7 @@ h3.album-track, h5.album-track {
   text-align: center;
   letter-spacing: 5px;
   text-transform: uppercase;
+  color: #8e8e9c;
 }
 
 .section-heading.centered.white {

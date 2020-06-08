@@ -29,6 +29,7 @@ class SetupDev < Thor
     puts 'Seed the example Music - bundle exec thor yams:db:seed_music'
     system('bundle exec thor yams:db:seed_music')
 
+    YamsCore::Artist.reindex
     YamsCore::Track.reindex
     YamsCore::Album.reindex
   end

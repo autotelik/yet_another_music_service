@@ -1,20 +1,20 @@
 /* YAMS - OVER RIDES OF THE ENGINE AND PLAYER SPECIFIC STYLES*/
 
-.datashift-audio-author-name {
+.yams-audio-author-name {
   font-size: 18px;
   color: $colour-cool-mint !important;
 }
 
-#datashift-audio-player {
+#yams-audio-player {
   background-color:        $colour-audio-player;
   border-top: 1px solid    $colour-blue-grey;
   border-bottom: 1px solid $colour-blue-grey;
 }
 
-#datashift-audio-player-track_cover
+#yams-audio-player-track_cover
 {
   padding-left: 32px;
-  padding-top: 8px;
+  padding-top: 24px;
 }
 
 #navbar-container
@@ -27,25 +27,25 @@
   border-top: 1px solid whitesmoke;
 }
 
-.datashift-audio-track-title, .datashift-audio-duration, .datashift-audio-full-name
+.yams-audio-track-title, .yams-audio-duration, .yams-audio-full-name
 {
   font-size: 16px;
 }
 
-.datashift-audio-duration
+.yams-audio-duration
 {
   font-size: 16px;
 }
 
-.datashift-audio-track-playlist i.datashift-audio-active{
+.yams-audio-track-playlist i.yams-audio-active{
   box-shadow: 0px 0px 5px  $colour-blue-grey-2;
   color: $colour-blue-grey-1;
 }
 
-.datashift-audio-playlist {
+.yams-audio-playlist {
 }
 
-.datashift-audio-playlist li{
+.yams-audio-playlist li{
   display: block;
   transition: 0.25s;
   color: ghostwhite;
@@ -53,87 +53,87 @@
   border-bottom: 1px solid $colour-gun-metal-blue;
 }
 
-.datashift-audio-playlist li *{
+.yams-audio-playlist li *{
   display: inline-block;
   padding: 0;
   cursor: pointer;
 }
 
-.datashift-audio-playlist li .duration{
+.yams-audio-playlist li .duration{
   color: ghostwhite;
   background-color: black;
   padding: 0px 10px;
 }
 
-.datashift-audio-playlist li i{
+.yams-audio-playlist li i{
   color:  $colour-cool-mint;
 }
 
-.datashift-audio-playlist li:hover i{
+.yams-audio-playlist li:hover i{
   color:  $colour-cool-mint;
 }
 
-.datashift-audio-playlist a {
+.yams-audio-playlist a {
   color:  $colour-cool-mint;
   text-decoration: none;
 }
 
-.datashift-audio-playlist a {
+.yams-audio-playlist a {
   color: ghostwhite;
   text-decoration: none;
 }
 
-.datashift-audio-playlist li .full-name{
+.yams-audio-playlist li .full-name{
   padding: 0px 10px;
 }
 
-.datashift-audio-playlist li:hover{
+.yams-audio-playlist li:hover{
   color:  $colour-cool-mint;
   cursor: pointer;
 }
 
-.datashift-audio-playlist li.active{
+.yams-audio-playlist li.active{
   background-color: black;
   color: white;
 }
 
-.datashift-audio-playlist li.datashift-audio-active:hover{
+.yams-audio-playlist li.yams-audio-active:hover{
   color: white;
 }
 
-.datashift-audio-playlist > li:nth-child(odd) {
+.yams-audio-playlist > li:nth-child(odd) {
 }
-.datashift-audio-playlist > li:nth-child(even) {
+.yams-audio-playlist > li:nth-child(even) {
 }
 
-.datashift-audio-playlist .current-track{
+.yams-audio-playlist .current-track{
   background-color: black;
   color: white;
 }
 
-.datashift-audio-player .datashift-audio-pages li:hover{
+.yams-audio-player .yams-audio-pages li:hover{
   cursor: pointer;
   opacity: 50%;
 }
 
-.datashift-audio-playlist-content{
+.yams-audio-playlist-content{
   display: inline-block;
   width: 100%;
 }
 
-.datashift-audio-track-basic-info {
+.yams-audio-track-basic-info {
   padding-left: 32px;
   font-size:    18px;
   line-height:  1.2;
   font-weight:  100;
 }
 
-#datashift-audio-track-playlist-wrapper-row
+#yams-audio-track-playlist-wrapper-row
 {
   padding: 0;
 
 }
-#datashift-audio-track-volume {
+#yams-audio-track-volume {
   float: right;
   margin-right: 32px;
 }
@@ -143,7 +143,7 @@
   color: $colour-cool-mint !important;
 }
 
-#datashift-audio-wave-controls {
+#yams-audio-wave-controls {
   text-align: center;
   padding-bottom: 8px;
   padding-top: 4px;

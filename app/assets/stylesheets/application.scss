@@ -12,21 +12,24 @@
  *
  *= require select2
 */
-@import "font-awesome";
+
+// TODO: review use of icons and font-awesome
+//@import "font-awesome";
+
 @import "normalize";
 @import "webflow";
 
-@import "bootstrap";
+@import 'bootstrap_custom';
 
 // YAMS Engines
 @import "yams_theme/variables";
 
-@import "yams_theme/cover_file_upload";
-@import "yams_theme/file_upload";
+@import "yams_theme/direct_uploads";
 @import "yams_theme/pages";
+@import "yams_theme/select2";
 
-@import "datashift_audio_engine/datashift_audio_engine";
-@import "datashift_audio_engine/yams_override";
+@import "yams_audio_engine/yams_audio_engine";
+@import "yams_audio_engine/yams_override";
 
 * {
   box-sizing: border-box;
@@ -143,10 +146,22 @@ input[type="submit"] {
   display: none !important; /* just [...] no arrow */
 }
 
+.btn-outline-primary {
+  color: $colour-off-white;
+  border-color: $colour-purple;
+}
+
+.btn-outline-primary:hover, .btn-outline-primary:focus{
+  opacity: 0.8;
+  color: #fff;
+  background-color: $colour-theme-background !important;
+  border-color: $colour-purple;
+}
+
 
 .card {
   color: $colour-off-white !important;
-  background: #090c03 !important;
+  background: $colour-theme-background !important;
   word-wrap: break-word;
   position: relative;
   display: flex;
@@ -174,7 +189,24 @@ input[type="submit"] {
 }
 
 .card-header-drag-drop {
-  background-color: $colour-card-header-drag-drop;
+  background-color: $colour-card-header;
+
+  h6 {
+    padding: 16px 0 16px 8px;
+    font-size: 12px;
+    font-family: Karla, Inconsolata, sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.27px;
+    text-transform: lowercase;
+    color: white;
+    opacity: 0.8;
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .content-wrapper {
@@ -201,8 +233,7 @@ form {
   bottom: 0px;
 }
 
-div.footer h5
-{
+div.footer h5 {
   padding-bottom: 8px;
 }
 
@@ -233,7 +264,6 @@ div.footer h5
 .form-control-yams {
   color: #495057;
   display: block;
-  width: 75%;
   font-weight: 100;
   font-size: 14px;
   line-height: 20px;
@@ -277,6 +307,21 @@ h5.text-light {
 h6 {
   margin: 0px;
 }
+
+
+i.icon-chevron-small-right
+{
+  border: 1px solid $colour-purple;
+}
+
+i.icon-chevron-small-right:hover, i.icon-chevron-small-right:focus {
+  color: $colour-dark-purple;
+}
+
+i.icon-tag-light.icon-list {
+  color: $colour-cool-mint;
+}
+
 
 img {
   vertical-align: middle;
@@ -409,11 +454,6 @@ p.light {
   text-align: center;
 }
 
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
-  background-color: $colour-purple;
-  color: $colour-rich-black;;
-}
-
 .single_list_item_headers
 {
   vertical-align: middle;
@@ -443,6 +483,11 @@ strong {
 
 .text-light {
   color: $colour-off-white !important;
+}
+
+.text-small
+{
+  font-size: 10px;
 }
 
 ul

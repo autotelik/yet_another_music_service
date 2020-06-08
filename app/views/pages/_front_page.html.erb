@@ -1,15 +1,16 @@
-<div class="front-page-section centered pb-5 pt-5">
+<div class="front-page-section text-center pb-5 pt-5">
   <div class="front-page-subheading">everything evolves</div>
   <div data-ix="new-interaction" class="w-container">
     <h1 class="front-page-heading">Yet Another music service</h1>
     <div >
-      <div class="front-page-subheading">A new take on music sharing<br><br>built by musicians<br>‍<br> for musicians<br>‍</div>
+      <div class="front-page-subheading mb-0">A new take on music sharing<br><br>built by musicians<br>‍<br> for musicians<br>‍</div>
         <div>
           <%= link_to( t(:sign_up, scope: :global), yams_core.new_user_registration_path, class: 'button') unless current_user %>
         </div>
     </div>
   </div>
 </div>
+
 <div class="section">
   <div class="w-container">
     <div class="section-title-group">
