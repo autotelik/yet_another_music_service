@@ -13,7 +13,7 @@ gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
 require 'dotenv/load'
 
 # TODO: remove once dev complete move to core gemspec
-if File.exists?('../yams_audio_engine')
+if File.exist?('../yams_audio_engine')
   gem 'yams_audio_engine', path: '../yams_audio_engine'
 else
   gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git'
@@ -27,8 +27,8 @@ else
 end
 
 # RAILS
-gem 'rails', '~> 6.0.3.1', '>= 6.0.2.2'
 gem 'rack', '2.0.8'
+gem 'rails', '~> 6.0.3.1', '>= 6.0.2.2'
 
 gem 'jbuilder', '~> 2.5'
 
@@ -48,18 +48,18 @@ gem 'aws-sdk-s3', require: false
 #
 # https://github.com/btcpayserver/btcpayserver/tree/master/BTCPayServer/Controllers
 # https://bitpay.com/api/#rest-api
-gem 'bitpay-sdk', :git => 'https://github.com/btcpayserver/ruby-client'
+gem 'bitpay-sdk', git: 'https://github.com/btcpayserver/ruby-client'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'bourbon'
 
 if ENV['YAMS_NON_OPEN_SOURCE_GEMS'].to_s.downcase == 'true'
-  %w{ yams_events }.each do |lib|
+  %w[yams_events].each do |lib|
     library_path = File.expand_path("../../#{lib}", __FILE__)
     if File.exist?(library_path) && ENV['YAMS_USE_LOCAL_PATHS'].to_s.downcase == 'true'
-      gem lib, :path => library_path
+      gem lib, path: library_path
     else
-      gem lib, :git => "https://github.com/autotelik/#{lib}.git"#, :branch => branch
+      gem lib, git: "https://github.com/autotelik/#{lib}.git" # , :branch => branch
     end
   end
 end
@@ -73,7 +73,8 @@ gem 'image_processing', '~> 1.7'
 
 gem 'jquery-rails'
 gem 'jquery-ui-rails'
-gem 'kaminari'
+
+gem 'kaminari', '>= 1.2.1'
 
 gem 'listen'
 
@@ -89,7 +90,7 @@ gem 'searchkick'
 gem 'select2-rails'
 gem 'sidekiq'
 
-gem 'mini_racer'#, platform: :ruby
+gem 'mini_racer' # , platform: :ruby
 gem 'tzinfo-data'
 
 gem 'webpacker'

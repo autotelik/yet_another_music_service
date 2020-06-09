@@ -16,11 +16,10 @@ feature 'Create Tracks', tracks: true do
 
     expect(page).to have_xpath('//select[@name="track[tag_list][]"]')
     expect(page).to have_xpath('//input[@type="file"]')
-    expect(page).to have_xpath('//*[@id="new-cover-file-upload"]')
+    expect(page).to have_xpath('//*[@id="new-audio-upload-file-field"]')
   end
 
   context 'No cover supplied' do
-
     before do
       FactoryBot.create(:default_track_cover)
     end
@@ -47,12 +46,12 @@ feature 'Create Tracks', tracks: true do
     fill_in 'track[title]', with: 'Photon Histories'
     fill_in 'track[description]', with: 'new banging album'
 
-    #t('.' + controller.action_name + '.submit'
-    #click_button I18n.t(:submit)
+    # t('.' + controller.action_name + '.submit'
+    # click_button I18n.t(:submit)
     expect {
       click_button(I18n.t('yams_core.track.tracks.form.new.submit'))
     }.to change(YamsCore::Track, :count).by(1)
-             .and change(YamsCore::Cover, :count).by(1)
+                                        .and change(YamsCore::Cover, :count).by(1)
 
     expect(page).to have_text 'Track was successfully created.'
     expect(page).to have_text 'new banging album'

@@ -4,8 +4,7 @@ require 'rails_helper'
 # TODO: test belongs in the engine - fix the dummy app and move there
 #
 describe YamsCore::User do
-
-  it "triggers do_something on save" do
+  it 'triggers do_something on save' do
     user = build(:user)
     expect(user).to receive(:publish_new_user)
     user.save
@@ -37,7 +36,5 @@ describe YamsCore::User do
 
       YamsEvents::CreateBtcpayStoreWorker.drain
     end
-
   end
-
 end

@@ -1,8 +1,9 @@
 AllCops:
-  TargetRubyVersion: 2.3
+  TargetRubyVersion: 2.7
   Exclude:
     - 'db/**/*'
     - 'config/**/*'
+    - 'node_modules/**/*'
     - 'script/**/*'
     - '.git-hooks/**/*'
     - !ruby/regexp /old_and_unused\.rb$/
@@ -15,6 +16,7 @@ AllCops:
     # spec_helper is generated when rspec is initialised and therefore should be
     # left as is
     - 'spec/spec_helper.rb'
+    - 'spec/support/**/*'
     - '*.gemspec'
 
 # Looks cluttered/ugly having your first method directly after the module/class declaration

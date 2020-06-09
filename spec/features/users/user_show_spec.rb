@@ -32,7 +32,7 @@ feature 'User profile page', :devise do
     visit yams_core.user_path(me)
     expect(page).to have_link I18n.t(:edit, scope: :global)
 
-    expect(find(:xpath, "//a/i")['class']).to match /.*icon-pencil/
+    expect(find(:xpath, '//a/i')['class']).to match /.*icon-pencil/
   end
 
   # Scenario: User can see another users's profile but cannot edit
@@ -46,6 +46,6 @@ feature 'User profile page', :devise do
 
     expect(page).to have_content other.name
     expect(page).to have_content other.email
-    expect(page).to_not  have_link I18n.t(:edit, scope: :global)
+    expect(page).to_not have_link I18n.t(:edit, scope: :global)
   end
 end

@@ -15,18 +15,17 @@ module Yams
       method_option :sidekiq, type: :boolean, default: false, desc: 'Also spin up Sidekiq container'
 
       def up
-
         load_rails_environment
 
-        %w{db elasticsearch kibana redis}.each {|c| docker_up(c) }
+        %w[db elasticsearch kibana redis].each { |c| docker_up(c) }
 
-        docker_up('sidekiq') if(options[:sidekiq])
+        docker_up('sidekiq') if options[:sidekiq]
 
-        if(options[:init])
-          docker_exec(cmd: 'bundle exec rake db:create')
-          docker_exec(cmd: 'bundle exec rake db:migrate')
-          docker_exec(cmd: 'bundle exec rake db:seed')
-        end
+        return unless options[:init]
+
+        docker_exec(cmd: 'bundle exec rake db:create')
+        docker_exec(cmd: 'bundle exec rake db:migrate')
+        docker_exec(cmd: 'bundle exec rake db:seed')
       end
 
     end
@@ -39,14 +38,13 @@ module Yams
       def up
         load_rails_environment
 
-        cli = "docker-compose -f docker-compose.yml up --no-recreate -d sidekiq"
-        puts "Running": cli
+        cli = 'docker-compose -f docker-compose.yml up --no-recreate -d sidekiq'
+        puts 'Running', cli
         system cli
       end
     end
 
-    %w{ Elasticsearch Kibana Redis Sidekiq }.each do |name|
-
+    %w[Elasticsearch Kibana Redis Sidekiq].each do |name|
       klass = Class.new(Thor) do
         include TaskCommon
 
@@ -54,18 +52,17 @@ module Yams
 
         method_option :init, type: :boolean, default: false, desc: 'Initialise the DB'
 
-        define_method(:up) {
+        define_method(:up) do
           load_rails_environment
 
           docker_up("--no-deps #{name.downcase}")
 
-          if(options[:init])
+          if options[:init]
             docker_exec(cmd: 'bundle exec rake db:create')
             docker_exec(cmd: 'bundle exec rake db:migrate')
             docker_exec(cmd: 'bundle exec rake db:seed')
           end
-
-        }
+        end
       end
 
       Yams.const_set name, klass

@@ -28,8 +28,8 @@ module TaskCommon
     until found
       env = begin
         gets.chomp.strip.to_sym
-      rescue StandardError
-        nil
+            rescue StandardError
+              nil
       end
       found = env && config[env]
       unless found

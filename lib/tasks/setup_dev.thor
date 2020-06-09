@@ -15,7 +15,7 @@ class SetupDev < Thor
     system('bundle exec rake db:drop')
 
     puts 'Create the DB'
-    #system('bundle exec rails yams_core:install:migrations')
+    # system('bundle exec rails yams_core:install:migrations')
     system('bundle exec rails yams_events:install:migrations')
 
     system('bundle exec rake db:create')

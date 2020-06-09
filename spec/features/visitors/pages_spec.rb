@@ -1,9 +1,8 @@
 # frozen_string_literal: true
 
 feature 'Pages' do
-
   def expect_logo
-    expect(find(:xpath, "//nav//img")['src']).to match /.*logos\/all_pages_logo.*.png/
+    expect(find(:xpath, '//nav//img')['src']).to match %r{.*logos/all_pages_logo.*.png}
   end
 
   # Scenario: Visit the home page
