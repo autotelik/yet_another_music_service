@@ -1,24 +1,14 @@
 # config valid for current version and patch releases of Capistrano
-#
-#This links the folder specified in config.assets.prefix to shared/assets. If you already use this shared folder you'll need to write your own deployment task.
+lock '~> 3.14.1'
 
-# It is important that this folder is shared between deployments so that remotely cached pages referencing the old compiled assets still work for the life of the cached page.
-#load 'deploy/assets'
-
-lock "~> 3.11.0"
-
-set :application, "yams"
+set :application, 'yams'
 
 set :repo_url, "git@github.com:autotelik/yet_another_music_service.git"
 
-set :deploy_to, '/var/www/vhosts/yams.fm/apps'
+# Default branch is :master - to deploy another use - cap staging deploy BRANCH=PROC-7994-jade-server-issues
+set :branch, ENV['BRANCH'] if ENV['BRANCH']
 
-set :server_ruby, '/var/www/vhosts/yams.fm/.rvm/gems/ruby-2.6.4/wrappers/ruby'
-
-append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'storage'
-
-# Only keep the last 5 releases to save disk space
-set :keep_releases, 5
+set :container_name, 'yams-web'
 
 # Defaults to :db role
 set :migration_role, :app
@@ -30,46 +20,51 @@ set :migration_servers, -> { primary(fetch(:migration_role)) }
 # Skip migration if files in db/migrate were not modified
 set :conditionally_migrate, true
 
-# Defaults to [:web]
-set :assets_roles, [:web, :app]
-
-# Defaults to 'assets'
-# This should match config.assets.prefix in your rails config/application.rb
-set :assets_prefix, 'prepackaged-assets'
-
-# Defaults to ["/path/to/release_path/public/#{fetch(:assets_prefix)}/.sprockets-manifest*", "/path/to/release_path/public/#{fetch(:assets_prefix)}/manifest*.*"]
-# This should match config.assets.manifest in your rails config/application.rb
-set :assets_manifests, ['app/assets/config/manifest.js']
-
-# RAILS_GROUPS env value for the assets:precompile task. Default to nil.
-set :rails_assets_groups, :assets
-
-# If you need to touch public/images, public/javascripts, and public/stylesheets on each deploy
-set :normalize_asset_timestamps, %w{public/images public/javascripts public/stylesheets}
-
-# Defaults to nil (no asset cleanup is performed)
-# If you use Rails 4+ and you'd like to clean up old assets after each deploy,
-# set this to the number of versions to keep
-set :keep_assets, 2
-
-after :deploy, :searchkick_reindex
-
-#after 'deploy:updated', 'assets:precompile'
-
-set :container_name, "yams_#{fetch(:stage)}"
-
 before :deploy, :stop_docker_containers
-after :deploy, :up_app_container
+
+after :deploy,  :up_app_container
 
 task :stop_docker_containers do
   on roles(:app) do
+    # Stop existing APP  Container - ignore errors if container not available
+    app_container_names.each do |c|
+      begin
+        execute "docker stop #{c}; echo 0"
+        execute "docker rm -f #{c}; echo 0"
+      rescue StandardError => e
+        puts "WARNING - Failed to remove Container #{fetch(:container_name)} - #{e.message}"
+      end
+    end
+
+    images = %W[yams-web-app_#{fetch(:stage)} yams-web-app_yams_sidekiq]
+
+    images.each { |i| execute "docker rmi -f #{i}; echo 0" }
+
     invoke 'stop_other_containers'
   end
 end
 
+after 'deploy', :set_git_commit do
+  on roles(:app) do
+    `git rev-parse --short HEAD > public/git_release_rev`
+
+    File.open('public/release_date', 'w') {|f| f << Time.now.strftime('%Y-%m-%d') }
+
+    upload! 'public/git_release_rev', "#{deploy_to}/current/public"
+    upload! 'public/release_date',    "#{deploy_to}/current/public"
+  end
+end
+
+# Containers that should be removed and rebuilt fully
+# Rebuild nginx incase certificates have changed
+#
+def app_container_names
+  [fetch(:container_name), 'yams-sidekiq']
+end
+
 # Service containers that can be stopped and restarted
 def container_names
-  %w[yams_database yams_redis yams_elasticsearch yams_kibana yams_sidekiq]
+  %w[yams-db yams-elasticsearch yams-redis]
 end
 
 task :stop_other_containers do
@@ -87,80 +82,21 @@ end
 task :up_app_container do
   on roles(:app) do
     # -p project means containers can be reused if unchanged
-    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d db"
-    execute "cd #{deploy_to}/current && docker-compose -p yams_fm -f docker-compose.yml up -d sidekiq"
+    execute "cd #{deploy_to}/current && docker-compose -p yams-web-app -f docker-compose.yml up -d #{fetch(:container_name)}"
   end
 
-  invoke :container_admin
+  invoke 'container_admin'
 end
 
 task :container_admin do
+
   on roles(:app) do
-    within current_path do  # TOFIX: does not seem to work - still need to cd to /var/www/vhosts/yams.fm/apps/current
-      begin
-        execute "cd #{deploy_to}/current && #{fetch(:server_ruby)} -S bundle install --no-deployment --without development test"
-      rescue => e
-      end
 
-      begin
-        execute "cd #{deploy_to}/current && #{fetch(:server_ruby)} -S bundle exec rake assets:precompile RAILS_ENV=production"
-      rescue => e
-        puts "Assets precompile failed : #{e.inspect}"
-      end
-
-      begin
-        # Sort out any issues with permissions etc
-        execute "cd #{deploy_to}/current && chmod 0664 #{fetch(:deploy_to)}/current/log/*.log"
-      rescue => e
-        puts "Container admin failed : #{e.inspect}"
-      end
-
-      begin
-        execute "cd #{deploy_to}/current && touch tmp/restart.txt"
-      rescue => e
-        puts "Elastic Search Container admin failed : #{e.inspect}"
-      end
-
+    begin
+      execute "docker exec #{fetch(:container_name)} bundle exec rake db:create RAILS_ENV=#{fetch(:rails_env)}"
+    rescue => e
+      # ignore - this only needed during first deploy # TODO make running it configurable
     end
+
   end
 end
-
-
-desc 'Run a searchkick:reindex task on all models'
-task :searchkick_reindex do
-  on roles(:app) do
-    within current_path do
-      begin
-        execute "#{fetch(:server_ruby)} -S bundle exec thor yams:search_index:build"
-      rescue
-      end
-    end
-  end
-end
-
-namespace :assets do
-  desc 'Precompile assets locally and then rsync to web servers'
-  task :precompile do
-    run_locally do
-      with rails_env: stage_of_env do
-        execute :bundle, 'exec rake assets:precompile'
-      end
-    end
-
-    on roles(:web), in: :parallel do |server|
-      run_locally do
-        execute :rsync,
-                "-a --delete ./public/packs/ #{fetch(:user)}@#{server.hostname}:#{shared_path}/public/packs/"
-        execute :rsync,
-                "-a --delete ./public/assets/ #{fetch(:user)}@#{server.hostname}:#{shared_path}/public/assets/"
-      end
-    end
-
-    run_locally do
-      execute :rm, '-rf public/assets'
-      execute :rm, '-rf public/packs'
-    end
-  end
-end
-
-

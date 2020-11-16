@@ -6,13 +6,13 @@ module TaskCommon
     file = File.join(Rails.root, 'docker-compose.yml')
 
     cli = "docker-compose -f #{file} -p yams_fm up --no-recreate -d #{container}"
-    puts "Running": cli
+    puts "Running: #{cli}"
     system cli
   end
 
   def docker_exec(cmd:, container: 'development')
     cli = "docker exec -ti #{container} #{cmd}"
-    puts "Running": cli
+    puts "Running: #{cli}"
     system cli
   end
 

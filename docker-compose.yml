@@ -7,10 +7,16 @@
 #
 version: '3'
 
+# See docker-compose-letsencrypt-nginx-proxy-companion
+networks:
+  default:
+    external:
+      name: webproxy
+
 volumes:
   elastic_search_volume:
     driver: local
-  postgres:
+  postgres_volume:
     driver: local
   rails_logs_volume:
     driver: local
@@ -21,68 +27,116 @@ volumes:
 
 services:
 
-  db:
-    container_name: yams_database
-    environment:
-      POSTGRES_PASSWORD: bitnami  # TODO ${YAMS_PRODUCTION_DB_PASSWORD}
-    image: postgres:9.6.10
+  yams_db:
+    image: postgres:10.9-alpine
+    container_name: yams-db
+    networks:
+      - default
     ports:
-      - "5432:5432"
+      - "5442:5432"                         # Multiple apps may be on staging - expose different port to outside world
     restart: unless-stopped
     volumes:
-      - postgres:/var/lib/postgresql/data
+      - postgres_volume:/var/lib/postgresql/data
+
+  yams_web:
+    build:
+      context: .
+      args:                           # Build Arguments
+        RAILS_ENV: production
+    container_name: yams-web
+    command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+    environment:
+       ELASTICSEARCH_URL: http://yams_elasticsearch:9200
+       LOGSTASH_HOST: logstash
+       VIRTUAL_HOST: yams.fm
+       VIRTUAL_PORT: 3000
+       LETSENCRYPT_HOST: yams.fm
+       RAILS_ENV: 'production'
+       RACK_ENV: 'production'
+       RAILS_SERVE_STATIC_FILES: 'true'
+       RAILS_LOG_TO_STDOUT: 'true'
+       PUMA_PORT: 3000
+       REDIS_URL: redis://yams_redis:6379/0
+    depends_on:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    links:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+     - rails_logs_volume:/home/app/yams/log/
+     - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
+     - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
+
+  yams_sidekiq:
+    build:
+     context: .
+     args:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    command: ["dotenv", "bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
+    container_name: yams-sidekiq
+    environment:
+      - ELASTICSEARCH_URL=http://yams_elasticsearch:9200
+      - JOB_WORKER_URL=redis://yams_redis:6379/0
+      - REDIS_URL=redis://yams_redis:6379/0
+      - RAILS_ENV=production
+      - YAMS_DB_HOST=yams_db
+    depends_on:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    links:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    networks:
+      - default
+    restart: unless-stopped
+    volumes:
+      - local_cloud_storage_volume:/home/app/yams/storage
+      - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
+      - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
+
+  yams_redis:
+    container_name: yams-redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    networks:
+      - default
+    restart: unless-stopped
 
   # NOTES
 
-   # The ELK images come with XPack already installed - this adds an authorisation layer we do not need,
-   # or at least not worth the complication at this stage. Turn it off via  - xpack.security.enabled=false
+  # The ELK images come with XPack already installed - this adds an authorisation layer we do not need,
+  # or at least not worth the complication at this stage. Turn it off via  - xpack.security.enabled=false
 
-  elasticsearch:
+  yams_elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
-    container_name: yams_elasticsearch
+    container_name: yams-elasticsearch
     environment:
       - xpack.security.enabled=false
       - xpack.monitoring.enabled=false
       - xpack.ml.enabled=false
       - xpack.graph.enabled=false
       - xpack.watcher.enabled=false
-    ulimits:
-      nofile:
-        soft: 65535
-        hard: 65535
+    networks:
+      - default
     ports:
       - 9200:9200
       - 9300:9300
     restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
     volumes:
       # N.B if switched for a mounted volume,then that volumes permissions must make it accessible by user/group elasticsearch.
       - elastic_search_volume:/usr/share/elasticsearch/data
-
-  redis:
-    container_name: yams_redis
-    image: redis:latest
-    ports:
-      - 6379:6379
-    restart: unless-stopped
-
-  sidekiq:
-    build:
-     context: .
-     args:
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
-    command: bundle exec sidekiq -C config/sidekiq.yml -e production
-    container_name: yams_sidekiq
-    depends_on: [db, elasticsearch, redis]
-    environment:
-      - ELASTICSEARCH_URL=http://elasticsearch:9200
-      - JOB_WORKER_URL=redis://redis:6379/0
-      - REDIS_URL=redis://redis:6379/0
-      - RAILS_ENV=production
-      - YAMS_DB_HOST=db
-    depends_on:   [db, elasticsearch, redis]
-    links:   [db, elasticsearch, redis]
-    restart: always
-    volumes:
-      - /var/www/vhosts/yams.fm/apps/shared/storage:/home/app/yams/storage
-      - /var/www/vhosts/yams.fm/apps/shared/.env:/home/app/yams/.env
-

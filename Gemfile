@@ -6,7 +6,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-ruby '>= 2.7.0'
+ruby '>= 2.7.2'
 
 gem 'dotenv', '~> 2.7.5'
 gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
@@ -28,7 +28,7 @@ end
 
 # RAILS
 gem 'rack', '2.0.8'
-gem 'rails', '~> 6.0.3.1', '>= 6.0.2.2'
+gem 'rails', '~> 6.0.3.4', '>= 6.0.2.2'
 
 gem 'jbuilder', '~> 2.5'
 
@@ -43,12 +43,6 @@ gem 'acts-as-taggable-on'
 gem 'administrate'
 gem 'aws-sdk-s3', require: false
 
-# No API for Stores etc yet,
-# but these are the Controller code = maybe can hack the UI form submissions
-#
-# https://github.com/btcpayserver/btcpayserver/tree/master/BTCPayServer/Controllers
-# https://bitpay.com/api/#rest-api
-gem 'bitpay-sdk', git: 'https://github.com/btcpayserver/ruby-client'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'bourbon'

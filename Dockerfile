@@ -1,52 +1,59 @@
-# Rails 5/Ruby 2.6 - https://hub.docker.com/r/phusion/passenger-ruby26
-FROM phusion/passenger-ruby26:latest
+FROM ruby:2.7.2
 
-RUN gem install --no-ri --no-rdoc bundler
+# Install dependencies
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
-# Check the Ubuntu version passenger image based on.
-# RUN cat /etc/lsb-release
-# Check the Ruby version passenger image based on.
-# RUN ruby --version  && export
+# Required 3rd party libs
+# See also https://edgeguides.rubyonrails.org/active_storage_overview.html
 
-# Set correct environment variables.
-ENV HOME /root
+RUN apt-get update -qq && \
+    apt-get install -y apt-transport-https ca-certificates build-essential ffmpeg gnupg2 libpq-dev nodejs p7zip-full software-properties-common vim yarn
 
-# Install everything requied to build native gems and run services - mlibsasl2-dev
-RUN apt-get update -qq && apt-get install -y --no-install-recommends \
-  build-essential \
-  curl libssl-dev \
-  ffmpeg \
-  git \
-  gstreamer1.0-plugins-base gstreamer1.0-tools gstreamer1.0-x \
-  unzip \
-  zlib1g-dev \
-  libxslt-dev \
-  libqt5webkit5-dev \
-  qt5-default
+# Install NGC cli - For details of access to https://ngc.nvidia.com - see : https://ngc.nvidia.com/setup/api-key
 
-# Clean up APT when done.
-RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
+RUN wget -O ngccli_cat_linux.zip https://ngc.nvidia.com/downloads/ngccli_cat_linux.zip && unzip -o ngccli_cat_linux.zip && chmod u+x ngc
+RUN mv ngc /usr/local/bin
 
-# Use baseimage-docker's init process.
-CMD ["/sbin/my_init"]
+# Install docker for "Debian GNU/Linux"
+RUN curl -fsSL https://download.docker.com/linux/debian/gpg | apt-key add -
+RUN add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/debian $(lsb_release -cs) stable"
+RUN apt-get update -qq &&  apt-get -y install docker-ce containerd.io
 
-# Create installation area for Rails app - Passenger defines that it should be placed in /home/app.
+# Setting env up
+ENV RAILS_ENV='production'
+ENV RACK_ENV='production'
+ENV RUBYOPT='-W:no-deprecated -W:no-experimental'
+
+## Create installation area for Rails app
+#
 ENV APP_HOME /home/app/yams
-RUN mkdir $APP_HOME
+ENV RAILS_ROOT /home/app/yams
 WORKDIR $APP_HOME
 
-# Configure Nginx
-# N.B - site specific config for /etc/nginx/sites-enabled/ is added via volume
-RUN rm /etc/nginx/sites-enabled/default
+RUN mkdir -p $APP_HOME && \
+    mkdir -p $APP_HOME/tmp/pids
 
-# Start Nginx and Passenger
-EXPOSE 80
-RUN rm -f /etc/service/nginx/down
-
-# Copy the main application.
-COPY --chown=app:app . ${APP_HOME}
+# Adding gems
+COPY ./Gemfile ${APP_HOME}
+COPY ./Gemfile.lock ${APP_HOME}
 
 # We have private repos - need a Token
 ARG GITHUB_TOKEN
 RUN bundle config github.com x-access-token:${GITHUB_TOKEN}
 RUN bundle install ${BUNDLE_INSTALL_ARGS}
+
+RUN bundle config set without 'development' && bundle config set without 'test' && bundle install --jobs 20 --retry 5
+
+## Copy the main application. (requires docker v17.09.0-ce and newer)
+COPY . ${APP_HOME}
+
+## Rails 6 with Webpacker - prepare assets for Production
+RUN yarn install --check-files
+
+RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
+
+CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+
+
+
