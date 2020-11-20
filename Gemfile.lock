@@ -11,14 +11,16 @@ GIT
       thor (>= 0.19.0, < 2.0)
       thread_safe (~> 0.3, >= 0.3)
 
-PATH
-  remote: ../yams_audio_engine
+GIT
+  remote: https://github.com/autotelik/yams_audio_engine.git
+  revision: 3d0b5a07328763c55b729bd33ad1f3531ff18310
   specs:
     yams_audio_engine (0.1.0)
       rails (>= 5.2)
 
-PATH
-  remote: ../yams_core
+GIT
+  remote: https://github.com/autotelik/yams_core.git
+  revision: ebd0ba3bffa35c3f24505a23086f49eac14df136
   specs:
     yams_core (0.1.0)
       active_storage_validations
