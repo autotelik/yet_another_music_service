@@ -38,30 +38,15 @@ module Yams
     end
 
 
-    %w[Elasticsearch Redis Sidekiq].each do |name|
-      klass = Class.new(Thor) do
-        include TaskCommon
+    %w[Db Elasticsearch Redis Sidekiq].each do |name|
+      desc :"#{name.downcase}", "Start #{name} docker container"
 
-        desc :up, "Start #{name} docker container"
+      define_method("#{name.downcase}") do
+        load_rails_environment
 
-        method_option :init, type: :boolean, default: false, desc: 'Initialise the DB'
-
-        define_method(:up) do
-          load_rails_environment
-
-          docker_up("--no-deps yams_#{name.downcase}")
-
-          if options[:init]
-            docker_exec(cmd: 'bundle exec rake db:create')
-            docker_exec(cmd: 'bundle exec rake db:migrate')
-            docker_exec(cmd: 'bundle exec rake db:seed')
-          end
-        end
+        docker_up("--no-deps yams_#{name.downcase}")
       end
-
-      Yams.const_set name, klass
     end
-
   end
 
 end

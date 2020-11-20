@@ -1,2 +1,2 @@
-web: bundle exec puma -S ~/puma -C config/puma.rb
+web: bundle exec puma -C config/puma.rb -b 'tcp://0.0.0.0:3000'
 webpacker: ./bin/webpack-dev-server

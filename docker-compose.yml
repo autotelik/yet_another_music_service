@@ -43,6 +43,7 @@ services:
       context: .
       args:                           # Build Arguments
         RAILS_ENV: production
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
     container_name: yams-web
     command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
     environment:
@@ -91,11 +92,9 @@ services:
     depends_on:
       - yams_db
       - yams_redis
-      - yams_sidekiq
     links:
       - yams_db
       - yams_redis
-      - yams_sidekiq
     networks:
       - default
     restart: unless-stopped
