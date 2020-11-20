@@ -10,7 +10,7 @@ ruby '>= 2.7.2'
 
 gem 'dotenv', '~> 2.7.5'
 gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
-require 'dotenv/load'
+
 
 # TODO: remove once dev complete move to core gemspec
 if File.exist?('../yams_audio_engine')

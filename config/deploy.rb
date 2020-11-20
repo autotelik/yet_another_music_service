@@ -84,7 +84,7 @@ end
 task :up_app_container do
   on roles(:app) do
     # -p project means containers can be reused if unchanged
-    execute "GITHUB_TOKEN=#{fecth(:github_access_token)} cd #{deploy_to}/current && docker-compose -p yams-web-app -f docker-compose.yml up -d #{fetch(:container_name)}"
+    execute "cd #{deploy_to}/current && GITHUB_TOKEN=#{fetch(:github_access_token)}  docker-compose -p yams-web-app -f docker-compose.yml up -d yams_web"
   end
 
   invoke 'container_admin'
