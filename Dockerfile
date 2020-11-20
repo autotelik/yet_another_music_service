@@ -9,7 +9,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 # See also https://edgeguides.rubyonrails.org/active_storage_overview.html
 
 RUN apt-get update -qq && \
-    apt-get install -y apt-transport-https
+    apt-get install -y apt-transport-https \
     ca-certificates \
     build-essential  \
     gnupg2 libpq-dev nodejs p7zip-full software-properties-common \
