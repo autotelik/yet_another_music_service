@@ -34,7 +34,7 @@ services:
     networks:
       - default
     ports:
-      - "5442:5432"                         # Multiple apps may be on staging - expose different port to outside world
+      - "5432:5432"
     restart: unless-stopped
     volumes:
       - postgres_volume:/var/lib/postgresql/data
