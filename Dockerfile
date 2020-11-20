@@ -8,10 +8,13 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 # Required 3rd party libs
 # See also https://edgeguides.rubyonrails.org/active_storage_overview.html
 
-#RUN apt-get update -qq && \
-#    apt-get install -y apt-transport-https
-   # ca-certificates \
-   # build-essential ffmpeg gnupg2 libpq-dev nodejs p7zip-full software-properties-common vim yarn
+RUN apt-get update -qq && \
+    apt-get install -y apt-transport-https
+    ca-certificates \
+    build-essential  \
+    gnupg2 libpq-dev nodejs p7zip-full software-properties-common \
+    vim \
+    yarn
 
 # Setting env up
 ENV RAILS_ENV='production'
