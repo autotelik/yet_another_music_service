@@ -16,14 +16,14 @@ gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
 if File.exist?('../yams_audio_engine')
   gem 'yams_audio_engine', path: '../yams_audio_engine'
 else
-  gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git', branch: 'update-to-support-rails-6'
+  gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git'
 end
 
 # TODO: remove once dev complete
 if File.exist?('../datashift')
   gem 'datashift', path: '../datashift'
 else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'master'
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'update-to-support-rails-6'
 end
 
 # RAILS
