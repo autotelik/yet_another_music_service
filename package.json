@@ -2,10 +2,10 @@
   "name": "yet_another_music_site",
   "private": true,
   "dependencies": {
-    "@rails/webpacker": "5.1.1",
     "@rails/actioncable": "^6.0.0",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
+    "@rails/webpacker": "5.2.1",
     "bootstrap": "^4.4.1",
     "exports-loader": "^0.7.0",
     "imports-loader": "^0.8.0",

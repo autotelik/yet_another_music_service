@@ -47,7 +47,10 @@ db/*.sqlite3
 /doc/app/
 /doc/features.html
 /doc/specs.html
+/public/assets/
 /public/cache
+public/git_release_rev
+public/release_date
 /public/stylesheets/compiled
 /public/system/*
 /spec/tmp/*

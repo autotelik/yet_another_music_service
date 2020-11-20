@@ -11,15 +11,11 @@
 .vs
 */.vscode
 .vscode
-
-# TODO - UNCOMMENT - this should be part of Capistrano deploy - shared area on server- and not copied here
-# /config/master.key
-
+# Should be part of Capistrano deploy - shared area on server - and not copied here
+config/master.key
 Dockerfile
 docker-compose.yml
 docker-compose.*.yml
-*/bin
-bin
 */obj
 obj
 */node_modules
