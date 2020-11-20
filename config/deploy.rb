@@ -5,7 +5,7 @@ set :application, 'yams'
 
 set :repo_url, "git@github.com:autotelik/yet_another_music_service.git"
 
-set :github_access_token, '1266d72ffc42dcf50140f86076beb6c4ef0a5f4f'
+set :github_access_token, ENV['GITHUB_TOKEN']
 
 # Default branch is :master - to deploy another use - cap staging deploy BRANCH=PROC-7994-jade-server-issues
 set :branch, ENV['BRANCH'] if ENV['BRANCH']
