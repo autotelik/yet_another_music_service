@@ -105,6 +105,7 @@ group :development, :test do
   gem 'capistrano'
   gem 'capistrano-rails'
   gem 'capistrano-rvm'
+  gem "capistrano-scm-copy"
 
   gem 'database_cleaner'
 
