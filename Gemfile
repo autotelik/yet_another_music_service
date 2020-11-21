@@ -67,24 +67,18 @@ gem 'webpacker'
 
 
 # TODO: remove once dev completeresolved_paths
-#if File.exist?('../datashift')
-# gem 'datashift', path: '../datashift'
-#else
-gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'update-to-support-rails-6'
-#end
-#
-# TODO: remove once dev complete move to core gemspec
-#if File.exist?('../yams_audio_engine')
-  #gem 'yams_audio_engine', path: '../yams_audio_engine'
-#else
-  gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git'
-#end
 
-#if File.exist?('../yams_core')
-  #gem 'yams_core', path: '../yams_core'
-#else
-  gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
-#end
+=begin
+gem 'datashift', path: '../datashift'
+gem 'yams_audio_engine', path: '../yams_audio_engine'
+gem 'yams_core', path: '../yams_core'
+=end
+
+
+gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'update-to-support-rails-6'
+gem 'yams_audio_engine', git: 'https://github.com/autotelik/yams_audio_engine.git'
+gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
+
 #
 # # if ENV['YAMS_NON_OPEN_SOURCE_GEMS'].to_s.downcase == 'true'
 # #   %w[yams_events].each do |lib|

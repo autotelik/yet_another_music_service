@@ -27,6 +27,7 @@ before :deploy, :stop_docker_containers
 after :deploy,  :up_app_container
 
 task :stop_docker_containers do
+
   on roles(:app) do
     # Stop existing APP  Container - ignore errors if container not available
     app_container_names.each do |c|
@@ -38,12 +39,13 @@ task :stop_docker_containers do
       end
     end
 
-    images = %W[yams-web-app_#{fetch(:stage)} yams-web-app_yams_sidekiq]
+    images = %W[yams-web-app_yams_web yams-web-app_yams_sidekiq]
 
     images.each { |i| execute "docker rmi -f #{i}; echo 0" }
 
     invoke 'stop_other_containers'
   end
+
 end
 
 after 'deploy', :set_git_commit do
