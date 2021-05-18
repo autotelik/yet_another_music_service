@@ -51,7 +51,7 @@ gem 'listen'
 gem 'pg', '~> 0.18'
 
 # Use Puma as the app server
-gem 'puma', '~> 4.1'
+gem 'puma', '~> 4.3'
 gem 'pundit'
 
 gem 'rubocop', '~> 0.79.0'
