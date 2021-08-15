@@ -15,23 +15,24 @@ After forking this repository, you probably want to :
 
 These can be found under : `app/views/pages`
 
-#### Installation
+## Installation
 
 This application requires:
 
-- Ruby 2.5
-- Rails 5
+- Ruby > 2.7
 - ElasticSearch, Kibana - [Installation instructions](https://www.elastic.co/guide/en/elasticsearch/reference/current/_installation.html) - or see docker section below.
-- Sidekiq and Redis
+- Postgres, Sidekiq and Redis
 
-These are already bundled as services, configured to inter operate, in provided Docker compose setup. 
+These are already bundled as services, configured to inter-operate, in the provided Docker compose setup. 
 
 Clone the Project from github
 
-In your cloned project, install the gems
+In your cloned project, install the gems and dependencies :
 
 ```sh
 bundle install
+
+yarn install
 ```
 
 ### Prerequisites
@@ -51,21 +52,30 @@ For Ubuntu
 sudo apt-get install imagemagick
 ```
 
-We use mailcatcher but is not present in Gemfile since it will conflict with your applications gems at some point.
+We use mailcatcher for testing emails in development, but this is not present in Gemfile since it would conflict with
+the applications gems at some point.
 
 Simply run `gem install mailcatcher` then `mailcatcher` to get started.
 
+## Configuration
 
-### Docker
+The .env file can be used to configure certain aspects of the setup.
+
+Uploaded data is stored using Active Storage.
+
+In config/environments/development.rb the service is set to `:local` by default, and the local storage path
+is defined by ENV : YAMS_LOCAL_STORAGE_PATH
+
+In Production, follow Active Storage's usual configuration and set your preferred cloud storage in : `config/storage.yml`
+
+## Docker
 
 A Dockerfile and docker-compose file are provided to simplify installation.
-
-There is a docker specific database.yml file that is copied into the container under docker/config/database.yml
 
 The complete stack, for a `development``container, can be spun up with a single thor command :
 
 ```sh
-bundle exec thor yams:docker:dev:up
+bundle exec thor yams:docker:dev
 ```
 
 > Elastic Search container may exit first time, with log containing :
@@ -95,11 +105,10 @@ redis-server
 bundle exec sidekiq
 ```
 
-
 ### DB Setup
 
 If using the docker install, DB container should be ready to use,if you wish to use the seed data,
-open a bash sh in the container and jump to seed the DB section.
+open a bash sh in the container and jump to the section Seed the DB
 
 ```sh
  docker exec -ti development bash
@@ -118,7 +127,7 @@ rake db:migrate
 
 #### Seed the DB
 
-The admin user is created via db:seed task with password specified in .env
+The admin user is created via db:seed task. You can specify the email and password in .env
 
 In development seed will also create an artist User
 
@@ -126,29 +135,24 @@ email: 'artist@example.com'
 password: 'artist_change_me'
  
  ```ruby
-rake db:seed
+rails db:seed
 ```
-
-- Login
-
-- Change admin password !
 
 ##### Loading Sample Audio Data
 
 Example data can be **bulk uploaded** from Excel spreadsheet containing details of tracks and covers.
 
-There is a starter pack of my music and images available Free, by visiting this link
+There is a starter pack of music and images available for free, by visiting this link
 
-https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=1
+[Free Sample Pack](https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=1)
 
-If download does not start automatically, there should be a a Download button top right.
+If download does not start automatically, there should be a Download button top right.
 
-Save to /tmp on your local hard drive: 
+Save zip and extract contents to `/tmp` on your local hard drive: 
 
-
-> If you save elsewhere, open up the loading spreadsheet, `db/seed/aqwan_tracks.xls`, and change the `/tmp` path hardcoded in there.
+> If you save elsewhere, open up the loading spreadsheet, `db/seed/aqwan_tracks.xls`, and change the `/tmp` path that's hardcoded in there.
  
-> The development artist user is assigned by default in the spreadsheet, again edit in th4 spreadsheet to change.
+> The development artist user is assigned by default in the spreadsheet, again edit in the spreadsheet to change.
 
 Run
 
@@ -175,3 +179,5 @@ License
 @copyright aqwan @ autotelik
 
 open source
+
+[Free Sample Pack]: https://www.dropbox.com/sh/ofk927xx4f3kvww/AADNZHYVedH7-3eQNVRR10VVa?dl=1

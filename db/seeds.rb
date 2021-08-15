@@ -5,10 +5,10 @@ if(Rails.env.development?)
   DatabaseCleaner.clean_with(:truncation)
 end
 
-user = YamsCore::User.find_or_create_by!(email: Rails.application.secrets.admin_email) do |user|
+user = YamsCore::User.find_or_create_by!(email: ENV.fetch('YAMS_ADMIN_EMAIL', 'admin@example.com')) do |user|
   user.name = 'admin'
-  user.password = Rails.application.secrets.admin_password
-  user.password_confirmation = Rails.application.secrets.admin_password
+  user.password =  ENV.fetch('YAMS_ADMIN_PASSWORD', 'admin123')
+  user.password_confirmation = ENV.fetch('YAMS_ADMIN_PASSWORD', 'admin123')
   user.confirm
   user.admin!
 end

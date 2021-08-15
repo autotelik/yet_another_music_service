@@ -6,6 +6,7 @@
 development:
   adapter:  postgresql
   host:     <%= ENV['YAMS_DB_HOST'] || Rails.application.credentials.dig(:postgresql, :host) || 'localhost' %>
+  port:     <%= ENV.fetch('YAMS_DB_PORT', 5432) %>
   encoding: unicode
   database: yams_development
   pool:     5
@@ -18,6 +19,7 @@ development:
 test:
   adapter:  postgresql
   host:     localhost
+  port:     <%= ENV.fetch('YAMS_DB_PORT', 5432) %>
   encoding: unicode
   database: yams_test
   pool:     5
@@ -29,6 +31,7 @@ test:
 production:
   adapter:  postgresql
   host:     <%= ENV['YAMS_DB_HOST'] %>
+  port:     <%= ENV.fetch('YAMS_DB_PORT', 5432) %>
   encoding: unicode
   database: yams_production
   pool:     5

@@ -33,17 +33,17 @@ Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 # If you are not using ActiveRecord, you can remove this line.
 ActiveRecord::Migration.maintain_test_schema!
 
-Capybara.javascript_driver = :webkit
+Capybara.javascript_driver = :selenium
 
-Capybara::Webkit.configure do |config|
-  config.allow_url('fonts.googleapis.com')
-
-  # Enable debug mode. Prints a log of everything the driver is doing.
-  # config.debug = true
-
-  # Timeout if requests take longer than 5 seconds
-  config.timeout = 5
-end
+# Capybara::Webkit.configure do |config|
+#   config.allow_url('fonts.googleapis.com')
+#
+#   # Enable debug mode. Prints a log of everything the driver is doing.
+#   # config.debug = true
+#
+#   # Timeout if requests take longer than 5 seconds
+#   config.timeout = 5
+# end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures

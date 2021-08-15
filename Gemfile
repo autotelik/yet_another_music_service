@@ -11,10 +11,9 @@ ruby '>= 2.7.2'
 gem 'dotenv', '~> 2.7.5'
 gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
 
-
 # RAILS
-gem 'rack', '2.0.8'
-gem 'rails', '~> 6.0.3.4', '>= 6.0.2.2'
+gem 'rack'#, '2.0.8'
+gem 'rails', '~> 6.1.4', '>= 6.0.2.2'
 
 gem 'jbuilder', '~> 2.5'
 
@@ -48,7 +47,8 @@ gem 'kaminari', '>= 1.2.1'
 
 gem 'listen'
 
-gem 'pg', '~> 0.18'
+#gem 'pg'#, '~> 0.18'
+gem 'pg', '~> 1.2', '>= 1.2.3'
 
 # Use Puma as the app server
 gem 'puma', '~> 4.1'
@@ -110,15 +110,9 @@ group :development, :test do
 end
 
 group :test do
-  gem 'capybara', '~> 2.13'
+  gem 'capybara'
   gem 'capybara-email'
-
-  # On Centos - QMAKE=/usr/lib64/qt5/bin/qmake gem install capybara-webkit
-  #
-  # TODO How to set in bundle - this dont seem to work :
-  #   bundle config build.capybara-webkit  --with-opt-include=/usr/lib64/qt5/bin/qmake
-  #
-  gem 'capybara-webkit'
+  gem 'selenium-webdriver'
 
   gem 'factory_bot_rails'
   gem 'faker'
@@ -127,8 +121,10 @@ group :test do
 
   gem 'launchy'
   gem 'rails-controller-testing'
-  gem 'rails_event_store-rspec'
+  gem 'ruby_event_store-rspec'
   gem 'rspec'
   gem 'rspec-rails'
   gem 'shoulda-matchers', '~> 3.1'
 end
+
+

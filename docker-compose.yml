@@ -34,7 +34,7 @@ services:
     networks:
       - default
     ports:
-      - "5432:5432"
+      - ${YAMS_DB_PORT:-5432}:${YAMS_DB_PORT:-5432}
     restart: unless-stopped
     volumes:
       - postgres_volume:/var/lib/postgresql/data
