@@ -1,0 +1,9 @@
+<div class="section accent">
+  <div class="w-container">
+
+    <% content_for :title do t('terms.title', instance: Rails.application.secrets.domain_name)  end %>
+
+    <%= t('terms.body_html') %>
+
+  </div>
+</div>
