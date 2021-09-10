@@ -1,7 +1,8 @@
-$colour-blue-grey:      #637079;
-$colour-border-break:   #d5d5e0;
 
-$colour-btc-orange:     #f7931a;
+$colour-btc-orange-alt: #f7931a;
+$colour-btc-orange:     #f2a900;
+$colour-btc-grey:       #4d4d4e;
+
 
 $colour-cool-mint:      #dafcff;
 
@@ -14,6 +15,8 @@ $colour-green-blue:     #729f98;
 
 $colour-blue-grey-1:    #3b4143;
 $colour-blue-grey-2:    #4d595f;
+
+
 
 $colour-intro-btn:      #2d7174;
 $colour-off-white:      #f0eceb;
@@ -33,14 +36,18 @@ $colour-rich-black:     #020202;
 $colour-danger-red:     #D1495B;
 
 // AUDIO
-$colour-wave-wave:     $colour-btc-orange;
-$colour-wave-progress: #c7630a;
+$colour-wave-wave:     $colour-btc-grey;
+$colour-wave-progress: $colour-btc-orange;
 $colour-wave-cursor:   #010101;
+$colour-blue-grey:      #637079;
+$colour-border-break:   #d5d5e0;
+
 
 // Backgrounds
-$colour-default-body:     #192024;
-$colour-theme-background: #192024;
-$colour-audio-player:     #2d3e4f;
+$colour-default-body:       #192024;
+$colour-theme-background:   #192024;
+$colour-audio-player:       #2d3e4f;
+$colour-audio-player-accent:#272F38;
 
 $colour-secondary: $colour-gun-metal-blue;
 

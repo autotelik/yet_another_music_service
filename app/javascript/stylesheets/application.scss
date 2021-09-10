@@ -25,10 +25,10 @@
 @import "yams_theme/variables";
 
 @import "yams_theme/direct_uploads";
-@import "yams_theme/pages";
+//@import "yams_theme/pages";
 @import "yams_theme/select2";
 
-@import "yams_audio_engine/yams_override";
+@import "yams_audio_engine/yams_player";
 
 * {
   box-sizing: border-box;
@@ -339,6 +339,19 @@ img {
 .material-icons-small {
   font-size: 16px;
 }
+
+.material-icons {
+  font-size: 20px;
+}
+
+.material-icons-medium {
+  font-size: 32px;
+}
+
+.material-icons-large {
+  font-size: 48px;
+}
+
 
 nav {
   top: 0px;

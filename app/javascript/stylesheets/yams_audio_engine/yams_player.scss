@@ -1,0 +1,226 @@
+#yams-audio-wave-controls-section {
+  text-align: center;
+  padding-bottom: 8px;
+  padding-top: 4px;
+}
+
+.yams-audio-list-selected {
+  background-color: $colour-audio-player-accent;
+}
+
+#yams-audio-player {
+  background-color:        $colour-audio-player;
+  border-top: 1px solid    $colour-blue-grey;
+  border-bottom: 1px solid $colour-blue-grey;
+}
+
+.yams-audio-playlist li{
+  display: block;
+  transition: 0.25s;
+  color: ghostwhite;
+  padding: 8px 0 8px 0;
+  border-bottom: 1px solid $colour-gun-metal-blue;
+}
+
+.yams-audio-playlist li *{
+  display: inline-block;
+  padding: 0;
+  cursor: pointer;
+}
+
+
+// VOLUME SLIDER
+
+.yams-audio-controls-volume-range{
+  -webkit-appearance: none;
+  width: 50%;
+  height: 2px;
+  background: $colour-audio-player;
+  outline: none;
+  border: 1px solid $colour-btc-orange-alt;
+  border-radius: 1px;
+} 
+
+/* firefox */
+
+.yams-audio-controls-volume-range::-moz-range-thumb {
+  width: 6px;
+  height: 6px;
+  cursor: pointer;
+  border: 2px solid $colour-btc-orange-alt;
+  background: $colour-audio-player;
+  border-radius: 3px;
+}
+
+.yams-audio-controls-volume-range::-moz-range-progress {
+  background-color: $colour-btc-orange-alt;
+}
+
+.yams-audio-controls-volume-range::-moz-range-track {  
+  background-color: $colour-btc-orange;
+}
+
+/* IE*/
+
+.yams-audio-controls-volume-range::-ms-fill-lower {
+  background-color: $colour-btc-orange-alt;
+}
+.yams-audio-controls-volume-range::-ms-fill-upper {  
+  background-color:$colour-btc-orange;
+}
+
+/* chrome/safari */
+
+.yams-audio-controls-volume-range::-webkit-slider-runnable-track {
+  width: 50%;
+  height: 2px;
+  background: $colour-audio-player;
+  outline: none;
+  border: 1px solid $colour-btc-orange-alt;
+  border-radius: 1px;
+}
+
+.yams-audio-controls-volume-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 6px;
+  height: 12px;
+  border: 2px solid $colour-btc-orange-alt;
+  border-radius: 3px;
+  background: $colour-audio-player;
+  margin-top: -6px;
+ 
+}
+
+
+/* YAMS - OVER RIDES OF THE ENGINE AND PLAYER SPECIFIC STYLES*/
+
+/*
+.yams-audio-author-name {
+  font-size: 18px;
+  color: $colour-cool-mint !important;
+}
+
+
+#navbar-container
+{
+  border-bottom: 1px solid whitesmoke;
+}
+
+#navbar-audio-player
+{
+  border-top: 1px solid whitesmoke;
+}
+
+.yams-audio-track-title, .yams-audio-duration, .yams-audio-full-name
+{
+  font-size: 16px;
+}
+
+.yams-audio-duration
+{
+  font-size: 16px;
+}
+
+.yams-audio-track-playlist i.yams-audio-active{
+  box-shadow: 0px 0px 5px  $colour-blue-grey-2;
+  color: $colour-blue-grey-1;
+}
+
+.yams-audio-playlist {
+}
+
+
+
+
+.yams-audio-playlist li .duration{
+  color: ghostwhite;
+  background-color: black;
+  padding: 0px 10px;
+}
+
+.yams-audio-playlist li i{
+  color:  $colour-cool-mint;
+}
+
+.yams-audio-playlist li:hover i{
+  color:  $colour-cool-mint;
+}
+
+.yams-audio-playlist a {
+  color:  $colour-cool-mint;
+  text-decoration: none;
+}
+
+.yams-audio-playlist a {
+  color: ghostwhite;
+  text-decoration: none;
+}
+
+.yams-audio-playlist li .full-name{
+  padding: 0px 10px;
+}
+
+.yams-audio-playlist li:hover{
+  color:  $colour-cool-mint;
+  cursor: pointer;
+}
+
+.yams-audio-playlist li.active{
+  background-color: black;
+  color: white;
+}
+
+.yams-audio-playlist li.yams-audio-active:hover{
+  color: white;
+}
+
+.yams-audio-playlist > li:nth-child(odd) {
+}
+.yams-audio-playlist > li:nth-child(even) {
+}
+
+.yams-audio-playlist .current-track{
+  background-color: black;
+  color: white;
+}
+
+.yams-audio-player .yams-audio-pages li:hover{
+  cursor: pointer;
+  opacity: 50%;
+}
+
+.yams-audio-playlist-content{
+  display: inline-block;
+  width: 100%;
+}
+
+.yams-audio-track-basic-info {
+  padding-left: 32px;
+  font-size:    14px;
+  line-height:  16px;
+  font-weight:  100;
+}
+
+#yams-audio-track-playlist-wrapper-row
+{
+  padding: 0;
+
+}
+#yams-audio-track-volume {
+  float: right;
+  margin-right: 32px;
+}
+
+.datashift-user-track-playlist h6
+{
+  color: $colour-cool-mint !important;
+}
+
+
+
+#radio-create-playlist-wrapper {
+  margin-left: 48px;
+  margin-top: 16px;
+}
+
+*/

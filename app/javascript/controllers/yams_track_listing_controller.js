@@ -1,9 +1,9 @@
-import WaveSurfer from 'wavesurfer.js';
-
 import { Controller } from "stimulus"
 
 // Import UJS so we can access the Rails.ajax method
 import Rails from "@rails/ujs";
+
+// Manages loading Tracks from Playlists/Albums etc
 
 export default class extends Controller {
 
@@ -12,7 +12,6 @@ export default class extends Controller {
         trackId: String,
         url: String
     }
-
 
     connect() {
 
@@ -49,7 +48,7 @@ export default class extends Controller {
             }
         }
 
-        console.log(this.settings);
+        console.log('TrackListing Settings: ' + this.settings);
     }
 
     load(event){
@@ -59,11 +58,7 @@ export default class extends Controller {
             url: event.currentTarget.dataset.url,
             type: 'GET',
             error:function(e){
-                alert("FAILED TO PLAY TRACK" + e);
-            },
-            success: function (data) {
-        
-                console.log('UPDATE PLAYER');
+                alert("FAILED TO GET TRACK" + e);
             }
         })
     }

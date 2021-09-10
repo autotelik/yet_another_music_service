@@ -7,11 +7,14 @@ export default class extends Controller {
     static values = {
         settings: String,
         trackId: String,
-        audioUrl: String
+        audioUrl: String,
+        listItemId: String,
+        nextTrack: String,
+        prevTrack: String,
+        volume: Number
     }
 
-    static targets = ["player"]
-
+    static targets = ["player", "volumeSlider"]
 
     handleFrameRendered(event) {
         console.log('IN handleFrameRendered - ID ' + event.target.id);
@@ -21,33 +24,36 @@ export default class extends Controller {
         }
     }
 
-    connect() {
+    // Create WaveSurfer instance, load audio and render the Wav
 
-        $('#yams-player-controls-pause').hide();
-        $('#yams-player-controls-play').show();
+    connect() {
+        console.log('WaveSurfer process new Track load');
+        
+        this.pauseControl().hide();
+        this.playControl().show();
+        
+        this.volumeValue = 100.0;
+
+        this.settings = {}
 
         if (this.settingsValue) {
-            this.settings = JSON.parse(this.settingsValue);
+            this.settings = JSON.parse(this.settingsValue).settings;
         }
         else {
+            // See - yams_audio_engine/app/services/yams_audio/player_settings_builder.rb
             this.settings = {
-                state: null,
-                engine: null,
-
-                save_interval: 1000,
-
-                is_radio: false,
-
-            
+                
                 autoplay: false,
                 random: false,
                 repeat: null,
-                volume: 1,
+                save_interval: 1000,
         
-                colors: {
-                    wave_color: 'green',
-                    progress_color: 'purple',
-                    cursor_color: 'black'
+                waveform: {
+                    colors: {
+                        wave_color: 'green',
+                        progress_color: 'purple',
+                        cursor_color: 'black'
+                    }
                 },
 
                 // could holds details of the control elements such as play/prev/volume buttons
@@ -62,149 +68,183 @@ export default class extends Controller {
 
         if (this.audioUrlValue) {
 
+            this.playerElem().show();
+
             this.engine = WaveSurfer.create({
-                container: '#waveform',
-                waveColor:     this.settings.colors.wave_color,
-                progressColor: this.settings.colors.progress_color,
-                cursorColor:   this.settings.colors.cursor_color,
+                container:     '#waveform',
+                waveColor:     this.settings.waveform.wave_color,
+                progressColor: this.settings.waveform.progress_color,
+                cursorColor:   this.settings.waveform.cursor_color,
                 barWidth: 3,
                 hideScrollbar: true,
                 backend: 'MediaElement'
             });
 
-
             this.engine.load(this.audioUrlValue);
-
 
             console.log('WaveSurfer created => #waveform');
 
             this.engine.on('ready', function(){
-
-                // console.log('Engine READY')
-
-                // self.audio_data.position = 0;
-                // self.seek(self.audio_data.position);
-
-                // self.visual.current_position.html(formatTime(self.audio_data.position));
-                // self.visual.total_duration.html(formatTime(self.engine.getDuration()));
-
-                // self.volume(self.settings.volume);
-                // // self.controls.volume.get(0).value = self.settings.volume * 100;
-                // self.controls.volume.attr('value',  self.settings.volume * 100);
-
-                // var volume = parseInt(self.controls.volume.attr('value'));
-                // self.controls.volume.change();
-
-            
-
-                // self.engine.on('finish', function(){
-                //     self.save_current_state();
-                //     clearInterval(self.timer);
-                //     self.next();
-                //     console.log('Track finished');
-                // })
+                console.log('Engine READY')
             });
 
+
+            // console.log('WaveSurfer Engine ON');
+
             if (this.settings.autoplay) {
-                console.log('AutoPlay ON- Play')
+                // console.log('AutoPlay ON- Play')
                 this.play();
             }
 
-            console.log('WaveSurfer Engine ON');
+            $("li").removeClass("yams-audio-list-selected");
 
+            $('#' + this.listItemIdValue).addClass("yams-audio-list-selected");
         }
         else {
-            console.log('WARNING NO AUDIO !? - Check audioUrlValue')
+            // console.log('WARNING NO AUDIO !? - Check audioUrlValue')
+            this.playerElem().hide();
         }
 
     }
 
+    play(event){
+        event.stopPropagation()   // otherwise calls rails server as well - maybe cos we use <a href='#' ?
+        //event.preventDefault()
 
-    play(){
-        console.log('Someone clicked PLAY');
+        console.log('Clicked PLAY ON: ' + $('#' + this.listItemIdValue));
     
-        $('#yams-player-controls-pause').show();
-        $('#yams-player-controls-play').hide();
+        this.pauseControl().show();
+        this.playControl().hide();
 
-            //this.controls.play.addClass('d-none');
-            //this.controls.pause.removeClass('d-none');
-
-            //data-action': "click->yams-audio-player#play:capture")
-
-
-            //console.log('PLAY - Save Callback every - ' + this.save_interval + ' ms');
-            //this.timer = setInterval(this.save_current_state, this.save_interval);
+        //console.log('PLAY - Save Callback every - ' + this.save_interval + ' ms');
+        //this.timer = setInterval(this.save_current_state, this.save_interval);
        
-        console.log('Calling Engine Play');
+        $("li").removeClass("yams-audio-list-selected");
+
+        $('#' + this.listItemIdValue).addClass("yams-audio-list-selected");
+
         this.engine.play();
-         
     }
     
-    pause(){
-        console.log('Someone clicked PAUSE');
+    pause(event){
+        event.stopPropagation()
+        //console.log('Clicked PAUSE');
 
-        $('#yams-player-controls-pause').hide();
-        $('#yams-player-controls-play').show();
-
+        this.pauseControl().hide();
+        this.playControl().show();
 		
-		//this.audio_data.autoplay = false;
-		//this.save_current_state();
-		
-		//clearInterval(this.timer);
-
 		this.engine.pause();
     }
 
-    // render the track in player
-    render_and_play_audio_file(event)
-    {
-        console.log('START render_and_play_audio_file');
+    previous(event) {
+        event.stopPropagation() 
+        //console.log('Clicked PREVIOUS');
+
+        let findId = this.listItemIdValue;
+
+        // TODO: best way of passing the playlist ID in ?
+        let playList = this.listItems('#yams-audio-radio-playlist');
+
+        playList.each(function(i, li) {
+            //console.log(i);
+            //console.log(li.id);
+         
+            // when i == 0 li == empty string - probaly the header row ?
+            if (li.id == findId && i > 1) {
+                 // TODO - for now we assume its the Cover image we click - find more sustainable way of passing this info in
+                $('#' + playList[i-1].id).find('img').trigger('click');
+                return false;
+            }
+        });
     }
 
+    next(event) {
+        event.stopPropagation()  
+    
+        let findId = this.listItemIdValue;
 
-// 		console.log("Loading Audio Engine from URL " + track.audio_url)
-// 		
+        //console.log('Clicked NEXT ON : ' + findId);
 
+        // TODO: best way of passing the playlist ID in ?
+        let playList = this.listItems('#yams-audio-radio-playlist');
 
-// 		this.visual.pages.children('li').removeClass('yams-audio-active');
-// 		var visual_page = $('#page-' + this.audio_data.page);
-// 		visual_page.addClass('yams-audio-active')
-// */
-// 		var self = this;
+        playList.each(function(i, li) {
+            
+            if (li.id == findId && playList[i+1]) {
+                 // TODO - for now we assume its the Cover image we click - find more sustainable way of passing this info in
+                $('#' + playList[i+1].id).find('img').trigger('click');
+                return false;
+            }
+        });
+    }
 
-// 		this.engine.on('ready', function(){
+    volumeMute(event) {
+        event.stopPropagation()  
+        console.log('Clicked MUTE');
+       
+        $('#yams-player-controls-volume-mute').hide();
+        $('#yams-player-controls-volume-off').show();
+        
+        this.volumeValue = this.volumeSliderTarget.value;
+        console.log(this.volumeValue);
 
-// 			console.log('Engine READY')
+        this.volumeSliderTarget.value = 0;
 
-// 			self.audio_data.position = 0;
-// 			self.seek(self.audio_data.position);
+        this.engine.setVolume(0);
+    }
 
-// 			self.visual.current_position.html(formatTime(self.audio_data.position));
-// 			self.visual.total_duration.html(formatTime(self.engine.getDuration()));
+    volumeOff(event) {
+        event.stopPropagation()  
+        console.log('Clicked VOLUME OFF');
 
-// 			self.volume(self.settings.volume);
-// 			// self.controls.volume.get(0).value = self.settings.volume * 100;
-// 			self.controls.volume.attr('value',  self.settings.volume * 100);
+        $('#yams-player-controls-volume-mute').show();
+        $('#yams-player-controls-volume-off').hide();
 
-// 			var volume = parseInt(self.controls.volume.attr('value'));
-// 			self.controls.volume.change();
+        this.volumeSliderTarget.value = this.volumeValue;
 
-// 			if (self.settings.autoplay) {
-// 				console.log('AutoPlay ON- Play')
-// 				self.play();
-// 			}
+        this.engine.setVolume((this.volumeValue / this.maxVolume()));
+    }
 
-// 			self.engine.on('finish', function(){
-// 				self.save_current_state();
-// 				clearInterval(self.timer);
-// 				self.next();
-// 				console.log('Track finished');
-// 			})
-// 		});
+    volumeSliderChange(event) {
+        event.stopPropagation()  
 
+        let value = parseInt(this.volumeSliderTarget.value);
 
-// 	} */
+        if (isNaN(value)) value = 1;
+    
+    
+        if (value == 0) {
+            $('#yams-player-controls-volume-mute').hide();
+            $('#yams-player-controls-volume-off').show();
+        } else  {
+            $('#yams-player-controls-volume-mute').show();
+            $('#yams-player-controls-volume-off').hide();
+        }
+
+        this.volumeValue = value;
+
+        this.engine.setVolume(value / this.maxVolume());
+    }
+
+    listItems(id) {
+        return $(id + ' li')
+    }
+
+    maxVolume() {
+       return 100.0;
+    }
+
+    pauseControl() {
+        return $('#yams-player-controls-pause');
+    }
+
+    playControl() { 
+        return $('#yams-player-controls-play');
+    }
+
+    playerElem() {
+        return $('#' + this.playerTarget.id)
+    }
+
 }
-
-
 

@@ -74,6 +74,22 @@ is defined by ENV : YAMS_LOCAL_STORAGE_PATH
 
 In Production, follow Active Storage's usual configuration and set your preferred cloud storage in : `config/storage.yml`
 
+### Audio Settings
+
+Can be configured in the initializer : 'config/initializers/yams_audio_engine.rb'
+
+```ruby
+YamsAudioEngine::Config.configure do |config|
+
+    # Waveform colors.
+    #
+    config.wave_color     = '#f7931a'
+    config.progress_color = '#f2a900'
+    config.cursor_color   = '#010101'
+  
+end
+
+```
 ## Docker
 
 A Dockerfile and docker-compose file are provided to simplify installation.
