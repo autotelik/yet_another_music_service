@@ -41,12 +41,12 @@ gem 'importmap-rails'
 # rails webpacker:install:stimulus
 gem 'hotwire-rails'
 
-# TODO: remove once dev completeresolved_path
+# TODO: remove once dev complete resolved_path
 
 if File.exist?('/home/rubyuser/SoftwareDev/git/datashift')
   gem 'datashift', path: '../datashift'
 else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: 'update-to-support-rails-6'
+  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'#, branch: 'update-to-support-rails-6'
 end
 
 # gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
