@@ -3125,3 +3125,997 @@ gems path: /usr/share/rvm/gems
 2021-09-09 12:12:38,931 [72578788]   WARN - ctionSystem.impl.ActionUpdater - 1324 ms to expand group child TabList 
 2021-09-09 12:15:18,607 [72738464]   WARN - ctionSystem.impl.ActionUpdater - 1367 ms to expand group child AttachProject 
 2021-09-09 12:15:18,609 [72738466]   WARN - ctionSystem.impl.ActionUpdater - 1548 ms to expand group child FileOpenGroup 
+2021-09-11 10:40:31,291 [     57]   WARN - llij.ide.plugins.PluginManager - id redefinition ([row,col,system-id]: [2,3,"product classpath"]) 
+2021-09-11 10:40:32,322 [   1088]   WARN - llij.ide.plugins.PluginManager - Problems found loading plugins:
+  The Project Wide Analysis (id=com.intellij.analysis.pwa, path=~/idea-IU-212.4746.92/plugins/pwa-core) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Project Wide Analysis for Java (id=com.intellij.analysis.pwa.java, path=~/idea-IU-212.4746.92/plugins/java-pwa) plugin Plugin 'Project Wide Analysis for Java' cannot be loaded because it depends on plugin 'Project Wide Analysis' which failed to load
+  The Java EE: Gradle Integration (id=com.intellij.javaee.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-javaee) plugin Requires plugin 'com.intellij.javaee' to be enabled
+  The JBoss Frameworks Base (id=com.intellij.jboss.core, path=~/idea-IU-212.4746.92/plugins/jboss-core) plugin Requires plugin 'com.intellij.java-i18n' to be enabled
+  The Persistence Frameworks (id=com.intellij.persistence, path=~/idea-IU-212.4746.92/plugins/PersistenceSupport) plugin Requires plugin 'com.intellij.diagram' to be enabled
+  The Performance Testing (Dynamic Plugins) (id=com.jetbrains.performancePlugin.dynamicPlugins, path=~/idea-IU-212.4746.92/plugins/dynamicPluginsTests-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Gradle) (id=com.jetbrains.performancePlugin.gradle, path=~/idea-IU-212.4746.92/plugins/performanceTesting-gradle) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Maven) (id=com.jetbrains.performancePlugin.maven, path=~/idea-IU-212.4746.92/plugins/performanceTesting-maven) plugin Requires plugin 'org.jetbrains.idea.maven' to be enabled
+  The Performance Testing (Workspace Model) (id=com.jetbrains.performancePlugin.workspaceModel, path=~/idea-IU-212.4746.92/plugins/workspaceModel-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Gradle-Java (id=org.jetbrains.plugins.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-java) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle Dependency Updater Implementation (id=org.jetbrains.plugins.gradle.dependency.updater, path=~/idea-IU-212.4746.92/plugins/gradle-dependencyUpdater) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle-Maven (id=org.jetbrains.plugins.gradle.maven, path=~/idea-IU-212.4746.92/plugins/gradle-java-maven) plugin Requires plugin 'org.intellij.groovy' to be enabled
+  The SSH Remote Run (id=org.jetbrains.plugins.remote-run, path=~/idea-IU-212.4746.92/plugins/remote-run) plugin Requires plugin 'com.jetbrains.plugins.webDeployment' to be enabled 
+2021-09-11 10:40:53,038 [  21804]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.2IKE90, INVOCATION_ID=e89a1f2953cc43b0a4ab06cefc0f2b4b, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2031,unix/autotelik-2:/tmp/.ICE-unix/2031, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1840, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a9c13772-b411-47ab-9d95-b258dc6a78e2, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-11 10:40:53,039 [  21805]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-11 10:40:53,039 [  21805]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-11 10:40:53,714 [  22480]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.2IKE90, INVOCATION_ID=e89a1f2953cc43b0a4ab06cefc0f2b4b, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2031,unix/autotelik-2:/tmp/.ICE-unix/2031, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1840, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a9c13772-b411-47ab-9d95-b258dc6a78e2, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-11 10:40:53,714 [  22480]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-11 10:40:53,714 [  22480]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-11 10:40:54,439 [  23205]   WARN - ctionSystem.impl.ActionUpdater - 1188 ms to expand group child OpenFile 
+2021-09-11 10:40:57,074 [  25840]   WARN - ctionSystem.impl.ActionUpdater - 1505 ms to expand group child ShowIntentionsGroup 
+2021-09-11 10:40:57,092 [  25858]   WARN - ctionSystem.impl.ActionUpdater - 1509 ms to expand group child NewElementInMenuGroup 
+2021-09-11 10:40:57,093 [  25859]   WARN - ctionSystem.impl.ActionUpdater - 1509 ms to expand group child OpenProjectGroup 
+2021-09-11 10:40:57,204 [  25970]   WARN - ctionSystem.impl.ActionUpdater - 2354 ms to expand group child ShowIntentionsGroup 
+2021-09-11 10:40:58,212 [  26978]   WARN - ctionSystem.impl.ActionUpdater - 1119 ms to expand group child OpenFile 
+2021-09-11 10:40:58,219 [  26985]   WARN - ctionSystem.impl.ActionUpdater - 1007 ms to expand group child LightEditOpenFileInProject 
+2021-09-11 10:40:58,219 [  26985]   WARN - ctionSystem.impl.ActionUpdater - 1014 ms to expand group child LightEditModePopup 
+2021-09-11 10:40:59,220 [  27986]   WARN - ctionSystem.impl.ActionUpdater - 1000 ms to expand group child $LRU 
+2021-09-11 10:40:59,235 [  28001]   WARN - ctionSystem.impl.ActionUpdater - 3651 ms to expand group child FileOpenGroup 
+2021-09-11 10:41:00,272 [  29038]   WARN - ctionSystem.impl.ActionUpdater - 1030 ms to expand group child RefactoringMenu 
+2021-09-11 10:41:00,272 [  29038]   WARN - ctionSystem.impl.ActionUpdater - 1034 ms to expand group child EditorPopupMenu1.FindRefactor 
+2021-09-11 10:41:00,273 [  29039]   WARN - ctionSystem.impl.ActionUpdater - 1036 ms to expand group child EditorPopupMenu1 
+2021-09-11 10:41:01,987 [  30753]   WARN - ctionSystem.impl.ActionUpdater - 1647 ms to expand group child SelectInProjectView 
+2021-09-11 10:41:02,113 [  30879]   WARN - ctionSystem.impl.ActionUpdater - 1778 ms to expand group child ProjectViewToolbar 
+2021-09-11 10:41:02,114 [  30880]   WARN - ctionSystem.impl.ActionUpdater - 1779 ms to expand group child null 
+2021-09-11 10:41:03,890 [  32656]   WARN - ctionSystem.impl.ActionUpdater - 1776 ms to expand group child null 
+2021-09-11 10:41:03,891 [  32657]   WARN - ctionSystem.impl.ActionUpdater - 1776 ms to expand group child null 
+2021-09-11 10:41:05,236 [  34002]   WARN - ctionSystem.impl.ActionUpdater - 1345 ms to expand group child null 
+2021-09-11 10:41:05,237 [  34003]   WARN - ctionSystem.impl.ActionUpdater - 1345 ms to expand group child null 
+2021-09-11 10:41:07,036 [  35802]   WARN - ctionSystem.impl.ActionUpdater - 1786 ms to expand group child null 
+2021-09-11 10:41:49,762 [  78528]   WARN - ctionSystem.impl.ActionUpdater - 2135 ms to expand group child TabList 
+2021-09-11 10:41:49,762 [  78528]   WARN - ctionSystem.impl.ActionUpdater - 2135 ms to expand group child TabList 
+2021-09-11 10:41:54,152 [  82918]   WARN - ctionSystem.impl.ActionUpdater - 2059 ms to expand group child null 
+2021-09-11 10:41:54,152 [  82918]   WARN - ctionSystem.impl.ActionUpdater - 2059 ms to expand group child null 
+2021-09-11 10:41:54,585 [  83351]   WARN - ndler.BundlerGemInfrastructure - bundle check exited with non-zero status: {exitCode=11, timeout=false, cancelled=false, stdout=, stderr=Your Gemfile lists the gem sqlite3 (>= 0) more than once.
+You should probably keep only one of them.
+Remove any duplicate entries and specify the gem only once.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+The git source https://github.com/autotelik/yams_events.git is not yet checked out. Please run `bundle install` before trying to start your application
+} 
+2021-09-11 10:42:01,406 [  90172]   WARN - ctionSystem.impl.ActionUpdater - 1173 ms to expand group child TabList 
+2021-09-11 10:42:01,407 [  90173]   WARN - ctionSystem.impl.ActionUpdater - 1174 ms to expand group child TabList 
+2021-09-11 17:00:57,986 [     42]   WARN - llij.ide.plugins.PluginManager - id redefinition ([row,col,system-id]: [2,3,"product classpath"]) 
+2021-09-11 17:00:59,133 [   1189]   WARN - llij.ide.plugins.PluginManager - Problems found loading plugins:
+  The Project Wide Analysis (id=com.intellij.analysis.pwa, path=~/idea-IU-212.4746.92/plugins/pwa-core) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Project Wide Analysis for Java (id=com.intellij.analysis.pwa.java, path=~/idea-IU-212.4746.92/plugins/java-pwa) plugin Plugin 'Project Wide Analysis for Java' cannot be loaded because it depends on plugin 'Project Wide Analysis' which failed to load
+  The Java EE: Gradle Integration (id=com.intellij.javaee.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-javaee) plugin Requires plugin 'com.intellij.javaee' to be enabled
+  The JBoss Frameworks Base (id=com.intellij.jboss.core, path=~/idea-IU-212.4746.92/plugins/jboss-core) plugin Requires plugin 'com.intellij.java-i18n' to be enabled
+  The Persistence Frameworks (id=com.intellij.persistence, path=~/idea-IU-212.4746.92/plugins/PersistenceSupport) plugin Requires plugin 'com.intellij.diagram' to be enabled
+  The Performance Testing (Dynamic Plugins) (id=com.jetbrains.performancePlugin.dynamicPlugins, path=~/idea-IU-212.4746.92/plugins/dynamicPluginsTests-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Gradle) (id=com.jetbrains.performancePlugin.gradle, path=~/idea-IU-212.4746.92/plugins/performanceTesting-gradle) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Maven) (id=com.jetbrains.performancePlugin.maven, path=~/idea-IU-212.4746.92/plugins/performanceTesting-maven) plugin Requires plugin 'org.jetbrains.idea.maven' to be enabled
+  The Performance Testing (Workspace Model) (id=com.jetbrains.performancePlugin.workspaceModel, path=~/idea-IU-212.4746.92/plugins/workspaceModel-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Gradle-Java (id=org.jetbrains.plugins.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-java) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle Dependency Updater Implementation (id=org.jetbrains.plugins.gradle.dependency.updater, path=~/idea-IU-212.4746.92/plugins/gradle-dependencyUpdater) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle-Maven (id=org.jetbrains.plugins.gradle.maven, path=~/idea-IU-212.4746.92/plugins/gradle-java-maven) plugin Requires plugin 'org.intellij.groovy' to be enabled
+  The SSH Remote Run (id=org.jetbrains.plugins.remote-run, path=~/idea-IU-212.4746.92/plugins/remote-run) plugin Requires plugin 'com.jetbrains.plugins.webDeployment' to be enabled 
+2021-09-11 17:01:05,695 [   7751]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.6RFN90, INVOCATION_ID=570b19a914344a508f1b92a4fc93f53f, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2044,unix/autotelik-2:/tmp/.ICE-unix/2044, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1852, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:69277ecf-0eac-46cc-a5c3-7b837e4f9563, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-11 17:01:05,695 [   7751]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-11 17:01:05,696 [   7752]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-11 17:01:06,126 [   8182]   WARN - ctionSystem.impl.ActionUpdater - 1137 ms to expand group child NewElementInMenuGroup 
+2021-09-11 17:01:06,126 [   8182]   WARN - ctionSystem.impl.ActionUpdater - 1145 ms to expand group child OpenProjectGroup 
+2021-09-11 17:01:06,126 [   8182]   WARN - ctionSystem.impl.ActionUpdater - 1151 ms to expand group child FileOpenGroup 
+2021-09-11 17:01:06,126 [   8182]   WARN - ctionSystem.impl.ActionUpdater - 1151 ms to expand group child $Undo 
+2021-09-11 17:01:06,349 [   8405]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.6RFN90, INVOCATION_ID=570b19a914344a508f1b92a4fc93f53f, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2044,unix/autotelik-2:/tmp/.ICE-unix/2044, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1852, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:69277ecf-0eac-46cc-a5c3-7b837e4f9563, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-11 17:01:06,350 [   8406]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-11 17:01:06,350 [   8406]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-11 17:01:08,615 [  10671]   WARN - ctionSystem.impl.ActionUpdater - 2445 ms to expand group child OpenFile 
+2021-09-11 17:01:09,880 [  11936]   WARN - ctionSystem.impl.ActionUpdater - 1265 ms to expand group child SaveAll 
+2021-09-11 17:01:10,861 [  12917]   WARN - ctionSystem.impl.ActionUpdater - 2199 ms to expand group child ShowIntentionsGroup 
+2021-09-11 17:01:13,318 [  15374]   WARN - ctionSystem.impl.ActionUpdater - 2391 ms to expand group child ShowIntentionsGroup 
+2021-09-11 17:01:18,731 [  20787]   WARN - ctionSystem.impl.ActionUpdater - 1434 ms to expand group child $Undo 
+2021-09-11 17:01:18,733 [  20789]   WARN - ctionSystem.impl.ActionUpdater - 1434 ms to expand group child NewElementInMenuGroup 
+2021-09-11 17:01:18,733 [  20789]   WARN - ctionSystem.impl.ActionUpdater - 1435 ms to expand group child OpenProjectGroup 
+2021-09-11 17:01:18,743 [  20799]   WARN - ctionSystem.impl.ActionUpdater - 1445 ms to expand group child FileOpenGroup 
+2021-09-11 17:01:21,113 [  23169]   WARN - ctionSystem.impl.ActionUpdater - 1275 ms to expand group child null 
+2021-09-11 17:01:21,113 [  23169]   WARN - ctionSystem.impl.ActionUpdater - 1276 ms to expand group child null 
+2021-09-11 17:01:23,313 [  25369]   WARN - ndler.BundlerGemInfrastructure - bundle check exited with non-zero status: {exitCode=11, timeout=false, cancelled=false, stdout=, stderr=Your Gemfile lists the gem sqlite3 (>= 0) more than once.
+You should probably keep only one of them.
+Remove any duplicate entries and specify the gem only once.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+The git source https://github.com/autotelik/yams_events.git is not yet checked out. Please run `bundle install` before trying to start your application
+} 
+2021-09-11 17:01:29,412 [  31468]   WARN - ctionSystem.impl.ActionUpdater - 1487 ms to expand group child LightEditOpenFileInProject 
+2021-09-11 17:01:29,413 [  31469]   WARN - ctionSystem.impl.ActionUpdater - 1488 ms to expand group child LightEditModePopup 
+2021-09-11 17:01:31,097 [  33153]   WARN - ctionSystem.impl.ActionUpdater - Slow (112 ms) `com.intellij.openapi.vcs.changes.patch.ApplyPatchFromClipboardAction#update`. Consider speeding it up and/or implementing UpdateInBackground. 
+2021-09-11 17:01:34,630 [  36686]   WARN - ctionSystem.impl.ActionUpdater - 1096 ms to expand group child null 
+2021-09-11 17:01:34,631 [  36687]   WARN - ctionSystem.impl.ActionUpdater - 1096 ms to expand group child TabList 
+2021-09-11 17:01:35,672 [  37728]   WARN - ctionSystem.impl.ActionUpdater - 1013 ms to expand group child TabList 
+2021-09-11 17:01:35,672 [  37728]   WARN - ctionSystem.impl.ActionUpdater - 1013 ms to expand group child TabList 
+2021-09-11 17:01:43,133 [  45189]   WARN - ctionSystem.impl.ActionUpdater - 1355 ms to expand group child TabList 
+2021-09-11 17:01:43,134 [  45190]   WARN - ctionSystem.impl.ActionUpdater - 1356 ms to expand group child TabList 
+2021-09-11 17:01:45,603 [  47659]   WARN - ctionSystem.impl.ActionUpdater - 1109 ms to expand group child TabList 
+2021-09-11 17:01:45,603 [  47659]   WARN - ctionSystem.impl.ActionUpdater - 1109 ms to expand group child TabList 
+2021-09-11 17:01:46,703 [  48759]   WARN - ctionSystem.impl.ActionUpdater - 1030 ms to expand group child null 
+2021-09-11 17:01:46,703 [  48759]   WARN - ctionSystem.impl.ActionUpdater - 1030 ms to expand group child OpenFile 
+2021-09-11 17:01:46,703 [  48759]   WARN - ctionSystem.impl.ActionUpdater - 1030 ms to expand group child null 
+2021-09-11 17:01:50,277 [  52333]   WARN - ctionSystem.impl.ActionUpdater - 1481 ms to expand group child TabList 
+2021-09-11 17:01:50,277 [  52333]   WARN - ctionSystem.impl.ActionUpdater - 1481 ms to expand group child TabList 
+2021-09-11 17:01:53,612 [  55668]   WARN - ctionSystem.impl.ActionUpdater - 1488 ms to expand group child null 
+2021-09-11 17:01:57,901 [  59957]   WARN - ctionSystem.impl.ActionUpdater - 1594 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-11 17:01:57,902 [  59958]   WARN - ctionSystem.impl.ActionUpdater - 1591 ms to expand group child TabList 
+2021-09-11 17:01:59,626 [  61682]   WARN - ctionSystem.impl.ActionUpdater - 1723 ms to expand group child TabList 
+2021-09-11 17:01:59,626 [  61682]   WARN - ctionSystem.impl.ActionUpdater - 1714 ms to expand group child TabList 
+2021-09-11 17:02:01,388 [  63444]   WARN - ctionSystem.impl.ActionUpdater - 1752 ms to expand group child TabList 
+2021-09-11 17:02:01,388 [  63444]   WARN - ctionSystem.impl.ActionUpdater - 1752 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-11 17:02:07,987 [  70043]   WARN - ctionSystem.impl.ActionUpdater - 1113 ms to expand group child TabList 
+2021-09-11 17:02:07,988 [  70044]   WARN - ctionSystem.impl.ActionUpdater - 1109 ms to expand group child TabList 
+2021-09-11 17:02:10,988 [  73044]   WARN - ctionSystem.impl.ActionUpdater - 1060 ms to expand group child null 
+2021-09-11 17:02:11,029 [  73085]   WARN - ctionSystem.impl.ActionUpdater - 1103 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-11 17:02:26,281 [  88337]   WARN - ctionSystem.impl.ActionUpdater - 2010 ms to expand group child TabList 
+2021-09-11 17:02:26,281 [  88337]   WARN - ctionSystem.impl.ActionUpdater - 1987 ms to expand group child SelectInProjectView 
+2021-09-11 17:02:26,281 [  88337]   WARN - ctionSystem.impl.ActionUpdater - 2000 ms to expand group child ProjectViewToolbar 
+2021-09-11 17:02:26,281 [  88337]   WARN - ctionSystem.impl.ActionUpdater - 2011 ms to expand group child null 
+2021-09-11 17:02:28,624 [  90680]   WARN - ctionSystem.impl.ActionUpdater - 1516 ms to expand group child TabList 
+2021-09-11 17:02:28,624 [  90680]   WARN - ctionSystem.impl.ActionUpdater - 1516 ms to expand group child TabList 
+2021-09-11 18:46:54,327 [6356383]   WARN - ctionSystem.impl.ActionUpdater - 3002 ms to expand group child TabList 
+2021-09-11 18:46:54,327 [6356383]   WARN - ctionSystem.impl.ActionUpdater - 3002 ms to expand group child TabList 
+2021-09-11 18:46:55,444 [6357500]   WARN - ctionSystem.impl.ActionUpdater - 1100 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-11 18:46:59,535 [6361591]   WARN - ctionSystem.impl.ActionUpdater - 1000 ms to expand group child null 
+2021-09-11 18:47:00,644 [6362700]   WARN - ctionSystem.impl.ActionUpdater - 1095 ms to expand group child EditorPopupMenuAnalyze 
+2021-09-11 18:47:00,645 [6362701]   WARN - ctionSystem.impl.ActionUpdater - 1098 ms to expand group child EditorPopupMenu1 
+2021-09-11 18:47:00,648 [6362704]   WARN - ctionSystem.impl.ActionUpdater - 1100 ms to expand group child EditorPopupMenu1.FindRefactor 
+2021-09-11 18:47:00,649 [6362705]   WARN - ctionSystem.impl.ActionUpdater - 1102 ms to expand group child EditorPopupMenu1 
+2021-09-11 18:47:01,780 [6363836]   WARN - ctionSystem.impl.ActionUpdater - 1131 ms to expand group child DatabaseView.Sql.Scripts 
+2021-09-11 18:47:01,780 [6363836]   WARN - ctionSystem.impl.ActionUpdater - 1124 ms to expand group child Console.Toggle.Notebook.Mode 
+2021-09-11 18:47:02,751 [6364807]   WARN - ctionSystem.impl.ActionUpdater - 2102 ms to expand group child EditorPopupMenu2 
+2021-09-11 18:47:02,751 [6364807]   WARN - ctionSystem.impl.ActionUpdater - 2095 ms to expand group child Console.Jdbc.RunContextGroup 
+2021-09-11 18:47:02,752 [6364808]   WARN - ctionSystem.impl.ActionUpdater - 2104 ms to expand group child RunContextGroup 
+2021-09-11 18:47:02,752 [6364808]   WARN - ctionSystem.impl.ActionUpdater - 2104 ms to expand group child RunContextPopupGroup 
+2021-09-11 18:47:02,752 [6364808]   WARN - ctionSystem.impl.ActionUpdater - 2104 ms to expand group child EditorPopupMenu.Run 
+2021-09-11 18:47:02,752 [6364808]   WARN - ctionSystem.impl.ActionUpdater - 2104 ms to expand group child EditorLangPopupMenu 
+2021-09-11 18:47:06,714 [6368770]   WARN - ctionSystem.impl.ActionUpdater - 1514 ms to expand group child null 
+2021-09-11 18:47:07,985 [6370041]   WARN - ctionSystem.impl.ActionUpdater - 1269 ms to expand group child TabList 
+2021-09-11 18:47:07,992 [6370048]   WARN - ctionSystem.impl.ActionUpdater - 1278 ms to expand group child TabList 
+2021-09-11 18:47:10,098 [6372154]   WARN - ctionSystem.impl.ActionUpdater - 1649 ms to expand group child TabList 
+2021-09-11 18:47:10,099 [6372155]   WARN - ctionSystem.impl.ActionUpdater - 1649 ms to expand group child TabList 
+2021-09-11 18:47:16,190 [6378246]   WARN - ctionSystem.impl.ActionUpdater - 1280 ms to expand group child null 
+2021-09-11 18:47:16,190 [6378246]   WARN - ctionSystem.impl.ActionUpdater - 1281 ms to expand group child null 
+2021-09-11 18:47:17,220 [6379276]   WARN - ctionSystem.impl.ActionUpdater - 1024 ms to expand group child Synchronize 
+2021-09-11 18:47:17,220 [6379276]   WARN - ctionSystem.impl.ActionUpdater - 1024 ms to expand group child null 
+2021-09-11 18:47:19,464 [6381520]   WARN - ctionSystem.impl.ActionUpdater - 1017 ms to expand group child Vcs.Push 
+2021-09-11 18:47:19,465 [6381521]   WARN - ctionSystem.impl.ActionUpdater - 1076 ms to expand group child VcsToolbarActions 
+2021-09-11 18:47:19,465 [6381521]   WARN - ctionSystem.impl.ActionUpdater - 1076 ms to expand group child MainToolBarSettings 
+2021-09-11 18:47:21,907 [6383963]   WARN - ctionSystem.impl.ActionUpdater - 1297 ms to expand group child TabList 
+2021-09-11 18:53:40,789 [6762845]   WARN - ctionSystem.impl.ActionUpdater - 2381 ms to expand group child TabList 
+2021-09-11 18:53:40,789 [6762845]   WARN - ctionSystem.impl.ActionUpdater - 2381 ms to expand group child TabList 
+2021-09-11 18:53:43,075 [6765131]   WARN - ctionSystem.impl.ActionUpdater - 2275 ms to expand group child TabList 
+2021-09-11 18:53:43,075 [6765131]   WARN - ctionSystem.impl.ActionUpdater - 2274 ms to expand group child TabList 
+2021-09-11 18:55:07,948 [6850004]   WARN - ctionSystem.impl.ActionUpdater - 1458 ms to expand group child null 
+2021-09-11 18:55:07,948 [6850004]   WARN - ctionSystem.impl.ActionUpdater - 1457 ms to expand group child OpenFile 
+2021-09-11 18:55:10,358 [6852414]   WARN - ctionSystem.impl.ActionUpdater - 2385 ms to expand group child null 
+2021-09-11 18:55:10,358 [6852414]   WARN - ctionSystem.impl.ActionUpdater - 2385 ms to expand group child null 
+2021-09-11 18:55:10,358 [6852414]   WARN - ctionSystem.impl.ActionUpdater - 2385 ms to expand group child null 
+2021-09-11 18:57:14,266 [6976322]   WARN - ctionSystem.impl.ActionUpdater - 1404 ms to expand group child RestoreFontPreviewTextAction 
+2021-09-11 18:57:39,946 [7002002]   WARN - ctionSystem.impl.ActionUpdater - 1599 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-11 18:57:42,071 [7004127]   WARN - ctionSystem.impl.ActionUpdater - 1662 ms to expand group child TabList 
+2021-09-11 18:57:42,071 [7004127]   WARN - ctionSystem.impl.ActionUpdater - 1662 ms to expand group child TabList 
+2021-09-11 18:57:43,316 [7005372]   WARN - ctionSystem.impl.ActionUpdater - 1238 ms to expand group child null 
+2021-09-11 19:53:32,432 [10354488]   WARN - ctionSystem.impl.ActionUpdater - 1574 ms to expand group child TabList 
+2021-09-11 19:53:32,432 [10354488]   WARN - ctionSystem.impl.ActionUpdater - 1574 ms to expand group child TabList 
+2021-09-11 19:53:36,063 [10358119]   WARN - ctionSystem.impl.ActionUpdater - 1931 ms to expand group child TabList 
+2021-09-11 19:53:36,063 [10358119]   WARN - ctionSystem.impl.ActionUpdater - 1931 ms to expand group child TabList 
+2021-09-11 20:02:29,198 [10891254]   WARN - ctionSystem.impl.ActionUpdater - 1465 ms to expand group child TabList 
+2021-09-11 20:02:29,198 [10891254]   WARN - ctionSystem.impl.ActionUpdater - 1465 ms to expand group child TabList 
+2021-09-13 10:01:44,768 [147646824]   WARN - ctionSystem.impl.ActionUpdater - 1360 ms to expand group child TabList 
+2021-09-13 10:01:44,768 [147646824]   WARN - ctionSystem.impl.ActionUpdater - 1360 ms to expand group child TabList 
+2021-09-13 10:04:48,109 [147830165]   WARN - ctionSystem.impl.ActionUpdater - 1151 ms to expand group child RestoreFontPreviewTextAction 
+2021-09-13 10:04:51,553 [147833609]   WARN - ctionSystem.impl.ActionUpdater - 1507 ms to expand group child null 
+2021-09-13 10:04:51,553 [147833609]   WARN - ctionSystem.impl.ActionUpdater - 1507 ms to expand group child null 
+2021-09-13 10:04:51,553 [147833609]   WARN - ctionSystem.impl.ActionUpdater - 1507 ms to expand group child null 
+2021-09-13 10:04:52,646 [147834702]   WARN - ctionSystem.impl.ActionUpdater - 1093 ms to expand group child null 
+2021-09-13 10:04:53,839 [147835895]   WARN - ctionSystem.impl.ActionUpdater - 1192 ms to expand group child TabList 
+2021-09-13 10:04:53,840 [147835896]   WARN - ctionSystem.impl.ActionUpdater - 1188 ms to expand group child TabList 
+2021-09-13 10:04:57,326 [147839382]   WARN - ctionSystem.impl.ActionUpdater - 2385 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-13 10:04:57,327 [147839383]   WARN - ctionSystem.impl.ActionUpdater - 2386 ms to expand group child TabList 
+2021-09-13 10:04:59,009 [147841065]   WARN - ctionSystem.impl.ActionUpdater - 1450 ms to expand group child null 
+2021-09-13 10:04:59,009 [147841065]   WARN - ctionSystem.impl.ActionUpdater - 1449 ms to expand group child TabList 
+2021-09-13 10:04:59,024 [147841080]   WARN - ctionSystem.impl.ActionUpdater - 1697 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-13 10:09:51,951 [148134007]   WARN - ctionSystem.impl.ActionUpdater - 2077 ms to expand group child TabList 
+2021-09-13 10:09:51,951 [148134007]   WARN - ctionSystem.impl.ActionUpdater - 1660 ms to expand group child TabList 
+2021-09-13 10:09:54,949 [148137005]   WARN - ctionSystem.impl.ActionUpdater - 1816 ms to expand group child TabList 
+2021-09-13 10:09:54,949 [148137005]   WARN - ctionSystem.impl.ActionUpdater - 1816 ms to expand group child TabList 
+2021-09-13 10:09:58,089 [148140145]   WARN - ctionSystem.impl.ActionUpdater - 2662 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-13 10:09:58,089 [148140145]   WARN - ctionSystem.impl.ActionUpdater - 2662 ms to expand group child TabList 
+2021-09-13 10:10:35,320 [148177376]   WARN - ctionSystem.impl.ActionUpdater - 1479 ms to expand group child TabList 
+2021-09-13 10:10:35,320 [148177376]   WARN - ctionSystem.impl.ActionUpdater - 1479 ms to expand group child TabList 
+2021-09-13 10:11:28,917 [148230973]   WARN - ctionSystem.impl.ActionUpdater - 1393 ms to expand group child TabList 
+2021-09-13 10:11:28,917 [148230973]   WARN - ctionSystem.impl.ActionUpdater - 1393 ms to expand group child TabList 
+2021-09-13 10:11:30,045 [148232101]   WARN - ctionSystem.impl.ActionUpdater - 1001 ms to expand group child TabList 
+2021-09-13 10:11:30,045 [148232101]   WARN - ctionSystem.impl.ActionUpdater - 1001 ms to expand group child null 
+2021-09-13 10:11:32,138 [148234194]   WARN - ctionSystem.impl.ActionUpdater - 1127 ms to expand group child TabList 
+2021-09-13 10:11:32,138 [148234194]   WARN - ctionSystem.impl.ActionUpdater - 1127 ms to expand group child TabList 
+2021-09-13 10:11:48,466 [148250522]   WARN - ctionSystem.impl.ActionUpdater - 1446 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-13 10:11:48,467 [148250523]   WARN - ctionSystem.impl.ActionUpdater - 1406 ms to expand group child TabList 
+2021-09-13 10:11:49,712 [148251768]   WARN - ctionSystem.impl.ActionUpdater - 1245 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-13 10:12:13,191 [148275247]   WARN - penapi.wm.impl.GlobalMenuLinux - can't obtain XID of window: com.intellij.openapi.ui.FrameWrapper$MyJFrame[frame0,144,320,2005x1132,invalid,hidden,layout=java.awt.BorderLayout,title=/home/rubyuser/SoftwareDev/git/yams_core/app/presenters/yams_core/track_presenter.rb,resizable,normal,defaultCloseOperation=DO_NOTHING_ON_CLOSE,rootPane=,rootPaneCheckingEnabled=true], skip global menu unbinding 
+2021-09-13 10:12:14,947 [148277003]   WARN - ctionSystem.impl.ActionUpdater - 1318 ms to expand group child RestoreFontPreviewTextAction 
+2021-09-13 10:12:30,099 [148292155]   WARN - ctionSystem.impl.ActionUpdater - 1287 ms to expand group child TabList 
+2021-09-13 10:12:30,099 [148292155]   WARN - ctionSystem.impl.ActionUpdater - 1287 ms to expand group child TabList 
+2021-09-13 10:12:37,537 [148299593]   WARN - ctionSystem.impl.ActionUpdater - 2505 ms to expand group child TabList 
+2021-09-13 10:12:37,537 [148299593]   WARN - ctionSystem.impl.ActionUpdater - 2505 ms to expand group child TabList 
+2021-09-13 10:20:04,058 [148746114]   WARN - ctionSystem.impl.ActionUpdater - 1295 ms to expand group child TabList 
+2021-09-13 10:20:04,059 [148746115]   WARN - ctionSystem.impl.ActionUpdater - 1295 ms to expand group child TabList 
+2021-09-13 10:20:13,884 [148755940]   WARN - ctionSystem.impl.ActionUpdater - 1972 ms to expand group child TabList 
+2021-09-13 10:20:13,886 [148755942]   WARN - ctionSystem.impl.ActionUpdater - 1974 ms to expand group child TabList 
+2021-09-13 10:20:18,131 [148760187]   WARN - ctionSystem.impl.ActionUpdater - 1972 ms to expand group child TabList 
+2021-09-13 10:20:18,132 [148760188]   WARN - ctionSystem.impl.ActionUpdater - 1973 ms to expand group child TabList 
+2021-09-13 10:27:20,338 [149182394]   WARN - ctionSystem.impl.ActionUpdater - 2228 ms to expand group child TabList 
+2021-09-13 10:27:20,339 [149182395]   WARN - ctionSystem.impl.ActionUpdater - 2002 ms to expand group child TabList 
+2021-09-13 10:27:22,180 [149184236]   WARN - ctionSystem.impl.ActionUpdater - 1830 ms to expand group child TabList 
+2021-09-13 10:27:22,180 [149184236]   WARN - ctionSystem.impl.ActionUpdater - 1830 ms to expand group child TabList 
+2021-09-13 11:13:12,565 [151934621]   WARN - ctionSystem.impl.ActionUpdater - 1485 ms to expand group child TabList 
+2021-09-13 11:13:12,566 [151934622]   WARN - ctionSystem.impl.ActionUpdater - 1484 ms to expand group child TabList 
+2021-09-13 11:13:16,569 [151938625]   WARN - ctionSystem.impl.ActionUpdater - 1062 ms to expand group child TabList 
+2021-09-13 11:13:16,569 [151938625]   WARN - ctionSystem.impl.ActionUpdater - 1062 ms to expand group child TabList 
+2021-09-13 11:13:25,329 [151947385]   WARN - ctionSystem.impl.ActionUpdater - 2082 ms to expand group child TabList 
+2021-09-13 11:13:25,329 [151947385]   WARN - ctionSystem.impl.ActionUpdater - 2083 ms to expand group child TabList 
+2021-09-14 09:02:29,042 [    119]   WARN - llij.ide.plugins.PluginManager - id redefinition ([row,col,system-id]: [2,3,"product classpath"]) 
+2021-09-14 09:02:30,024 [   1101]   WARN - llij.ide.plugins.PluginManager - Problems found loading plugins:
+  The Project Wide Analysis (id=com.intellij.analysis.pwa, path=~/idea-IU-212.4746.92/plugins/pwa-core) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Project Wide Analysis for Java (id=com.intellij.analysis.pwa.java, path=~/idea-IU-212.4746.92/plugins/java-pwa) plugin Plugin 'Project Wide Analysis for Java' cannot be loaded because it depends on plugin 'Project Wide Analysis' which failed to load
+  The Java EE: Gradle Integration (id=com.intellij.javaee.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-javaee) plugin Requires plugin 'com.intellij.javaee' to be enabled
+  The JBoss Frameworks Base (id=com.intellij.jboss.core, path=~/idea-IU-212.4746.92/plugins/jboss-core) plugin Requires plugin 'com.intellij.java-i18n' to be enabled
+  The Persistence Frameworks (id=com.intellij.persistence, path=~/idea-IU-212.4746.92/plugins/PersistenceSupport) plugin Requires plugin 'com.intellij.diagram' to be enabled
+  The Performance Testing (Dynamic Plugins) (id=com.jetbrains.performancePlugin.dynamicPlugins, path=~/idea-IU-212.4746.92/plugins/dynamicPluginsTests-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Gradle) (id=com.jetbrains.performancePlugin.gradle, path=~/idea-IU-212.4746.92/plugins/performanceTesting-gradle) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Maven) (id=com.jetbrains.performancePlugin.maven, path=~/idea-IU-212.4746.92/plugins/performanceTesting-maven) plugin Requires plugin 'org.jetbrains.idea.maven' to be enabled
+  The Performance Testing (Workspace Model) (id=com.jetbrains.performancePlugin.workspaceModel, path=~/idea-IU-212.4746.92/plugins/workspaceModel-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Gradle-Java (id=org.jetbrains.plugins.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-java) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle Dependency Updater Implementation (id=org.jetbrains.plugins.gradle.dependency.updater, path=~/idea-IU-212.4746.92/plugins/gradle-dependencyUpdater) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle-Maven (id=org.jetbrains.plugins.gradle.maven, path=~/idea-IU-212.4746.92/plugins/gradle-java-maven) plugin Requires plugin 'org.intellij.groovy' to be enabled
+  The SSH Remote Run (id=org.jetbrains.plugins.remote-run, path=~/idea-IU-212.4746.92/plugins/remote-run) plugin Requires plugin 'com.jetbrains.plugins.webDeployment' to be enabled 
+2021-09-14 09:02:35,933 [   7010]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.IVI580, INVOCATION_ID=5f6d1fcfe20e4c91be9e03e624557fc9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2053,unix/autotelik-2:/tmp/.ICE-unix/2053, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1857, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:668366c4-e528-43ce-8db7-0f772f620879, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-14 09:02:35,933 [   7010]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-14 09:02:35,933 [   7010]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-14 09:02:36,605 [   7682]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.IVI580, INVOCATION_ID=5f6d1fcfe20e4c91be9e03e624557fc9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2053,unix/autotelik-2:/tmp/.ICE-unix/2053, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1857, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:668366c4-e528-43ce-8db7-0f772f620879, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-14 09:02:36,606 [   7683]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-14 09:02:36,606 [   7683]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-14 09:02:37,656 [   8733]   WARN - ctionSystem.impl.ActionUpdater - 1490 ms to expand group child OpenFile 
+2021-09-14 09:02:38,200 [   9277]   WARN - ctionSystem.impl.ActionUpdater - 1506 ms to expand group child TabList 
+2021-09-14 09:02:39,551 [  10628]   WARN - ctionSystem.impl.ActionUpdater - 1338 ms to expand group child TabList 
+2021-09-14 09:02:39,552 [  10629]   WARN - ctionSystem.impl.ActionUpdater - 1339 ms to expand group child TabList 
+2021-09-14 09:02:46,150 [  17227]   WARN - ctionSystem.impl.ActionUpdater - 3696 ms to expand group child $Undo 
+2021-09-14 09:02:46,151 [  17228]   WARN - ctionSystem.impl.ActionUpdater - 3677 ms to expand group child NewElementInMenuGroup 
+2021-09-14 09:02:46,151 [  17228]   WARN - ctionSystem.impl.ActionUpdater - 3685 ms to expand group child OpenProjectGroup 
+2021-09-14 09:02:46,151 [  17228]   WARN - ctionSystem.impl.ActionUpdater - 3698 ms to expand group child FileOpenGroup 
+2021-09-14 09:02:56,298 [  27375]   WARN - ctionSystem.impl.ActionUpdater - 1773 ms to expand group child NewElementInMenuGroup 
+2021-09-14 09:02:56,299 [  27376]   WARN - ctionSystem.impl.ActionUpdater - 1773 ms to expand group child OpenProjectGroup 
+2021-09-14 09:02:56,299 [  27376]   WARN - ctionSystem.impl.ActionUpdater - 1705 ms to expand group child $Undo 
+2021-09-14 09:02:56,788 [  27865]   WARN - ctionSystem.impl.ActionUpdater - 2262 ms to expand group child FileOpenGroup 
+2021-09-14 09:03:30,811 [  61888]   WARN - ctionSystem.impl.ActionUpdater - 3081 ms to expand group child TabList 
+2021-09-14 09:03:30,811 [  61888]   WARN - ctionSystem.impl.ActionUpdater - 3081 ms to expand group child TabList 
+2021-09-14 09:03:34,865 [  65942]   WARN - ndler.BundlerGemInfrastructure - bundle check exited with non-zero status: {exitCode=11, timeout=false, cancelled=false, stdout=, stderr=Your Gemfile lists the gem sqlite3 (>= 0) more than once.
+You should probably keep only one of them.
+Remove any duplicate entries and specify the gem only once.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+The git source https://github.com/autotelik/yams_events.git is not yet checked out. Please run `bundle install` before trying to start your application
+} 
+2021-09-14 09:03:39,523 [  70600]   WARN - ctionSystem.impl.ActionUpdater - 1036 ms to expand group child TabList 
+2021-09-14 09:03:39,524 [  70601]   WARN - ctionSystem.impl.ActionUpdater - 1036 ms to expand group child TabList 
+2021-09-14 09:03:43,712 [  74789]   WARN - ctionSystem.impl.ActionUpdater - 1032 ms to expand group child null 
+2021-09-14 09:06:03,937 [ 215014]   WARN - ctionSystem.impl.ActionUpdater - 1258 ms to expand group child TabList 
+2021-09-14 09:06:03,938 [ 215015]   WARN - ctionSystem.impl.ActionUpdater - 1256 ms to expand group child TabList 
+2021-09-14 09:06:05,328 [ 216405]   WARN - ctionSystem.impl.ActionUpdater - 1084 ms to expand group child ProjectViewToolbar 
+2021-09-14 09:06:05,328 [ 216405]   WARN - ctionSystem.impl.ActionUpdater - 1084 ms to expand group child null 
+2021-09-14 09:06:08,805 [ 219882]   WARN - ctionSystem.impl.ActionUpdater - 1462 ms to expand group child RestoreFontPreviewTextAction 
+2021-09-14 09:06:13,554 [ 224631]   WARN - ctionSystem.impl.ActionUpdater - 1269 ms to expand group child null 
+2021-09-14 09:06:13,556 [ 224633]   WARN - ctionSystem.impl.ActionUpdater - 1269 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:06:13,558 [ 224635]   WARN - ctionSystem.impl.ActionUpdater - 2056 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-14 09:06:39,044 [ 250121]   WARN - ctionSystem.impl.ActionUpdater - 1981 ms to expand group child SelectInProjectView 
+2021-09-14 09:06:39,049 [ 250126]   WARN - ctionSystem.impl.ActionUpdater - 1986 ms to expand group child null 
+2021-09-14 09:06:39,049 [ 250126]   WARN - ctionSystem.impl.ActionUpdater - 1986 ms to expand group child null 
+2021-09-14 09:06:40,694 [ 251771]   WARN - ctionSystem.impl.ActionUpdater - 1645 ms to expand group child null 
+2021-09-14 09:06:40,694 [ 251771]   WARN - ctionSystem.impl.ActionUpdater - 1646 ms to expand group child CollapseAll 
+2021-09-14 09:06:40,694 [ 251771]   WARN - ctionSystem.impl.ActionUpdater - 3632 ms to expand group child ProjectViewToolbar 
+2021-09-14 09:06:40,694 [ 251771]   WARN - ctionSystem.impl.ActionUpdater - 3632 ms to expand group child null 
+2021-09-14 09:07:00,906 [ 271983]   WARN - ctionSystem.impl.ActionUpdater - 1692 ms to expand group child TabList 
+2021-09-14 09:07:02,416 [ 273493]   WARN - ctionSystem.impl.ActionUpdater - 1508 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-14 09:07:02,423 [ 273500]   WARN - ctionSystem.impl.ActionUpdater - 1514 ms to expand group child TabList 
+2021-09-14 09:07:07,530 [ 278607]   WARN - ctionSystem.impl.ActionUpdater - 1621 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-14 09:07:13,085 [ 284162]   WARN - ctionSystem.impl.ActionUpdater - 2409 ms to expand group child TabList 
+2021-09-14 09:07:13,085 [ 284162]   WARN - ctionSystem.impl.ActionUpdater - 2410 ms to expand group child TabList 
+2021-09-14 09:07:21,999 [ 293076]   WARN - ctionSystem.impl.ActionUpdater - 1673 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:21,999 [ 293076]   WARN - ctionSystem.impl.ActionUpdater - 1670 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:23,578 [ 294655]   WARN - ctionSystem.impl.ActionUpdater - 1578 ms to expand group child LightEditOpenFileInProject 
+2021-09-14 09:07:23,578 [ 294655]   WARN - ctionSystem.impl.ActionUpdater - 1578 ms to expand group child LightEditModePopup 
+2021-09-14 09:07:23,579 [ 294656]   WARN - ctionSystem.impl.ActionUpdater - 1578 ms to expand group child LightEditOpenFileInProject 
+2021-09-14 09:07:23,579 [ 294656]   WARN - ctionSystem.impl.ActionUpdater - 1579 ms to expand group child LightEditModePopup 
+2021-09-14 09:07:34,257 [ 305334]   WARN - ctionSystem.impl.ActionUpdater - 3275 ms to expand group child TabList 
+2021-09-14 09:07:34,257 [ 305334]   WARN - ctionSystem.impl.ActionUpdater - 3275 ms to expand group child TabList 
+2021-09-14 09:07:36,215 [ 307292]   WARN - ctionSystem.impl.ActionUpdater - 1878 ms to expand group child SelectInProjectView 
+2021-09-14 09:07:36,215 [ 307292]   WARN - ctionSystem.impl.ActionUpdater - 1879 ms to expand group child ProjectViewToolbar 
+2021-09-14 09:07:36,216 [ 307293]   WARN - ctionSystem.impl.ActionUpdater - 1883 ms to expand group child null 
+2021-09-14 09:07:36,215 [ 307292]   WARN - ctionSystem.impl.ActionUpdater - 1880 ms to expand group child null 
+2021-09-14 09:07:36,216 [ 307293]   WARN - ctionSystem.impl.ActionUpdater - 1883 ms to expand group child null 
+2021-09-14 09:07:37,874 [ 308951]   WARN - ctionSystem.impl.ActionUpdater - 1641 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:37,875 [ 308952]   WARN - ctionSystem.impl.ActionUpdater - 1655 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:37,875 [ 308952]   WARN - ctionSystem.impl.ActionUpdater - 1641 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:37,875 [ 308952]   WARN - ctionSystem.impl.ActionUpdater - 1655 ms to expand group child ShowIntentionsGroup 
+2021-09-14 09:07:39,638 [ 310715]   WARN - ctionSystem.impl.ActionUpdater - 1755 ms to expand group child $Paste 
+2021-09-14 09:07:41,462 [ 312539]   WARN - ctionSystem.impl.ActionUpdater - 1821 ms to expand group child JsonCopyPointer 
+2021-09-14 09:07:41,462 [ 312539]   WARN - ctionSystem.impl.ActionUpdater - 1821 ms to expand group child AnalyzeMenu 
+2021-09-14 09:07:41,462 [ 312539]   WARN - ctionSystem.impl.ActionUpdater - 3578 ms to expand group child EditorPopupMenuAnalyze 
+2021-09-14 09:07:41,462 [ 312539]   WARN - ctionSystem.impl.ActionUpdater - 3581 ms to expand group child EditorPopupMenu1 
+2021-09-14 09:07:43,395 [ 314472]   WARN - ctionSystem.impl.ActionUpdater - 1928 ms to expand group child EditorPopupMenuAnalyze 
+2021-09-14 09:07:43,395 [ 314472]   WARN - ctionSystem.impl.ActionUpdater - 1447 ms to expand group child Console.Toggle.Notebook.Mode 
+2021-09-14 09:07:45,165 [ 316242]   WARN - ctionSystem.impl.ActionUpdater - 1770 ms to expand group child Console.Jdbc.ChooseSession 
+2021-09-14 09:07:45,165 [ 316242]   WARN - ctionSystem.impl.ActionUpdater - 1770 ms to expand group child AnalyzeMenu 
+2021-09-14 09:07:45,165 [ 316242]   WARN - ctionSystem.impl.ActionUpdater - 3700 ms to expand group child EditorPopupMenuAnalyze 
+2021-09-14 09:07:45,165 [ 316242]   WARN - ctionSystem.impl.ActionUpdater - 3702 ms to expand group child EditorPopupMenu1 
+2021-09-14 09:07:46,730 [ 317807]   WARN - ctionSystem.impl.ActionUpdater - 1563 ms to expand group child DDL.Editor.Regenerate 
+2021-09-14 09:07:46,730 [ 317807]   WARN - ctionSystem.impl.ActionUpdater - 1565 ms to expand group child Console.Jdbc.ExplainGroup 
+2021-09-14 09:07:46,730 [ 317807]   WARN - ctionSystem.impl.ActionUpdater - 1565 ms to expand group child EditorPopupMenu2 
+2021-09-14 09:07:46,731 [ 317808]   WARN - ctionSystem.impl.ActionUpdater - 4790 ms to expand group child Console.Jdbc.RunContextGroup 
+2021-09-14 09:07:46,731 [ 317808]   WARN - ctionSystem.impl.ActionUpdater - 5267 ms to expand group child RunContextGroup 
+2021-09-14 09:07:46,732 [ 317809]   WARN - ctionSystem.impl.ActionUpdater - 5267 ms to expand group child RunContextPopupGroup 
+2021-09-14 09:07:46,732 [ 317809]   WARN - ctionSystem.impl.ActionUpdater - 5267 ms to expand group child EditorPopupMenu.Run 
+2021-09-14 09:07:46,733 [ 317810]   WARN - ctionSystem.impl.ActionUpdater - 5269 ms to expand group child EditorLangPopupMenu 
+2021-09-14 09:15:27,665 [ 778742]   WARN - ctionSystem.impl.ActionUpdater - 1110 ms to expand group child null 
+2021-09-14 09:15:27,665 [ 778742]   WARN - ctionSystem.impl.ActionUpdater - 1110 ms to expand group child null 
+2021-09-14 09:15:27,665 [ 778742]   WARN - ctionSystem.impl.ActionUpdater - 1111 ms to expand group child SelectInProjectView 
+2021-09-14 09:15:27,666 [ 778743]   WARN - ctionSystem.impl.ActionUpdater - 1111 ms to expand group child ProjectViewToolbar 
+2021-09-14 09:15:27,666 [ 778743]   WARN - ctionSystem.impl.ActionUpdater - 1111 ms to expand group child null 
+2021-09-14 09:16:00,747 [ 811824]   WARN - ctionSystem.impl.ActionUpdater - 1547 ms to expand group child TabList 
+2021-09-14 09:16:00,747 [ 811824]   WARN - ctionSystem.impl.ActionUpdater - 1547 ms to expand group child TabList 
+2021-09-14 09:36:45,802 [2056879]   WARN - ctionSystem.impl.ActionUpdater - 1219 ms to expand group child TabList 
+2021-09-14 09:36:45,802 [2056879]   WARN - ctionSystem.impl.ActionUpdater - 1219 ms to expand group child TabList 
+2021-09-16 20:21:23,893 [     73]   WARN - llij.ide.plugins.PluginManager - id redefinition ([row,col,system-id]: [2,3,"product classpath"]) 
+2021-09-16 20:21:24,992 [   1172]   WARN - llij.ide.plugins.PluginManager - Problems found loading plugins:
+  The Project Wide Analysis (id=com.intellij.analysis.pwa, path=~/idea-IU-212.4746.92/plugins/pwa-core) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Project Wide Analysis for Java (id=com.intellij.analysis.pwa.java, path=~/idea-IU-212.4746.92/plugins/java-pwa) plugin Plugin 'Project Wide Analysis for Java' cannot be loaded because it depends on plugin 'Project Wide Analysis' which failed to load
+  The Java EE: Gradle Integration (id=com.intellij.javaee.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-javaee) plugin Requires plugin 'com.intellij.javaee' to be enabled
+  The JBoss Frameworks Base (id=com.intellij.jboss.core, path=~/idea-IU-212.4746.92/plugins/jboss-core) plugin Requires plugin 'com.intellij.java-i18n' to be enabled
+  The Persistence Frameworks (id=com.intellij.persistence, path=~/idea-IU-212.4746.92/plugins/PersistenceSupport) plugin Requires plugin 'com.intellij.diagram' to be enabled
+  The Performance Testing (Dynamic Plugins) (id=com.jetbrains.performancePlugin.dynamicPlugins, path=~/idea-IU-212.4746.92/plugins/dynamicPluginsTests-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Gradle) (id=com.jetbrains.performancePlugin.gradle, path=~/idea-IU-212.4746.92/plugins/performanceTesting-gradle) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Performance Testing (Maven) (id=com.jetbrains.performancePlugin.maven, path=~/idea-IU-212.4746.92/plugins/performanceTesting-maven) plugin Requires plugin 'org.jetbrains.idea.maven' to be enabled
+  The Performance Testing (Workspace Model) (id=com.jetbrains.performancePlugin.workspaceModel, path=~/idea-IU-212.4746.92/plugins/workspaceModel-performanceTesting) plugin Requires plugin 'com.jetbrains.performancePlugin' to be enabled
+  The Gradle-Java (id=org.jetbrains.plugins.gradle, path=~/idea-IU-212.4746.92/plugins/gradle-java) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle Dependency Updater Implementation (id=org.jetbrains.plugins.gradle.dependency.updater, path=~/idea-IU-212.4746.92/plugins/gradle-dependencyUpdater) plugin Requires plugin 'com.intellij.gradle' to be enabled
+  The Gradle-Maven (id=org.jetbrains.plugins.gradle.maven, path=~/idea-IU-212.4746.92/plugins/gradle-java-maven) plugin Requires plugin 'org.intellij.groovy' to be enabled
+  The SSH Remote Run (id=org.jetbrains.plugins.remote-run, path=~/idea-IU-212.4746.92/plugins/remote-run) plugin Requires plugin 'com.jetbrains.plugins.webDeployment' to be enabled 
+2021-09-16 20:21:38,739 [  14919]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.CADT90, INVOCATION_ID=e6e36d9ea7214673a14baf98356637d9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2068,unix/autotelik-2:/tmp/.ICE-unix/2068, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1866, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a6f53a99-2ba3-4669-8c43-d796cbff296a, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-16 20:21:38,741 [  14921]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-16 20:21:38,743 [  14923]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-16 20:21:39,731 [  15911]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.CADT90, INVOCATION_ID=e6e36d9ea7214673a14baf98356637d9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2068,unix/autotelik-2:/tmp/.ICE-unix/2068, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1866, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a6f53a99-2ba3-4669-8c43-d796cbff296a, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-16 20:21:39,731 [  15911]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-16 20:21:39,731 [  15911]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-16 20:21:41,935 [  18115]   WARN - ctionSystem.impl.ActionUpdater - 3738 ms to expand group child OpenFile 
+2021-09-16 20:21:44,692 [  20872]   WARN - ctionSystem.impl.ActionUpdater - 1301 ms to expand group child TabList 
+2021-09-16 20:21:44,692 [  20872]   WARN - ctionSystem.impl.ActionUpdater - 1289 ms to expand group child TabList 
+2021-09-16 20:21:47,580 [  23760]   WARN - ctionSystem.impl.ActionUpdater - 1111 ms to expand group child TabList 
+2021-09-16 20:21:47,587 [  23767]   WARN - ctionSystem.impl.ActionUpdater - 1115 ms to expand group child TabList 
+2021-09-16 20:21:50,816 [  26996]   WARN - ctionSystem.impl.ActionUpdater - 2003 ms to expand group child TabList 
+2021-09-16 20:21:50,819 [  26999]   WARN - ctionSystem.impl.ActionUpdater - 2006 ms to expand group child TabList 
+2021-09-16 20:21:52,618 [  28798]   WARN - ctionSystem.impl.ActionUpdater - 1798 ms to expand group child TabList 
+2021-09-16 20:21:52,619 [  28799]   WARN - ctionSystem.impl.ActionUpdater - 1802 ms to expand group child TabList 
+2021-09-16 20:21:53,813 [  29993]   WARN - ctionSystem.impl.ActionUpdater - 1191 ms to expand group child TabList 
+2021-09-16 20:21:53,814 [  29994]   WARN - ctionSystem.impl.ActionUpdater - 1195 ms to expand group child TabList 
+2021-09-16 20:21:55,532 [  31712]   WARN - ctionSystem.impl.ActionUpdater - 1717 ms to expand group child TabList 
+2021-09-16 20:21:55,532 [  31712]   WARN - ctionSystem.impl.ActionUpdater - 1715 ms to expand group child TabList 
+2021-09-16 20:21:57,051 [  33231]   WARN - ctionSystem.impl.ActionUpdater - 1518 ms to expand group child TabList 
+2021-09-16 20:21:57,052 [  33232]   WARN - ctionSystem.impl.ActionUpdater - 1519 ms to expand group child TabList 
+2021-09-16 20:22:04,360 [  40540]   WARN - ctionSystem.impl.ActionUpdater - Slow (195 ms) `org.jetbrains.plugins.ruby.console.RunPryConsoleAction#update`. Consider speeding it up and/or implementing UpdateInBackground. 
+2021-09-16 20:22:04,882 [  41062]   WARN - ctionSystem.impl.ActionUpdater - Slow (262 ms) `com.intellij.openapi.vcs.changes.patch.ApplyPatchFromClipboardAction#update`. Consider speeding it up and/or implementing UpdateInBackground. 
+2021-09-16 20:22:06,453 [  42633]   WARN - ctionSystem.impl.ActionUpdater - 1005 ms to expand group child EditorLangPopupMenu 
+2021-09-16 20:22:35,325 [  71505]   WARN - ctionSystem.impl.ActionUpdater - 1741 ms to expand group child TabList 
+2021-09-16 20:22:35,326 [  71506]   WARN - ctionSystem.impl.ActionUpdater - 1742 ms to expand group child TabList 
+2021-09-16 20:22:51,002 [  87182]   WARN - ctionSystem.impl.ActionUpdater - 2022 ms to expand group child TabList 
+2021-09-16 20:22:51,002 [  87182]   WARN - ctionSystem.impl.ActionUpdater - 2021 ms to expand group child TabList 
+2021-09-16 20:22:53,009 [  89189]   WARN - ndler.BundlerGemInfrastructure - bundle check exited with non-zero status: {exitCode=11, timeout=false, cancelled=false, stdout=, stderr=Your Gemfile lists the gem sqlite3 (>= 0) more than once.
+You should probably keep only one of them.
+Remove any duplicate entries and specify the gem only once.
+While it's not a problem now, it could cause errors if you change the version of one of them later.
+The git source https://github.com/autotelik/yams_events.git is not yet checked out. Please run `bundle install` before trying to start your application
+} 
+2021-09-16 20:22:56,268 [  92448]   WARN - ctionSystem.impl.ActionUpdater - 1624 ms to expand group child TabList 
+2021-09-16 20:22:56,275 [  92455]   WARN - ctionSystem.impl.ActionUpdater - 1628 ms to expand group child TabList 
+2021-09-16 20:24:16,585 [ 172765]   WARN - ctionSystem.impl.ActionUpdater - 1016 ms to expand group child TabList 
+2021-09-16 20:24:41,811 [ 197991]   WARN - ctionSystem.impl.ActionUpdater - 1087 ms to expand group child TabList 
+2021-09-16 20:24:41,811 [ 197991]   WARN - ctionSystem.impl.ActionUpdater - 1087 ms to expand group child TabList 
+2021-09-16 20:24:48,786 [ 204966]   WARN - ctionSystem.impl.ActionUpdater - 1014 ms to expand group child null 
+2021-09-16 20:24:49,790 [ 205970]   WARN - ctionSystem.impl.ActionUpdater - 1004 ms to expand group child TabList 
+2021-09-16 20:24:49,791 [ 205971]   WARN - ctionSystem.impl.ActionUpdater - 1003 ms to expand group child TabList 
+2021-09-16 20:24:57,992 [ 214172]   WARN - ctionSystem.impl.ActionUpdater - 1100 ms to expand group child TabList 
+2021-09-16 20:24:57,992 [ 214172]   WARN - ctionSystem.impl.ActionUpdater - 1100 ms to expand group child TabList 
+2021-09-16 20:24:59,023 [ 215203]   WARN - ctionSystem.impl.ActionUpdater - 1026 ms to expand group child TabList 
+2021-09-16 20:24:59,023 [ 215203]   WARN - ctionSystem.impl.ActionUpdater - 1026 ms to expand group child TabList 
+2021-09-16 20:25:21,405 [ 237585]   WARN - ctionSystem.impl.ActionUpdater - 1383 ms to expand group child null 
+2021-09-16 20:25:21,405 [ 237585]   WARN - ctionSystem.impl.ActionUpdater - 1383 ms to expand group child null 
+2021-09-16 20:25:22,475 [ 238655]   WARN - ctionSystem.impl.ActionUpdater - 1069 ms to expand group child null 
+2021-09-16 20:25:28,742 [ 244922]   WARN - ctionSystem.impl.ActionUpdater - 1037 ms to expand group child SearchEverywhere 
+2021-09-16 20:25:41,511 [ 257691]   WARN - ctionSystem.impl.ActionUpdater - 1373 ms to expand group child TabList 
+2021-09-16 20:25:41,511 [ 257691]   WARN - ctionSystem.impl.ActionUpdater - 1373 ms to expand group child TabList 
+2021-09-16 20:25:42,727 [ 258907]   WARN - ctionSystem.impl.ActionUpdater - 1215 ms to expand group child TabList 
+2021-09-16 20:25:42,730 [ 258910]   WARN - ctionSystem.impl.ActionUpdater - 1218 ms to expand group child TabList 
+2021-09-16 20:25:56,442 [ 272622]   WARN - ctionSystem.impl.ActionUpdater - 1802 ms to expand group child $Copy 
+2021-09-16 20:25:56,443 [ 272623]   WARN - ctionSystem.impl.ActionUpdater - 1743 ms to expand group child TabList 
+2021-09-16 20:25:56,932 [ 273112]   WARN - ystem.impl.ActionPopupMenuImpl - 2696 ms to fill popup menu EditorPopup 
+2021-09-16 20:26:03,129 [ 279309]   WARN - ctionSystem.impl.ActionUpdater - 1151 ms to expand group child TabList 
+2021-09-16 20:26:03,129 [ 279309]   WARN - ctionSystem.impl.ActionUpdater - 1151 ms to expand group child TabList 
+2021-09-16 20:26:04,192 [ 280372]   WARN - ctionSystem.impl.ActionUpdater - 1051 ms to expand group child TabList 
+2021-09-16 20:26:04,192 [ 280372]   WARN - ctionSystem.impl.ActionUpdater - 1051 ms to expand group child TabList 
+2021-09-16 20:26:06,257 [ 282437]   WARN - ctionSystem.impl.ActionUpdater - 1034 ms to expand group child TabList 
+2021-09-16 20:26:12,480 [ 288660]   WARN - ctionSystem.impl.ActionUpdater - 1047 ms to expand group child TabList 
+2021-09-16 20:26:12,480 [ 288660]   WARN - ctionSystem.impl.ActionUpdater - 1047 ms to expand group child TabList 
+2021-09-16 20:26:14,884 [ 291064]   WARN - ctionSystem.impl.ActionUpdater - 1480 ms to expand group child null 
+2021-09-16 20:26:14,884 [ 291064]   WARN - ctionSystem.impl.ActionUpdater - 1480 ms to expand group child null 
+2021-09-16 20:27:12,483 [ 348663]   WARN - ctionSystem.impl.ActionUpdater - 1713 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-16 20:27:13,548 [ 349728]   WARN - ctionSystem.impl.ActionUpdater - 1061 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-16 20:27:13,549 [ 349729]   WARN - ctionSystem.impl.ActionUpdater - 1062 ms to expand group child ExternalSystem.ProjectRefreshAction 
+2021-09-16 20:27:14,638 [ 350818]   WARN - ctionSystem.impl.ActionUpdater - 1084 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-16 20:27:14,638 [ 350818]   WARN - ctionSystem.impl.ActionUpdater - 1089 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-16 20:27:16,295 [ 352475]   WARN - ctionSystem.impl.ActionUpdater - 1216 ms to expand group child TabList 
+2021-09-16 20:27:16,295 [ 352475]   WARN - ctionSystem.impl.ActionUpdater - 1216 ms to expand group child TabList 
+2021-09-16 20:27:33,644 [ 369824]   WARN - ctionSystem.impl.ActionUpdater - 1112 ms to expand group child null 
+2021-09-16 20:27:35,399 [ 371579]   WARN - ctionSystem.impl.ActionUpdater - 1754 ms to expand group child WeighingNewGroup 
+2021-09-16 20:27:35,474 [ 371654]   WARN - ystem.impl.ActionPopupMenuImpl - 2994 ms to fill popup menu ProjectViewPopup 
+2021-09-16 20:27:43,231 [ 379411]   WARN - ctionSystem.impl.ActionUpdater - 1131 ms to expand group child TabList 
+2021-09-16 20:28:24,605 [ 420785]   WARN - ctionSystem.impl.ActionUpdater - 1220 ms to expand group child null 
+2021-09-16 20:28:35,516 [ 431696]   WARN - ctionSystem.impl.ActionUpdater - 1414 ms to expand group child TabList 
+2021-09-16 20:28:35,516 [ 431696]   WARN - ctionSystem.impl.ActionUpdater - 1414 ms to expand group child TabList 
+2021-09-16 20:28:36,568 [ 432748]   WARN - ctionSystem.impl.ActionUpdater - 1045 ms to expand group child OpenFile 
+2021-09-16 20:28:36,568 [ 432748]   WARN - ctionSystem.impl.ActionUpdater - 1046 ms to expand group child null 
+2021-09-16 20:28:37,608 [ 433788]   WARN - ctionSystem.impl.ActionUpdater - 1038 ms to expand group child ExternalSystem.HideProjectRefreshAction 
+2021-09-16 20:28:42,823 [ 439003]   WARN - ctionSystem.impl.ActionUpdater - 1392 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-16 20:28:43,923 [ 440103]   WARN - ctionSystem.impl.ActionUpdater - 1094 ms to expand group child ExternalSystem.ProjectRefreshAction 
+2021-09-16 20:28:43,923 [ 440103]   WARN - ctionSystem.impl.ActionUpdater - 1094 ms to expand group child null 
+2021-09-16 20:28:45,095 [ 441275]   WARN - ctionSystem.impl.ActionUpdater - 1165 ms to expand group child TabList 
+2021-09-16 20:28:53,125 [ 449305]   WARN - ctionSystem.impl.ActionUpdater - 1500 ms to expand group child TabList 
+2021-09-16 20:28:53,127 [ 449307]   WARN - ctionSystem.impl.ActionUpdater - 1502 ms to expand group child TabList 
+2021-09-17 08:41:29,113 [44405293]   WARN - ctionSystem.impl.ActionUpdater - 1200 ms to expand group child TabList 
+2021-09-17 08:41:29,113 [44405293]   WARN - ctionSystem.impl.ActionUpdater - 1200 ms to expand group child TabList 
+2021-09-17 08:41:51,336 [44427516]   WARN - ctionSystem.impl.ActionUpdater - 1152 ms to expand group child TabList 
+2021-09-17 08:41:51,336 [44427516]   WARN - ctionSystem.impl.ActionUpdater - 1152 ms to expand group child TabList 
+2021-09-17 08:42:00,814 [44436994]   WARN - ctionSystem.impl.ActionUpdater - 1333 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:42:16,415 [44452595]   WARN - ctionSystem.impl.ActionUpdater - 2076 ms to expand group child WeighingNewGroup 
+2021-09-17 08:42:16,489 [44452669]   WARN - ystem.impl.ActionPopupMenuImpl - 2325 ms to fill popup menu ProjectViewPopup 
+2021-09-17 08:42:24,349 [44460529]   WARN - ctionSystem.impl.ActionUpdater - 1650 ms to expand group child AssociateWithFileType 
+2021-09-17 08:42:24,373 [44460553]   WARN - ystem.impl.ActionPopupMenuImpl - 2041 ms to fill popup menu ProjectViewPopup 
+2021-09-17 08:42:32,816 [44468996]   WARN - ctionSystem.impl.ActionUpdater - 1046 ms to expand group child TabList 
+2021-09-17 08:42:32,816 [44468996]   WARN - ctionSystem.impl.ActionUpdater - 1046 ms to expand group child TabList 
+2021-09-17 08:42:36,186 [44472366]   WARN - ctionSystem.impl.ActionUpdater - 1052 ms to expand group child OpenFile 
+2021-09-17 08:42:36,186 [44472366]   WARN - ctionSystem.impl.ActionUpdater - 1052 ms to expand group child null 
+2021-09-17 08:42:36,186 [44472366]   WARN - ctionSystem.impl.ActionUpdater - 1052 ms to expand group child null 
+2021-09-17 08:42:38,579 [44474759]   WARN - ctionSystem.impl.ActionUpdater - 1087 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:42:38,579 [44474759]   WARN - ctionSystem.impl.ActionUpdater - 1087 ms to expand group child null 
+2021-09-17 08:42:38,580 [44474760]   WARN - ctionSystem.impl.ActionUpdater - 1088 ms to expand group child null 
+2021-09-17 08:42:41,226 [44477406]   WARN - ctionSystem.impl.ActionUpdater - 1025 ms to expand group child TabList 
+2021-09-17 08:42:41,226 [44477406]   WARN - ctionSystem.impl.ActionUpdater - 1024 ms to expand group child OpenFile 
+2021-09-17 08:42:55,223 [44491403]   WARN - ctionSystem.impl.ActionUpdater - 1277 ms to expand group child TabList 
+2021-09-17 08:42:55,223 [44491403]   WARN - ctionSystem.impl.ActionUpdater - 1277 ms to expand group child TabList 
+2021-09-17 08:43:11,163 [44507343]   WARN - ctionSystem.impl.ActionUpdater - 1005 ms to expand group child TabList 
+2021-09-17 08:43:37,133 [44533313]   WARN - ctionSystem.impl.ActionUpdater - 1180 ms to expand group child TabList 
+2021-09-17 08:43:37,133 [44533313]   WARN - ctionSystem.impl.ActionUpdater - 1173 ms to expand group child TabList 
+2021-09-17 08:43:51,148 [44547328]   WARN - ctionSystem.impl.ActionUpdater - 1648 ms to expand group child WeighingNewGroup 
+2021-09-17 08:43:51,217 [44547397]   WARN - ystem.impl.ActionPopupMenuImpl - 2771 ms to fill popup menu ProjectViewPopup 
+2021-09-17 08:43:57,664 [44553844]   WARN - ctionSystem.impl.ActionUpdater - 1073 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:44:11,422 [44567602]   WARN - ctionSystem.impl.ActionUpdater - 1232 ms to expand group child TabList 
+2021-09-17 08:44:11,422 [44567602]   WARN - ctionSystem.impl.ActionUpdater - 1232 ms to expand group child null 
+2021-09-17 08:44:12,417 [44568597]   WARN - ctionSystem.impl.ActionUpdater - 2235 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:44:23,147 [44579327]   WARN - ctionSystem.impl.ActionUpdater - 1263 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:44:24,160 [44580340]   WARN - ctionSystem.impl.ActionUpdater - 1010 ms to expand group child ExternalSystem.ProjectRefreshAction 
+2021-09-17 08:44:24,160 [44580340]   WARN - ctionSystem.impl.ActionUpdater - 1010 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-17 08:44:25,875 [44582055]   WARN - ctionSystem.impl.ActionUpdater - 1714 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:45:27,042 [44643222]   WARN - ctionSystem.impl.ActionUpdater - 1063 ms to expand group child null 
+2021-09-17 08:45:27,043 [44643223]   WARN - ctionSystem.impl.ActionUpdater - 1065 ms to expand group child TabList 
+2021-09-17 08:45:28,788 [44644968]   WARN - ctionSystem.impl.ActionUpdater - 1070 ms to expand group child TabList 
+2021-09-17 08:45:28,788 [44644968]   WARN - ctionSystem.impl.ActionUpdater - 1070 ms to expand group child TabList 
+2021-09-17 08:46:02,945 [44679125]   WARN - ctionSystem.impl.ActionUpdater - 1115 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:46:14,826 [44691006]   WARN - ctionSystem.impl.ActionUpdater - 1226 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:46:19,757 [44695937]   WARN - ctionSystem.impl.ActionUpdater - 1123 ms to expand group child Forward 
+2021-09-17 08:46:31,734 [44707914]   WARN - ctionSystem.impl.ActionUpdater - 1122 ms to expand group child TabList 
+2021-09-17 08:46:31,734 [44707914]   WARN - ctionSystem.impl.ActionUpdater - 1122 ms to expand group child TabList 
+2021-09-17 08:48:11,739 [44807919]   WARN - ctionSystem.impl.ActionUpdater - 1218 ms to expand group child null 
+2021-09-17 08:48:11,739 [44807919]   WARN - ctionSystem.impl.ActionUpdater - 1218 ms to expand group child null 
+2021-09-17 08:48:18,919 [44815099]   WARN - ctionSystem.impl.ActionUpdater - 2040 ms to expand group child TabList 
+2021-09-17 08:48:18,919 [44815099]   WARN - ctionSystem.impl.ActionUpdater - 2038 ms to expand group child TabList 
+2021-09-17 08:48:20,301 [44816481]   WARN - ctionSystem.impl.ActionUpdater - 1071 ms to expand group child null 
+2021-09-17 08:48:22,491 [44818671]   WARN - ctionSystem.impl.ActionUpdater - 1802 ms to expand group child ProjectView.ShowLibraryContents 
+2021-09-17 08:48:22,494 [44818674]   WARN - ystem.impl.ActionPopupMenuImpl - 2108 ms to fill popup menu ToolwindowPopup 
+2021-09-17 08:48:24,255 [44820435]   WARN - ctionSystem.impl.ActionUpdater - 1752 ms to expand group child AssociateWithFileType 
+2021-09-17 08:48:30,193 [44826373]   WARN - ctionSystem.impl.ActionUpdater - 1841 ms to expand group child ProjectView.ShowModules 
+2021-09-17 08:48:30,213 [44826393]   WARN - ystem.impl.ActionPopupMenuImpl - 3405 ms to fill popup menu ToolwindowPopup 
+2021-09-17 08:48:38,575 [44834755]   WARN - ctionSystem.impl.ActionUpdater - 1120 ms to expand group child TabList 
+2021-09-17 08:48:40,557 [44836737]   WARN - ctionSystem.impl.ActionUpdater - 1309 ms to expand group child TabList 
+2021-09-17 08:48:40,557 [44836737]   WARN - ctionSystem.impl.ActionUpdater - 1308 ms to expand group child TabList 
+2021-09-17 08:48:50,720 [44846900]   WARN - ctionSystem.impl.ActionUpdater - 1154 ms to expand group child TabList 
+2021-09-17 08:48:50,720 [44846900]   WARN - ctionSystem.impl.ActionUpdater - 1155 ms to expand group child TabList 
+2021-09-17 08:48:51,956 [44848136]   WARN - ctionSystem.impl.ActionUpdater - 1222 ms to expand group child TabList 
+2021-09-17 08:49:24,148 [44880328]   WARN - ctionSystem.impl.ActionUpdater - 1090 ms to expand group child TabList 
+2021-09-17 08:49:24,149 [44880329]   WARN - ctionSystem.impl.ActionUpdater - 1091 ms to expand group child TabList 
+2021-09-17 08:49:31,902 [44888082]   WARN - ctionSystem.impl.ActionUpdater - 1062 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:49:31,902 [44888082]   WARN - ctionSystem.impl.ActionUpdater - 1062 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:50:36,221 [44952401]   WARN - ctionSystem.impl.ActionUpdater - 1636 ms to expand group child null 
+2021-09-17 08:50:36,225 [44952405]   WARN - ctionSystem.impl.ActionUpdater - 1640 ms to expand group child null 
+2021-09-17 08:50:58,958 [44975138]   WARN - ctionSystem.impl.ActionUpdater - 1012 ms to expand group child TabList 
+2021-09-17 08:50:58,958 [44975138]   WARN - ctionSystem.impl.ActionUpdater - 1013 ms to expand group child TabList 
+2021-09-17 08:51:42,106 [45018286]   WARN - ctionSystem.impl.ActionUpdater - 1305 ms to expand group child TabList 
+2021-09-17 08:51:42,106 [45018286]   WARN - ctionSystem.impl.ActionUpdater - 1305 ms to expand group child TabList 
+2021-09-17 08:51:58,432 [45034612]   WARN - ctionSystem.impl.ActionUpdater - 1145 ms to expand group child TabList 
+2021-09-17 08:51:58,432 [45034612]   WARN - ctionSystem.impl.ActionUpdater - 1146 ms to expand group child TabList 
+2021-09-17 08:52:05,623 [45041803]   WARN - ctionSystem.impl.ActionUpdater - 1058 ms to expand group child TabList 
+2021-09-17 08:52:05,624 [45041804]   WARN - ctionSystem.impl.ActionUpdater - 1058 ms to expand group child TabList 
+2021-09-17 08:52:41,825 [45078005]   WARN - ctionSystem.impl.ActionUpdater - 1300 ms to expand group child TabList 
+2021-09-17 08:52:41,825 [45078005]   WARN - ctionSystem.impl.ActionUpdater - 1300 ms to expand group child TabList 
+2021-09-17 08:53:15,724 [45111904]   WARN - ctionSystem.impl.ActionUpdater - 1404 ms to expand group child TabList 
+2021-09-17 08:53:15,724 [45111904]   WARN - ctionSystem.impl.ActionUpdater - 1404 ms to expand group child TabList 
+2021-09-17 08:53:33,297 [45129477]   WARN - ctionSystem.impl.ActionUpdater - 1723 ms to expand group child TabList 
+2021-09-17 08:53:33,297 [45129477]   WARN - ctionSystem.impl.ActionUpdater - 1723 ms to expand group child TabList 
+2021-09-17 08:54:11,230 [45167410]   WARN - ctionSystem.impl.ActionUpdater - 1625 ms to expand group child TabList 
+2021-09-17 08:54:11,230 [45167410]   WARN - ctionSystem.impl.ActionUpdater - 1625 ms to expand group child TabList 
+2021-09-17 08:54:20,788 [45176968]   WARN - ctionSystem.impl.ActionUpdater - 1163 ms to expand group child TabList 
+2021-09-17 08:54:22,647 [45178827]   WARN - ctionSystem.impl.ActionUpdater - 1851 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 08:54:30,090 [45186270]   WARN - ctionSystem.impl.ActionUpdater - 1338 ms to expand group child RestoreFontPreviewTextAction 
+2021-09-17 08:54:38,687 [45194867]   WARN - ctionSystem.impl.ActionUpdater - 1067 ms to expand group child null 
+2021-09-17 08:54:38,687 [45194867]   WARN - ctionSystem.impl.ActionUpdater - 1067 ms to expand group child OpenFile 
+2021-09-17 08:54:46,570 [45202750]   WARN - ctionSystem.impl.ActionUpdater - 1053 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:54:46,570 [45202750]   WARN - ctionSystem.impl.ActionUpdater - 1053 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 08:55:13,091 [45229271]   WARN - ctionSystem.impl.ActionUpdater - 1168 ms to expand group child TabList 
+2021-09-17 08:55:13,092 [45229272]   WARN - ctionSystem.impl.ActionUpdater - 1168 ms to expand group child TabList 
+2021-09-17 08:55:43,464 [45259644]   WARN - ctionSystem.impl.ActionUpdater - 1754 ms to expand group child TabList 
+2021-09-17 08:55:43,464 [45259644]   WARN - ctionSystem.impl.ActionUpdater - 1754 ms to expand group child TabList 
+2021-09-17 08:58:47,075 [45443255]   WARN - ctionSystem.impl.ActionUpdater - 1093 ms to expand group child TabList 
+2021-09-17 08:58:47,075 [45443255]   WARN - ctionSystem.impl.ActionUpdater - 1093 ms to expand group child TabList 
+2021-09-17 08:59:01,303 [45457483]   WARN - ctionSystem.impl.ActionUpdater - 1532 ms to expand group child ExternalSystem.ProjectRefreshAction 
+2021-09-17 08:59:02,602 [45458782]   WARN - ctionSystem.impl.ActionUpdater - 2349 ms to expand group child TabList 
+2021-09-17 08:59:02,603 [45458783]   WARN - ctionSystem.impl.ActionUpdater - 1300 ms to expand group child ExternalSystem.HideProjectRefreshAction 
+2021-09-17 08:59:28,095 [45484275]   WARN - ctionSystem.impl.ActionUpdater - 1154 ms to expand group child null 
+2021-09-17 08:59:28,095 [45484275]   WARN - ctionSystem.impl.ActionUpdater - 1155 ms to expand group child null 
+2021-09-17 08:59:28,096 [45484276]   WARN - ctionSystem.impl.ActionUpdater - 1153 ms to expand group child SelectInProjectView 
+2021-09-17 08:59:28,096 [45484276]   WARN - ctionSystem.impl.ActionUpdater - 1153 ms to expand group child ProjectViewToolbar 
+2021-09-17 08:59:28,096 [45484276]   WARN - ctionSystem.impl.ActionUpdater - 1156 ms to expand group child null 
+2021-09-17 08:59:30,098 [45486278]   WARN - ctionSystem.impl.ActionUpdater - 1066 ms to expand group child TabList 
+2021-09-17 08:59:30,098 [45486278]   WARN - ctionSystem.impl.ActionUpdater - 1066 ms to expand group child TabList 
+2021-09-17 08:59:33,781 [45489961]   WARN - ctionSystem.impl.ActionUpdater - 1646 ms to expand group child TabList 
+2021-09-17 08:59:33,783 [45489963]   WARN - ctionSystem.impl.ActionUpdater - 1644 ms to expand group child ExternalSystem.ProjectRefreshActionGroup 
+2021-09-17 08:59:34,944 [45491124]   WARN - ctionSystem.impl.ActionUpdater - 1159 ms to expand group child ExternalSystem.HideProjectRefreshAction 
+2021-09-17 08:59:41,445 [45497625]   WARN - ctionSystem.impl.ActionUpdater - 1077 ms to expand group child TabList 
+2021-09-17 08:59:41,445 [45497625]   WARN - ctionSystem.impl.ActionUpdater - 1077 ms to expand group child TabList 
+2021-09-17 08:59:47,681 [45503861]   WARN - ctionSystem.impl.ActionUpdater - 1379 ms to expand group child TabList 
+2021-09-17 08:59:47,681 [45503861]   WARN - ctionSystem.impl.ActionUpdater - 1379 ms to expand group child TabList 
+2021-09-17 09:00:01,722 [45517902]   WARN - ctionSystem.impl.ActionUpdater - 1922 ms to expand group child TabList 
+2021-09-17 09:00:01,722 [45517902]   WARN - ctionSystem.impl.ActionUpdater - 1922 ms to expand group child TabList 
+2021-09-17 09:00:09,634 [45525814]   WARN - ctionSystem.impl.ActionUpdater - 2064 ms to expand group child null 
+2021-09-17 09:00:09,634 [45525814]   WARN - ctionSystem.impl.ActionUpdater - 2065 ms to expand group child CopyPaths 
+2021-09-17 09:00:10,178 [45526358]   WARN - ystem.impl.ActionPopupMenuImpl - 2932 ms to fill popup menu EditorTabPopup 
+2021-09-17 09:00:15,693 [45531873]   WARN - ctionSystem.impl.ActionUpdater - 1299 ms to expand group child null 
+2021-09-17 09:00:15,693 [45531873]   WARN - ctionSystem.impl.ActionUpdater - 1299 ms to expand group child null 
+2021-09-17 09:00:15,693 [45531873]   WARN - ctionSystem.impl.ActionUpdater - 1298 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 09:00:15,725 [45531905]   WARN - ctionSystem.impl.ActionUpdater - 1332 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 09:00:22,490 [45538670]   WARN - ctionSystem.impl.ActionUpdater - 1590 ms to expand group child Stop 
+2021-09-17 09:00:22,490 [45538670]   WARN - ctionSystem.impl.ActionUpdater - 1591 ms to expand group child ToolbarRunGroup 
+2021-09-17 09:00:22,490 [45538670]   WARN - ctionSystem.impl.ActionUpdater - 1555 ms to expand group child null 
+2021-09-17 09:00:22,490 [45538670]   WARN - ctionSystem.impl.ActionUpdater - 1555 ms to expand group child null 
+2021-09-17 09:00:28,178 [45544358]   WARN - ctionSystem.impl.ActionUpdater - 1146 ms to expand group child TabList 
+2021-09-17 09:00:28,178 [45544358]   WARN - ctionSystem.impl.ActionUpdater - 1146 ms to expand group child TabList 
+2021-09-17 09:00:38,568 [45554748]   WARN - ctionSystem.impl.ActionUpdater - 1701 ms to expand group child TabList 
+2021-09-17 09:00:38,568 [45554748]   WARN - ctionSystem.impl.ActionUpdater - 1701 ms to expand group child TabList 
+2021-09-17 09:01:00,913 [45577093]   WARN - ctionSystem.impl.ActionUpdater - 1885 ms to expand group child null 
+2021-09-17 09:01:00,914 [45577094]   WARN - ctionSystem.impl.ActionUpdater - 1885 ms to expand group child SelectInProjectView 
+2021-09-17 09:01:00,914 [45577094]   WARN - ctionSystem.impl.ActionUpdater - 1885 ms to expand group child ProjectViewToolbar 
+2021-09-17 09:01:00,914 [45577094]   WARN - ctionSystem.impl.ActionUpdater - 1885 ms to expand group child null 
+2021-09-17 09:01:02,541 [45578721]   WARN - ctionSystem.impl.ActionUpdater - 1417 ms to expand group child null 
+2021-09-17 09:01:19,824 [45596004]   WARN - ctionSystem.impl.ActionUpdater - 1845 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 09:01:23,176 [45599356]   WARN - ctionSystem.impl.ActionUpdater - 3268 ms to expand group child TabList 
+2021-09-17 09:01:23,176 [45599356]   WARN - ctionSystem.impl.ActionUpdater - 1816 ms to expand group child null 
+2021-09-17 09:01:27,127 [45603307]   WARN - ctionSystem.impl.ActionUpdater - 1865 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 09:01:27,127 [45603307]   WARN - ctionSystem.impl.ActionUpdater - 1865 ms to expand group child null 
+2021-09-17 09:01:27,127 [45603307]   WARN - ctionSystem.impl.ActionUpdater - 1865 ms to expand group child null 
+2021-09-17 09:01:41,128 [45617308]   WARN - ctionSystem.impl.ActionUpdater - 1283 ms to expand group child TabList 
+2021-09-17 09:01:41,128 [45617308]   WARN - ctionSystem.impl.ActionUpdater - 1283 ms to expand group child TabList 
+2021-09-17 09:01:49,255 [45625435]   WARN - ctionSystem.impl.ActionUpdater - 1552 ms to expand group child TabList 
+2021-09-17 09:01:49,255 [45625435]   WARN - ctionSystem.impl.ActionUpdater - 1552 ms to expand group child TabList 
+2021-09-17 09:03:16,610 [45712790]   WARN - ctionSystem.impl.ActionUpdater - 1250 ms to expand group child OpenInBrowserEditorContextBarGroupAction 
+2021-09-17 09:23:28,487 [46924667]   WARN - ctionSystem.impl.ActionUpdater - 1093 ms to expand group child TabList 
+2021-09-17 09:23:28,487 [46924667]   WARN - ctionSystem.impl.ActionUpdater - 1093 ms to expand group child TabList 
+2021-09-17 10:17:52,523 [50188703]   WARN - ctionSystem.impl.ActionUpdater - 1379 ms to expand group child TabList 
+2021-09-17 10:17:52,523 [50188703]   WARN - ctionSystem.impl.ActionUpdater - 1379 ms to expand group child TabList 
+2021-09-17 10:18:06,047 [50202227]   WARN - ctionSystem.impl.ActionUpdater - 1109 ms to expand group child TabList 
+2021-09-17 10:18:06,047 [50202227]   WARN - ctionSystem.impl.ActionUpdater - 1109 ms to expand group child TabList 
+2021-09-17 10:20:08,439 [50324619]   WARN - ctionSystem.impl.ActionUpdater - 1079 ms to expand group child FileOpenGroup 
+2021-09-17 10:20:15,522 [50331702]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.CADT90, INVOCATION_ID=e6e36d9ea7214673a14baf98356637d9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2068,unix/autotelik-2:/tmp/.ICE-unix/2068, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1866, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a6f53a99-2ba3-4669-8c43-d796cbff296a, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-17 10:20:15,522 [50331702]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-17 10:20:15,522 [50331702]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+2021-09-17 10:20:18,923 [50335103]   WARN - ctionSystem.impl.ActionUpdater - 1324 ms to expand group child ConvertModuleGroupsToQualifiedNames 
+2021-09-17 10:20:18,923 [50335103]   WARN - ctionSystem.impl.ActionUpdater - 1391 ms to expand group child FileMainSettingsGroup 
+2021-09-17 10:20:18,923 [50335103]   WARN - ctionSystem.impl.ActionUpdater - 1324 ms to expand group child CopyAsRichText 
+2021-09-17 10:20:20,537 [50336717]   WARN - ctionSystem.impl.ActionUpdater - 1613 ms to expand group child FilePropertiesGroup 
+2021-09-17 10:20:21,631 [50337811]   WARN - ctionSystem.impl.ActionUpdater - 1094 ms to expand group child LocalHistory 
+2021-09-17 10:20:21,632 [50337812]   WARN - ctionSystem.impl.ActionUpdater - 1094 ms to expand group child LocalHistory.MainMenuGroup 
+2021-09-17 10:20:21,631 [50337811]   WARN - ctionSystem.impl.ActionUpdater - 1087 ms to expand group child JsonCopyPointer 
+2021-09-17 10:20:21,632 [50337812]   WARN - ctionSystem.impl.ActionUpdater - 4100 ms to expand group child CutCopyPasteGroup 
+2021-09-17 10:20:28,687 [50344867]   WARN - ctionSystem.impl.ActionUpdater - 1391 ms to expand group child TabList 
+2021-09-17 10:21:03,945 [50380125]   WARN - ctionSystem.impl.ActionUpdater - 1851 ms to expand group child TabList 
+2021-09-17 10:21:03,948 [50380128]   WARN - ctionSystem.impl.ActionUpdater - 1833 ms to expand group child TabList 
+2021-09-17 10:21:05,936 [50382116]   WARN - ctionSystem.impl.ActionUpdater - 1985 ms to expand group child null 
+2021-09-17 10:21:05,936 [50382116]   WARN - ctionSystem.impl.ActionUpdater - 1985 ms to expand group child null 
+2021-09-17 10:22:28,998 [50465178]   WARN - ctionSystem.impl.ActionUpdater - 1547 ms to expand group child TabList 
+2021-09-17 10:22:28,998 [50465178]   WARN - ctionSystem.impl.ActionUpdater - 1547 ms to expand group child TabList 
+2021-09-17 10:34:25,526 [51181706]   WARN - t.rvm.RvmVersionManagerHandler - RVM environment is not good:
+rubies path: null
+gems path: /usr/share/rvm/gems
+; rvm environment: {XAUTHORITY=/run/user/1000/.mutter-Xwaylandauth.CADT90, INVOCATION_ID=e6e36d9ea7214673a14baf98356637d9, XMODIFIERS=@im=ibus, rvm_gems_path=/usr/share/rvm/gems, rvm_is_not_a_shell_function=0, SPRING_SERVER_COMMAND=spring server, TERMINATOR_DBUS_PATH=/net/tenshu/Terminator2, XDG_CURRENT_DESKTOP=ubuntu:GNOME, rvm_user_path=/usr/share/rvm/user, COLORTERM=truecolor, SESSION_MANAGER=local/autotelik-2:@/tmp/.ICE-unix/2068,unix/autotelik-2:/tmp/.ICE-unix/2068, USERNAME=rubyuser, LC_PAPER=nl_NL.UTF-8, LOGNAME=rubyuser, rvm_version=1.29.12 (manual), rvm_archives_path=/usr/share/rvm/archives, PWD=/home/rubyuser/SoftwareDev/git/yams, rvm_hooks_path=/usr/share/rvm/hooks, MANAGERPID=1866, IM_CONFIG_PHASE=1, rvm_token=do, rvm_head_flag=0, GJS_DEBUG_TOPICS=JS ERROR;JS LOG, rvm_user_install_flag=0, SHELL=/bin/bash, rvm_verbose_flag=0, rvm_log_path=/usr/share/rvm/log, LC_ADDRESS=nl_NL.UTF-8, rvm_gemset_name=, rvm_delete_flag=0, MY_RUBY_HOME=/usr/share/rvm/rubies/ruby-2.7.4, rvm_archive_extension=tar.bz2, GNOME_DESKTOP_SESSION_ID=this-is-deprecated, __array_start=0, rvm_man_path=/usr/share/rvm/share/man, GTK_MODULES=gail:atk-bridge, rvm_lib_path=/usr/share/rvm/lib, RM_INFO=IU-212.5080.55, RUBY_VERSION=ruby-2.7.4, rvm_action=do, rvm_examples_path=/usr/share/rvm/examples, _system_name=Ubuntu, rvm_usr_path=/usr/share/rvm/usr, XDG_SESSION_DESKTOP=ubuntu, LS_COLORS=rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:, SSH_AGENT_LAUNCHER=gnome-keyring, rvm_comment_clr=, LC_MONETARY=nl_NL.UTF-8, _system_arch=x86_64, rvm_notify_clr=, rvm_src_path=/usr/share/rvm/src, XDG_CONFIG_DIRS=/etc/xdg/xdg-ubuntu:/etc/xdg, rvm_prefix=/usr/share, rvm_wrappers_path=/usr/share/rvm/wrappers, LANG=en_US.UTF-8, XDG_SESSION_TYPE=wayland, SPRING_TMP_PATH=/tmp/RMSpring, rvm_default_flag=0, LC_NAME=nl_NL.UTF-8, rvm_help_path=/usr/share/rvm/help, rvm_patches_path=/usr/share/rvm/patches, DESKTOP_SESSION=ubuntu, TERMINATOR_DBUS_NAME=net.tenshu.Terminator25ef4b219e3b005583550f2b0f9f990c3, _system_version=21.04, XDG_MENU_PREFIX=gnome-, QT_ACCESSIBILITY=1, rvm_stored_umask=0002, TERMINATOR_UUID=urn:uuid:a6f53a99-2ba3-4669-8c43-d796cbff296a, GJS_DEBUG_OUTPUT=stderr, SSH_AUTH_SOCK=/run/user/1000/keyring/ssh, rvm_environments_path=/usr/share/rvm/environments, GNOME_SHELL_SESSION_MODE=ubuntu, IM_CONFIG_CHECK_ENV=1, rvm_docs_path=/usr/share/rvm/docs, HOME=/home/rubyuser} 
+2021-09-17 10:34:25,526 [51181706]   WARN - t.rvm.RvmVersionManagerHandler - Inferring paths from the path to RVM /usr/share/rvm/bin/rvm 
+2021-09-17 10:34:25,526 [51181706]   WARN - t.rvm.RvmVersionManagerHandler - rvm_rubies_path(/usr/share/rvm/rubies) inferred from path to rvm executable (/usr/share/rvm/bin/rvm) 
+libva error: vaGetDriverNameByIndex() failed with unknown libva error, driver_name = (null)
+2021-09-17 10:34:30,664 [51186844]   WARN - ctionSystem.impl.ActionUpdater - 1452 ms to expand group child OpenFile 
+2021-09-17 10:34:30,664 [51186844]   WARN - ctionSystem.impl.ActionUpdater - 1452 ms to expand group child $Redo 
+2021-09-17 10:34:31,278 [51187458]   WARN - ctionSystem.impl.ActionUpdater - 2235 ms to expand group child FileOpenGroup 
+2021-09-17 10:34:36,029 [51192209]   WARN - ctionSystem.impl.ActionUpdater - 1367 ms to expand group child TabList 
+2021-09-17 10:34:36,031 [51192211]   WARN - ctionSystem.impl.ActionUpdater - 1368 ms to expand group child TabList 
+2021-09-17 10:35:05,889 [51222069]   WARN - ctionSystem.impl.ActionUpdater - 1313 ms to expand group child TabList 
+2021-09-17 10:35:05,889 [51222069]   WARN - ctionSystem.impl.ActionUpdater - 1313 ms to expand group child TabList 
+2021-09-17 10:35:10,928 [51227108]   WARN - ctionSystem.impl.ActionUpdater - 3502 ms to expand group child TabList 
+2021-09-17 10:35:10,928 [51227108]   WARN - ctionSystem.impl.ActionUpdater - 3502 ms to expand group child TabList 
+2021-09-17 10:35:17,930 [51234110]   WARN - ctionSystem.impl.ActionUpdater - 1439 ms to expand group child TabList 
+2021-09-17 10:35:17,930 [51234110]   WARN - ctionSystem.impl.ActionUpdater - 1439 ms to expand group child TabList 
+2021-09-17 10:35:21,387 [51237567]   WARN - ctionSystem.impl.ActionUpdater - 3455 ms to expand group child TabList 
+2021-09-17 10:35:21,395 [51237575]   WARN - ctionSystem.impl.ActionUpdater - 3463 ms to expand group child TabList 
+2021-09-17 10:35:24,818 [51240998]   WARN - ctionSystem.impl.ActionUpdater - 3418 ms to expand group child TabList 
+2021-09-17 10:35:24,818 [51240998]   WARN - ctionSystem.impl.ActionUpdater - 3419 ms to expand group child TabList 
+2021-09-17 10:35:28,295 [51244475]   WARN - ctionSystem.impl.ActionUpdater - 1715 ms to expand group child TabList 
+2021-09-17 10:35:28,303 [51244483]   WARN - ctionSystem.impl.ActionUpdater - 1723 ms to expand group child TabList 
+2021-09-17 10:35:56,754 [51272934]   WARN - aths.AssetsRegistrationWatcher - Asset loadpath registration: Unrecognized argument detected: Rails.root.join('node_modules') 
+2021-09-17 10:35:59,424 [51275604]   WARN - ctionSystem.impl.ActionUpdater - 1225 ms to expand group child null 
+2021-09-17 10:36:00,752 [51276932]   WARN - ctionSystem.impl.ActionUpdater - 1317 ms to expand group child ExpandAll 
+2021-09-17 10:36:00,752 [51276932]   WARN - ctionSystem.impl.ActionUpdater - 1314 ms to expand group child null 
+2021-09-17 10:36:00,754 [51276934]   WARN - ctionSystem.impl.ActionUpdater - 1317 ms to expand group child null 
+2021-09-17 10:36:00,774 [51276954]   WARN - ctionSystem.impl.ActionUpdater - 1343 ms to expand group child ProjectViewToolbar 
+2021-09-17 10:36:00,774 [51276954]   WARN - ctionSystem.impl.ActionUpdater - 1343 ms to expand group child null 
+2021-09-17 10:36:39,012 [51315192]   WARN - ctionSystem.impl.ActionUpdater - 1311 ms to expand group child $LRU 
+2021-09-17 10:36:39,013 [51315193]   WARN - ctionSystem.impl.ActionUpdater - 2061 ms to expand group child FileOpenGroup 
+2021-09-17 10:36:43,214 [51319394]   WARN - ctionSystem.impl.ActionUpdater - 1176 ms to expand group child $LRU 
+2021-09-17 10:36:43,215 [51319395]   WARN - ctionSystem.impl.ActionUpdater - 2105 ms to expand group child FileOpenGroup 
+2021-09-17 10:36:59,845 [51336025]   WARN - ctionSystem.impl.ActionUpdater - 1061 ms to expand group child FileChooser.GotoDesktop 
+2021-09-17 10:37:04,304 [51340484]   WARN - nSystem.impl.ActionToolbarImpl - 'DirDiff' toolbar by default uses any focused component to update its actions. Toolbar actions that need local UI context would be incorrectly disabled. Please call toolbar.setTargetComponent() explicitly. 
+java.lang.Throwable: toolbar creation trace
+	at com.intellij.openapi.actionSystem.impl.ActionToolbarImpl.<init>(ActionToolbarImpl.java:112)
+	at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.createActionToolbar(ActionManagerImpl.java:438)
+	at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.createActionToolbar(ActionManagerImpl.java:432)
+	at com.intellij.openapi.diff.impl.dir.DirDiffPanel.<init>(DirDiffPanel.java:196)
+	at com.intellij.diff.tools.dir.DirDiffViewer.<init>(DirDiffViewer.java:71)
+	at com.intellij.diff.tools.dir.DirDiffViewer.<init>(DirDiffViewer.java:55)
+	at com.intellij.diff.tools.dir.DirDiffTool.createViewer(DirDiffTool.java:57)
+	at com.intellij.diff.tools.dir.DirDiffTool.createComponent(DirDiffTool.java:40)
+	at com.intellij.diff.impl.DiffRequestProcessor.createState(DiffRequestProcessor.java:269)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$doApplyRequest$4(DiffRequestProcessor.java:344)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:705)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:647)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:63)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeNonCancelableSection(CoreProgressManager.java:223)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$doApplyRequest$5(DiffRequestProcessor.java:338)
+	at com.intellij.diff.util.DiffUtil.runPreservingFocus(DiffUtil.java:757)
+	at com.intellij.diff.impl.DiffRequestProcessor.doApplyRequest(DiffRequestProcessor.java:328)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$applyRequest$3(DiffRequestProcessor.java:310)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.lambda$doWhenFocusSettlesDown$3(FocusManagerImpl.java:184)
+	at com.intellij.util.ui.EdtInvocationManager.invokeLaterIfNeeded(EdtInvocationManager.java:101)
+	at com.intellij.ide.IdeEventQueue.ifFocusEventsInTheQueue(IdeEventQueue.java:186)
+	at com.intellij.ide.IdeEventQueue.executeWhenAllFocusEventsLeftTheQueue(IdeEventQueue.java:140)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:175)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:181)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:41)
+	at com.intellij.diff.impl.DiffRequestProcessor.applyRequest(DiffRequestProcessor.java:318)
+	at com.intellij.diff.impl.DiffRequestProcessor.applyRequest(DiffRequestProcessor.java:297)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.lambda$updateRequest$0(CacheDiffRequestProcessor.java:117)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.finish(BackgroundTaskUtil.java:111)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.executeAndTryWait(BackgroundTaskUtil.java:99)
+	at com.intellij.diff.util.DiffTaskQueue.executeAndTryWait(DiffTaskQueue.java:47)
+	at com.intellij.diff.util.DiffTaskQueue.executeAndTryWait(DiffTaskQueue.java:38)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.updateRequest(CacheDiffRequestProcessor.java:112)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.updateRequest(CacheDiffRequestProcessor.java:91)
+	at com.intellij.diff.impl.DiffRequestProcessor.updateRequest(DiffRequestProcessor.java:180)
+	at com.intellij.diff.impl.DiffRequestProcessor.updateRequest(DiffRequestProcessor.java:175)
+	at com.intellij.diff.editor.DiffRequestProcessorEditor.selectNotify(DiffRequestProcessorEditor.kt:45)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$1.selectionChanged(EditorTabbedContainer.java:103)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.fireSelectionChanged(JBTabsImpl.java:1345)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.executeSelectionChange(JBTabsImpl.java:1300)
+	at com.intellij.ui.tabs.impl.JBTabsImpl$9.run(JBTabsImpl.java:1253)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer.lambda$new$1(EditorTabbedContainer.java:116)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:207)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:172)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:162)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:148)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer.lambda$new$2(EditorTabbedContainer.java:114)
+	at com.intellij.ui.tabs.impl.JBTabsImpl._setSelected(JBTabsImpl.java:1249)
+	at com.intellij.ui.tabs.impl.JBTabsImpl.select(JBTabsImpl.java:1239)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer$EditorTabs.select(EditorTabbedContainer.java:752)
+	at com.intellij.openapi.fileEditor.impl.EditorTabbedContainer.setSelectedIndex(EditorTabbedContainer.java:151)
+	at com.intellij.openapi.fileEditor.impl.EditorWindow.setSelectedEditor(EditorWindow.java:517)
+	at com.intellij.openapi.fileEditor.impl.EditorWindow.setEditor(EditorWindow.java:567)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4Edt(FileEditorManagerImpl.java:1024)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl4$17(FileEditorManagerImpl.java:969)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.runBulkTabChange(FileEditorManagerImpl.java:1786)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl4$18(FileEditorManagerImpl.java:968)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:438)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:456)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:965)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl2$14(FileEditorManagerImpl.java:891)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:216)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:172)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:162)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:148)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl2(FileEditorManagerImpl.java:890)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:764)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:731)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:719)
+	at com.intellij.openapi.fileEditor.ex.FileEditorManagerEx.openFile(FileEditorManagerEx.java:132)
+	at com.intellij.openapi.vcs.changes.VcsEditorTabFilesManager.openFile(VcsEditorTabFilesManager.kt:75)
+	at com.intellij.openapi.vcs.changes.VcsEditorTabFilesManager.openFile(VcsEditorTabFilesManager.kt:60)
+	at com.intellij.openapi.vcs.changes.EditorTabDiffPreviewManager.showDiffFile(EditorTabDiffPreviewManager.kt:37)
+	at com.intellij.diff.DiffManagerImpl.showDiffBuiltin(DiffManagerImpl.java:79)
+	at com.intellij.diff.DiffManagerImpl.showDiff(DiffManagerImpl.java:56)
+	at com.intellij.diff.actions.BaseShowDiffAction.actionPerformed(BaseShowDiffAction.java:59)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.lambda$performActionDumbAwareWithCallbacks$4(ActionUtil.java:240)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareWithCallbacks(ActionUtil.java:261)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks(ActionUtil.java:240)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.lambda$actionPerformed$0(ActionMenuItem.java:248)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:236)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:67)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:240)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.lambda$fireActionPerformed$0(ActionMenuItem.java:90)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:94)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:90)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.doClick(BegMenuItemUI.java:515)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:545)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6652)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3345)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6417)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5027)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4859)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2784)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4859)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:778)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:727)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:751)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:749)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:748)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:887)
+	at com.intellij.ide.IdeEventQueue.dispatchMouseEvent(IdeEventQueue.java:816)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:753)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$7(IdeEventQueue.java:443)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:825)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$8(IdeEventQueue.java:442)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:794)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:494)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2021-09-17 10:37:04,347 [51340527]   WARN - nSystem.impl.ActionToolbarImpl - 'DirDiff' toolbar by default uses any focused component to update its actions. Toolbar actions that need local UI context would be incorrectly disabled. Please call toolbar.setTargetComponent() explicitly. 
+java.lang.Throwable: toolbar creation trace
+	at com.intellij.openapi.actionSystem.impl.ActionToolbarImpl.<init>(ActionToolbarImpl.java:112)
+	at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.createActionToolbar(ActionManagerImpl.java:438)
+	at com.intellij.openapi.actionSystem.impl.ActionManagerImpl.createActionToolbar(ActionManagerImpl.java:432)
+	at com.intellij.openapi.diff.impl.dir.DirDiffPanel.<init>(DirDiffPanel.java:196)
+	at com.intellij.diff.tools.dir.DirDiffViewer.<init>(DirDiffViewer.java:71)
+	at com.intellij.diff.tools.dir.DirDiffViewer.<init>(DirDiffViewer.java:55)
+	at com.intellij.diff.tools.dir.DirDiffTool.createViewer(DirDiffTool.java:57)
+	at com.intellij.diff.tools.dir.DirDiffTool.createComponent(DirDiffTool.java:40)
+	at com.intellij.diff.impl.DiffRequestProcessor.createState(DiffRequestProcessor.java:269)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$doApplyRequest$4(DiffRequestProcessor.java:344)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.registerIndicatorAndRun(CoreProgressManager.java:705)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeProcessUnderProgress(CoreProgressManager.java:647)
+	at com.intellij.openapi.progress.impl.ProgressManagerImpl.executeProcessUnderProgress(ProgressManagerImpl.java:63)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.executeNonCancelableSection(CoreProgressManager.java:223)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$doApplyRequest$5(DiffRequestProcessor.java:338)
+	at com.intellij.diff.util.DiffUtil.runPreservingFocus(DiffUtil.java:757)
+	at com.intellij.diff.impl.DiffRequestProcessor.doApplyRequest(DiffRequestProcessor.java:328)
+	at com.intellij.diff.impl.DiffRequestProcessor.lambda$applyRequest$3(DiffRequestProcessor.java:310)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.lambda$doWhenFocusSettlesDown$3(FocusManagerImpl.java:184)
+	at com.intellij.util.ui.EdtInvocationManager.invokeLaterIfNeeded(EdtInvocationManager.java:101)
+	at com.intellij.ide.IdeEventQueue.ifFocusEventsInTheQueue(IdeEventQueue.java:186)
+	at com.intellij.ide.IdeEventQueue.executeWhenAllFocusEventsLeftTheQueue(IdeEventQueue.java:140)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:175)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.doWhenFocusSettlesDown(FocusManagerImpl.java:181)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.doWhenFocusSettlesDown(IdeFocusManagerImpl.java:41)
+	at com.intellij.diff.impl.DiffRequestProcessor.applyRequest(DiffRequestProcessor.java:318)
+	at com.intellij.diff.impl.DiffRequestProcessor.applyRequest(DiffRequestProcessor.java:297)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.lambda$updateRequest$0(CacheDiffRequestProcessor.java:117)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.finish(BackgroundTaskUtil.java:111)
+	at com.intellij.openapi.progress.util.BackgroundTaskUtil.executeAndTryWait(BackgroundTaskUtil.java:99)
+	at com.intellij.diff.util.DiffTaskQueue.executeAndTryWait(DiffTaskQueue.java:47)
+	at com.intellij.diff.util.DiffTaskQueue.executeAndTryWait(DiffTaskQueue.java:38)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.updateRequest(CacheDiffRequestProcessor.java:112)
+	at com.intellij.diff.impl.CacheDiffRequestProcessor.updateRequest(CacheDiffRequestProcessor.java:91)
+	at com.intellij.diff.impl.DiffRequestProcessor.updateRequest(DiffRequestProcessor.java:180)
+	at com.intellij.diff.impl.DiffRequestProcessor.updateRequest(DiffRequestProcessor.java:175)
+	at com.intellij.diff.editor.DiffRequestProcessorEditor.selectNotify(DiffRequestProcessorEditor.kt:45)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4Edt(FileEditorManagerImpl.java:1056)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl4$17(FileEditorManagerImpl.java:969)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.runBulkTabChange(FileEditorManagerImpl.java:1786)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl4$18(FileEditorManagerImpl.java:968)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:438)
+	at com.intellij.openapi.application.impl.ApplicationImpl.invokeAndWait(ApplicationImpl.java:456)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl4(FileEditorManagerImpl.java:965)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.lambda$openFileImpl2$14(FileEditorManagerImpl.java:891)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:216)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:172)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:162)
+	at com.intellij.openapi.command.impl.CoreCommandProcessor.executeCommand(CoreCommandProcessor.java:148)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileImpl2(FileEditorManagerImpl.java:890)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:764)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:731)
+	at com.intellij.openapi.fileEditor.impl.FileEditorManagerImpl.openFileWithProviders(FileEditorManagerImpl.java:719)
+	at com.intellij.openapi.fileEditor.ex.FileEditorManagerEx.openFile(FileEditorManagerEx.java:132)
+	at com.intellij.openapi.vcs.changes.VcsEditorTabFilesManager.openFile(VcsEditorTabFilesManager.kt:75)
+	at com.intellij.openapi.vcs.changes.VcsEditorTabFilesManager.openFile(VcsEditorTabFilesManager.kt:60)
+	at com.intellij.openapi.vcs.changes.EditorTabDiffPreviewManager.showDiffFile(EditorTabDiffPreviewManager.kt:37)
+	at com.intellij.diff.DiffManagerImpl.showDiffBuiltin(DiffManagerImpl.java:79)
+	at com.intellij.diff.DiffManagerImpl.showDiff(DiffManagerImpl.java:56)
+	at com.intellij.diff.actions.BaseShowDiffAction.actionPerformed(BaseShowDiffAction.java:59)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.lambda$performActionDumbAwareWithCallbacks$4(ActionUtil.java:240)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performDumbAwareWithCallbacks(ActionUtil.java:261)
+	at com.intellij.openapi.actionSystem.ex.ActionUtil.performActionDumbAwareWithCallbacks(ActionUtil.java:240)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.lambda$actionPerformed$0(ActionMenuItem.java:248)
+	at com.intellij.openapi.wm.impl.FocusManagerImpl.runOnOwnContext(FocusManagerImpl.java:236)
+	at com.intellij.openapi.wm.impl.IdeFocusManagerImpl.runOnOwnContext(IdeFocusManagerImpl.java:67)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem$ActionTransmitter.actionPerformed(ActionMenuItem.java:240)
+	at java.desktop/javax.swing.AbstractButton.fireActionPerformed(AbstractButton.java:1967)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.lambda$fireActionPerformed$0(ActionMenuItem.java:90)
+	at com.intellij.openapi.application.TransactionGuardImpl.performUserActivity(TransactionGuardImpl.java:94)
+	at com.intellij.openapi.actionSystem.impl.ActionMenuItem.fireActionPerformed(ActionMenuItem.java:90)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI.doClick(BegMenuItemUI.java:515)
+	at com.intellij.ui.plaf.beg.BegMenuItemUI$MyMouseInputHandler.mouseReleased(BegMenuItemUI.java:545)
+	at java.desktop/java.awt.Component.processMouseEvent(Component.java:6652)
+	at java.desktop/javax.swing.JComponent.processMouseEvent(JComponent.java:3345)
+	at java.desktop/java.awt.Component.processEvent(Component.java:6417)
+	at java.desktop/java.awt.Container.processEvent(Container.java:2263)
+	at java.desktop/java.awt.Component.dispatchEventImpl(Component.java:5027)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2321)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4859)
+	at java.desktop/java.awt.LightweightDispatcher.retargetMouseEvent(Container.java:4918)
+	at java.desktop/java.awt.LightweightDispatcher.processMouseEvent(Container.java:4547)
+	at java.desktop/java.awt.LightweightDispatcher.dispatchEvent(Container.java:4488)
+	at java.desktop/java.awt.Container.dispatchEventImpl(Container.java:2307)
+	at java.desktop/java.awt.Window.dispatchEventImpl(Window.java:2784)
+	at java.desktop/java.awt.Component.dispatchEvent(Component.java:4859)
+	at java.desktop/java.awt.EventQueue.dispatchEventImpl(EventQueue.java:778)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:727)
+	at java.desktop/java.awt.EventQueue$4.run(EventQueue.java:721)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:95)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:751)
+	at java.desktop/java.awt.EventQueue$5.run(EventQueue.java:749)
+	at java.base/java.security.AccessController.doPrivileged(Native Method)
+	at java.base/java.security.ProtectionDomain$JavaSecurityAccessImpl.doIntersectionPrivilege(ProtectionDomain.java:85)
+	at java.desktop/java.awt.EventQueue.dispatchEvent(EventQueue.java:748)
+	at com.intellij.ide.IdeEventQueue.defaultDispatchEvent(IdeEventQueue.java:887)
+	at com.intellij.ide.IdeEventQueue.dispatchMouseEvent(IdeEventQueue.java:816)
+	at com.intellij.ide.IdeEventQueue._dispatchEvent(IdeEventQueue.java:753)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$7(IdeEventQueue.java:443)
+	at com.intellij.openapi.progress.impl.CoreProgressManager.computePrioritized(CoreProgressManager.java:825)
+	at com.intellij.ide.IdeEventQueue.lambda$dispatchEvent$8(IdeEventQueue.java:442)
+	at com.intellij.openapi.application.impl.ApplicationImpl.runIntendedWriteActionOnCurrentThread(ApplicationImpl.java:794)
+	at com.intellij.ide.IdeEventQueue.dispatchEvent(IdeEventQueue.java:494)
+	at java.desktop/java.awt.EventDispatchThread.pumpOneEventForFilters(EventDispatchThread.java:203)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForFilter(EventDispatchThread.java:124)
+	at java.desktop/java.awt.EventDispatchThread.pumpEventsForHierarchy(EventDispatchThread.java:113)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:109)
+	at java.desktop/java.awt.EventDispatchThread.pumpEvents(EventDispatchThread.java:101)
+	at java.desktop/java.awt.EventDispatchThread.run(EventDispatchThread.java:90)
+2021-09-17 10:37:06,195 [51342375]   WARN - ctionSystem.impl.ActionUpdater - 1584 ms to expand group child null 
+2021-09-17 10:37:06,195 [51342375]   WARN - ctionSystem.impl.ActionUpdater - 1584 ms to expand group child null 
+2021-09-17 10:37:08,439 [51344619]   WARN - ctionSystem.impl.ActionUpdater - 1272 ms to expand group child null 
+2021-09-17 10:37:08,440 [51344620]   WARN - ctionSystem.impl.ActionUpdater - 1273 ms to expand group child TabList 
+2021-09-17 10:37:14,923 [51351103]   WARN - ctionSystem.impl.ActionUpdater - 1693 ms to expand group child null 
+2021-09-17 10:37:14,923 [51351103]   WARN - ctionSystem.impl.ActionUpdater - 1693 ms to expand group child null 
+2021-09-17 10:37:14,923 [51351103]   WARN - ctionSystem.impl.ActionUpdater - 1690 ms to expand group child null 
+2021-09-17 10:37:16,577 [51352757]   WARN - ctionSystem.impl.ActionUpdater - 1649 ms to expand group child TabList 
+2021-09-17 10:37:16,578 [51352758]   WARN - ctionSystem.impl.ActionUpdater - 1214 ms to expand group child TabList 
+2021-09-17 10:38:00,106 [51396286]   WARN - ctionSystem.impl.ActionUpdater - 1117 ms to expand group child TabList 
+2021-09-17 10:38:00,107 [51396287]   WARN - ctionSystem.impl.ActionUpdater - 1117 ms to expand group child TabList 
+2021-09-17 10:38:03,447 [51399627]   WARN - ctionSystem.impl.ActionUpdater - 1202 ms to expand group child TabList 
+2021-09-17 10:38:03,448 [51399628]   WARN - ctionSystem.impl.ActionUpdater - 1202 ms to expand group child TabList 
+2021-09-17 10:38:04,804 [51400984]   WARN - ctionSystem.impl.ActionUpdater - 1309 ms to expand group child TabList 
+2021-09-17 10:38:04,804 [51400984]   WARN - ctionSystem.impl.ActionUpdater - 1309 ms to expand group child TabList 
+2021-09-17 10:38:11,946 [51408126]   WARN - ctionSystem.impl.ActionUpdater - 1460 ms to expand group child TabList 
+2021-09-17 10:38:11,946 [51408126]   WARN - ctionSystem.impl.ActionUpdater - 1460 ms to expand group child TabList 
+2021-09-17 10:38:14,497 [51410677]   WARN - ctionSystem.impl.ActionUpdater - 2536 ms to expand group child null 
+2021-09-17 10:38:14,497 [51410677]   WARN - ctionSystem.impl.ActionUpdater - 2536 ms to expand group child null 
+2021-09-17 10:38:14,497 [51410677]   WARN - ctionSystem.impl.ActionUpdater - 2538 ms to expand group child null 
+2021-09-17 10:38:14,497 [51410677]   WARN - ctionSystem.impl.ActionUpdater - 2538 ms to expand group child null 
+2021-09-17 10:38:18,693 [51414873]   WARN - ctionSystem.impl.ActionUpdater - 1191 ms to expand group child TabList 
+2021-09-17 10:38:18,694 [51414874]   WARN - ctionSystem.impl.ActionUpdater - 1191 ms to expand group child TabList 
+2021-09-17 10:38:28,795 [51424975]   WARN - ctionSystem.impl.ActionUpdater - 1050 ms to expand group child TabList 
+2021-09-17 10:38:28,795 [51424975]   WARN - ctionSystem.impl.ActionUpdater - 1050 ms to expand group child TabList 
+2021-09-17 10:38:42,494 [51438674]   WARN - ctionSystem.impl.ActionUpdater - 1195 ms to expand group child TabList 
+2021-09-17 10:38:42,494 [51438674]   WARN - ctionSystem.impl.ActionUpdater - 1195 ms to expand group child TabList 
+2021-09-17 10:38:45,872 [51442052]   WARN - ctionSystem.impl.ActionUpdater - 1441 ms to expand group child TabList 
+2021-09-17 10:38:45,872 [51442052]   WARN - ctionSystem.impl.ActionUpdater - 1440 ms to expand group child TabList 
+2021-09-17 10:38:48,677 [51444857]   WARN - ctionSystem.impl.ActionUpdater - 1765 ms to expand group child TabList 
+2021-09-17 10:38:48,677 [51444857]   WARN - ctionSystem.impl.ActionUpdater - 1765 ms to expand group child TabList 
+2021-09-17 10:38:50,181 [51446361]   WARN - ctionSystem.impl.ActionUpdater - 1493 ms to expand group child VcsToolbarLabelAction 
+2021-09-17 10:38:50,181 [51446361]   WARN - ctionSystem.impl.ActionUpdater - 1460 ms to expand group child null 
+2021-09-17 10:38:50,181 [51446361]   WARN - ctionSystem.impl.ActionUpdater - 1460 ms to expand group child null 
+2021-09-17 10:38:50,190 [51446370]   WARN - ctionSystem.impl.ActionUpdater - 1502 ms to expand group child VcsToolbarActions 
+2021-09-17 10:38:50,190 [51446370]   WARN - ctionSystem.impl.ActionUpdater - 1502 ms to expand group child MainToolBarSettings 
+2021-09-17 10:38:51,193 [51447373]   WARN - ctionSystem.impl.ActionUpdater - 1002 ms to expand group child TabList 
+2021-09-17 10:38:51,193 [51447373]   WARN - ctionSystem.impl.ActionUpdater - 1003 ms to expand group child TabList 
+2021-09-17 10:38:52,726 [51448906]   WARN - ctionSystem.impl.ActionUpdater - 1482 ms to expand group child null 
+2021-09-17 10:38:52,726 [51448906]   WARN - ctionSystem.impl.ActionUpdater - 1482 ms to expand group child null 
+2021-09-17 10:39:01,176 [51457356]   WARN - ctionSystem.impl.ActionUpdater - 1532 ms to expand group child TabList 
+2021-09-17 10:39:01,176 [51457356]   WARN - ctionSystem.impl.ActionUpdater - 1532 ms to expand group child TabList 
+2021-09-17 10:39:12,749 [51468929]   WARN - ctionSystem.impl.ActionUpdater - 1071 ms to expand group child null 
+2021-09-17 10:39:12,749 [51468929]   WARN - ctionSystem.impl.ActionUpdater - 1071 ms to expand group child null 
+2021-09-17 10:39:14,642 [51470822]   WARN - ctionSystem.impl.ActionUpdater - 1883 ms to expand group child null 
+2021-09-17 10:39:16,220 [51472400]   WARN - ctionSystem.impl.ActionUpdater - 1583 ms to expand group child TabList 
+2021-09-17 10:39:16,221 [51472401]   WARN - ctionSystem.impl.ActionUpdater - 1578 ms to expand group child TabList 
+2021-09-17 10:39:19,694 [51475874]   WARN - ctionSystem.impl.ActionUpdater - 1624 ms to expand group child TabList 
+2021-09-17 10:39:19,700 [51475880]   WARN - ctionSystem.impl.ActionUpdater - 1630 ms to expand group child TabList 
+2021-09-17 10:39:21,324 [51477504]   WARN - ctionSystem.impl.ActionUpdater - 1234 ms to expand group child null 
+2021-09-17 10:39:21,324 [51477504]   WARN - ctionSystem.impl.ActionUpdater - 1234 ms to expand group child null 
+2021-09-17 10:39:21,324 [51477504]   WARN - ctionSystem.impl.ActionUpdater - 1163 ms to expand group child null 
+2021-09-17 10:39:21,324 [51477504]   WARN - ctionSystem.impl.ActionUpdater - 1163 ms to expand group child null 
+2021-09-17 10:39:37,550 [51493730]   WARN - ctionSystem.impl.ActionUpdater - 1738 ms to expand group child null 
+2021-09-17 10:39:37,550 [51493730]   WARN - ctionSystem.impl.ActionUpdater - 1573 ms to expand group child TabList 
+2021-09-17 10:39:39,794 [51495974]   WARN - ctionSystem.impl.ActionUpdater - 2243 ms to expand group child WeighingNewGroup 
+2021-09-17 10:39:39,873 [51496053]   WARN - ystem.impl.ActionPopupMenuImpl - 5491 ms to fill popup menu ProjectViewPopup 
+2021-09-17 10:39:48,362 [51504542]   WARN - ctionSystem.impl.ActionUpdater - 1177 ms to expand group child null 
+2021-09-17 10:39:50,657 [51506837]   WARN - ctionSystem.impl.ActionUpdater - 1091 ms to expand group child TabList 
+2021-09-17 10:39:50,657 [51506837]   WARN - ctionSystem.impl.ActionUpdater - 1094 ms to expand group child TabList 
+2021-09-17 10:39:52,658 [51508838]   WARN - ctionSystem.impl.ActionUpdater - 1986 ms to expand group child null 
+2021-09-17 10:39:52,658 [51508838]   WARN - ctionSystem.impl.ActionUpdater - 1987 ms to expand group child null 
+2021-09-17 10:39:52,658 [51508838]   WARN - ctionSystem.impl.ActionUpdater - 1986 ms to expand group child null 
+2021-09-17 10:39:55,680 [51511860]   WARN - ctionSystem.impl.ActionUpdater - 1018 ms to expand group child TabList 
+2021-09-17 10:39:55,680 [51511860]   WARN - ctionSystem.impl.ActionUpdater - 1018 ms to expand group child TabList 
+2021-09-17 10:41:10,868 [51587048]   WARN - ctionSystem.impl.ActionUpdater - 1969 ms to expand group child null 
+2021-09-17 10:41:10,868 [51587048]   WARN - ctionSystem.impl.ActionUpdater - 1969 ms to expand group child null 
+2021-09-17 10:41:13,896 [51590076]   WARN - ctionSystem.impl.ActionUpdater - 1060 ms to expand group child TabList 
+2021-09-17 10:41:14,655 [51590835]   WARN - ctionSystem.impl.ActionUpdater - 2751 ms to expand group child WeighingNewGroup 
+2021-09-17 10:41:16,234 [51592414]   WARN - ctionSystem.impl.ActionUpdater - 1574 ms to expand group child AssociateWithFileType 
+2021-09-17 10:41:16,259 [51592439]   WARN - ystem.impl.ActionPopupMenuImpl - 5387 ms to fill popup menu ProjectViewPopup 
+2021-09-17 11:18:04,971 [53801151]   WARN - ctionSystem.impl.ActionUpdater - 2005 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 11:18:06,731 [53802911]   WARN - ctionSystem.impl.ActionUpdater - 1749 ms to expand group child TabList 
+2021-09-17 11:18:06,731 [53802911]   WARN - ctionSystem.impl.ActionUpdater - 1748 ms to expand group child TabList 
+2021-09-17 11:18:13,382 [53809562]   WARN - ctionSystem.impl.ActionUpdater - 1742 ms to expand group child TabList 
+2021-09-17 11:18:13,385 [53809565]   WARN - ctionSystem.impl.ActionUpdater - 1740 ms to expand group child fontEditorPreview.ToggleBoldFont 

@@ -54,9 +54,6 @@ body {
   position:relative;
 }
 
-#app-header {
-}
-
 #app-body {
   margin-top: 32px;
   padding-bottom: $footer-height;
@@ -122,10 +119,6 @@ input[type="submit"] {
   font-weight: bolder;
 }
 
-.btn {
-
-}
-
 .btn-danger {
   background: #dc3545 !important;
 }
@@ -167,8 +160,9 @@ input[type="submit"] {
   flex-direction: column;
   min-width: 0;
   background-clip: border-box;
-  border: 1px solid rgba(0,0,0,0.125);
+  //border: 1px solid rgba(0,0,0,0.125);
   border-radius: 0.25rem;
+  border: 0;
 }
 
 .card-body {
@@ -178,9 +172,8 @@ input[type="submit"] {
 
 .card-header, .card-header-light {
   margin-bottom: 0;
-  background-color: $colour-card-header;
-  border-bottom: 1px solid #090c03;
   padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid #273043;
 }
 
 .card-header-light {
@@ -208,8 +201,6 @@ input[type="submit"] {
   align-items: center;
 }
 
-.content-wrapper {
-}
 
 form {
   display: block;
@@ -397,7 +388,7 @@ nav {
 }
 
 .nav-link {
-  font-family: Inconsolata, monospace;
+  font-family: 'Oswald', Inconsolata, sans-serif;
   left: 0px;
   -webkit-transition: all 300ms ease-in-out;
   transition: all 300ms ease-in-out;
@@ -464,6 +455,20 @@ p.light {
   max-width: 400px;
   padding-left: 27px;
   text-align: center;
+}
+
+.sidebar {
+  background-color: $colour-theme-background;
+
+}
+
+.sidebar a {
+  font-size: .9rem;
+  font-family: $font-menus;
+}
+
+.sidebar a:hover {
+  color: $colour-off-white;
 }
 
 .single_list_item_headers

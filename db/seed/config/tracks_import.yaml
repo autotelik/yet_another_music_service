@@ -1,0 +1,14 @@
+data_flow_schema:
+  Global:
+    force_inclusion_of_columns: 'audio'
+  'YamsCore::Track':
+    nodes:
+      - audio:
+          index: 2
+          operator: attach_audio_file
+      - cover:
+          index: 3
+          operator: attach_cover
+      - availables:
+          index: 4
+          operator: make_available_for

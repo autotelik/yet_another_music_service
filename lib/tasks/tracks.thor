@@ -22,5 +22,16 @@ module Yams
       end
 
     end
+
+    desc :play_lists, 'Create some dummy Playlists and assign random Tracks to them'
+
+    method_option :id, aliases: '-i', desc: 'Track ID - Defaults to all Tracks'
+
+    def play_lists
+      load_rails_environment
+
+      ::YamsCore::Playlist.create!()
+       
+    end
   end
 end

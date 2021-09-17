@@ -14,7 +14,8 @@
   border-bottom: 1px solid $colour-blue-grey;
 }
 
-.yams-audio-playlist li{
+
+.yams-audio-track-listing li {
   display: block;
   transition: 0.25s;
   color: ghostwhite;
@@ -22,7 +23,11 @@
   border-bottom: 1px solid $colour-gun-metal-blue;
 }
 
-.yams-audio-playlist li *{
+.yams-audio-track-listing a {
+  font-size: 16px;
+}
+
+.yams-audio-track-listing li *{
   display: inline-block;
   padding: 0;
   cursor: pointer;
@@ -126,60 +131,60 @@
   color: $colour-blue-grey-1;
 }
 
-.yams-audio-playlist {
+.yams-audio-track-listing {
 }
 
 
 
 
-.yams-audio-playlist li .duration{
+.yams-audio-track-listing li .duration{
   color: ghostwhite;
   background-color: black;
   padding: 0px 10px;
 }
 
-.yams-audio-playlist li i{
+.yams-audio-track-listing li i{
   color:  $colour-cool-mint;
 }
 
-.yams-audio-playlist li:hover i{
+.yams-audio-track-listing li:hover i{
   color:  $colour-cool-mint;
 }
 
-.yams-audio-playlist a {
+.yams-audio-track-listing a {
   color:  $colour-cool-mint;
   text-decoration: none;
 }
 
-.yams-audio-playlist a {
+.yams-audio-track-listing a {
   color: ghostwhite;
   text-decoration: none;
 }
 
-.yams-audio-playlist li .full-name{
+.yams-audio-track-listing li .full-name{
   padding: 0px 10px;
 }
 
-.yams-audio-playlist li:hover{
+.yams-audio-track-listing li:hover{
   color:  $colour-cool-mint;
   cursor: pointer;
 }
 
-.yams-audio-playlist li.active{
+.yams-audio-track-listing li.active{
   background-color: black;
   color: white;
 }
 
-.yams-audio-playlist li.yams-audio-active:hover{
+.yams-audio-track-listing li.yams-audio-active:hover{
   color: white;
 }
 
-.yams-audio-playlist > li:nth-child(odd) {
+.yams-audio-track-listing > li:nth-child(odd) {
 }
-.yams-audio-playlist > li:nth-child(even) {
+.yams-audio-track-listing > li:nth-child(even) {
 }
 
-.yams-audio-playlist .current-track{
+.yams-audio-track-listing .current-track{
   background-color: black;
   color: white;
 }
@@ -189,7 +194,7 @@
   opacity: 50%;
 }
 
-.yams-audio-playlist-content{
+.yams-audio-track-listing-content{
   display: inline-block;
   width: 100%;
 }

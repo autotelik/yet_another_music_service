@@ -36,6 +36,17 @@ To manage javascript assets, we use webpacker and *yarn*
 
 [Yarn Installation instructions](https://yarnpkg.com/getting-started/install)
 
+#### Packages Installed
+
+The following packages have been added to this project
+
+```
+yarn add bootstrap
+yarn add @popperjs/core
+```
+
+#### Linux Packages
+
 Some mp3 processing currently requires ffmpeg
 
 For Ubuntu
