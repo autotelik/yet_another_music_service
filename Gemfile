@@ -31,6 +31,8 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.4', require: false
 
 # YAMS
+gem 'bcrypt_pbkdf', '>= 1.0', '< 2.0'
+gem 'ed25519', '>= 1.2', '< 2.0'
 
 gem 'high_voltage'
 gem 'importmap-rails'
@@ -49,13 +51,11 @@ end
 
 # gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 
-
 if File.exist?('/home/rubyuser/SoftwareDev/git/yams_core')
   gem 'yams_core', path: '../yams_core'
 else
   gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
 end
-
 
 # TODO: remove once dev complete move to core gemspec
 if File.exist?('/home/rubyuser/SoftwareDev/git/yams_audio_engine')
