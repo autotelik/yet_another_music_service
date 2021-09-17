@@ -4119,3 +4119,8 @@ java.lang.Throwable: toolbar creation trace
 2021-09-17 11:18:06,731 [53802911]   WARN - ctionSystem.impl.ActionUpdater - 1748 ms to expand group child TabList 
 2021-09-17 11:18:13,382 [53809562]   WARN - ctionSystem.impl.ActionUpdater - 1742 ms to expand group child TabList 
 2021-09-17 11:18:13,385 [53809565]   WARN - ctionSystem.impl.ActionUpdater - 1740 ms to expand group child fontEditorPreview.ToggleBoldFont 
+2021-09-17 11:32:34,661 [54670841]   WARN - ctionSystem.impl.ActionUpdater - 1051 ms to expand group child TabList 
+2021-09-17 11:32:34,661 [54670841]   WARN - ctionSystem.impl.ActionUpdater - 1051 ms to expand group child TabList 
+2021-09-17 11:33:42,719 [54738899]   WARN - ctionSystem.impl.ActionUpdater - 1199 ms to expand group child EditorToggleUseSoftWrapsInPreview 
+2021-09-17 15:34:11,089 [69167269]   WARN - ctionSystem.impl.ActionUpdater - 1842 ms to expand group child TabList 
+2021-09-17 15:34:11,089 [69167269]   WARN - ctionSystem.impl.ActionUpdater - 1842 ms to expand group child TabList 

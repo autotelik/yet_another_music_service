@@ -1,0 +1,142 @@
+# https://docs.docker.com/compose/compose-file/
+#
+# Nice management UI for Docker : https://github.com/portainer/portainer
+# This creates a local (development) style installation, availble at http://http://docker.yams/yams
+# Note:  Requires following entry in your local /etc/hosts
+#   127.0.0.1 yams_core.docker
+#
+version: '3'
+
+# See https://github.com/nginx-proxy/docker-letsencrypt-nginx-proxy-companion
+
+networks:
+  default:
+    external:
+      name: webproxy
+
+volumes:
+  elastic_search_volume:
+    driver: local
+  postgres_volume:
+    driver: local
+  rails_logs_volume:
+    driver: local
+  redis:
+    driver: local
+  local_cloud_storage_volume:
+    driver: local
+
+services:
+
+  yams_db:
+    image: postgres:10.9-alpine
+    container_name: yams-db
+    networks:
+      - default
+    ports:
+      - ${YAMS_DB_PORT:-5432}:${YAMS_DB_PORT:-5432}
+    restart: unless-stopped
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+
+  yams_web:
+    build:
+      context: .
+      args:                           # Build Arguments
+        RAILS_ENV: production
+        GITHUB_TOKEN: ${GITHUB_TOKEN}
+    container_name: yams-web
+    command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+    environment:
+       ELASTICSEARCH_URL: http://yams_elasticsearch:9200
+       LOGSTASH_HOST: logstash
+       VIRTUAL_HOST: yams.fm
+       VIRTUAL_PORT: 3000
+       LETSENCRYPT_HOST: yams.fm
+       RAILS_ENV: 'production'
+       RACK_ENV: 'production'
+       RAILS_SERVE_STATIC_FILES: 'true'
+       RAILS_LOG_TO_STDOUT: 'true'
+       PUMA_PORT: 3000
+       REDIS_URL: redis://yams_redis:6379/0
+    depends_on:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    links:
+      - yams_db
+      - yams_redis
+      - yams_sidekiq
+    networks:
+      - default
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    volumes:
+     - rails_logs_volume:/home/app/yams/log/
+     - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
+     - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
+
+  yams_sidekiq:
+    build:
+     context: .
+     args:
+      - GITHUB_TOKEN=${GITHUB_TOKEN}
+    command: ["dotenv", "bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
+    container_name: yams-sidekiq
+    environment:
+      - ELASTICSEARCH_URL=http://yams_elasticsearch:9200
+      - JOB_WORKER_URL=redis://yams_redis:6379/0
+      - REDIS_URL=redis://yams_redis:6379/0
+      - RAILS_ENV=production
+      - YAMS_DB_HOST=yams_db
+    depends_on:
+      - yams_db
+      - yams_redis
+    links:
+      - yams_db
+      - yams_redis
+    networks:
+      - default
+    restart: unless-stopped
+    volumes:
+      - local_cloud_storage_volume:/home/app/yams/storage
+      - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
+      - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
+
+  yams_redis:
+    container_name: yams-redis
+    image: redis:latest
+    ports:
+      - 6379:6379
+    networks:
+      - default
+    restart: unless-stopped
+
+  # NOTES
+
+  # The ELK images come with XPack already installed - this adds an authorisation layer we do not need,
+  # or at least not worth the complication at this stage. Turn it off via  - xpack.security.enabled=false
+
+  yams_elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.1
+    container_name: yams-elasticsearch
+    environment:
+      - xpack.security.enabled=false
+      - xpack.monitoring.enabled=false
+      - xpack.ml.enabled=false
+      - xpack.graph.enabled=false
+      - xpack.watcher.enabled=false
+    networks:
+      - default
+    ports:
+      - 9200:9200
+      - 9300:9300
+    restart: unless-stopped
+    ulimits:
+      nofile:
+        soft: 65535
+        hard: 65535
+    volumes:
+      # N.B if switched for a mounted volume,then that volumes permissions must make it accessible by user/group elasticsearch.
+      - elastic_search_volume:/usr/share/elasticsearch/data
