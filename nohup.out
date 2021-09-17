@@ -4132,3 +4132,9 @@ java.lang.Throwable: toolbar creation trace
 2021-09-17 16:59:33,103 [74289283]   WARN - ctionSystem.impl.ActionUpdater - 1464 ms to expand group child TabList 
 2021-09-17 16:59:35,402 [74291582]   WARN - ctionSystem.impl.ActionUpdater - 2274 ms to expand group child TabList 
 2021-09-17 16:59:35,403 [74291583]   WARN - ctionSystem.impl.ActionUpdater - 2275 ms to expand group child TabList 
+2021-09-17 17:58:52,846 [77849026]   WARN - ctionSystem.impl.ActionUpdater - 2121 ms to expand group child null 
+2021-09-17 17:58:52,847 [77849027]   WARN - ctionSystem.impl.ActionUpdater - 2013 ms to expand group child null 
+2021-09-17 17:58:52,847 [77849027]   WARN - ctionSystem.impl.ActionUpdater - 2013 ms to expand group child null 
+2021-09-17 17:58:58,894 [77855074]   WARN - ctionSystem.impl.ActionUpdater - 1531 ms to expand group child null 
+2021-09-17 17:58:58,894 [77855074]   WARN - ctionSystem.impl.ActionUpdater - 1529 ms to expand group child null 
+2021-09-17 17:58:58,894 [77855074]   WARN - ctionSystem.impl.ActionUpdater - 1529 ms to expand group child null 

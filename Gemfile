@@ -43,26 +43,15 @@ gem 'hotwire-rails'
 
 # TODO: remove once dev complete resolved_path
 
-if File.exist?('/home/rubyuser/SoftwareDev/git/datashift')
-  gem 'datashift', path: '../datashift'
-else
-  gem 'datashift', git: 'https://github.com/autotelik/datashift.git'#, branch: 'update-to-support-rails-6'
-end
+# bundle config local.datashift /home/rubyuser/SoftwareDev/git/datashift
+gem 'datashift', git: 'https://github.com/autotelik/datashift.git', branch: "master"
 
-# gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
+# bundle config local.yams_core /home/rubyuser/SoftwareDev/git/yams_core
+gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git', branch: "master"
 
-if File.exist?('/home/rubyuser/SoftwareDev/git/yams_core')
-  gem 'yams_core', path: '../yams_core'
-else
-  gem 'yams_core', git: 'https://github.com/autotelik/yams_core.git'
-end
+# bundle config local.yams_audio /home/rubyuser/SoftwareDev/git/yams_audio_engine
+gem 'yams_audio', git: 'https://github.com/autotelik/yams_audio_engine.git', branch: "master"
 
-# TODO: remove once dev complete move to core gemspec
-if File.exist?('/home/rubyuser/SoftwareDev/git/yams_audio_engine')
-  gem 'yams_audio', path: '/home/rubyuser/SoftwareDev/git/yams_audio_engine'
-else
-  gem 'yams_audio', git: 'https://github.com/autotelik/yams_audio_engine.git'
-end
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
