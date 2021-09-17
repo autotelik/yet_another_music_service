@@ -37,8 +37,7 @@ COPY ./Gemfile.lock ${APP_HOME}
 # We have private repos - need a Token
 ARG GITHUB_TOKEN
 RUN bundle config github.com x-access-token:${GITHUB_TOKEN} && \
-    bundle config set without 'development' && \
-    bundle config set without 'test' && \
+    bundle config set without 'development' 'test' && \
     bundle install ${BUNDLE_INSTALL_ARGS}
 
 ## Copy the main application. (requires docker v17.09.0-ce and newer)
