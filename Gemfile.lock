@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_core.git
-  revision: 0d3643163776c5731232f4b3c577f2dc081a699f
+  revision: f89a102dc27dbf4479a7394e9820d2d1d4faff54
   branch: master
   specs:
     yams_core (0.1.0)
@@ -194,7 +194,7 @@ GEM
     execjs (2.8.1)
     faker (2.19.0)
       i18n (>= 1.6, < 2)
-    faraday (1.7.2)
+    faraday (1.8.0)
       faraday-em_http (~> 1.0)
       faraday-em_synchrony (~> 1.0)
       faraday-excon (~> 1.1)

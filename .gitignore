@@ -47,6 +47,7 @@ db/*.sqlite3
 /doc/app/
 /doc/features.html
 /doc/specs.html
+nohup.out
 /public/assets/
 /public/cache
 public/git_release_rev
