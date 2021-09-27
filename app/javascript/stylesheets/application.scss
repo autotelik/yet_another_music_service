@@ -10,25 +10,21 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require select2
 */
 
 // TODO: review use of icons and font-awesome
 //@import "font-awesome";
-
-@import "normalize";
-@import "webflow";
+//@import "normalize";
+//@import "webflow";
 
 @import 'bootstrap/scss/bootstrap';
 
 // YAMS Engines
 @import "yams_theme/variables";
-
 @import "yams_theme/direct_uploads";
-//@import "yams_theme/pages";
-@import "yams_theme/select2";
-
+@import "yams_theme/pages";
 @import "yams_audio_engine/yams_player";
+@import "yams_theme/sign_in";
 
 * {
   box-sizing: border-box;
@@ -55,7 +51,7 @@ body {
 }
 
 #app-body {
-  margin-top: 32px;
+  margin-top: 60px; // we use a fixed nav bar
   padding-bottom: $footer-height;
 }
 
@@ -110,13 +106,23 @@ input,
 optgroup,
 select,
 textarea {
-  color: $colour-rich-black;
+  color: $colour-off-white
 }
 
 input[type="submit"] {
   color:      $colour-submit-btn-text;
   background: $colour-submit-btn;
   font-weight: bolder;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
 }
 
 .btn-danger {
@@ -205,6 +211,11 @@ input[type="submit"] {
 form {
   display: block;
   margin-top: 0em;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  margin-top: 24px;
 }
 
 .footer {
@@ -312,7 +323,6 @@ i.icon-tag-light.icon-list {
   color: $colour-cool-mint;
 }
 
-
 img {
   vertical-align: middle;
   border-style: none;
@@ -325,6 +335,14 @@ img {
 .image-wrapper {
   width: 20%;
   text-align: center;
+}
+
+
+label {
+  text-transform: uppercase;
+  font-size: 14px;
+  opacity: 0.8; 
+  transition: all 0.5s ease-in-out;
 }
 
 .material-icons-small {
@@ -344,26 +362,6 @@ img {
 }
 
 
-nav {
-  top: 0px;
-  right: 0px;
-  display: block;
-  margin-left: 0px;
-  float: none;
-  clear: both;
-  grid-auto-columns: 1fr;
-  grid-column-gap: 16px;
-  grid-row-gap: 16px;
-  -ms-grid-columns: 1fr 1fr;
-  grid-template-columns: 1fr 1fr;
-  -ms-grid-rows: auto auto;
-  grid-template-rows: auto auto;
-  font-family: Inconsolata, monospace;
-  font-size: 16px;
-  color: #edeff2;
-  border-top: 2px solid $colour-dark-green;
-  border-bottom: 2px solid $colour-dark-green;
-}
 
 .navbar-brand {
   display: inline-block;

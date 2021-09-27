@@ -1,0 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light pt-0 pb-0">
+
+  <%= link_to image_tag('logos/all_pages_logo.png', class: "avatar avatar-sm"), main_app.root_path, class: 'navbar-brand' %>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+    <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+
+      <li class="nav-item">
+        <%= link_to t('global.radio'), yams_core.radio_path, class: 'nav-link' %>
+      </li>
+
+      <% if user_signed_in? %>
+        <li class="nav-item">
+          <%= link_to t(:playlists, scope: :global), yams_core.playlists_path, class: 'nav-link' %>
+        </li>
+
+        <!--<li class='nav-item'><%#= link_to t('global.tracks'), tracks_path, class: 'nav-link border-right' %></li>-->
+
+        <li class="nav-item">
+          <%= link_to t('global.albums'), yams_core.albums_path, class: 'nav-link' %>
+        </li>
+
+        <!--<li class='nav-item'><%#= link_to t('global.artists'), '/artists', class: 'nav-link border-right' %></li>-->
+
+        <li class="nav-item">
+          <%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: 'nav-link' %>
+        </li>
+      <% else %>
+        <li class="nav-item">
+          <%= link_to t(:sign_in, scope: :global), yams_core.new_user_session_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
+          <%= link_to t(:sign_up, scope: :global), yams_core.new_user_registration_path, class: 'nav-link' %>
+        </li>
+      <% end %>
+
+
+      <%= form_for :searches, url: yams_core.searches_path, method: :get, html: { class: 'pull-left p-1 mb-0 mt-2' } do |form| %>
+        <%= form.text_field :q, { value: params[:q], class: "search-input w-input p-0", placeholder: "Search...", maxlength: "256", 'aria-label' => "Search" } %>
+      <% end %>
+    </ul>
+      <% if user_signed_in? %>
+
+      <ul class="navbar-nav pl-5 mt-2 mt-lg-0">
+        <li class="nav-item dropdown">
+          <a data-turbo="false" class="dropdown-toggle  nav-link" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <% if current_user.avatar.attached? %>
+              <%= image_tag(main_app.rails_blob_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
+            <%else %>
+              <%= t(:profile, scope: :global) %>
+            <% end %>
+          </a>
+
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+
+            <%= link_to t(:profile, scope: :global), yams_core.user_path(current_user), class: 'dropdown-item' %>
+
+            <div class="dropdown-divider"></div>
+            <%= link_to t(:bulk_upload, scope: :global), yams_core.new_track_bulk_uploads_path, class: 'dropdown-item' %>
+
+            <div class="dropdown-divider"></div>
+            <%= link_to t(:add_album, scope: :global), yams_core.new_album_path, class: 'dropdown-item' %>
+            <%= link_to t(:manage_albums, scope: :global), yams_core.album_management_index_path, class: 'dropdown-item' %>
+
+            <div class="dropdown-divider"></div>
+            <%= link_to t(:add_playlist, scope: :global), yams_core.new_playlist_path, class: 'dropdown-item' %>
+            <%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'dropdown-item' %>
+            <div class="dropdown-divider"></div>
+
+            <%= link_to t(:sign_out, scope: :global), yams_core.destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %>
+
+            <% if current_user.try(:admin?) %>
+              <div class="dropdown-divider"></div>
+              <%= link_to t(:admin, scope: :global), '/admin', class: 'dropdown-item' %>
+            <% end %>
+          </div>
+        </li>
+
+      </ul>
+      <% end %>
+
+
+  </div>
+</nav>

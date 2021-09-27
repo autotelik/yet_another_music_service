@@ -149,9 +149,10 @@ export default class extends Controller {
             //console.log(i);
             //console.log(li.id);
          
-            // when i == 0 li == empty string - probaly the header row ?
+            // when i == 0 li == empty string - probably the header row ?
             if (li.id == findId && i > 1) {
-                 // TODO - for now we assume its the Cover image we click - find more sustainable way of passing this info in
+                 // TODO - for now we assume its the Cover image we click to Play
+                //  - find more sustainable way of passing this info in
                 $('#' + playList[i-1].id).find('img').trigger('click');
                 return false;
             }

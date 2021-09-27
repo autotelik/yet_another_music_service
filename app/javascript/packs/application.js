@@ -15,14 +15,19 @@ Rails.start()
 ActiveStorage.start()
 
 import "@hotwired/turbo-rails"
-
 import "controllers"
+
+require('popper.js/dist/umd/popper');
+require('bootstrap/dist/js/bootstrap');
 
 require("jquery")
 
 $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
+
+import 'select2'
+import 'select2/dist/css/select2.css'
 
 const images = require.context('../../assets/images', true)
 
