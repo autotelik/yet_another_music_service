@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/autotelik/datashift.git
-  revision: d6b3566e1125d8d7b72c9de0d604761dfa11d59a
+  revision: 54dec8f4e4d6084b99a58134174d4fff07d6e62c
   branch: master
   specs:
     datashift (0.40.4)
@@ -13,7 +13,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_audio_engine.git
-  revision: c847fa7d148232d4ec39d8099b9c806960edb5c5
+  revision: ef137d5529735c2161464fd192e3a706068d4b0a
   branch: master
   specs:
     yams_audio (0.1.0)
@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_core.git
-  revision: f89a102dc27dbf4479a7394e9820d2d1d4faff54
+  revision: c3442c4a91be003c203f7b37639c4fdfecf19216
   branch: master
   specs:
     yams_core (0.1.0)
@@ -147,6 +147,12 @@ GEM
     concurrent-ruby (1.1.9)
     connection_pool (2.2.5)
     crass (1.0.6)
+    database_cleaner (2.0.1)
+      database_cleaner-active_record (~> 2.0.0)
+    database_cleaner-active_record (2.0.1)
+      activerecord (>= 5.a)
+      database_cleaner-core (~> 2.0.0)
+    database_cleaner-core (2.0.1)
     datetime_picker_rails (0.0.7)
       momentjs-rails (>= 2.8.1)
     devise (4.8.0)
@@ -442,6 +448,7 @@ DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.4.4)
   byebug
+  database_cleaner
   datashift!
   dotenv (~> 2.7.5)
   dotenv-rails (~> 2.7.5)

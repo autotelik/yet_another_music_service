@@ -1,8 +1,7 @@
 // UPLOADS
 
 .track-upload {
-  background-size: cover;
-  box-shadow: 0px 30px 60px -5px #000;
+  @extend .form-parent;
 }
 
 .img-preview {

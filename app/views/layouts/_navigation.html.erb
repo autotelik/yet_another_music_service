@@ -1,37 +1,88 @@
-<nav class="navbar navbar-expand-lg fixed-top bg-dark">
- <%= link_to image_tag('logos/all_pages_logo.png', class: "avatar avatar-sm"), main_app.root_path, class: 'navbar-brand' %>
+<nav id="yams-top-navbar" class="navbar navbar-expand-lg fixed-top">
+  <div class="container-fluid">
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+    <%= link_to image_tag('logos/all_pages_logo.png', class: "avatar avatar-sm"), main_app.root_path, class: 'navbar-brand' %>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
-      <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          Dropdown
-        </a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled" href="#">Disabled</a>
-      </li>
-    </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
+    <button class="navbar-toggler navbar-dark" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
+        <li class="nav-item">
+          <%= link_to t('global.radio'), yams_core.radio_path, class: 'nav-link' %>
+        </li>
+
+        <% if user_signed_in? %>
+
+          <li class="nav-item">
+            <%= link_to t(:playlists, scope: :global), yams_core.playlists_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to t('global.albums'), yams_core.albums_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to t(:upload, scope: :global), yams_core.new_track_path, class: 'nav-link' %>
+          </li>
+
+        <% else %>
+
+          <li class="nav-item">
+            <%= link_to t(:sign_in, scope: :global), yams_core.new_user_session_path, class: 'nav-link' %>
+          </li>
+
+          <li class="nav-item">
+            <%= link_to t(:sign_up, scope: :global), yams_core.new_user_registration_path, class: 'nav-link' %>
+          </li>
+
+        <% end %>
+      </ul>
+
+      <%= form_for :searches, url: yams_core.searches_path, method: :get, html: { class: 'd-flex' } do |form| %>
+        <%= form.search_field :q, { value: params[:q], class: "form-control me-2", placeholder: "Search", maxlength: "64", 'aria-label': "Search" } %>
+      <% end %>
+
+      <ul class="navbar-nav">
+        <% if user_signed_in? %>
+          <li class="nav-item dropdown">
+            <a data-turbo="false" class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <% if current_user.avatar.attached? %>
+                <%= image_tag(main_app.rails_blob_url(current_user.avatar), class: 'avatar avatar-xs') %> <%=  current_user.name %>
+              <%else %>
+                <%= t(:profile, scope: :global) %>
+              <% end %>
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+
+              <li><%= link_to t(:profile, scope: :global), yams_core.user_path(current_user), class: 'dropdown-item' %></li>
+
+              <div class="dropdown-divider"></div>
+              <li><%= link_to t(:bulk_upload, scope: :global), yams_core.new_track_bulk_uploads_path, class: 'dropdown-item' %></li>
+
+              <div class="dropdown-divider"></div>
+              <li><%= link_to t(:add_album, scope: :global), yams_core.new_album_path, class: 'dropdown-item' %></li>
+              <li><%= link_to t(:manage_albums, scope: :global), yams_core.album_management_index_path, class: 'dropdown-item' %></li>
+
+              <div class="dropdown-divider"></div>
+              <li><%= link_to t(:add_playlist, scope: :global), yams_core.new_playlist_path, class: 'dropdown-item' %></li>
+              <li><%= link_to t(:manage_playlists, scope: :global), yams_core.playlist_management_index_path, class: 'dropdown-item' %></li>
+              <div class="dropdown-divider"></div>
+
+              <li><%= link_to t(:sign_out, scope: :global), yams_core.destroy_user_session_path, :method=>'delete', class: 'dropdown-item' %></li>
+
+              <% if current_user.try(:admin?) %>
+                <div class="dropdown-divider"></div>
+                <li><%= link_to t(:admin, scope: :global), '/admin', class: 'dropdown-item' %></li>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+
+    </div>
   </div>
-
 </nav>

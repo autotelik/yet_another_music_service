@@ -1,7 +1,17 @@
 .yams-audio-bar {
+  height: $navbar-player-height;
+  top: $navbar-height;
   position: fixed;
+  z-index:100;
+  background-color:        $colour-audio-player;
+  border-top: 1px solid    $colour-blue-grey;
+  border-bottom: 1px solid $colour-blue-grey;
 }
 
+#yams-audio-radio-playlist {
+  margin-top: $full-header-height;
+  background-color: $colour-default-body;
+}
 
 #yams-audio-wave-controls-section {
   text-align: center;
@@ -13,12 +23,10 @@
   background-color: $colour-audio-player-accent;
 }
 
-#yams-audio-player {
-  background-color:        $colour-audio-player;
-  border-top: 1px solid    $colour-blue-grey;
-  border-bottom: 1px solid $colour-blue-grey;
+.yams-audio-track-listing {
+  padding: 0;
+  margin: 0;
 }
-
 
 .yams-audio-track-listing li {
   display: block;
@@ -51,7 +59,7 @@
   outline: none;
   border: 1px solid $colour-btc-orange-alt;
   border-radius: 1px;
-} 
+}
 
 /* firefox */
 
@@ -68,7 +76,7 @@
   background-color: $colour-btc-orange-alt;
 }
 
-.yams-audio-controls-volume-range::-moz-range-track {  
+.yams-audio-controls-volume-range::-moz-range-track {
   background-color: $colour-btc-orange;
 }
 
@@ -77,7 +85,7 @@
 .yams-audio-controls-volume-range::-ms-fill-lower {
   background-color: $colour-btc-orange-alt;
 }
-.yams-audio-controls-volume-range::-ms-fill-upper {  
+.yams-audio-controls-volume-range::-ms-fill-upper {
   background-color:$colour-btc-orange;
 }
 
@@ -100,7 +108,7 @@
   border-radius: 3px;
   background: $colour-audio-player;
   margin-top: -6px;
- 
+
 }
 
 
@@ -136,9 +144,6 @@
 .yams-audio-track-playlist i.yams-audio-active{
   box-shadow: 0px 0px 5px  $colour-blue-grey-2;
   color: $colour-blue-grey-1;
-}
-
-.yams-audio-track-listing {
 }
 
 

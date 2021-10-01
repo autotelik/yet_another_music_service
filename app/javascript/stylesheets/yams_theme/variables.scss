@@ -59,23 +59,31 @@ $colour-card-header:            #010101;
 $colour-card-header-light:      #141414;
 $colour-card-header-drag-drop:  #464349;
 
+$colour-default-h1: $colour-off-white;
+$colour-default-h:  $colour-cool-mint;
+
 $colour-sidebar:            #010101;
 
 $colour-links:              $colour-cool-mint;
 
+// Forms
+
+$colour-form-back:          $colour-btc-grey;
 $colour-submit-btn:         $colour-purple;
 $colour-submit-btn-text:    $colour-rich-black;
 
 $colour-secondary-btn:      $colour-steel-teal;
 $colour-secondary-btn-text: $colour-eerie-black;
 
-$colour-default-h1: $colour-off-white;
-$colour-default-h:  $colour-cool-mint;
 
 // Sizing
-$navbar-total-height: 76px;
-$navbar-player-height: 155px;
-$navbar-player-spacer: 79px;
+
+$label-form-spacing: 12px;
+
+$navbar-height: 70px;
+$navbar-player-height: 170px;
+
+$full-header-height: 170px;
 
 $navbar-padding: 0.75rem 1.5rem;
 

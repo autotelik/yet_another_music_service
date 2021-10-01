@@ -1,11 +1,11 @@
 <div class="footer border-break-top">
 
   <div class="row mx-0 my-0 py-3">
-    <div class="col-3 px-0 center">
+    <div class="col-2 px-0 center">
       <%= render 'shared/logo' %>
     </div>
 
-    <div class="col-3 px-0">
+    <div class="col-2 px-0">
       <h5 class="center">Links</h5>
       <%= link_to t(:home, scope: :global), main_app.root_path, class: "footer-link" %>
       <%= link_to t(:about, scope: :global), main_app.page_path(:about), class: "footer-link" %>
@@ -13,7 +13,10 @@
         <%= link_to t(:profile, scope: :global),  yams_core.user_path(current_user), class: "footer-link" %>
         <%= link_to t(:sign_out, scope: :global),  yams_core.destroy_user_session_path, :method=>'delete', class: "footer-link" %>
       <% end %>
-      <h5 class="pt-2">Platform</h5>
+    </div>
+
+    <div class="col-2 px-0">
+      <h5 class="center">Platform</h5>
 
       <%= link_to "Ruby on Rails", 'https://rubyonrails.org/', target: :_blank, class: "footer-link" %>
 
@@ -22,13 +25,14 @@
       <%= link_to "Lightning Network", 'https://lightning.network', target: :_blank, class: "footer-link" %>
     </div>
 
-    <div class="col-3 px-0">
-      <h5>Community</h5>
+    <div class="col-2 px-0">
+      <h5 class="center">Community</h5>
       <%= link_to t('terms.link'), main_app.page_path(:terms), class: "footer-link" %>
 
       <%= link_to t('.contact.link'), main_app.page_path(:contact), class: "footer-link" %>
-
-      <h5 class="pt-2">Music</h5>
+    </div>
+    <div class="col-2 px-0">
+      <h5 class="center">Music</h5>
 
       <%= link_to t('global.radio'), yams_core.radio_path, method: :post, class: "footer-link" %>
 
@@ -38,8 +42,8 @@
       <% end %>
     </div>
 
-    <div class="col-3 px-0">
-      <h5>Social</h5>
+    <div class="col-2 px-0">
+      <h5 class="center">Social</h5>
       <a href="https://twitter.com/FmYams" class="footer-link with-icon" target="_blank">
         <img src="<%=asset_path('icons/social-18.svg') %>" width="20" alt="" class="info-icon">
         Twitter
@@ -52,7 +56,7 @@
   </div>
 
   <div class="center my-0 py-1 border-break-top">
-      <div class="footer-text">© 2021 aqwan @ autotelik. Built with Rails.</div>
+    <div class="footer-text">© 2021 aqwan @ autotelik. Built with Rails.</div>
   </div>
 
 </div>
