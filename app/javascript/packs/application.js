@@ -17,9 +17,7 @@ import "channels"
 Rails.start()
 
 import "@hotwired/turbo-rails"
-import "controllers"
 
-require('popper.js/dist/umd/popper');
 require('bootstrap/dist/js/bootstrap');
 
 require("jquery")
