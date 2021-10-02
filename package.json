@@ -3,6 +3,7 @@
     "@hotwired/stimulus": "^3.0.0",
     "@hotwired/turbo-rails": "^7.0.1",
     "@popperjs/core": "^2.10.2",
+    "@rails/activestorage": "^6.1.4-1",
     "@rails/ujs": "^6.1.4-1",
     "@rails/webpacker": "5.4.3",
     "bootstrap": "^5.1.1",
