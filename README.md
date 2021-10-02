@@ -41,9 +41,15 @@ To manage javascript assets, we use webpacker and *yarn*
 The following packages have been added to this project
 
 ```
+yarn add jquery
 yarn add bootstrap
 yarn add @popperjs/core
 yarn add select2 
+yarn add turbolinks
+yarn add @rails/ujs
+
+./bin/rails hotwire:install
+./bin/rails active_storage:install 
 ```
 
 #### Linux Packages

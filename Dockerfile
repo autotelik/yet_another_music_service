@@ -5,6 +5,9 @@ ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
 RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
+RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
+RUN apt-get install -y nodejs
+
 # Required 3rd party libs
 # See also https://edgeguides.rubyonrails.org/active_storage_overview.html
 
@@ -12,9 +15,10 @@ RUN apt-get update -qq && \
     apt-get install -y apt-transport-https \
     ca-certificates \
     build-essential  \
-    gnupg2 libpq-dev nodejs p7zip-full software-properties-common \
-    vim \
-    yarn
+    gnupg2 libpq-dev p7zip-full software-properties-common \
+    vim
+
+RUN npm install -g yarn
 
 # Setting env up
 ENV RAILS_ENV='production'
@@ -45,6 +49,11 @@ COPY . ${APP_HOME}
 
 ## Rails 6 with Webpacker - prepare assets for Production
 RUN yarn install --check-files
+
+# trying to deal with  JS/webpack/yarn BULLSHIT
+RUN yarn add mini-css-extract-plugin@2.3.0
+RUN yarn add sass-loader@10.1.1
+RUN yarn upgrade postcss-loader@4.2.0
 
 RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
 
