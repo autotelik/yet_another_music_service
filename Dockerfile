@@ -51,9 +51,9 @@ COPY . ${APP_HOME}
 RUN yarn install --check-files
 
 # trying to deal with  JS/webpack/yarn BULLSHIT
-RUN yarn add mini-css-extract-plugin@2.3.0
-RUN yarn add sass-loader@10.1.1
-RUN yarn upgrade postcss-loader@4.2.0
+#RUN yarn add mini-css-extract-plugin@2.3.0
+#RUN yarn add sass-loader@10.1.1
+#RUN yarn upgrade postcss-loader@4.2.0
 
 RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
 
