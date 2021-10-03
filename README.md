@@ -48,7 +48,8 @@ yarn add bootstrap
 yarn add @popperjs/core
 yarn add turbolinks
 yarn add dropzone
-yarn add select2 
+yarn add select2
+yarn add @hotwired/stimulus-webpack-helpers
 ```
 
 ```

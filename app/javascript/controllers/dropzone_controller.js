@@ -13,9 +13,11 @@ export default class extends Controller {
     static targets = ["input"];
 
     connect() {
+        console.log('FUCK YOU')
         this.dropZone = createDropZone(this);
         this.hideFileInput();
         this.bindEvents();
+        console.log('FUCK YOU TOO')
         Dropzone.autoDiscover = false; // necessary quirk for Dropzone error in console
     }
 

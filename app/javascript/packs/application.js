@@ -17,9 +17,6 @@ ActiveStorage.start()
 
 import "@hotwired/turbo-rails"
 
-// Stimulus
-import "../controllers"
-
 import "bootstrap";
 
 $ = require('jquery');
@@ -29,9 +26,14 @@ window.$ = $;
 import 'select2'
 import 'select2/dist/css/select2.css'
 
+// Stimulus
+import "controllers"
+
 // ASSETS - IMAGES - SCSS
 
 const images = require.context('../../assets/images', true)
 require.context('../images', true)
 
 import "../stylesheets/application";
+
+
