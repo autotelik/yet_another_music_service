@@ -100,7 +100,7 @@
 
 .signin {
   //@extend input[type="submit"];
-  @extend input, [type=submit]
+  @extend input, [type=submit] !optional;
 }
 
 .signin:hover {

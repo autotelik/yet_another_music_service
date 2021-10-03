@@ -6,12 +6,12 @@ Demonstration of an open source music streaming service, band page or record sto
 ### Run your own
 
 This is a front end example APP, that utilises the core functionality of YAMS, which is provided in a separate open source [ yams core engine](https://github.com/autotelik/yams_core)
- 
+
 You are welcome to use this project as the basis for your very own yet another music service.
- 
+
 After forking this repository, you probably want to :
 
-- Create your own `front_page` and `about` pages. 
+- Create your own `front_page` and `about` pages.
 
 These can be found under : `app/views/pages`
 
@@ -32,13 +32,21 @@ This application requires:
 You will also need a Javascript runtime - see : https://github.com/rails/execjs
 Node.js (v14) is usually a good option : https://github.com/nodesource/distributions/blob/master/README.md
 
-To manage javascript assets, we use webpacker and *yarn* 
+To manage javascript assets, we use webpacker and *yarn*
 
 [Yarn Installation instructions](https://yarnpkg.com/getting-started/install)
 
 #### Packages Installed
 
 The following packages have been added to this project
+
+```
+./bin/rails hotwire:install
+yarn add bootstrap
+yarn add @popperjs/core
+yarn add turbolinks
+```
+
 
 ```
 yarn add jquery
@@ -131,7 +139,7 @@ ERROR: [1] bootstrap checks failed
 
 Elastic search will be available at : `http://localhost:9200`
 
-Kibana will be available at : `http://localhost:5601` 
+Kibana will be available at : `http://localhost:5601`
 
 Sidekick configuration, including list of queues to start can found here : `docker/config/sidekiq.yml`
 
@@ -194,7 +202,7 @@ In development seed will also create an artist User
 
 email: 'artist@example.com'
 password: 'artist_change_me'
- 
+
  ```ruby
 rails db:seed
 ```
@@ -209,11 +217,11 @@ There is a starter pack of music and images available for free, by visiting this
 
 If download does not start automatically, there should be a Download button top right.
 
-Save zip and extract contents to `/tmp` on your local hard drive: 
+Save zip and extract contents to `/tmp` on your local hard drive:
 
-> If you save elsewhere, open up the loading spreadsheet, `db/seed/aqwan_tracks.xls`, and change the `/tmp` 
+> If you save elsewhere, open up the loading spreadsheet, `db/seed/aqwan_tracks.xls`, and change the `/tmp`
 > path that's hardcoded in there.
- 
+
 > The development artist user is assigned by default in the spreadsheet, again edit in the spreadsheet to change.
 
 Run
@@ -222,7 +230,7 @@ Run
 thor yams:db:seed_music
 ```
 
-This is essentially a wrapper around an Excel import tool for Rails. 
+This is essentially a wrapper around an Excel import tool for Rails.
 
 If you want to load your own, the raw command would be :
 

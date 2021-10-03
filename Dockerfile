@@ -2,11 +2,6 @@ FROM ruby:2.7.4
 
 # Install dependencies
 ENV APT_KEY_DONT_WARN_ON_DANGEROUS_USAGE=1
-RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
-RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
-
-RUN curl -fsSL https://deb.nodesource.com/setup_14.x | bash -
-RUN apt-get install -y nodejs
 
 # Required 3rd party libs
 # See also https://edgeguides.rubyonrails.org/active_storage_overview.html
@@ -14,11 +9,18 @@ RUN apt-get install -y nodejs
 RUN apt-get update -qq && \
     apt-get install -y apt-transport-https \
     ca-certificates \
-    build-essential  \
-    gnupg2 libpq-dev p7zip-full software-properties-common \
+    curl \
+    build-essential \
+    gnupg2 \
+    libpq-dev \
+    p7zip-full \
+    software-properties-common \
     vim
 
-RUN npm install -g yarn
+RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
+RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
+
+RUN apt-get update -qq && apt-get install -y nodejs yarn
 
 # Setting env up
 ENV RAILS_ENV='production'
@@ -38,10 +40,10 @@ RUN mkdir -p $APP_HOME && \
 COPY ./Gemfile ${APP_HOME}
 COPY ./Gemfile.lock ${APP_HOME}
 
-# We have private repos - need a Token
-ARG GITHUB_TOKEN
-RUN bundle config github.com x-access-token:${GITHUB_TOKEN} && \
-    bundle config set without 'development' 'test' && \
+# We have private repos - might need a Token
+# TBD ARG BITBUCKET_TOKEN
+# RUN bundle config github.com x-access-token:${private} && \
+RUN bundle config set without 'development' 'test' && \
     bundle install ${BUNDLE_INSTALL_ARGS}
 
 ## Copy the main application. (requires docker v17.09.0-ce and newer)
@@ -50,14 +52,7 @@ COPY . ${APP_HOME}
 ## Rails 6 with Webpacker - prepare assets for Production
 RUN yarn install --check-files
 
-# trying to deal with  JS/webpack/yarn BULLSHIT
-#RUN yarn add mini-css-extract-plugin@2.3.0
-#RUN yarn add sass-loader@10.1.1
-#RUN yarn upgrade postcss-loader@4.2.0
-
+# RUN rails webpacker:compile
 RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
 
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
-
-
-

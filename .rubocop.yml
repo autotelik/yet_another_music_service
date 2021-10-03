@@ -1,51 +1,141 @@
 AllCops:
   TargetRubyVersion: 2.7
   Exclude:
-    - 'db/**/*'
-    - 'config/**/*'
-    - 'node_modules/**/*'
-    - 'script/**/*'
-    - '.git-hooks/**/*'
-    - !ruby/regexp /old_and_unused\.rb$/
-    # Bin contains standard files created when Rails is initialised and
-    # therefore they should be left as is
-    - 'bin/**/*'
-    # Rakefile is generated when Rails is initialised and therefore should be
-    # left as is
-    - 'Rakefile'
-    # spec_helper is generated when rspec is initialised and therefore should be
-    # left as is
-    - 'spec/spec_helper.rb'
-    - 'spec/support/**/*'
-    - '*.gemspec'
-
-# Looks cluttered/ugly having your first method directly after the module/class declaration
-Layout/EmptyLinesAroundModuleBody:
-    Enabled: false
-Layout/EmptyLinesAroundClassBody:
-    Enabled: false
-Layout/EmptyLineAfterMagicComment:
-    Enabled: false
-Style/Lambda:
-    Enabled: false
-Style/RedundantParentheses:
-    Enabled: false
+  - 'bin/**/*'                    # Bin contains standard files created when Rails is initialised
+  - 'db/**/*'
+  - 'config/**/*'
+  - 'node_modules/**/*'
+  - 'script/**/*'
+  - '.git-hooks/**/*'
+  - !ruby/regexp /old_and_unused\.rb$/
+  - 'Rakefile'                    # Rakefile is generated when Rails is initialised and should be left
+  - 'spec/**/*'                   # Exclude specs for now
+  - 'spec/spec_helper.rb'
+  - '*.gemspec'
 
 # Rubymine disagrees and not sure how to fix Rubymine indentation right now
 CaseIndentation:
-    Description: Indentation of when in a case/when/[else/]end.
-    Enabled: false
+  Description: Indentation of when in a case/when/[else/]end.
+  Enabled: false
+
+# As a web app, as long as the team commit to using well named classes for
+# controllers, collector etc it should not be necessary to add top-level class
+# documentation.
+Documentation:
+  Enabled: false
+
+# We shouldn't be committing code with debug statements left in (e.g. byebug or save_and_open_page),
+Debugger:
+  Enabled: true
+
+
+# Looks cluttered/ugly having your first method directly after the module/class declaration
+Layout/EmptyLinesAroundBlockBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundModuleBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundClassBody:
+  Enabled: false
+
+Layout/EmptyLinesAroundMethodBody:
+  Enabled: false
+
+Layout/EmptyLineAfterMagicComment:
+  Enabled: false
+
+LineLength:
+  Description: Limit lines to 140 characters.
+  Enabled: true
+  Max: 140
+  Exclude:
+    - 'spec/factories/*.rb'
+    - 'spec/features/*_spec.rb'
+    - 'spec/routing/**/*_spec.rb'
+
+Lint/AmbiguousRegexpLiteral:
+  Exclude:
+  - spec/**/*.rb
+Lint/ParenthesesAsGroupedExpression:
+  Exclude:
+  - spec/**/*.rb
+
+Lint/DuplicateBranch: # (new in 1.3)
+  Enabled: true
+Lint/DuplicateRegexpCharacterClassElement: # (new in 1.1)
+  Enabled: true
+Lint/EmptyBlock: # (new in 1.1)
+  Enabled: true
+Lint/EmptyClass: # (new in 1.3)
+  Enabled: true
+Lint/NoReturnInBeginEndBlocks: # (new in 1.2)
+  Enabled: true
+Lint/ToEnumArguments: # (new in 1.1)
+  Enabled: true
+Lint/UnexpectedBlockArity: # (new in 1.5)
+  Enabled: true
+Lint/UnmodifiedReduceAccumulator: # (new in 1.1)
+  Enabled: true
+
+Gemspec/DateAssignment: # new in 1.10
+  Enabled: true
+Layout/LineEndStringConcatenationIndentation: # new in 1.18
+  Enabled: true
+Layout/SpaceBeforeBrackets: # new in 1.7
+  Enabled: true
+Lint/AmbiguousAssignment: # new in 1.7
+  Enabled: true
+Lint/AmbiguousOperatorPrecedence: # new in 1.21
+  Enabled: true
+Lint/AmbiguousRange: # new in 1.19
+  Enabled: true
+Lint/DeprecatedConstants: # new in 1.8
+  Enabled: true
+Lint/EmptyInPattern: # new in 1.16
+  Enabled: true
+Lint/IncompatibleIoSelectWithFiberScheduler: # new in 1.21
+  Enabled: true
+Lint/LambdaWithoutLiteralBlock: # new in 1.8
+  Enabled: true
+Lint/NumberedParameterAssignment: # new in 1.9
+  Enabled: true
+Lint/OrAssignmentToConstant: # new in 1.9
+  Enabled: true
+Lint/RedundantDirGlobSort: # new in 1.8
+  Enabled: true
+Lint/RequireRelativeSelfPath: # new in 1.22
+  Enabled: true
+Lint/SymbolConversion: # new in 1.9
+  Enabled: true
+Lint/TripleQuotes: # new in 1.9
+  Enabled: true
+
+MethodCalledOnDoEndBlock:
+  Exclude:
+  - spec/**/*_spec.rb
 
 Metrics/AbcSize:
-  # The ABC size is a calculated magnitude, so this number can be a Fixnum or
-  # a Float.
+  # The ABC size is a calculated magnitude, so can be a Fixnum or Float.
   Max: 60
 
-Metrics/PerceivedComplexity:
-  Max: 15
+Metrics/ClassLength:
+  Enabled: true
+  Max: 240
+
+Metrics/BlockLength:
+  Exclude:
+  - spec/**/*_spec.rb
 
 Metrics/CyclomaticComplexity:
   Max: 10
+
+Layout/LineLength:
+  Description: Limit lines to 180 characters.
+  Enabled: true
+  Max: 180
+  Exclude:
+  - 'spec/**/*.rb'
 
 #RSPEC SPECIFIC
 
@@ -62,33 +152,102 @@ Metrics/LineLength:
     - spec/factories/*.rb
     - spec/routing/**/*.rb
 
+# The default size seems very restrictive bumping to something more usable
 # Specs can get large and with good reason, no benefit splitting them up
 Metrics/ModuleLength:
   Exclude:
-    - spec/**/*_spec.rb
-
-# The default size seems very restrictive bumping to something more usable
-Metrics/ModuleLength:
+  - spec/**/*_spec.rb
   Max: 500
 
 Metrics/MethodLength:
   Max: 30
 
-# As a web app, as long as the team commit to using well named classes for
-# controllers, collector etc it should not be necessary to add top-level class
-# documentation.
-Documentation:
+Metrics/PerceivedComplexity:
+  Max: 15
+
+#Performance/Caller: # IMHO suggested change is less clear/readable than the original
+#  Enabled: false
+
+
+# Auto correcting this to safe_load can cause us issues with DB config where we use YAML aliases
+Security/YAMLLoad:
+  Description: >-
+    Prefer usage of `YAML.safe_load` over `YAML.load` due to potential
+    security issues. See reference for more information.
+  Reference: 'https://ruby-doc.org/stdlib-2.3.3/libdoc/yaml/rdoc/YAML.html#module-YAML-label-Security'
+  Enabled: true
+  AutoCorrect: false
+
+Style/ArgumentsForwarding: # (new in 1.1)
+  Enabled: true
+
+Style/BlockDelimiters:
+  Exclude:
+  - spec/**/*_spec.rb # Turn these off for RSPEC as totally messes with expect{...}.to syntax
+
+Style/CollectionCompact: # (new in 1.2)
+  Enabled: true
+
+Style/ClassAndModuleChildren:
   Enabled: false
 
-# We shouldn't be committing code with debug statements left in (e.g. byebug or save_and_open_page),
-Debugger:
+Style/DateTime:   # Not clear the implications of : Prefer Date or Time over DateTime.
+  Enabled: false
+
+Style/DocumentDynamicEvalDefinition: # (new in 1.1)
   Enabled: true
 
-LineLength:
-  Description: Limit lines to 140 characters.
-  Enabled: true
-  Max: 140
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Style/Lambda:
+  Enabled: false
+
+Style/NumericLiterals:    # Messes up things like Tile IDs - Use underscores(_) as decimal mark and separate every 3 digits with them.
+  Enabled: false
+
+Style/RedundantParentheses:
+  Enabled: false
+
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  AllowInnerSlashes: true
   Exclude:
-    - 'spec/factories/*.rb'
-    - 'spec/features/*_spec.rb'
-    - 'spec/routing/**/*_spec.rb'
+  - spec/**/*_spec.rb
+
+
+Style/NegatedIfElseCondition: # (new in 1.2)
+  Enabled: true
+Style/NilLambda: # (new in 1.3)
+  Enabled: true
+Style/RedundantArgument: # (new in 1.4)
+  Enabled: true
+Style/SwapValues: # (new in 1.1)
+  Enabled: true
+
+Security/IoMethods: # new in 1.22
+  Enabled: true
+Style/EndlessMethod: # new in 1.8
+  Enabled: true
+Style/HashConversion: # new in 1.10
+  Enabled: true
+Style/HashExcept: # new in 1.7
+  Enabled: true
+Style/IfWithBooleanLiteralBranches: # new in 1.9
+  Enabled: true
+Style/InPatternThen: # new in 1.16
+  Enabled: true
+Style/MultilineInPatternThen: # new in 1.16
+  Enabled: true
+Style/NumberedParameters: # new in 1.22
+  Enabled: true
+Style/NumberedParametersLimit: # new in 1.22
+  Enabled: true
+Style/QuotedSymbols: # new in 1.16
+  Enabled: true
+Style/RedundantSelfAssignmentBranch: # new in 1.19
+  Enabled: true
+Style/SelectByRegexp: # new in 1.22
+  Enabled: true
+Style/StringChars: # new in 1.12
+  Enabled: true

@@ -18,7 +18,7 @@ module Yams
       if options[:id]
         ::YamsCore::Mp3Worker.perform_async(options[:id])
       else
-        ::YamsCore::Track.all.each {|t| YamsCore::Mp3Worker.perform_async(t.id) }
+        ::YamsCore::Track.all.each { |t| YamsCore::Mp3Worker.perform_async(t.id) }
       end
 
     end
@@ -30,8 +30,8 @@ module Yams
     def play_lists
       load_rails_environment
 
-      ::YamsCore::Playlist.create!()
-       
+      ::YamsCore::Playlist.create!
+
     end
   end
 end

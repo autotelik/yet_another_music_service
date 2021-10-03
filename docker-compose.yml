@@ -48,17 +48,17 @@ services:
     container_name: yams-web
     command: ["bundle", "exec", "puma", "-C", "config/puma.rb"]
     environment:
-       ELASTICSEARCH_URL: http://yams_elasticsearch:9200
-       LOGSTASH_HOST: logstash
-       VIRTUAL_HOST: yams.fm
-       VIRTUAL_PORT: 3000
-       LETSENCRYPT_HOST: yams.fm
-       RAILS_ENV: 'production'
-       RACK_ENV: 'production'
-       RAILS_SERVE_STATIC_FILES: 'true'
-       RAILS_LOG_TO_STDOUT: 'true'
-       PUMA_PORT: 3000
-       REDIS_URL: redis://yams_redis:6379/0
+      ELASTICSEARCH_URL: http://yams_elasticsearch:9200
+      LOGSTASH_HOST: logstash
+      VIRTUAL_HOST: yams.fm
+      VIRTUAL_PORT: 3000
+      LETSENCRYPT_HOST: yams.fm
+      RAILS_ENV: 'production'
+      RACK_ENV: 'production'
+      RAILS_SERVE_STATIC_FILES: 'true'
+      RAILS_LOG_TO_STDOUT: 'true'
+      PUMA_PORT: 3000
+      REDIS_URL: redis://yams_redis:6379/0
     depends_on:
       - yams_db
       - yams_redis
@@ -73,15 +73,15 @@ services:
       - "3000:3000"
     restart: unless-stopped
     volumes:
-     - rails_logs_volume:/home/app/yams/log/
-     - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
-     - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
+      - rails_logs_volume:/home/app/yams/log/
+      - ./config/.env:/home/app/yams/.env                     # Kept out of git. Linked files in config/deploy/yams.rb
+      - ./config/master.key:/home/app/yams/config/master.key  # So Capistrano copies from server shared area to deployment area
 
   yams_sidekiq:
     build:
-     context: .
-     args:
-      - GITHUB_TOKEN=${GITHUB_TOKEN}
+      context: .
+      args:
+        - GITHUB_TOKEN=${GITHUB_TOKEN}
     command: ["dotenv", "bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
     container_name: yams-sidekiq
     environment:

@@ -28,8 +28,8 @@ module TaskCommon
     until found
       env = begin
         gets.chomp.strip.to_sym
-            rescue StandardError
-              nil
+      rescue StandardError
+        nil
       end
       found = env && config[env]
       unless found
@@ -46,7 +46,9 @@ module TaskCommon
   end
 
   def load_rails_environment
-    raise 'No config/environment.rb found - cannot initialise ActiveRecord' unless File.exist?(File.expand_path('config/environment.rb'))
+    unless File.exist?(File.expand_path('config/environment.rb'))
+      raise 'No config/environment.rb found - cannot initialise ActiveRecord'
+    end
 
     begin
       require File.expand_path('config/environment.rb')

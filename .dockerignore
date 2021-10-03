@@ -1,6 +1,7 @@
 .byebug_history
 .dockerignore
 .env
+.env_scenarios
 .env.example
 */.git
 .git
@@ -11,8 +12,9 @@
 .vs
 */.vscode
 .vscode
-# Should be part of Capistrano deploy - shared area on server - and not copied here
+
 config/master.key
+
 Dockerfile
 docker-compose.yml
 docker-compose.*.yml
@@ -22,7 +24,14 @@ obj
 node_modules
 storage
 spec
+test
 docker
 /log/*
 /tmp/*
+/public/assets/*
+/public/packs/*
 /public/system/*
+dive.log
+local-config
+/lib/maprenderer/maprenderer
+.ruby-version

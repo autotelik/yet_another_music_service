@@ -20,7 +20,6 @@ module Yams
       docker_up('yams_sidekiq') if options[:sidekiq]
     end
 
-
     desc :compose, 'Run docker compose to build full cluster (Db, SideKiq, Redis, ELK)'
 
     method_option :init, type: :boolean, default: false
@@ -41,11 +40,10 @@ module Yams
       docker_exec(container: 'yams-db', cmd: 'bundle exec rake db:seed')
     end
 
-
     %w[Db Elasticsearch Redis Sidekiq].each do |name|
       desc :"#{name.downcase}", "Start #{name} docker container"
 
-      define_method("#{name.downcase}") do
+      define_method(name.downcase.to_s) do
         load_rails_environment
 
         docker_up("--no-deps yams_#{name.downcase}")
