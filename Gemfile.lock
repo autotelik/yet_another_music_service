@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_core.git
-  revision: 8bd1fbf330c73f49ec48601daff7a1f3615911d5
+  revision: bc5891902f5084eb6509a6f32f247dbbecc0923a
   branch: master
   specs:
     yams_core (0.1.0)
@@ -169,6 +169,10 @@ GEM
     devise_invitable (2.0.5)
       actionmailer (>= 5.0)
       devise (>= 4.6)
+    dotenv (2.7.6)
+    dotenv-rails (2.7.6)
+      dotenv (= 2.7.6)
+      railties (>= 3.2)
     dry-auto_inject (0.8.0)
       dry-container (>= 0.3.4)
     dry-configurable (0.13.0)
@@ -448,6 +452,8 @@ DEPENDENCIES
   byebug
   database_cleaner
   datashift!
+  dotenv (~> 2.7.5)
+  dotenv-rails (~> 2.7.5)
   ed25519 (>= 1.2, < 2.0)
   faker
   high_voltage

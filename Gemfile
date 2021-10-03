@@ -3,6 +3,9 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '2.7.4'
 
+gem 'dotenv', '~> 2.7.5'
+gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
+
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '6.0.4.1'
 

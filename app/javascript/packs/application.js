@@ -9,29 +9,27 @@ import Rails from "@rails/ujs"
 import Turbolinks from "turbolinks"
 Turbolinks.start()
 
+import "channels"
+
+// Direct Uploads
 import * as ActiveStorage from "@rails/activestorage"
 ActiveStorage.start()
 
-import "channels"
-
-Rails.start()
-
 import "@hotwired/turbo-rails"
-
-import "bootstrap";
 
 // Stimulus
 import "../controllers"
 
-// require('bootstrap/dist/js/bootstrap');
-// require("jquery")
-//
+import "bootstrap";
+
 $ = require('jquery');
 window.jQuery = $;
 window.$ = $;
 
 //import 'select2'
 //import 'select2/dist/css/select2.css'
+
+// ASSETS - IMAGES - SCSS
 
 const images = require.context('../../assets/images', true)
 require.context('../images', true)
