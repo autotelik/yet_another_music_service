@@ -37,8 +37,9 @@ gem 'ed25519', '>= 1.2', '< 2.0'
 gem 'bootstrap'
 
 gem 'high_voltage'                    # https://github.com/thoughtbot/high_voltage
-
 gem 'hotwire-rails'                   # https://github.com/hotwired/hotwire-rails
+
+gem "image_processing", ">= 1.2"      # https://edgeguides.rubyonrails.org/active_storage_overview.html
 
 gem 'pagy', '~> 3.5'
 

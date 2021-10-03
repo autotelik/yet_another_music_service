@@ -51,23 +51,22 @@ yarn add turbolinks
 
 ```
 yarn add jquery
-yarn add bootstrap
-yarn add @popperjs/core
 yarn add select2 
-yarn add turbolinks
 yarn add @rails/ujs
 ```
 
 #### Linux Packages
 
-Some mp3 processing currently requires ffmpeg
+Various features of Active Storage depend on third-party software which must be installed separately:
+
+Audio processing requires ffmpeg
 
 For Ubuntu
 ```
 sudo apt install ffmpeg
 ```
 
-File uploads require imagemagick
+Image uploads require libvips v8.6+ or ImageMagick for analysis and transformations.
 
 For Ubuntu
 

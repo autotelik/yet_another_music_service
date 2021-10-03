@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_core.git
-  revision: cc0c45ad250bf48e8b0825adbbc33d36354b52c2
+  revision: 8bd1fbf330c73f49ec48601daff7a1f3615911d5
   branch: master
   specs:
     yams_core (0.1.0)
@@ -452,6 +452,7 @@ DEPENDENCIES
   faker
   high_voltage
   hotwire-rails
+  image_processing (>= 1.2)
   jbuilder (~> 2.7)
   listen (~> 3.3)
   pagy (~> 3.5)

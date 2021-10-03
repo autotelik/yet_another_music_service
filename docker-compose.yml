@@ -82,7 +82,7 @@ services:
       context: .
       args:
         - GITHUB_TOKEN=${GITHUB_TOKEN}
-    command: ["dotenv", "bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
+    command: ["bundle", "exec", "sidekiq", "-C", "config/sidekiq.yml"]
     container_name: yams-sidekiq
     environment:
       - ELASTICSEARCH_URL=http://yams_elasticsearch:9200
