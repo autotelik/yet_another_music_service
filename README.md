@@ -42,11 +42,12 @@ The following packages have been added to this project
 
 ```
 ./bin/rails hotwire:install
+./bin/rails stimulus:install
+./bin/rails active_storage:install 
 yarn add bootstrap
 yarn add @popperjs/core
 yarn add turbolinks
 ```
-
 
 ```
 yarn add jquery
@@ -55,9 +56,6 @@ yarn add @popperjs/core
 yarn add select2 
 yarn add turbolinks
 yarn add @rails/ujs
-
-./bin/rails hotwire:install
-./bin/rails active_storage:install 
 ```
 
 #### Linux Packages

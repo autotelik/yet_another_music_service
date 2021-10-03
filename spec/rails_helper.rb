@@ -11,6 +11,19 @@ require 'factory_bot_rails'
 
 #pp FactoryBot.definition_file_paths
 #FactoryBot.find_definitions
+# frozen_string_literal: true
+
+# This file is copied to spec/ when you run 'rails generate rspec:install'
+require 'spec_helper'
+ENV['RAILS_ENV'] ||= 'test'
+require File.expand_path('../config/environment', __dir__)
+
+# Prevent database truncation if the environment is production
+abort('The Rails environment is running in production mode!') if Rails.env.production?
+
+require 'rspec/rails'
+require 'capybara/rspec'
+require 'capybara/email/rspec'
 
 # Add additional requires below this line. Rails is not loaded until this point!
 
@@ -27,20 +40,27 @@ require 'factory_bot_rails'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[File.expand_path("../support/**/*.rb", __FILE__)].each {|f| require f}
+Dir[Rails.root.join('spec/support/**/*.rb')].sort.each { |f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
-# If you are not using ActiveRecord, you can remove these lines.
-begin
-  ActiveRecord::Migration.maintain_test_schema!
-rescue ActiveRecord::PendingMigrationError => e
-  puts e.to_s.strip
-  exit 1
-end
+# If you are not using ActiveRecord, you can remove this line.
+ActiveRecord::Migration.maintain_test_schema!
+
+Capybara.javascript_driver = :selenium
+
+# Capybara::Webkit.configure do |config|
+#   config.allow_url('fonts.googleapis.com')
+#
+#   # Enable debug mode. Prints a log of everything the driver is doing.
+#   # config.debug = true
+#
+#   # Timeout if requests take longer than 5 seconds
+#   config.timeout = 5
+# end
 
 RSpec.configure do |config|
   # Remove this line if you're not using ActiveRecord or ActiveRecord fixtures
-  #config.fixture_path = "#{::Rails.root}/spec/fixtures"
+  config.fixture_path = "#{::Rails.root}/spec/fixtures"
 
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
@@ -75,4 +95,24 @@ RSpec.configure do |config|
   config.include Devise::Test::ControllerHelpers, type: :view
 
   config.include Capybara::RSpecMatchers
+  # arbitrary gems may also be filtered via:
+  # config.filter_gems_from_backtrace("gem name")
+  #
+  config.include Warden::Test::Helpers
+
+  config.include FactoryBot::Syntax::Methods
+
+  include RspecFileHelpers
+end
+
+require 'sidekiq/testing'
+Sidekiq::Testing.fake!
+
+FactoryBot::SyntaxRunner.include RspecFileHelpers
+
+Shoulda::Matchers.configure do |config|
+  config.integrate do |with|
+    with.test_framework :rspec
+    with.library :rails
+  end
 end

@@ -21,12 +21,12 @@ import "@hotwired/turbo-rails"
 import "bootstrap";
 
 // Stimulus
-import "controllers"
+import "../controllers"
 
 // require('bootstrap/dist/js/bootstrap');
 // require("jquery")
 //
-// $ = require('jquery');
+$ = require('jquery');
 // window.jQuery = $;
 // window.$ = $;
 

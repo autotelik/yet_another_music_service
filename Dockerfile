@@ -52,7 +52,9 @@ COPY . ${APP_HOME}
 ## Rails 6 with Webpacker - prepare assets for Production
 RUN yarn install --check-files
 
-# RUN rails webpacker:compile
-RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
-
+#RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rails webpacker:compile
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
+
+
+
