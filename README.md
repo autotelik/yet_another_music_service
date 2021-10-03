@@ -47,6 +47,7 @@ The following packages have been added to this project
 yarn add bootstrap
 yarn add @popperjs/core
 yarn add turbolinks
+yarn add dropzone
 ```
 
 ```
