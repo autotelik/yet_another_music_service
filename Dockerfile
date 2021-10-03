@@ -50,13 +50,8 @@ COPY . ${APP_HOME}
 ## Rails 6 with Webpacker - prepare assets for Production
 RUN yarn install --check-files
 
-# trying to deal with  JS/webpack/yarn BULLSHIT
-#RUN yarn add mini-css-extract-plugin@2.3.0
-#RUN yarn add sass-loader@10.1.1
-#RUN yarn upgrade postcss-loader@4.2.0
-
-RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
-
+#RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rake assets:precompile
+RUN SECRET_KEY_BASE=1 RAILS_ENV=production bundle exec rails webpacker:compile
 CMD ["bundle", "exec", "puma", "-C", "config/puma.rb"]
 
 

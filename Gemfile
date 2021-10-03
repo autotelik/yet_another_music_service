@@ -6,8 +6,6 @@ ruby '2.7.4'
 gem 'dotenv', '~> 2.7.5'
 gem 'dotenv-rails', '~> 2.7.5', require: 'dotenv/rails-now'
 
-# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
-gem 'rails', '~> 6.1.4', '>= 6.1.4.1'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 1.1'
 # Use Puma as the app server
@@ -17,7 +15,6 @@ gem 'sass-rails', '>= 6'
 # Transpile app-like JavaScript. Read more: https://github.com/rails/webpacker
 #gem 'webpacker', '~> 5.0'
 gem 'webpacker', '~> 5.x'
-
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.7'

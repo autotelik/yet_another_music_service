@@ -133,11 +133,17 @@ GEM
       ruby_event_store (= 1.2.2)
     arkency-command_bus (0.4.0)
       thread_safe
+    autoprefixer-rails (10.3.3.0)
+      execjs (~> 2)
     bcrypt (3.1.16)
     bcrypt_pbkdf (1.1.0)
     bindex (0.8.1)
     bootsnap (1.9.1)
       msgpack (~> 1.0)
+    bootstrap (5.0.2)
+      autoprefixer-rails (>= 9.1.0)
+      popper_js (>= 2.9.2, < 3)
+      sassc-rails (>= 2.0.0)
     bounded_context (1.2.2)
     bourbon (7.0.0)
       thor (~> 1.0)
@@ -294,6 +300,7 @@ GEM
       mimemagic (~> 0.3.0)
       terrapin (~> 0.6.0)
     pg (1.2.3)
+    popper_js (2.9.3)
     puma (5.5.0)
       nio4r (~> 2.0)
     pundit (2.1.1)
@@ -447,6 +454,7 @@ PLATFORMS
 DEPENDENCIES
   bcrypt_pbkdf (>= 1.0, < 2.0)
   bootsnap (>= 1.4.4)
+  bootstrap (~> 5.0.2)
   byebug
   database_cleaner
   datashift!

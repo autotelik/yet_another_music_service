@@ -18,19 +18,4 @@ Rails.start()
 
 import "@hotwired/turbo-rails"
 
-require('bootstrap/dist/js/bootstrap');
 
-require("jquery")
-
-$ = require('jquery');
-window.jQuery = $;
-window.$ = $;
-
-import 'select2'
-import 'select2/dist/css/select2.css'
-
-const images = require.context('../../assets/images', true)
-
-require.context('../images', true)
-
-import "../stylesheets/application";
