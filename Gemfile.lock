@@ -21,7 +21,7 @@ GIT
 
 GIT
   remote: https://github.com/autotelik/yams_core.git
-  revision: acde562f09af941843a4b66164122509bca2c4b5
+  revision: e15738bc62576fd67f23346d5cd53a33c281bfde
   branch: master
   specs:
     yams_core (0.1.0)

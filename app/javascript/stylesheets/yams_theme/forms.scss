@@ -1,0 +1,109 @@
+button,
+input,
+optgroup,
+select,
+.signin,
+textarea {
+  color: $colour-off-white;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  width: 100%;
+  padding: 10px 20px;
+  border-radius: 8px;
+  background: $colour-form-back;
+  border: 2px solid rgba(255, 255, 255, 0);
+  overflow: hidden;
+  margin-top: $label-form-spacing;
+  transition: all 0.5s ease-in-out;
+  display: block;
+}
+
+.textarea:focus {
+  outline: 0;
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0);
+}
+
+.textarea:focus + span {
+  opacity: 0.6;
+}
+
+input[type="submit"] {
+  color:      $colour-submit-btn-text;
+  background: $colour-submit-btn;
+  font-weight: bolder;
+  color: #FFF;
+  width: 100%;
+  padding: 10px 20px;
+  display: block;
+  height: 39px;
+  border-radius: 20px;
+  margin-top: 30px;
+  transition: all 0.5s ease-in-out;
+  border: none;
+  text-transform: uppercase;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.form-group {
+  margin-bottom: 12px;
+  margin-top: 24px;
+}
+
+.form-parent {
+  position: relative;
+  margin: 130px auto auto;
+  padding: 30px 60px 60px 60px;
+  background-size: cover;
+  box-shadow: 0px 30px 60px -5px #000;
+}
+
+.form-control-yams {
+  color: #495057;
+  display: block;
+  font-weight: 100;
+  font-size: 14px;
+  line-height: 20px;
+  padding: 2px 7px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  transition: border-color .1s;
+}
+
+label {
+  font-size: 1rem;
+  line-height: 20px;
+  margin-top: 12px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: white;
+  text-transform: uppercase;
+  opacity: 0.8;
+  transition: all 0.5s ease-in-out;
+}
+
+.inner-label {
+  font-size: 0.8rem;
+  line-height: 16px;
+  margin: 0px;
+  letter-spacing: 4px;
+  color: white;
+  opacity: 0.75;
+  transition: all 0.5s ease-in-out;
+}
+
+.label-spacer {
+  margin-bottom: $label-form-spacing;
+}
+
+.search-input {
+  overflow: visible;
+  max-width: 400px;
+  padding-left: 27px;
+  text-align: center;
+}

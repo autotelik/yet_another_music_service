@@ -18,35 +18,6 @@
   top: -65px;
 }
 
-.input_text {
-  border: none;
-  width: 100%;
-  padding: 10px 20px;
-  border-radius: 20px;
-  background: $colour-form-back;
-  border: 2px solid rgba(255, 255, 255, 0);
-  overflow: hidden;
-  margin-top: $label-form-spacing;
-  transition: all 0.5s ease-in-out;
-}
-
-.text {
-  @extend .input_text;
-  display: block;
-  height: $label-form-spacing;
-}
-
-.text:focus {
-  outline: 0;
-  border: 2px solid rgba(255, 255, 255, 0.5);
-  border-radius: 20px;
-  background: rgba(0, 0, 0, 0);
-}
-
-.text:focus + span {
-  opacity: 0.6;
-}
-
 .login input[type="text"],
 .login input[type="password"] {
   font-family: 'Montserrat', sans-serif;

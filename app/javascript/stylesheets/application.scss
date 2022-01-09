@@ -16,7 +16,9 @@
 
 // YAMS Engines
 @import "yams_theme/variables";
+
 @import "yams_theme/direct_uploads";
+@import "yams_theme/forms";
 @import "yams_theme/pages";
 @import "yams_audio_engine/yams_player";
 @import "yams_theme/sign_in";
@@ -95,31 +97,6 @@ a {
   border-top: 1px solid $colour-border-break;
 }
 
-button,
-input,
-optgroup,
-select,
-textarea {
-  color: $colour-off-white;
-  font-family: 'Montserrat', sans-serif;
-}
-
-input[type="submit"] {
-  color:      $colour-submit-btn-text;
-  background: $colour-submit-btn;
-  font-weight: bolder;
-  color: #FFF;
-  width: 100%;
-  padding: 10px 20px;
-  display: block;
-  height: 39px;
-  border-radius: 20px;
-  margin-top: 30px;
-  transition: all 0.5s ease-in-out;
-  border: none;
-  text-transform: uppercase;
-}
-
 .btn-danger {
   background: #dc3545 !important;
 }
@@ -150,7 +127,6 @@ input[type="submit"] {
   background-color: $colour-theme-background !important;
   border-color: $colour-purple;
 }
-
 
 .card {
   color: $colour-off-white !important;
@@ -208,24 +184,6 @@ input[type="submit"] {
   font-weight: 400;
 }
 
-form {
-  display: block;
-  margin-top: 0em;
-}
-
-.form-group {
-  margin-bottom: 12px;
-  margin-top: 24px;
-}
-
-.form-parent {
-  position: relative;
-  margin: 130px auto auto;
-  padding: 30px 60px 60px 60px;
-  background-size: cover;
-  box-shadow: 0px 30px 60px -5px #000;
-}
-
 .footer {
   font-family: Inconsolata, monospace;
   background-color: transparent;
@@ -270,18 +228,6 @@ div.footer h5 {
   font-size: 16px;
 }
 
-.form-control-yams {
-  color: #495057;
-  display: block;
-  font-weight: 100;
-  font-size: 14px;
-  line-height: 20px;
-  padding: 2px 7px;
-  border-radius: 4px;
-  border: 1px solid #ccc;
-  transition: border-color .1s;
-}
-
 .fullwidth-image {
   width: 100%;
   margin-bottom: 20px;
@@ -301,9 +247,9 @@ h3 {
 }
 
 h5 {
-  font-size: 1.25rem;
+  font-size: 1.5rem;
   line-height: 20px;
-  margin: 0px;
+  margin: 0 0 6px 0;
   letter-spacing: 4px;
   text-transform: uppercase;
   color: white;
@@ -316,7 +262,6 @@ h5.text-light {
 h6 {
   margin: 0px;
 }
-
 
 i.icon-chevron-small-right
 {
@@ -343,34 +288,6 @@ img {
 .image-wrapper {
   width: 20%;
   text-align: center;
-}
-
-
-label {
-  font-size: 1rem;
-  line-height: 20px;
-  margin-top: 12px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
-  color: white;
-  text-transform: uppercase;
-  opacity: 0.8;
-  transition: all 0.5s ease-in-out;
-}
-
-.inner-label {
-  font-size: 0.8rem;
-  line-height: 16px;
-  margin: 0px;
-  letter-spacing: 4px;
-  color: white;
-  opacity: 0.75;
-  transition: all 0.5s ease-in-out;
-}
-
-
-.label-spacer {
-  margin-bottom: $label-form-spacing;
 }
 
 .material-icons-small {
@@ -469,13 +386,6 @@ p.light {
 .row {
   margin-right: 0;
   margin-left: 0;
-}
-
-.search-input {
-  overflow: visible;
-  max-width: 400px;
-  padding-left: 27px;
-  text-align: center;
 }
 
 .select2-results li {
