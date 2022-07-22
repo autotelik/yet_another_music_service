@@ -414,7 +414,7 @@ GEM
     tilt (2.0.10)
     turbo-rails (0.8.1)
       rails (>= 6.0.0)
-    tzinfo (1.2.9)
+    tzinfo (1.2.10)
       thread_safe (~> 0.1)
     tzinfo-data (1.2021.3)
       tzinfo (>= 1.0.0)
